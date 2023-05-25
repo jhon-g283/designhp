@@ -2,6 +2,7 @@ import styles from "../../styles/cafe/cafe.module.css";
 import Image from "next/image";
 import styled from "styled-components";
 import Header from "../../src/components/coffeeheader";
+import Footer from "../components/coffeefooter";
 import TopFirstSection from "../components/toppagefirstsection";
 import hearoImg from "../../public/img/hero.png";
 import SideMenuBar from "../components/coffeesidbemenu";
@@ -27,6 +28,7 @@ const HeroImage = (
   <div className={styles.heroimgclass}>
     <Image
       src="/img/hero.png"
+      // src="/img/hero2.jpg"
       width={1500} // Specify different width values based on device or viewport size
       height={727}
       alt="Your Image"
@@ -42,7 +44,7 @@ const Hero = () => {
   return (
     <>
       {HeroImage}
-      {/* <ImgCmp> */}
+
       <div className={styles.heroword}>
         <p className={styles.subtext1}>クリエイターの立ち寄るカフェ</p>
         <p className={styles.shopname}>Cafe Cucua Coffee</p>
@@ -63,10 +65,7 @@ const CoofeeTemplate = () => {
       </div>
 
       <TopFirstSection />
-      <TopFirstSection />
-      <TopFirstSection />
-      <TopFirstSection />
-      <TopFirstSection />
+      <Footer />
     </>
   );
 };

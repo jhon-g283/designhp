@@ -1,29 +1,42 @@
 import styles from "../../styles/cafe/cafe.module.css";
 import Image from "next/image";
 
-import Header from "./coffeeheader";
+// ToDo
+// 完成したらクラス名とテキストを引数にして出し分けできるようにする
+// マージンとパディングも調整するように修正」
 
-const SectionTitle = (
+const SectionTitleBlack = (
   <>
-    <h1>ABOUT</h1>
+    <div className={styles.sectiontiteleblack}>
+      <h2>ABOUT</h2>
+    </div>
   </>
 );
 
 const ExplainSection = (
   <>
-    <p>Cafe Cucua Coffee とは？</p>
+    <div className={styles.explainsectionwrapper}>
+      <p>Cafe Cucua Coffee とは？</p>
+    </div>
   </>
 );
 
-const ExplainSection1 = (
+const TextBlackConsept = (
   <>
-    <p>Concept</p>
+    <div className={styles.topFirstWiteBack}>
+      <p>Concept</p>
+    </div>
   </>
 );
 
-const ExplainSection2 = (
+const TextBalckFor = (
   <>
-    <p>”クリエイターのため”に作られたカフェ</p>
+    <div className={styles.topFirstWiteBack2}>
+      <p>
+        <span className={styles.forCreater}>”クリエイターのため”</span>
+        に作られたカフェ
+      </p>
+    </div>
   </>
 );
 
@@ -38,22 +51,21 @@ const TextWite = (
 
 const ListWite = (
   <>
-    <ul>
-      <li>Wi-Fiやコンセントなどの機材環境</li>
-      <li>リラックスしてアイデアを練り上げられる空間</li>
-    </ul>
+    <p>・Wi-Fiやコンセントなどの機材環境</p>
+    <p>・リラックスしてアイデアを練り上げられる空間</p>
   </>
 );
 
 const BlackBackGroundDiv = (
   <>
-    <div>
+    <div className={styles.topFirstBlackBack}>
       {TextWite}
       {ListWite}
     </div>
   </>
 );
 
+// ToDo
 const Image1 = (
   <>
     <div className={styles.sectionImage1}>
@@ -67,16 +79,110 @@ const Image1 = (
     </div>
   </>
 );
+const Image1Wrapper = (
+  <>
+    <div className={styles.textWrapper1}>
+      {TextBlackConsept}
+      {TextBalckFor}
+      {BlackBackGroundDiv}
+    </div>
+    <div className={styles.Image1Wrapper}>{Image1}</div>
+  </>
+);
 
+const Image2 = (
+  <>
+    <div className={styles.sectionImage2}>
+      <Image
+        src="/img/FirstSectionImg2-2.png"
+        width={500} // Specify different width values based on device or viewport size
+        height={400}
+        alt="Your Image"
+        layout="responsive"
+      ></Image>
+    </div>
+  </>
+);
+
+const TextBlackImage2 = (
+  <>
+    <div className={styles.textBlackImage2}>
+      <p>アイデアが湧く癒しの空間</p>
+    </div>
+  </>
+);
+
+const image2Wrapper = (
+  <>
+    <div className={styles.image2Wrapper}>
+      {Image2}
+      {TextBlackImage2}
+    </div>
+  </>
+);
+const TextBlackImage3 = (
+  <>
+    <div className={styles.textBlackImage3}>
+      <p>シンプルで集中できるスペース</p>
+    </div>
+  </>
+);
+
+const Image3 = (
+  <>
+    <div className={styles.sectionImage3}>
+      <Image
+        src="/img/FirstSectionImg3.png"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+      ></Image>
+    </div>
+  </>
+);
+
+const image3Wrapper = (
+  <>
+    <div className={styles.image3Wrapper}>
+      {TextBlackImage3}
+      {Image3}
+    </div>
+  </>
+);
+
+const witeArrowImage = (
+  <>
+    <Image
+      src="/img/WiteArrow.svg"
+      width={100} // Specify different width values based on device or viewport size
+      height={100}
+      alt="Your Image"
+      // layout="responsive"
+    ></Image>
+  </>
+);
+
+const moreButton = (
+  <>
+    <div className={styles.moreWrapper}>
+      <p>MORE</p>
+      {witeArrowImage}
+    </div>
+  </>
+);
 const TopFirstSection = () => {
   return (
     <>
-      {SectionTitle}
-      {ExplainSection}
-      {ExplainSection1}
-      {ExplainSection2}
-      {BlackBackGroundDiv}
-      {Image1}
+      <div className={styles.firstsectionwrapper}>
+        {SectionTitleBlack}
+        {ExplainSection}
+        {Image1Wrapper}
+
+        {image2Wrapper}
+        {image3Wrapper}
+        {moreButton}
+      </div>
     </>
   );
 };
