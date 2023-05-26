@@ -1,7 +1,6 @@
-import styles from "../../styles/cafe/cafe.module.css";
-import Image from "next/image";
-import Twitter from "../../public/img/Twitterlogo.png";
-import { useState } from "react";
+import styles from '../../styles/cafe/cafe.module.css';
+import Image from 'next/image';
+import { useState } from 'react';
 
 const SideMenuBar = () => {
   const [flg, changeFlg] = useState<boolean>(false);
@@ -9,24 +8,22 @@ const SideMenuBar = () => {
   const sideMenueNav = (
     <>
       <div className={styles.navarea}>
-        <nav style={{ backgroundColor: "red", opacity: 0.5 }}>
+        <nav className={styles.navItem}>
           <ul>
-            <li>Cafe Cucua Coffee </li>
+            <li className={styles.sectionItem}>TOP</li>
             <li>ABOUT</li>
             <li>MENU</li>
             <li>LOCATION</li>
           </ul>
+
           <ul>
-            <li>Cafe Cucua Coffee </li>
-            <li>ABOUT</li>
-            <li>MENU</li>
-            <li>LOCATION</li>
+            <li className={styles.sectionItem}>LEAN MORE</li>
+            <li>PLAN</li>
+            <li>GALLARY</li>
           </ul>
+
           <ul>
-            <li>Cafe Cucua Coffee </li>
-            <li>ABOUT</li>
-            <li>MENU</li>
-            <li>LOCATION</li>
+            <li className={styles.sectionItem}>MENU LIST</li>
           </ul>
         </nav>
       </div>
@@ -34,28 +31,35 @@ const SideMenuBar = () => {
   );
   return (
     <>
+      {flg ? sideMenueNav : <></>}
       <div
-        style={{
-          backgroundColor: "red",
-          // display: "flex",
-          // justifyContent: "flex-end",
-          // alignItems: "flex-end",
-          // // position: "fixed",
-          // bottom: 0,
-          // right: 0,
-        }}
+        style={
+          {
+            // backgroundColor: "red",
+            // display: "flex",
+            // justifyContent: "flex-end",
+            // alignItems: "flex-end",
+            // // position: "fixed",
+            // bottom: 0,
+            // right: 0,
+          }
+        }
       >
-        {flg ? sideMenueNav : <></>}
         <div className={styles.sidemenu}>
           <p>Creative cafe</p>
           <div>
-            <p
+            {/* <p
               style={{ backgroundColor: "red" }}
               onClick={() => changeFlg(!flg)}
             >
               二
             </p>
-            <p>{flg ? "T" : "F"}</p>
+            <p>{flg ? "T" : "F-"}</p> */}
+            <div className={styles.humberger} onClick={() => changeFlg(!flg)}>
+              <div className={flg ? styles.upperBar : ''}></div>
+
+              <div className={flg ? styles.lowerBar : ''}></div>
+            </div>
           </div>
           <div className={styles.sidemenuiconarea}>
             <div className={styles.snsicon}>
@@ -69,7 +73,7 @@ const SideMenuBar = () => {
             </div>
             <div className={styles.snsicon}>
               <Image
-                src="/img/Twitterlogo.png"
+                src="/img/Instagramlogo.png"
                 width={22} // Specify different width values based on device or viewport size
                 height={22}
                 alt="Your Image"
@@ -78,7 +82,7 @@ const SideMenuBar = () => {
             </div>
             <div className={styles.snsicon}>
               <Image
-                src="/img/Twitterlogo.png"
+                src="/img/maillogo.png"
                 width={22} // Specify different width values based on device or viewport size
                 height={22}
                 alt="Your Image"

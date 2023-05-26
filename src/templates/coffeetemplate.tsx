@@ -1,28 +1,21 @@
-import styles from "../../styles/cafe/cafe.module.css";
-import Image from "next/image";
-import styled from "styled-components";
-import Header from "../../src/components/coffeeheader";
-import Footer from "../components/coffeefooter";
-import TopFirstSection from "../components/toppagefirstsection";
-import hearoImg from "../../public/img/hero.png";
-import SideMenuBar from "../components/coffeesidbemenu";
+import styles from '../../styles/cafe/cafe.module.css';
+import Image from 'next/image';
+import styled from 'styled-components';
+import Header from '../../src/components/coffeeheader';
+import Footer from '../components/coffeefooter';
+import TopFirstSection from '../components/toppagefirstsection';
+import hearoImg from '../../public/img/hero.png';
+import SideMenuBar from '../components/coffeesidbemenu';
+import TopSecondSection from '../components/toppagesecondsection';
 
-const backgroundImage = "/img/hero.png";
+const backgroundImage = '/img/hero.png';
 
-const test = "/img/hero.png";
+const test = '/img/hero.png';
 console.log(hearoImg.src);
 
-const ImgCmp = styled.div`
-  background-image: url("/img/hero.png");
-
-  padding: auto auto;
-
-  //   background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  //   display: flex;
-`;
+//
+// Heroもおそらく使い回しできそう・
+// あと商品紹介のテキストも使い回しができると思う。
 
 const HeroImage = (
   <div className={styles.heroimgclass}>
@@ -36,9 +29,6 @@ const HeroImage = (
     ></Image>
   </div>
 );
-
-console.log("ImgCmp");
-console.log(ImgCmp);
 
 const Hero = () => {
   return (
@@ -65,6 +55,7 @@ const CoofeeTemplate = () => {
       </div>
 
       <TopFirstSection />
+      <TopSecondSection />
       <Footer />
     </>
   );

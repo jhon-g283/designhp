@@ -1,25 +1,15 @@
-import styles from "../../styles/cafe/cafe.module.css";
-import Image from "next/image";
+// Topページの最初のセクション
+
+import styles from '../../styles/cafe/cafe.module.css';
+import Image from 'next/image';
+import SectionTitleComp from './coffeesectiontitle';
+import ExplainSectionComp from './coffeeexplainsection';
+
+import MoreButtonComp from './morebutton';
 
 // ToDo
 // 完成したらクラス名とテキストを引数にして出し分けできるようにする
 // マージンとパディングも調整するように修正」
-
-const SectionTitleBlack = (
-  <>
-    <div className={styles.sectiontiteleblack}>
-      <h2>ABOUT</h2>
-    </div>
-  </>
-);
-
-const ExplainSection = (
-  <>
-    <div className={styles.explainsectionwrapper}>
-      <p>Cafe Cucua Coffee とは？</p>
-    </div>
-  </>
-);
 
 const TextBlackConsept = (
   <>
@@ -151,37 +141,31 @@ const image3Wrapper = (
   </>
 );
 
-const witeArrowImage = (
-  <>
-    <Image
-      src="/img/WiteArrow.svg"
-      width={100} // Specify different width values based on device or viewport size
-      height={100}
-      alt="Your Image"
-      // layout="responsive"
-    ></Image>
-  </>
-);
-
-const moreButton = (
-  <>
-    <div className={styles.moreWrapper}>
-      <p>MORE</p>
-      {witeArrowImage}
-    </div>
-  </>
-);
 const TopFirstSection = () => {
   return (
     <>
       <div className={styles.firstsectionwrapper}>
-        {SectionTitleBlack}
-        {ExplainSection}
-        {Image1Wrapper}
+        <SectionTitleComp
+          text={'ABOUT'}
+          useClassName={styles.sectionTitle}
+          fontColor={'white'}
+        />
+        <ExplainSectionComp
+          text={'Cafe Cucua Coffee とは？'}
+          useClassName={styles.explainsection}
+          fontColor={'white'}
+          widthOfBorder={150}
+        />
 
+        {Image1Wrapper}
         {image2Wrapper}
         {image3Wrapper}
-        {moreButton}
+
+        <MoreButtonComp
+          text={'MORE'}
+          useClassName={styles.moreWrapper}
+          fontColor={'white'}
+        />
       </div>
     </>
   );
