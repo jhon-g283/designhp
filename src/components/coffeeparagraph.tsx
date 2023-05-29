@@ -1,6 +1,6 @@
 interface Props {
-  useClassName: string;
-  fontColor: string;
+  useClassName?: string;
+  fontColor?: string;
   paragramText: JSX.Element;
 }
 

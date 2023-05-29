@@ -10,10 +10,12 @@ const MoreButtonComp = ({
   useClassName: useClassName,
   fontColor,
 }: Props) => {
+  const arrowImg =
+    fontColor == 'white' ? '/img/WiteArrow.svg' : '/img/BlackArrow.svg';
   const witeArrowImage = (
     <>
       <Image
-        src="/img/WiteArrow.svg"
+        src={arrowImg}
         width={100} // Specify different width values based on device or viewport size
         height={100}
         alt="Your Image"
@@ -24,7 +26,7 @@ const MoreButtonComp = ({
   return (
     <>
       <div className={useClassName}>
-        <p style={{ color: fontColor }}>{text}</p>
+        <a style={{ color: fontColor }}>{text}</a>
         {witeArrowImage}
       </div>
     </>

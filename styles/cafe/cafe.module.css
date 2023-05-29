@@ -3,17 +3,11 @@
 .headerarea {
   top: -2px;
   left: 0px;
-  /* width: 1366px; */
+
   height: 72px;
 
-  /* font-family: "Noto Nastaliq Urdu"; */
-  /* font-weight: bold; */
-  /* font-size: 24px; */
-  /* letter-spacing: 0.13em; */
   text-align: left;
   color: #fff;
-  border: 1px solid #fff;
-  background-color: red;
 }
 .headerarea h1 {
   /* top: -2px; */
@@ -25,10 +19,27 @@
   font-weight: bold;
   font-size: 24px;
   letter-spacing: 0.13em;
-  text-align: left;
+
   color: #fff;
-  border: 1px solid #fff;
+
+  padding-left: 30px;
+  margin: 0;
   background-color: black;
+}
+/* フッター */
+.footer {
+  padding-left: 30px;
+
+  height: 183px;
+  background: #000000 0% 0% no-repeat padding-box;
+}
+
+.footer h2 {
+  margin-top: 0px;
+
+  font: normal normal bold 24px Noto Nastaliq Urdu;
+  letter-spacing: 3.05px;
+  color: #ffffff;
 }
 
 /* トップページとサイドメニューを並べるよう */
@@ -97,11 +108,6 @@
 
 .sidemenu {
   background-color: black;
-
-  /* top: 116px;
-  left: 1318px;
-  width: 28px;
-  height: 102px; */
 
   /* position: absolute; */
   top: 0px;
@@ -229,6 +235,18 @@
   color: #ffffff;
   list-style: none;
   opacity: 1;
+}
+
+/* 下線を消す */
+.navItem li a {
+  text-decoration: none;
+}
+
+/* 訪問前後の状態をなくす */
+.navItem a:visited,
+.navItem a:link {
+  color: inherit;
+  justify-content: flex-end;
 }
 
 .navItem .sectionItem {
@@ -504,7 +522,7 @@
   margin-top: 10px;
 }
 
-.moreWrapper p {
+.moreWrapper a {
   font: normal normal bold 32px Noto Nastaliq Urdu;
   padding-right: 5px;
   padding-bottom: 5px;
@@ -512,3 +530,220 @@
 
   color: #ffffff;
 }
+
+/* セクション２ */
+
+.paragramCmpClass {
+  font: normal normal normal 16px/39px Noto Sans JP Thin;
+  letter-spacing: 2.67px;
+}
+
+.menuBlock {
+  display: flex;
+  background-color: #17e29f;
+}
+
+.menuBlockImg {
+  margin: auto 0 auto auto;
+  background-color: #827171;
+}
+
+/* 逆パターン */
+.menuBlockImgReverse {
+  background-color: #9a9797;
+}
+
+/* スマホ専用 */
+.menuBlockImgOnlySp {
+  margin: auto 0 auto auto;
+  background-color: #827171;
+  display: none;
+}
+.menuTextLabelBlack {
+  /* top: 3143px;
+left: 128px; */
+  width: 447px;
+  height: 410px;
+  background: #000000 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+/* 逆パターン */
+.menuTextLabelBlackReverse {
+  /* top: 3143px;
+left: 128px; */
+  width: 447px;
+  height: 410px;
+  margin: auto 0 auto auto;
+  background: #000000 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+.menuNumWrapper {
+  text-align: right;
+  padding-right: 20px;
+  opacity: 0.85;
+}
+
+.menuNumWrapper p {
+  margin: 0px;
+  padding: 0px;
+  font: normal normal bold 27px Noto Nastaliq Urdu;
+  /* background-color: #17e29f; */
+}
+
+.menuNumText {
+  font: normal normal bold 27px Noto Nastaliq Urdu;
+  /* letter-spacing: 3.43px; */
+}
+
+p.menuNumber {
+  margin-top: -59px;
+  padding-right: 6px;
+  font: normal normal bold 59px Noto Nastaliq Urdu;
+  letter-spacing: 7.49px;
+  /* background-color: #c6c8c7; */
+
+  /* letter-spacing: 3.43px; */
+}
+
+.menuText {
+  padding-left: 68px;
+  /* padding-top: 0; */
+  position: absolute;
+  margin-top: -95px;
+  background-color: rgba(169, 68, 68, 0.77);
+}
+
+.menuText p {
+  margin: 0px;
+}
+
+.menuItemName {
+  font: normal normal normal 32px/80px Noto Serif Myanmar;
+  letter-spacing: 0px;
+
+  background-color: #825858;
+}
+
+.priceText {
+  padding-top: 5px;
+  letter-spacing: 2.67px;
+  background-color: #825858;
+}
+.priceText span {
+  padding-left: 6px;
+}
+
+/* セクション３ */
+
+.locationImage {
+  /* width: 1084px; */
+  height: 453px;
+}
+
+/* 住所情報 */
+.addressArea {
+  margin-top: 35px;
+
+  /* padding: 40px; */
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: rgb(255, 255, 255);
+}
+
+.addressText {
+  display: flex;
+}
+
+.addressTextLeft {
+  width: 188px;
+}
+
+.addressAreaParagraph {
+  font: normal normal normal 17px Noto Sans JP Thin;
+  letter-spacing: 2.23px;
+  color: #000000;
+}
+
+.addressPayLogo1 {
+  /* margin-top: auto; */
+  margin-bottom: -20px;
+  width: 104px;
+  height: 67px;
+}
+
+.addressPayLogo2 {
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  margin-bottom: -20px;
+  width: 174px;
+  height: 63px;
+}
+
+.addresAreaSpan01 {
+  margin-left: 30px;
+}
+
+.addresAreaSpan02 {
+  margin-left: 40px;
+}
+.addresAreaSpan03 {
+  margin-left: 95px;
+}
+
+.addresAreaSpan04 {
+  margin-left: 30px;
+}
+
+.addresAreaSpan05 {
+  margin-right: 30px;
+}
+
+.mapImage {
+  /* width: 1040px; */
+  height: 284px;
+}
+
+.addressWrapper {
+  background-color: #17e29f;
+}
+
+.addressImgWrapper {
+  text-align: end;
+}
+
+a.mapAppButton {
+  width: 200px;
+  height: 43px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 4px solid #000000;
+
+  font: normal normal normal 17px Noto Sans JP Thin;
+  letter-spacing: 0px;
+
+  text-decoration: none;
+
+  padding-top: 5px;
+  padding-left: 28px;
+  padding-bottom: 7px;
+  padding-right: 50px;
+  /* display: flex; */
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: auto;
+  z-index: 4;
+  opacity: 0.99;
+
+  /* justify-content: flex-end; */
+}
+
+a.mapAppButton:visited {
+  color: inherit;
+  justify-content: flex-end;
+}
+
+/* LearnMorePage */

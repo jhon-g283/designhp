@@ -149,6 +149,7 @@ const TopFirstSection = () => {
           text={'ABOUT'}
           useClassName={styles.sectionTitle}
           fontColor={'white'}
+          idOfElement={'toppageAboutSection'}
         />
         <ExplainSectionComp
           text={'Cafe Cucua Coffee とは？'}

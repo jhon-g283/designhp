@@ -1,20 +1,20 @@
-import styles from '../../styles/cafe/cafe.module.css';
-
 interface Props {
   text: string;
   useClassName: string;
   fontColor: string;
+  idOfElement?: string;
 }
 
 const SectionTitleComp = ({
   text: title,
   useClassName: name,
   fontColor,
+  idOfElement,
 }: Props) => {
   return (
     <>
       <div className={name} style={{ color: fontColor }}>
-        <h2>{title}</h2>
+        <h2 id={idOfElement}>{title}</h2>
       </div>
     </>
   );

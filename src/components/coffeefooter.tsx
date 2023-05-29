@@ -1,10 +1,10 @@
-import styles from "../../styles/cafe/cafe.module.css";
+import styles from '../../styles/cafe/cafe.module.css';
 
 const Footer = () => {
   return (
     <>
-      <div className={styles.headerarea}>
-        <h1>Fotter</h1>
+      <div className={styles.footer}>
+        <h2>CafeCuCuaCoffe</h2>
       </div>
     </>
   );

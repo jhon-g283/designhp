@@ -1,9 +1,11 @@
 import styles from '../../styles/cafe/cafe.module.css';
-import Image from 'next/image';
+
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
 import MoreButtonComp from './morebutton';
 import Paragraph from './coffeeparagraph';
+
+import MenuBlock from './coffeemenubox';
 
 const intoroText = (
   <>
@@ -14,6 +16,33 @@ const intoroText = (
   </>
 );
 
+const menuText1 = (
+  <>
+    <p>
+      Cucua Beansを使用した <br></br>オリジナルブレンドのコーヒーです。
+    </p>
+  </>
+);
+const menuText2 = (
+  <>
+    <p>
+      とれたてのベリーと蜂蜜シロップを <br></br>あしらったパンケーキになります。
+    </p>
+  </>
+);
+
+const menuText3 = (
+  <>
+    <p>
+      柔らかいパン生地と新鮮な具材から作る <br></br>サンドウィッチセットです。
+    </p>
+  </>
+);
+
+// 外部コンポーネントにする。
+//
+//
+
 const TopSecondSection = () => {
   return (
     <>
@@ -22,6 +51,7 @@ const TopSecondSection = () => {
           text={'MENU'}
           useClassName={styles.sectionTitle}
           fontColor={'black'}
+          idOfElement="toppageMenuSection"
         />
         <ExplainSectionComp
           text={'こだわりのメニューたち'}
@@ -31,10 +61,50 @@ const TopSecondSection = () => {
         />
 
         <Paragraph
-          useClassName=""
+          useClassName={styles.paragramCmpClass}
           fontColor="black"
           paragramText={intoroText}
         />
+
+        <MenuBlock
+          classNameOfBox={styles.menuBlock}
+          classNameOfBoxLabel={styles.menuTextLabelBlack}
+          classNameOfBoxImg={styles.menuBlockImg}
+          paragramMenuTextOfLabel={menuText1}
+          textOfMenuNameJp={'ブレンドコーヒー'}
+          textOfMenuNameEn={'Brend Coffee'}
+          textOfMenuNameNum={'01'}
+          textOfMenuprice={'500'}
+          pathToImg={'/img/BrendCoffee.png'}
+          displayPattern={'01'}
+        />
+
+        <MenuBlock
+          classNameOfBox={styles.menuBlock}
+          classNameOfBoxLabel={styles.menuTextLabelBlackReverse}
+          classNameOfBoxImg={styles.menuBlockImgReverse}
+          paragramMenuTextOfLabel={menuText2}
+          textOfMenuNameJp={'ベリーズパンケーキ'}
+          textOfMenuNameEn={'Berrys Cake'}
+          textOfMenuNameNum={'02'}
+          textOfMenuprice={'600'}
+          pathToImg={'/img/PanCake.png'}
+          displayPattern={'0'}
+        />
+
+        <MenuBlock
+          classNameOfBox={styles.menuBlock}
+          classNameOfBoxLabel={styles.menuTextLabelBlack}
+          classNameOfBoxImg={styles.menuBlockImg}
+          paragramMenuTextOfLabel={menuText3}
+          textOfMenuNameJp={'サンドウィッチセット'}
+          textOfMenuNameEn={'Sandwitch'}
+          textOfMenuNameNum={'03'}
+          textOfMenuprice={'700'}
+          pathToImg={'/img/Sandwitch.png'}
+          displayPattern={'01'}
+        />
+
         <MoreButtonComp
           text={'MORE'}
           useClassName={styles.moreWrapper}

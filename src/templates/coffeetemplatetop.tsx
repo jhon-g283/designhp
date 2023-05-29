@@ -1,17 +1,13 @@
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
-import styled from 'styled-components';
-import Header from '../../src/components/coffeeheader';
+
+import Header from '../components/coffeeheader';
 import Footer from '../components/coffeefooter';
 import TopFirstSection from '../components/toppagefirstsection';
-import hearoImg from '../../public/img/hero.png';
+
 import SideMenuBar from '../components/coffeesidbemenu';
 import TopSecondSection from '../components/toppagesecondsection';
-
-const backgroundImage = '/img/hero.png';
-
-const test = '/img/hero.png';
-console.log(hearoImg.src);
+import TopThirdSection from '../components/toppagethirdsection';
 
 //
 // Heroもおそらく使い回しできそう・
@@ -45,7 +41,7 @@ const Hero = () => {
   );
 };
 
-const CoofeeTemplate = () => {
+const CoofeeTopPageTemplate = () => {
   return (
     <>
       <Header />
@@ -56,9 +52,12 @@ const CoofeeTemplate = () => {
 
       <TopFirstSection />
       <TopSecondSection />
-      <Footer />
+      <TopThirdSection />
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
 
-export default CoofeeTemplate;
+export default CoofeeTopPageTemplate;

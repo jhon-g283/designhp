@@ -10,10 +10,18 @@ const SideMenuBar = () => {
       <div className={styles.navarea}>
         <nav className={styles.navItem}>
           <ul>
-            <li className={styles.sectionItem}>TOP</li>
-            <li>ABOUT</li>
-            <li>MENU</li>
-            <li>LOCATION</li>
+            <li className={styles.sectionItem}>
+              <a href="">TOP</a>
+            </li>
+            <li>
+              <a href="#toppageAboutSection">ABOUT</a>
+            </li>
+            <li>
+              <a href="#toppageMenuSection">MENU</a>
+            </li>
+            <li>
+              <a href="#toppageLocationSection">LOCATION</a>
+            </li>
           </ul>
 
           <ul>
@@ -32,19 +40,7 @@ const SideMenuBar = () => {
   return (
     <>
       {flg ? sideMenueNav : <></>}
-      <div
-        style={
-          {
-            // backgroundColor: "red",
-            // display: "flex",
-            // justifyContent: "flex-end",
-            // alignItems: "flex-end",
-            // // position: "fixed",
-            // bottom: 0,
-            // right: 0,
-          }
-        }
-      >
+      <div>
         <div className={styles.sidemenu}>
           <p>Creative cafe</p>
           <div>
