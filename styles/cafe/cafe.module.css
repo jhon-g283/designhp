@@ -284,8 +284,9 @@
 /* セクション１ */
 
 .firstsectionwrapper {
-  margin-top: -50px;
-  background-color: #ccb4e7;
+  margin-top: -93px;
+
+  /* background-color: #ccb4e7; */
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
@@ -747,3 +748,171 @@ a.mapAppButton:visited {
 }
 
 /* LearnMorePage */
+/* トップビュー */
+.moretopviewTitle {
+  font: normal normal bold 45px Noto Nastaliq Urdu;
+  letter-spacing: 5.71px;
+}
+
+.moretopviewSubTitle {
+  font: normal normal bold 13px/19px Noto Sans JP Thin;
+  letter-spacing: 0px;
+}
+
+.moreTopTitleWrap {
+  z-index: 1;
+  position: absolute;
+  margin-top: 5%;
+
+  text-align: center;
+  width: 100%;
+
+  letter-spacing: 1.3px;
+  color: #e85b5b;
+  background-color: bisque;
+}
+
+.moreTopTitleWrap p {
+  padding-left: 35%;
+  margin: 0;
+}
+
+.moreTextBlack {
+  width: 631px;
+  height: 88px;
+  padding-left: 14px;
+  padding-bottom: 9px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+}
+
+.moreTextBlack p {
+  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  letter-spacing: 3.17px;
+  color: #000000;
+}
+
+.morePageGalleryArea {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f7f7f7;
+}
+
+.moreTextBlackWhiteBack {
+  width: 422px;
+  height: 37px;
+  padding-left: 26px;
+  /* padding-bottom: 9px; */
+  background: #ffffff 0% 0% no-repeat padding-box;
+}
+
+.moreTextBlackWhiteBack p,
+.moreTextBlackWhiteBack2 p {
+  font: normal normal bold 16px/39px Noto Sans JP Thin;
+  letter-spacing: 2.67px;
+}
+
+.moreTextBlackWhiteBack2 {
+  width: 341px;
+  height: 37px;
+  padding-left: 26px;
+  /* padding-bottom: 9px; */
+  background: #ffffff 0% 0% no-repeat padding-box;
+}
+
+.planLabel {
+  height: 88px;
+
+  background: #000000 0% 0% no-repeat padding-box;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.planLabelTextLeft {
+  padding-left: 19px;
+  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  letter-spacing: 3.17px;
+}
+
+.planLabelTextRight {
+  margin-top: -120px;
+  margin-left: auto;
+  margin-right: 0;
+
+  font: normal normal bold 67px Noto Nastaliq Urdu;
+  letter-spacing: 8.51px;
+}
+
+.areaBlock {
+  /*  */
+  display: flex;
+  background-color: #5d4b59;
+  margin-bottom: 10px;
+}
+
+.areaTextLabelBlack {
+  width: 447px;
+  /* height: 410px; */
+  background: #c53131 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+.areaText {
+  padding-left: 68px;
+  /* flex: 1; */
+
+  /* width: 1110px; */
+  /* height: 267px; */
+  padding-top: 48px;
+  /* position: absolute; */
+  /* margin-top: -95px; */
+  background-color: rgba(237, 240, 215, 0.77);
+}
+
+.paragramOfArea {
+  font: normal normal normal 16px Noto Sans JP Thin;
+  letter-spacing: 2.67px;
+
+  background-color: #d7baf7;
+  margin-top: -16px;
+}
+
+.areaItemName {
+  font: normal normal normal 32px Noto Serif Myanmar;
+  letter-spacing: 0px;
+  margin-top: -32px;
+
+  background-color: #77be8b;
+}
+
+.areaBlockImg {
+  width: 487px;
+  height: 267px;
+  margin: auto 0 auto auto;
+  background-color: #ac2a2a;
+}
+
+/* 逆パターン */
+.menuTextLabelBlackReverse {
+  /* top: 3143px;
+left: 128px; */
+  width: 447px;
+  height: 410px;
+  margin: auto 0 auto auto;
+  background: #000000 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+.areaTextLabelBlackReverse {
+  width: 447px;
+  /* height: 410px; */
+  margin: auto 0 auto auto;
+  background: #c53131 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+.areaBlockImgReverse {
+  width: 487px;
+  height: 267px;
+  /* margin: auto 0 auto auto; */
+  background-color: #ac2a2a;
+}

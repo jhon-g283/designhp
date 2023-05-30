@@ -4,8 +4,9 @@ import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
-
 import MoreButtonComp from './morebutton';
+
+import BackGroundImg from '../../public/img/firstbackbroundimg.png';
 
 // ToDo
 // 完成したらクラス名とテキストを引数にして出し分けできるようにする
@@ -144,7 +145,13 @@ const image3Wrapper = (
 const TopFirstSection = () => {
   return (
     <>
-      <div className={styles.firstsectionwrapper}>
+      <div
+        className={styles.firstsectionwrapper}
+        style={{
+          backgroundImage: `url(${BackGroundImg.src})`,
+          backgroundColor: 'red',
+        }}
+      >
         <SectionTitleComp
           text={'ABOUT'}
           useClassName={styles.sectionTitle}

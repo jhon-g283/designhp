@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import CoofeeTopPageTemplate from '../../src/templates/coffeetemplatetop';
+import CoofeeLearnMorePageTemplate from '../../src/templates/coffeetemplatemore';
 
 // http://localhost:3000/designpage/cafetoppage
 const Main: NextPage = () => {
@@ -13,7 +13,7 @@ const Main: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CoofeeTopPageTemplate />
+      <CoofeeLearnMorePageTemplate />
     </>
   );
 };

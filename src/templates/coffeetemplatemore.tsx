@@ -1,42 +1,27 @@
 import styles from '../../styles/cafe/cafe.module.css';
-import Image from 'next/image';
 
 import Header from '../components/coffeeheader';
 import Footer from '../components/coffeefooter';
-import TopFirstSection from '../components/toppagefirstsection';
 
 import SideMenuBar from '../components/coffeesidbemenu';
-import TopSecondSection from '../components/toppagesecondsection';
-import TopThirdSection from '../components/toppagethirdsection';
+import TopImage from '../components/coffeetopimage';
+import TopViewTextCmp from '../components/coffeetopviewtitle';
+import MoreFirstSection from '../components/morepagefirstsection';
+import MoreSecondSection from '../components/morepagesecondsection';
 
-//
-// Heroもおそらく使い回しできそう・
-// あと商品紹介のテキストも使い回しができると思う。
-
-const HeroImage = (
-  <div className={styles.heroimgclass}>
-    <Image
-      src="/img/hero.png"
-      // src="/img/hero2.jpg"
-      width={1500} // Specify different width values based on device or viewport size
-      height={727}
-      alt="Your Image"
-      layout="responsive"
-    ></Image>
-  </div>
-);
-
-const Hero = () => {
+const Top = () => {
   return (
     <>
-      {HeroImage}
+      <TopImage
+        useClassName={styles.heroimgclass}
+        imagePath={'/img/topviewmore.png'}
+      />
 
-      <div className={styles.heroword}>
-        <p className={styles.subtext1}>クリエイターの立ち寄るカフェ</p>
-        <p className={styles.shopname}>Cafe Cucua Coffee</p>
-        <p className={styles.subtext1}>In TOKYO</p>
-      </div>
-      {/* </ImgCmp> */}
+      <TopViewTextCmp
+        useClassName={styles.moreTopTitleWrap}
+        titleText={'LEARN MORE'}
+        subTitleText={'よりもっと詳しく知る'}
+      />
     </>
   );
 };
@@ -46,13 +31,12 @@ const CoofeeLearnMorePageTemplate = () => {
     <>
       <Header />
       <div className={styles.wrap1}>
-        <Hero></Hero>
+        <Top></Top>
         <SideMenuBar />
       </div>
+      <MoreFirstSection />
+      <MoreSecondSection />
 
-      <TopFirstSection />
-      <TopSecondSection />
-      <TopThirdSection />
       <div>
         <Footer />
       </div>

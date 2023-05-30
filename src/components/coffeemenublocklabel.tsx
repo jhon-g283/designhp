@@ -29,10 +29,20 @@ const MenuBoxLabel = ({
   return (
     <>
       <div className={useClassName} style={{ color: fontColor }}>
-        <div className={styles.menuNumWrapper}>
+        {menuNum != '' ? (
+          <>
+            <div className={styles.menuNumWrapper}>
+              <p>MENU</p>
+              <p className={styles.menuNumber}>{menuNum}</p>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+        {/* <div className={styles.menuNumWrapper}>
           <p>MENU</p>
-          <p className={styles.menuNumber}> {menuNum}</p>
-        </div>
+          <p className={styles.menuNumber}>{menuNum}</p>
+        </div> */}
         <div className={styles.menuText}>
           <Paragraph
             useClassName={styles.paragramCmpClass}
@@ -50,7 +60,22 @@ const MenuBoxLabel = ({
             paragramText={paragramMenuText}
           />
 
-          <Paragraph
+          {price != '' ? (
+            <>
+              <Paragraph
+                useClassName={styles.priceText}
+                fontColor={fontColor}
+                paragramText={
+                  <p>
+                    単品 <span>¥{price}+tax</span>
+                  </p>
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {/* <Paragraph
             useClassName={styles.priceText}
             fontColor={fontColor}
             paragramText={
@@ -58,11 +83,85 @@ const MenuBoxLabel = ({
                 単品 <span>¥{price}+tax</span>
               </p>
             }
-          />
+          /> */}
         </div>
       </div>
     </>
   );
 };
 
+export const MenuBoxLabelForeArea = ({
+  useClassName,
+  fontColor,
+  paragramMenuText,
+  menuNameJp,
+  menuNameEn,
+  price,
+  menuNum,
+  classNameArray,
+}: Props) => {
+  const menuJp = <p>{menuNameJp}</p>;
+  const menuEn = <p>{menuNameEn}</p>;
+  const [blockClass, paragrapClass]: string[] = classNameArray ?? ['', ''];
+
+  return (
+    <>
+      <div className={useClassName} style={{ color: fontColor }}>
+        {menuNum != '' ? (
+          <>
+            <div className={styles.menuNumWrapper}>
+              <p>MENU</p>
+              <p className={styles.menuNumber}>{menuNum}</p>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+
+        <div className={styles.areaText}>
+          <Paragraph
+            useClassName={styles.paragramOfArea}
+            fontColor={fontColor}
+            paragramText={menuJp}
+          />
+          <Paragraph
+            useClassName={styles.areaItemName}
+            fontColor={fontColor}
+            paragramText={menuEn}
+          />
+          <Paragraph
+            useClassName={styles.paragramOfArea}
+            fontColor={fontColor}
+            paragramText={paragramMenuText}
+          />
+
+          {price != '' ? (
+            <>
+              <Paragraph
+                useClassName={styles.priceText}
+                fontColor={fontColor}
+                paragramText={
+                  <p>
+                    単品 <span>¥{price}+tax</span>
+                  </p>
+                }
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          {/* <Paragraph
+            useClassName={styles.priceText}
+            fontColor={fontColor}
+            paragramText={
+              <p>
+                単品 <span>¥{price}+tax</span>
+              </p>
+            }
+          /> */}
+        </div>
+      </div>
+    </>
+  );
+};
 export default MenuBoxLabel;

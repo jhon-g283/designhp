@@ -1,8 +1,8 @@
 interface Props {
-  text: string;
-  useClassName: string;
-  fontColor: string;
-  idOfElement?: string;
+  text: string; //テキスト
+  useClassName: string; //スタイつのクラス
+  fontColor: string; //フォントの色
+  idOfElement?: string; //HTMLのID
 }
 
 const SectionTitleComp = ({
