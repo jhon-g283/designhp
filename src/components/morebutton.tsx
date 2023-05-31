@@ -3,12 +3,14 @@ interface Props {
   text: string;
   useClassName: string;
   fontColor: string;
+  linkUrl: string;
 }
 
 const MoreButtonComp = ({
   text: text,
   useClassName: useClassName,
   fontColor,
+  linkUrl,
 }: Props) => {
   const arrowImg =
     fontColor == 'white' ? '/img/WiteArrow.svg' : '/img/BlackArrow.svg';
@@ -26,7 +28,9 @@ const MoreButtonComp = ({
   return (
     <>
       <div className={useClassName}>
-        <a style={{ color: fontColor }}>{text}</a>
+        <a style={{ color: fontColor }} href={linkUrl}>
+          {text}
+        </a>
         {witeArrowImage}
       </div>
     </>

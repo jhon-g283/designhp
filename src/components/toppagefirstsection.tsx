@@ -173,6 +173,7 @@ const TopFirstSection = () => {
           text={'MORE'}
           useClassName={styles.moreWrapper}
           fontColor={'white'}
+          linkUrl={'./cafemorepage'}
         />
       </div>
     </>

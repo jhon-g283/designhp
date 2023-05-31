@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1110.251" height="374" viewBox="0 0 1110.251 374">
+  <g id="グループ_231" data-name="グループ 231" transform="translate(-138 -2881.56)">
+    <g id="長方形_157" data-name="長方形 157" transform="translate(138.125 2881.56)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1110" height="374" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1109" height="373" fill="none"/>
+    </g>
+    <rect id="長方形_148" data-name="長方形 148" width="369" height="301.044" transform="translate(138 2954.185)"/>
+    <g id="パス_3564" data-name="パス 3564" transform="translate(138 2882)" fill="none">
+      <path d="M0,0H1109.75V373.229H0Z" stroke="none"/>
+      <path d="M 5 4.999969482421875 L 5 368.2285461425781 L 1104.75 368.2285461425781 L 1104.75 4.999969482421875 L 5 4.999969482421875 M 0 -3.0517578125e-05 L 1109.75 -3.0517578125e-05 L 1109.75 373.2285461425781 C 1109.75 373.2285461425781 827.80126953125 373.2285461425781 550.3637084960938 373.2285461425781 C 272.92626953125 373.2285461425781 0 373.2285461425781 0 373.2285461425781 L 0 -3.0517578125e-05 Z" stroke="none" fill="#000"/>
+    </g>
+    <text id="ミーティングエリア" transform="translate(225.125 2999.257)" fill="#fff" font-size="19" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">ミーティングエリア</tspan></text>
+    <text id="プレミアムエリア" transform="translate(235.125 3062.501)" fill="#fff" font-size="19" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">プレミアムエリア</tspan></text>
+    <text id="セキュアエリア" transform="translate(242.625 3137.837)" fill="#fff" font-size="18" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">セキュアエリア</tspan></text>
+    <path id="パス_3563" data-name="パス 3563" d="M0,0H1109.75V68.251H0Z" transform="translate(138 2882)"/>
+    <text id="追加料金" transform="translate(257.125 3220.761)" fill="#fff" font-size="24" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">追加料金</tspan></text>
+    <g id="グループ_225" data-name="グループ 225" transform="translate(1048.705 2963.433)">
+      <g id="グループ_209" data-name="グループ 209" transform="translate(11)">
+        <g id="グループ_180" data-name="グループ 180">
+          <text id="Unlimited" transform="translate(0 17)" stroke="#000" stroke-width="1" font-size="19" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">UNLIMITED</tspan></text>
+        </g>
+      </g>
+      <g id="グループ_213" data-name="グループ 213" transform="translate(42 27.591)">
+        <g id="グループ_180-2" data-name="グループ 180">
+          <text id="使い放題" transform="translate(0 11)" stroke="#000" stroke-width="1" font-size="13" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">使い放題</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="グループ_261" data-name="グループ 261" transform="translate(1048.705 3035.116)">
+      <g id="グループ_209-2" data-name="グループ 209" transform="translate(11)">
+        <g id="グループ_180-3" data-name="グループ 180">
+          <text id="Unlimited-2" data-name="Unlimited" transform="translate(0 17)" stroke="#000" stroke-width="1" font-size="19" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">UNLIMITED</tspan></text>
+        </g>
+      </g>
+      <g id="グループ_213-2" data-name="グループ 213" transform="translate(42 27.591)">
+        <g id="グループ_180-4" data-name="グループ 180">
+          <text id="使い放題-2" data-name="使い放題" transform="translate(0 11)" stroke="#000" stroke-width="1" font-size="13" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">使い放題</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="グループ_264" data-name="グループ 264" transform="translate(1048.705 3107.627)">
+      <g id="グループ_209-3" data-name="グループ 209" transform="translate(11)">
+        <g id="グループ_180-5" data-name="グループ 180">
+          <text id="Unlimited-3" data-name="Unlimited" transform="translate(0 17)" stroke="#000" stroke-width="1" font-size="19" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">UNLIMITED</tspan></text>
+        </g>
+      </g>
+      <g id="グループ_213-3" data-name="グループ 213" transform="translate(42 27.591)">
+        <g id="グループ_180-6" data-name="グループ 180">
+          <text id="使い放題-3" data-name="使い放題" transform="translate(0 11)" stroke="#000" stroke-width="1" font-size="13" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">使い放題</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="グループ_228" data-name="グループ 228" transform="translate(588.625 2934.727)">
+      <g id="グループ_201" data-name="グループ 201">
+        <text id="_60min" data-name="60min" transform="translate(12 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">60</tspan><tspan y="0" font-size="18">MIN</tspan></text>
+      </g>
+    </g>
+    <g id="グループ_259" data-name="グループ 259" transform="translate(588.625 3006.411)">
+      <g id="グループ_201-2" data-name="グループ 201">
+        <text id="_60min-2" data-name="60min" transform="translate(12 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">60</tspan><tspan y="0" font-size="18">MIN</tspan></text>
+      </g>
+    </g>
+    <g id="グループ_262" data-name="グループ 262" transform="translate(588.625 3078.922)">
+      <g id="グループ_201-3" data-name="グループ 201">
+        <text id="_60min-3" data-name="60min" transform="translate(12 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">60</tspan><tspan y="0" font-size="18">MIN</tspan></text>
+      </g>
+    </g>
+    <text id="_0" data-name="¥0" transform="translate(615.125 3222.818)" stroke="#000" stroke-width="1" font-size="25" font-family="Noto Sans JP Thin" letter-spacing="0.313em"><tspan x="0" y="0">¥0</tspan></text>
+    <text id="_500" data-name="¥500" transform="translate(840.705 3222.76)" stroke="#000" stroke-width="1" font-size="25" font-family="Noto Sans JP Thin" letter-spacing="0.313em"><tspan x="0" y="0">¥</tspan><tspan y="0" letter-spacing="0.153em">500</tspan></text>
+    <text id="_1_000" data-name="¥1,000" transform="translate(1070.205 3222.819)" stroke="#000" stroke-width="1" font-size="25" font-family="Noto Sans JP Thin" letter-spacing="0.313em"><tspan x="0" y="0">¥</tspan><tspan y="0" letter-spacing="0.2em">1,</tspan><tspan y="0" letter-spacing="0.159em">000</tspan></text>
+    <g id="グループ_229" data-name="グループ 229" transform="translate(844.705 2934.728)">
+      <text id="_180min" data-name="180min" transform="translate(0 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">180</tspan><tspan y="0" font-size="19">MIN</tspan></text>
+    </g>
+    <g id="グループ_260" data-name="グループ 260" transform="translate(844.705 3006.412)">
+      <text id="_180min-2" data-name="180min" transform="translate(0 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">180</tspan><tspan y="0" font-size="19">MIN</tspan></text>
+    </g>
+    <g id="グループ_263" data-name="グループ 263" transform="translate(844.705 3078.922)">
+      <text id="_180min-3" data-name="180min" transform="translate(0 55)" stroke="#000" stroke-width="1" font-size="20" font-family="Noto Sans JP Thin" letter-spacing="0.127em"><tspan x="0" y="0">180</tspan><tspan y="0" font-size="19">MIN</tspan></text>
+    </g>
+    <g id="グループ_242" data-name="グループ 242" transform="translate(1004.305 2891.006)">
+      <line id="線_20" data-name="線 20" y2="313.597" transform="translate(0 46.957)" fill="none" stroke="#000" stroke-width="3"/>
+      <line id="線_21" data-name="線 21" y2="58.054" fill="none" stroke="#fff" stroke-width="3"/>
+    </g>
+    <g id="グループ_241" data-name="グループ 241" transform="translate(762.424 2891.006)">
+      <line id="線_18" data-name="線 18" y2="319.163" transform="translate(0 45.06)" fill="none" stroke="#000" stroke-width="3"/>
+      <line id="線_22" data-name="線 22" y2="59.054" fill="none" stroke="#fff" stroke-width="3"/>
+    </g>
+    <path id="パス_3562" data-name="パス 3562" d="M0,14.676v60.5" transform="translate(506.417 2875.439)" fill="none" stroke="#fff" stroke-width="3"/>
+    <g id="グループ_221" data-name="グループ 221" transform="translate(135.829 3018.465)">
+      <path id="パス_3568" data-name="パス 3568" d="M377.674-.515H8.731" transform="translate(-0.943)" fill="none" stroke="#fff" stroke-width="3"/>
+      <line id="線_25" data-name="線 25" x1="744.625" transform="translate(367.671 -0.515)" fill="none" stroke="#000" stroke-width="3"/>
+    </g>
+    <g id="グループ_222" data-name="グループ 222" transform="translate(135.006 3089.831)">
+      <line id="線_24" data-name="線 24" x1="360.37" transform="translate(8.611)" fill="none" stroke="#fff" stroke-width="3"/>
+      <line id="線_25-2" data-name="線 25" x1="741.139" transform="translate(371.619)" fill="none" stroke="#000" stroke-width="3"/>
+    </g>
+    <g id="グループ_224" data-name="グループ 224" transform="translate(131.492 3164.342)">
+      <path id="パス_3571" data-name="パス 3571" d="M360.771.078,0,0" transform="translate(12.125 2)" fill="none" stroke="#fff" stroke-width="7"/>
+      <line id="線_25-3" data-name="線 25" x1="743.625" y1="0.282" transform="translate(373.133 1.718)" fill="none" stroke="#000" stroke-width="8"/>
+    </g>
+    <g id="グループ_245" data-name="グループ 245" transform="translate(578.824 2904.19)">
+      <text id="Standerd" transform="translate(-9.199 15.369)" fill="#fff" stroke="#fff" stroke-width="1" font-size="20" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="0.127em"><tspan x="0" y="0">STANDERD</tspan></text>
+      <text id="スタンダードプラン" transform="translate(4.5 31.347)" fill="#fff" stroke="#fff" stroke-width="1" font-size="10" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">スタンダードプラン</tspan></text>
+    </g>
+    <g id="グループ_246" data-name="グループ 246" transform="translate(811.824 2905.961)">
+      <text id="Extra" transform="translate(33.881 14)" fill="#fff" stroke="#fff" stroke-width="1" font-size="20" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="0.127em"><tspan x="0" y="0">EXTRA</tspan></text>
+      <text id="エクストラプラン" transform="translate(28.881 32.347)" fill="#fff" stroke="#fff" stroke-width="1" font-size="10" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">エクストラプラン</tspan></text>
+    </g>
+    <g id="グループ_247" data-name="グループ 247" transform="translate(1062.205 2905.961)">
+      <text id="Premium" transform="translate(4 14)" fill="#fff" stroke="#fff" stroke-width="1" font-size="20" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="0.127em"><tspan x="0" y="0">PREMIUM</tspan></text>
+      <text id="プレミアムプラン" transform="translate(15 32.347)" fill="#fff" stroke="#fff" stroke-width="1" font-size="10" font-family="HiraginoSans-W3, Hiragino Sans" letter-spacing="0.127em"><tspan x="0" y="0">プレミアムプラン</tspan></text>
+    </g>
+    <g id="グループ_257" data-name="グループ 257" transform="translate(44.289 -70.476)">
+      <rect id="長方形_154" data-name="長方形 154" width="69.59" height="15" transform="translate(1039.624 3249.941)"/>
+      <text id="subscribe" transform="translate(1045.419 3260.942)" fill="#fff" stroke="#fff" stroke-width="1" font-size="9" font-family="Noto Sans JP Thin" letter-spacing="0.133em"><tspan x="0" y="0">SUBSCRIBE</tspan></text>
+    </g>
+  </g>
+</svg>

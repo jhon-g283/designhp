@@ -5,33 +5,47 @@ import { useState } from 'react';
 const SideMenuBar = () => {
   const [flg, changeFlg] = useState<boolean>(false);
 
+  const topPageLink = './cafetoppage';
+  const morePageLink = './cafemorepage';
+  const menuPageLink = './cafemenupage';
   const sideMenueNav = (
     <>
       <div className={styles.navarea}>
         <nav className={styles.navItem}>
           <ul>
             <li className={styles.sectionItem}>
-              <a href="">TOP</a>
+              <a href={topPageLink}>TOP</a>
             </li>
             <li>
-              <a href="#toppageAboutSection">ABOUT</a>
+              <a href={topPageLink + '#toppageAboutSection'}>ABOUT</a>
             </li>
             <li>
-              <a href="#toppageMenuSection">MENU</a>
+              <a href={topPageLink + '#toppageMenuSection'}>MENU</a>
             </li>
             <li>
-              <a href="#toppageLocationSection">LOCATION</a>
+              <a href={topPageLink + '#toppageLocationSection'}>LOCATION</a>
             </li>
           </ul>
 
           <ul>
-            <li className={styles.sectionItem}>LEAN MORE</li>
-            <li>PLAN</li>
-            <li>GALLARY</li>
+            <li className={styles.sectionItem}>
+              <a href={morePageLink}>LEAN MORE</a>
+            </li>
+            <li>
+              <a href={morePageLink + '#morepageFirstSection'}>MORE</a>
+            </li>
+            <li>
+              <a href={morePageLink + '#morepageSecondSection'}>PLAN</a>
+            </li>
+            <li>
+              <a href={morePageLink + '#morepageThirdSection'}>GALLARY</a>
+            </li>
           </ul>
 
           <ul>
-            <li className={styles.sectionItem}>MENU LIST</li>
+            <li className={styles.sectionItem}>
+              <a href={menuPageLink}>MENU LIST</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -44,13 +58,6 @@ const SideMenuBar = () => {
         <div className={styles.sidemenu}>
           <p>Creative cafe</p>
           <div>
-            {/* <p
-              style={{ backgroundColor: "red" }}
-              onClick={() => changeFlg(!flg)}
-            >
-              二
-            </p>
-            <p>{flg ? "T" : "F-"}</p> */}
             <div className={styles.humberger} onClick={() => changeFlg(!flg)}>
               <div className={flg ? styles.upperBar : ''}></div>
 
@@ -79,7 +86,7 @@ const SideMenuBar = () => {
             <div className={styles.snsicon}>
               <Image
                 src="/img/maillogo.png"
-                width={22} // Specify different width values based on device or viewport size
+                width={23} // Specify different width values based on device or viewport size
                 height={22}
                 alt="Your Image"
                 // layout="responsive"

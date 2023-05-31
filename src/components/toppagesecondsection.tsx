@@ -109,6 +109,7 @@ const TopSecondSection = () => {
           text={'MORE'}
           useClassName={styles.moreWrapper}
           fontColor={'black'}
+          linkUrl={'./cafemenupage'}
         />
       </div>
     </>

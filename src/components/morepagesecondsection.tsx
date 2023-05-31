@@ -9,6 +9,7 @@ import BackGroundImg from '../../public/img/moresecondbackground.png';
 import Paragraph from './coffeeparagraph';
 import PlanLabelCmp from './coffeeplanlabel';
 import AreaBoxCmp from './coffeeareabox';
+import AreaBUsageTableCmpoxCmp from './coffeeusagetable';
 
 import Image from 'next/image';
 
@@ -46,7 +47,7 @@ const MoreSecondSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={styles.moresecondsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
           backgroundColor: 'red',
@@ -98,14 +99,9 @@ const MoreSecondSection = () => {
           text1="エリアの紹介"
           text2="AREA"
         />
+
         <div>
-          <Image
-            src={'/img/usage.png'}
-            width={200} // Specify different width values based on device or viewport size
-            height={200}
-            alt="Your Image"
-            layout="responsive"
-          ></Image>
+          <AreaBUsageTableCmpoxCmp />
         </div>
       </div>
     </>

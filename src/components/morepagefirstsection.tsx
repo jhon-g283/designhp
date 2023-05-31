@@ -1,10 +1,10 @@
 // Moreページの最初のセクション
 
 import styles from '../../styles/cafe/cafe.module.css';
-import Image from 'next/image';
+
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
-import MoreButtonComp from './morebutton';
+
 import BackGroundImg from '../../public/img/firstbackbroundimg.png';
 import Paragraph from './coffeeparagraph';
 import { GalleryBlockCmp } from './coffeegalleryblock';
@@ -88,12 +88,6 @@ const MoreFirstSection = () => {
             width1="42"
           />
         </div>
-
-        {/* <MoreButtonComp
-          text={'MORE'}
-          useClassName={styles.moreWrapper}
-          fontColor={'white'}
-        /> */}
       </div>
     </>
   );

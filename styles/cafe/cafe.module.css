@@ -10,9 +10,6 @@
   color: #fff;
 }
 .headerarea h1 {
-  /* top: -2px; */
-  /* left: 0px; */
-  /* width: 1366px; */
   height: 72px;
 
   font-family: 'Noto Nastaliq Urdu';
@@ -26,6 +23,14 @@
   margin: 0;
   background-color: black;
 }
+
+.headerarea a:visited,
+.headerarea a:link {
+  color: inherit;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
 /* フッター */
 .footer {
   padding-left: 30px;
@@ -532,6 +537,13 @@
   color: #ffffff;
 }
 
+.moreWrapper a:visited,
+.moreWrapper a:link {
+  color: inherit;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
 /* セクション２ */
 
 .paragramCmpClass {
@@ -749,6 +761,16 @@ a.mapAppButton:visited {
 
 /* LearnMorePage */
 /* トップビュー */
+
+.topviewimg {
+  z-index: -1;
+
+  width: 100%;
+  margin-left: -6px;
+
+  background-color: #6e13d0;
+}
+
 .moretopviewTitle {
   font: normal normal bold 45px Noto Nastaliq Urdu;
   letter-spacing: 5.71px;
@@ -759,10 +781,14 @@ a.mapAppButton:visited {
   letter-spacing: 0px;
 }
 
+.moretopviewSubTitle span {
+  padding-left: 15px;
+}
+
 .moreTopTitleWrap {
   z-index: 1;
   position: absolute;
-  margin-top: 5%;
+  margin-top: 2%;
 
   text-align: center;
   width: 100%;
@@ -773,7 +799,7 @@ a.mapAppButton:visited {
 }
 
 .moreTopTitleWrap p {
-  padding-left: 35%;
+  padding-left: 55%;
   margin: 0;
 }
 
@@ -804,11 +830,24 @@ a.mapAppButton:visited {
   /* padding-bottom: 9px; */
   background: #ffffff 0% 0% no-repeat padding-box;
 }
+/* Planセクション */
+
+.moresecondsectionwrapper {
+  margin-top: -93px;
+  padding-bottom: 150px;
+
+  /* background-color: #ccb4e7; */
+  /* padding-left: 128px; */
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+
+  /* padding-right: 128px; */
+}
 
 .moreTextBlackWhiteBack p,
 .moreTextBlackWhiteBack2 p {
   font: normal normal bold 16px/39px Noto Sans JP Thin;
-  letter-spacing: 2.67px;
+  /* letter-spacing: 2.67px; */
 }
 
 .moreTextBlackWhiteBack2 {
@@ -915,4 +954,93 @@ left: 128px; */
   height: 267px;
   /* margin: auto 0 auto auto; */
   background-color: #ac2a2a;
+}
+
+.usagePC {
+  padding: 0;
+}
+
+.specialPanel {
+  width: 235px;
+  height: 73px;
+  margin: auto 10px auto auto;
+}
+
+.usageSP {
+  display: none;
+}
+
+/*メニューページ  */
+/* セクション１ */
+.menuTitleLabel {
+  width: 253px;
+  /* height: 30px; */
+  /* padding-top: 1px; */
+  margin-bottom: 2px;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.menuTitleLabelUnderbar {
+  width: 253px;
+  border-bottom: solid rgba(0, 0, 0, 0.76) 2px;
+}
+
+.menuTitleLabel p {
+  margin: 0;
+  border-radius: 2px;
+}
+
+.itemPanelImg {
+  width: 359px;
+  height: 267px;
+}
+
+.menuItemText {
+  padding-left: 25px;
+
+  font: normal normal normal 16px Noto Sans JP Thin;
+  letter-spacing: 0px;
+}
+
+.menuItemText p {
+  margin: 5px;
+  letter-spacing: 2.67px;
+}
+
+.menuListWrap {
+  display: flex;
+  width: auto;
+  flex-wrap: wrap; /* 行を折り返す */
+  justify-content: space-between; /* 要素を均等に配置 */
+  background-color: #ccc; /* 背景色指定 */
+  padding-bottom: 100px;
+  @media screen (max-width: 768px) {
+    flex-wrap: wrap; /* 行を折り返す */
+    justify-content: center; /* 要素を中央に配置 */
+  }
+}
+
+/* あとで移植すること */
+@media (max-width: 768px) {
+  .itemPanelImg {
+    width: 150px;
+    height: 120px;
+    padding-bottom: -10px;
+    background-color: #6e13d0;
+  }
+
+  .menuItemText {
+    padding-left: 5px;
+    position: relative;
+
+    font: normal normal normal 6px Noto Sans JP Thin;
+    letter-spacing: 0px;
+  }
+
+  .menuItemText p {
+    margin: 5px;
+    letter-spacing: 2.67px;
+  }
 }

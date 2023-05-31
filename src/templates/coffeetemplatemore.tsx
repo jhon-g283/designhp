@@ -8,12 +8,13 @@ import TopImage from '../components/coffeetopimage';
 import TopViewTextCmp from '../components/coffeetopviewtitle';
 import MoreFirstSection from '../components/morepagefirstsection';
 import MoreSecondSection from '../components/morepagesecondsection';
+import MorethirdSection from '../components/morepagethirdsection';
 
 const Top = () => {
   return (
     <>
       <TopImage
-        useClassName={styles.heroimgclass}
+        useClassName={styles.topviewimg}
         imagePath={'/img/topviewmore.png'}
       />
 
@@ -36,6 +37,7 @@ const CoofeeLearnMorePageTemplate = () => {
       </div>
       <MoreFirstSection />
       <MoreSecondSection />
+      <MorethirdSection />
 
       <div>
         <Footer />

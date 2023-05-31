@@ -3,7 +3,8 @@ interface Props {
   useClassName?: string;
   fontColor?: string;
   titleText: string;
-  subTitleText: string;
+  subTitleText?: string;
+  subTTitleParagraph?: JSX.Element;
 }
 
 const TopViewTextCmp = ({
@@ -17,6 +18,25 @@ const TopViewTextCmp = ({
       <div className={useClassName} style={{ color: fontColor }}>
         <p className={styles.moretopviewTitle}>{titleText}</p>
         <p className={styles.moretopviewSubTitle}>{subTitleText}</p>
+      </div>
+    </>
+  );
+};
+
+export const TopViewTextMenuCmp = ({
+  useClassName,
+  fontColor,
+  titleText,
+
+  subTTitleParagraph,
+}: Props) => {
+  return (
+    <>
+      <div className={useClassName} style={{ color: fontColor }}>
+        <p className={styles.moretopviewTitle}>{titleText}</p>
+
+        {subTTitleParagraph}
+        {/* <p className={styles.moretopviewSubTitle}>{subTitleText}</p> */}
       </div>
     </>
   );
