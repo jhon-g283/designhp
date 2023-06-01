@@ -19,7 +19,6 @@ const ExplainSectionComp = ({
     &::after {
       margin-top: 53px;
       border-radius: 2px;
-
       width: ${width}px;
       height: 2px;
       content: ''; /*疑似要素の中身を指定*/

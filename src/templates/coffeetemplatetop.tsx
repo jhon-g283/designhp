@@ -33,8 +33,8 @@ const Hero = () => {
 
       <div className={styles.heroword}>
         <p className={styles.subtext1}>クリエイターの立ち寄るカフェ</p>
-        <p className={styles.shopname}>Cafe Cucua Coffee</p>
-        <p className={styles.subtext1}>In TOKYO</p>
+        <p className={styles.shopname}>CAFE CUCUA COFFEE</p>
+        <p className={styles.subtext1}>I N TOKYO</p>
       </div>
       {/* </ImgCmp> */}
     </>

@@ -96,8 +96,8 @@ const MoreSecondSection = () => {
         <PlanLabelCmp
           useClassName={styles.planLabel}
           fontColor="white"
-          text1="エリアの紹介"
-          text2="AREA"
+          text1="エリア使用料・特典一覧"
+          text2="USAGE FEE"
         />
 
         <div>

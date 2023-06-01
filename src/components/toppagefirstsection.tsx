@@ -149,7 +149,6 @@ const TopFirstSection = () => {
         className={styles.firstsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
-          backgroundColor: 'red',
         }}
       >
         <SectionTitleComp

@@ -4,7 +4,7 @@ import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
 import MoreButtonComp from './morebutton';
 import Paragraph from './coffeeparagraph';
-
+import BackGroundImg from '../../public/img/topSecondSectionBackground.png';
 import MenuBlock from './coffeemenubox';
 
 const intoroText = (
@@ -39,14 +39,15 @@ const menuText3 = (
   </>
 );
 
-// 外部コンポーネントにする。
-//
-//
-
 const TopSecondSection = () => {
   return (
     <>
-      <div className={styles.firstsectionwrapper}>
+      <div
+        className={styles.firstsectionwrapper}
+        style={{
+          backgroundImage: `url(${BackGroundImg.src})`,
+        }}
+      >
         <SectionTitleComp
           text={'MENU'}
           useClassName={styles.sectionTitle}

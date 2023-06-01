@@ -79,16 +79,16 @@
   width: 100%;
 
   letter-spacing: 1.3px;
-  color: #e85b5b;
-  background-color: bisque;
+  color: #ffffff;
+  /* background-color: bisque; */
 }
 .heroword p {
-  padding-left: 35%;
+  padding-left: 45%;
   margin: 0;
 }
 
 .shopname {
-  /* font: normal normal bold 45px/113px Noto Nastaliq Urdu; */
+  /* font: normal normal bold 45px Noto Nastaliq Urdu; */
   /* フォントを行間の都合で変更 */
   font-family: 'Amiri';
   font-weight: bold;
@@ -96,17 +96,17 @@
 
   letter-spacing: 5.71px;
 
-  background-color: #825858;
+  /* background-color: #825858; */
 }
 
 .subtext1 {
   font: normal normal bold 13px/19px Noto Sans JP Thin;
-  background-color: #d0b3b3;
+  /* background-color: #d0b3b3; */
 }
 
 .subtext2 {
   font: normal normal bold 13px/19px Noto Sans JP Thin;
-  background-color: #827171;
+  /* background-color: #827171; */
 }
 
 /* サイトメニュー */
@@ -290,6 +290,7 @@
 
 .firstsectionwrapper {
   margin-top: -93px;
+  padding-bottom: 90px;
 
   /* background-color: #ccb4e7; */
   /* padding-left: 128px; */

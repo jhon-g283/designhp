@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Paragraph from './coffeeparagraph';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
-import { relative } from 'path';
+import BackGroundImg from '../../public/img/topThirdSectionBackground.png';
 
 const LocationImage = (
   <>
@@ -193,7 +193,12 @@ const mapImage = (
 const TopThirdSection = () => {
   return (
     <>
-      <div className={styles.firstsectionwrapper}>
+      <div
+        className={styles.firstsectionwrapper}
+        style={{
+          backgroundImage: `url(${BackGroundImg.src})`,
+        }}
+      >
         <SectionTitleComp
           text={'LOCATION'}
           useClassName={styles.sectionTitle}
