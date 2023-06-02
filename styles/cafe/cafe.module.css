@@ -325,6 +325,8 @@
 
   @media (max-width: 768px) {
     margin-top: -544px;
+    padding-left: min(calc(10%), 28px);
+    padding-right: min(calc(10%), 28px);
   }
 }
 
@@ -420,7 +422,7 @@
   font: normal normal bold 19px/46px Noto Sans JP Thin;
   letter-spacing: 3.17px;
   @media (max-width: 768px) {
-    font: normal normal bold 10px Noto Sans JP Thin;
+    font: normal normal bold 12px Noto Sans JP Thin;
   }
 }
 
@@ -528,7 +530,7 @@
     /* margin: 0px; */
     padding: auto;
     width: 303px;
-    height: 25px;
+    height: 32px;
     margin-top: 20px;
   }
 }
@@ -540,7 +542,7 @@
   font: normal normal bold 19px/10px Noto Sans JP Thin;
   letter-spacing: 3.44px;
   @media (max-width: 768px) {
-    font: normal normal bold 10px/5px Noto Sans JP Thin;
+    font: normal normal bold 15px/1px Noto Sans JP Thin;
   }
 }
 
@@ -569,7 +571,7 @@
   opacity: 1;
   z-index: 11;
   @media (max-width: 768px) {
-    width: 343px;
+    width: 333px;
     height: 25px;
     margin-top: -250px;
     padding-bottom: 5px;
@@ -582,7 +584,7 @@
   font: normal normal bold 19px/10px Noto Sans JP Thin;
   letter-spacing: 3.44px;
   @media (max-width: 768px) {
-    font: normal normal bold 10px/10px Noto Sans JP Thin;
+    font: normal normal bold 12px/1px Noto Sans JP Thin;
   }
 }
 
@@ -641,21 +643,34 @@
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
 
-  /* padding-right: 128px; */
+  @media (max-width: 768px) {
+    padding-left: min(calc(10%), 28px);
+    padding-right: min(calc(10%), 28px);
+  }
 }
 
 .paragramCmpClass {
   font: normal normal normal 16px/39px Noto Sans JP Thin;
   letter-spacing: 2.67px;
+  @media (max-width: 768px) {
+    font: normal normal normal 13px Noto Sans JP Thin;
+  }
 }
 
 .menuBlock {
   display: flex;
-  /* background-color: #17e29f; */
+  @media (max-width: 768px) {
+    background: #000000 0% 0% no-repeat padding-box;
+    height: 300px;
+    margin-bottom: 10px;
+  }
 }
 
 .menuBlockImg {
   margin: auto 0 auto auto;
+  @media (max-width: 768px) {
+    /* height: 250px; */
+  }
   /* background-color: #827171; */
 }
 
@@ -678,6 +693,11 @@ left: 128px; */
   height: 410px;
   background: #000000 0% 0% no-repeat padding-box;
   position: relative;
+  @media (max-width: 768px) {
+    height: 250px;
+    width: 207px;
+    /* background-color: #827181; */
+  }
 }
 
 /* 逆パターン */
@@ -695,18 +715,23 @@ left: 128px; */
   text-align: right;
   padding-right: 20px;
   opacity: 0.85;
+  @media (max-width: 768px) {
+    position: absolute;
+    margin-top: 0px;
+    z-index: 20;
+    margin-left: 250px;
+    margin-right: 0px;
+    /* background-color: #c6c8c7; */
+  }
 }
 
 .menuNumWrapper p {
   margin: 0px;
   padding: 0px;
   font: normal normal bold 27px Noto Nastaliq Urdu;
-  /* background-color: #17e29f; */
-}
-
-.menuNumText {
-  font: normal normal bold 27px Noto Nastaliq Urdu;
-  /* letter-spacing: 3.43px; */
+  @media (max-width: 768px) {
+    font: normal normal bold 18px Noto Nastaliq Urdu;
+  }
 }
 
 p.menuNumber {
@@ -714,7 +739,9 @@ p.menuNumber {
   padding-right: 6px;
   font: normal normal bold 59px Noto Nastaliq Urdu;
   letter-spacing: 7.49px;
-  /* background-color: #c6c8c7; */
+  @media (max-width: 768px) {
+    font: normal normal bold 45px Noto Nastaliq Urdu;
+  }
 
   /* letter-spacing: 3.43px; */
 }
@@ -724,6 +751,12 @@ p.menuNumber {
   /* padding-top: 0; */
   position: absolute;
   margin-top: -95px;
+  @media (max-width: 768px) {
+    padding-left: 28px;
+
+    position: absolute;
+    margin-top: 50px;
+  }
   /* background-color: rgba(169, 68, 68, 0.77); */
 }
 
@@ -735,12 +768,17 @@ p.menuNumber {
   font: normal normal normal 32px/80px Noto Serif Myanmar;
   letter-spacing: 0px;
 
-  /* background-color: #825858; */
+  @media (max-width: 768px) {
+    font: normal normal normal 22px Noto Serif Myanmar;
+  }
 }
 
 .priceText {
   padding-top: 5px;
   letter-spacing: 2.67px;
+  @media (max-width: 768px) {
+    font: normal normal normal 12px Noto Serif Myanmar;
+  }
   /* background-color: #825858; */
 }
 .priceText span {
