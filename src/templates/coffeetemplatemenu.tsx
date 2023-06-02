@@ -10,7 +10,7 @@ import MenuFirstSection from '../components/menupagefirstsection';
 
 const subtext = (
   <>
-    <p className={styles.moretopviewSubTitle}>
+    <p className={styles.menutopviewSubTitle}>
       仕事とアイデアを<br></br>
       <span>養うためのメニュー</span>
     </p>
@@ -22,12 +22,12 @@ const Top = () => {
     <>
       <TopImage
         useClassName={styles.topviewimg}
-        imagePath={'/img/topviewmore.png'}
+        imagePath={'/img/menupagebackground.png'}
       />
 
       <TopViewTextMenuCmp
-        useClassName={styles.moreTopTitleWrap}
-        titleText={'メニュー一覧'}
+        useClassName={styles.menuTopTitleWrap}
+        titleText={'MENU LIST'}
         subTTitleParagraph={subtext}
       />
     </>

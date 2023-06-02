@@ -194,7 +194,7 @@ const TopThirdSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={styles.thirddsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
         }}
@@ -229,9 +229,9 @@ const TopThirdSection = () => {
             >
               Mapアプリで開く
             </a>
+            <div className={styles.addressEndDiv}></div>
           </div>
         </div>
-        <div style={{ height: 13 }}></div>
       </div>
     </>
   );

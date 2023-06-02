@@ -42,7 +42,7 @@ const MoreFirstSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={styles.morefirstsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
           backgroundColor: 'red',

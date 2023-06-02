@@ -43,7 +43,7 @@ const TopSecondSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={styles.secondsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
         }}

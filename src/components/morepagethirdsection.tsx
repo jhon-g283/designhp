@@ -15,10 +15,10 @@ const MorethirdSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={styles.morethirdsectionwrapper}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
-          backgroundColor: 'red',
+          // backgroundColor: 'red',
         }}
       >
         <SectionTitleComp

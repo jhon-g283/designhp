@@ -33,7 +33,7 @@ export const TopViewTextMenuCmp = ({
   return (
     <>
       <div className={useClassName} style={{ color: fontColor }}>
-        <p className={styles.moretopviewTitle}>{titleText}</p>
+        <p className={styles.menutopviewTitle}>{titleText}</p>
 
         {subTTitleParagraph}
         {/* <p className={styles.moretopviewSubTitle}>{subTitleText}</p> */}

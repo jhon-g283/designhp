@@ -30,7 +30,7 @@ export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
             // width: 669,
             width: `${widthVal}%`,
 
-            backgroundColor: 'blue',
+            backgroundColor: 'black',
             margin: 0,
           }}
         >
@@ -46,7 +46,7 @@ export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
           style={{
             // height: 238,
             // width: '40%',
-            backgroundColor: 'green',
+            backgroundColor: 'black',
             flex: 1,
             margin: 0,
             // marginRight: 0,
@@ -96,7 +96,7 @@ export const GalleryBlockCmp3Images = ({
             // width: 669,
             width: `${widthVal}%`,
 
-            backgroundColor: 'blue',
+            backgroundColor: 'black',
             margin: 0,
           }}
         >
@@ -112,7 +112,7 @@ export const GalleryBlockCmp3Images = ({
           style={{
             height: 238,
             // width: '40%',
-            backgroundColor: 'green',
+            backgroundColor: 'black',
             flex: 1,
             margin: 0,
             // marginRight: 0,
@@ -124,7 +124,7 @@ export const GalleryBlockCmp3Images = ({
           <div
             style={{
               // display: 'block',
-              backgroundColor: 'red',
+              backgroundColor: 'black',
               // height: 238,
             }}
           >

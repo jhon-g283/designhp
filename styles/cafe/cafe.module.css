@@ -289,7 +289,7 @@
 /* セクション１ */
 
 .firstsectionwrapper {
-  margin-top: -93px;
+  margin-top: -3px;
   padding-bottom: 90px;
 
   /* background-color: #ccb4e7; */
@@ -414,8 +414,7 @@
   width: 569px;
   height: 197px;
   padding-left: 9px; /* 139-128 */
-  background: #000000 0% 0% no-repeat padding-box;
-  opacity: 0.72;
+  background: rgba(0, 0, 0, 0.72) 0% 0% no-repeat padding-box;
 }
 
 .topFirstBlackBack p {
@@ -426,9 +425,9 @@
   opacity: 1;
 }
 
-.Image1Wrapper {
+/* .Image1Wrapper {
   background-color: #b1e6d8;
-}
+} */
 
 .sectionImage1 {
   width: 700px;
@@ -446,7 +445,7 @@
   display: flex;
 
   margin-bottom: 0px;
-  background-color: #f7faf9;
+  /* background-color: #f7faf9; */
 }
 
 .sectionImage2 {
@@ -454,7 +453,7 @@
   height: 460px;
 
   margin-bottom: 0px;
-  background-color: #917878;
+  /* background-color: #917878; */
   z-index: 9;
 }
 
@@ -489,7 +488,7 @@
   align-items: center;
   margin-top: -200px;
   padding-right: 100px;
-  background-color: #c6c8c7;
+  /* background-color: #c6c8c7; */
 }
 
 .textBlackImage3 {
@@ -517,7 +516,7 @@
   margin-top: -50px;
   margin-left: -150px;
 
-  background-color: #17e29f;
+  /* background-color: #17e29f; */
 }
 
 /* Moreボタン */
@@ -547,6 +546,18 @@
 
 /* セクション２ */
 
+.secondsectionwrapper {
+  margin-top: -65px;
+  padding-bottom: 90px;
+
+  /* background-color: #ccb4e7; */
+  /* padding-left: 128px; */
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+
+  /* padding-right: 128px; */
+}
+
 .paragramCmpClass {
   font: normal normal normal 16px/39px Noto Sans JP Thin;
   letter-spacing: 2.67px;
@@ -554,18 +565,19 @@
 
 .menuBlock {
   display: flex;
-  background-color: #17e29f;
+  /* background-color: #17e29f; */
 }
 
 .menuBlockImg {
   margin: auto 0 auto auto;
-  background-color: #827171;
+  /* background-color: #827171; */
 }
 
 /* 逆パターン */
-.menuBlockImgReverse {
+/* .menuBlockImgReverse {
   background-color: #9a9797;
-}
+} */
+/* あとで編集するかも */
 
 /* スマホ専用 */
 .menuBlockImgOnlySp {
@@ -626,7 +638,7 @@ p.menuNumber {
   /* padding-top: 0; */
   position: absolute;
   margin-top: -95px;
-  background-color: rgba(169, 68, 68, 0.77);
+  /* background-color: rgba(169, 68, 68, 0.77); */
 }
 
 .menuText p {
@@ -637,19 +649,31 @@ p.menuNumber {
   font: normal normal normal 32px/80px Noto Serif Myanmar;
   letter-spacing: 0px;
 
-  background-color: #825858;
+  /* background-color: #825858; */
 }
 
 .priceText {
   padding-top: 5px;
   letter-spacing: 2.67px;
-  background-color: #825858;
+  /* background-color: #825858; */
 }
 .priceText span {
   padding-left: 6px;
 }
 
 /* セクション３ */
+
+.thirddsectionwrapper {
+  margin-top: -65px;
+  padding-bottom: 90px;
+
+  /* background-color: #ccb4e7; */
+  /* padding-left: 128px; */
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+
+  /* padding-right: 128px; */
+}
 
 .locationImage {
   /* width: 1084px; */
@@ -721,7 +745,7 @@ p.menuNumber {
 }
 
 .addressWrapper {
-  background-color: #17e29f;
+  background-color: #ffffff;
 }
 
 .addressImgWrapper {
@@ -760,6 +784,11 @@ a.mapAppButton:visited {
   justify-content: flex-end;
 }
 
+/* マップ下のスペース用 */
+.addressEndDiv {
+  height: 50px;
+}
+
 /* LearnMorePage */
 /* トップビュー */
 
@@ -769,7 +798,7 @@ a.mapAppButton:visited {
   width: 100%;
   margin-left: -6px;
 
-  background-color: #6e13d0;
+  /* background-color: #6e13d0; */
 }
 
 .moretopviewTitle {
@@ -795,8 +824,8 @@ a.mapAppButton:visited {
   width: 100%;
 
   letter-spacing: 1.3px;
-  color: #e85b5b;
-  background-color: bisque;
+  color: #ffffff;
+  /* background-color: bisque; */
 }
 
 .moreTopTitleWrap p {
@@ -821,7 +850,7 @@ a.mapAppButton:visited {
 .morePageGalleryArea {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f7f7f7;
+  background-color: #000000;
 }
 
 .moreTextBlackWhiteBack {
@@ -832,6 +861,14 @@ a.mapAppButton:visited {
   background: #ffffff 0% 0% no-repeat padding-box;
 }
 /* Planセクション */
+
+.morefirstsectionwrapper {
+  margin-top: -69px;
+  padding-bottom: 100px;
+
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+}
 
 .moresecondsectionwrapper {
   margin-top: -93px;
@@ -861,7 +898,7 @@ a.mapAppButton:visited {
 
 .planLabel {
   height: 88px;
-
+  margin-top: 40px;
   background: #000000 0% 0% no-repeat padding-box;
   margin-bottom: 10px;
   display: flex;
@@ -885,14 +922,14 @@ a.mapAppButton:visited {
 .areaBlock {
   /*  */
   display: flex;
-  background-color: #5d4b59;
+  background-color: #000000;
   margin-bottom: 10px;
 }
 
 .areaTextLabelBlack {
   width: 447px;
   /* height: 410px; */
-  background: #c53131 0% 0% no-repeat padding-box;
+  /* background: #c53131 0% 0% no-repeat padding-box; */
   position: relative;
 }
 
@@ -905,14 +942,14 @@ a.mapAppButton:visited {
   padding-top: 48px;
   /* position: absolute; */
   /* margin-top: -95px; */
-  background-color: rgba(237, 240, 215, 0.77);
+  background-color: rgba(0, 0, 0);
 }
 
 .paragramOfArea {
   font: normal normal normal 16px Noto Sans JP Thin;
   letter-spacing: 2.67px;
 
-  background-color: #d7baf7;
+  /* background-color: #d7baf7; */
   margin-top: -16px;
 }
 
@@ -921,14 +958,14 @@ a.mapAppButton:visited {
   letter-spacing: 0px;
   margin-top: -32px;
 
-  background-color: #77be8b;
+  /* background-color: #77be8b; */
 }
 
 .areaBlockImg {
   width: 487px;
   height: 267px;
   margin: auto 0 auto auto;
-  background-color: #ac2a2a;
+  /* background-color: #000000; */
 }
 
 /* 逆パターン */
@@ -946,7 +983,7 @@ left: 128px; */
   width: 447px;
   /* height: 410px; */
   margin: auto 0 auto auto;
-  background: #c53131 0% 0% no-repeat padding-box;
+  /* background: #c53131 0% 0% no-repeat padding-box; */
   position: relative;
 }
 
@@ -954,7 +991,7 @@ left: 128px; */
   width: 487px;
   height: 267px;
   /* margin: auto 0 auto auto; */
-  background-color: #ac2a2a;
+  /* background-color: #ac2a2a; */
 }
 
 .usagePC {
@@ -971,7 +1008,66 @@ left: 128px; */
   display: none;
 }
 
+/* スペース用　エリア使用量 */
+.spaceDivUsage {
+  height: 60px;
+}
+
+.morethirdsectionwrapper {
+  margin-top: -65px;
+  /* padding-bottom: 100px; */
+
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+}
+
 /*メニューページ  */
+
+.menufirstsectionwrapper {
+  /* margin-top: -69px; */
+  padding-bottom: 100px;
+
+  padding-left: min(calc(10%), 128px);
+  padding-right: min(calc(10%), 128px);
+}
+
+.menutopviewTitle {
+  font: normal normal bold 45px Noto Nastaliq Urdu;
+  letter-spacing: 5.71px;
+  color: #000000;
+}
+
+.menuTopTitleWrap {
+  z-index: 1;
+  position: absolute;
+  margin-top: 2%;
+
+  text-align: center;
+  width: 100%;
+
+  letter-spacing: 1.3px;
+  color: #000000;
+  /* background-color: bisque; */
+}
+
+.menuTopTitleWrap p {
+  padding-left: 55%;
+  margin: 0;
+  color: #ffffff;
+}
+
+.menutopviewSubTitle {
+  font: normal normal bold 13px/19px Noto Sans JP Thin;
+
+  color: #fff;
+  letter-spacing: 0px;
+  text-shadow: 1px 2px 3px #e4e4e4;
+}
+
+.menutopviewSubTitle span {
+  padding-left: 15px;
+}
+
 /* セクション１ */
 .menuTitleLabel {
   width: 253px;
@@ -1015,7 +1111,7 @@ left: 128px; */
   width: auto;
   flex-wrap: wrap; /* 行を折り返す */
   justify-content: space-between; /* 要素を均等に配置 */
-  background-color: #ccc; /* 背景色指定 */
+
   padding-bottom: 100px;
   @media screen (max-width: 768px) {
     flex-wrap: wrap; /* 行を折り返す */

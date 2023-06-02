@@ -92,7 +92,8 @@ const MoreSecondSection = () => {
           text2="AREA"
         />
         <AreaBoxCmp />
-        {/* 料金表は表にするのがいいかも */}
+
+        <div className={styles.spaceDivUsage}></div>
         <PlanLabelCmp
           useClassName={styles.planLabel}
           fontColor="white"
