@@ -15,6 +15,7 @@ import TopThirdSection from '../components/toppagethirdsection';
 // あと商品紹介のテキストも使い回しができると思う。
 
 const HeroImage = (
+  // トップ画面画像とタイトル
   <div className={styles.heroimgclass}>
     <Image
       src="/img/hero.png"
