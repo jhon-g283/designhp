@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Paragraph from './coffeeparagraph';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
-import BackGroundImg from '../../public/img/topThirdSectionBackground.png';
+// import BackGroundImg from '../../public/img/topThirdSectionBackground.png';
+import BackGroundImg from '../../public/img/topSecondSectionBackground.png';
 
 const LocationImage = (
   <>
