@@ -1,3 +1,4 @@
+// 受け取ったタグ構造にクラス名でスタイルをつける
 interface Props {
   useClassName?: string;
   fontColor?: string;

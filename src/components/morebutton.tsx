@@ -6,6 +6,7 @@ interface Props {
   linkUrl: string;
 }
 
+// トップページのMoreボタン
 const MoreButtonComp = ({
   text: text,
   useClassName: useClassName,

@@ -1,3 +1,4 @@
+// トップページ第２セクション
 import styles from '../../styles/cafe/cafe.module.css';
 
 import SectionTitleComp from './coffeesectiontitle';

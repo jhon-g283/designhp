@@ -7,6 +7,7 @@ interface Props {
   text2: string;
 }
 
+// Moreページのラベルのコンポーネントの棒線ありの部分
 const ParagraphWithBorder = styled.p`
   &::before {
     margin-top: 103px;
@@ -22,7 +23,7 @@ const ParagraphWithBorder = styled.p`
     background-color: white;
   }
 `;
-
+// Moreページのラベルのコンポーネント
 const PlanLabel = ({ useClassName, fontColor, text1, text2 }: Props) => {
   return (
     <>

@@ -1,3 +1,4 @@
+// トップページテンプレ
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 

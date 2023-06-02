@@ -5,6 +5,7 @@ interface Props {
   idOfElement?: string; //HTMLのID
 }
 
+// セクションタイトル名部分のコンポーネント
 const SectionTitleComp = ({
   text: title,
   useClassName: name,

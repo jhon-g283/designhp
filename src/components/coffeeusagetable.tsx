@@ -1,6 +1,7 @@
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 
+// 料金表のコンポーネント、SVGでそのまま表示する形式にした
 const UsageTableCmp = () => {
   return (
     <>

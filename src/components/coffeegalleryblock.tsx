@@ -10,6 +10,7 @@ interface Props {
   flg?: boolean;
 }
 
+// ギャラリー部分の写真表示コンポーネント、２列で写真を表示する。
 export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
   const imagePath = '/img/galleryImg3.png';
 
@@ -68,6 +69,7 @@ export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
   );
 };
 
+// ギャラリー部分の写真表示コンポーネント、１列＋２列で写真を表示する。フラグで左右を逆転させることが可能、写真の割合もピクセル（％）で設定できる。
 export const GalleryBlockCmp3Images = ({
   imagePath1,
   imagePath2,

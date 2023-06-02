@@ -1,3 +1,4 @@
+// トップページ第３セクション
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 import Paragraph from './coffeeparagraph';

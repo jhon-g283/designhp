@@ -1,3 +1,6 @@
+// メニュー一覧のメニュー表リスト
+// 配列でデータを受け取って商品コンポーネントにする。
+
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 import Paragraph from './coffeeparagraph';
@@ -13,6 +16,7 @@ interface PropsList {
   arrayData: arrayText[];
 }
 
+// 商品のアイテム部分おコンポーネント、写真と、名前価格を表示
 const ItemPanel = ({ imagePath, menuName, menuPrice }: PropsItemPanel) => {
   const name = (
     <>

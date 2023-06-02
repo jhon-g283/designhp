@@ -1,3 +1,4 @@
+// メニューページのテンプレート
 import styles from '../../styles/cafe/cafe.module.css';
 
 import Header from '../components/coffeeheader';

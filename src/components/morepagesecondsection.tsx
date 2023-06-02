@@ -1,4 +1,4 @@
-// Moreページの最初のセクション
+// Moreページの第２のセクション
 
 import styles from '../../styles/cafe/cafe.module.css';
 

@@ -2,7 +2,7 @@ import styles from '../../styles/cafe/cafe.module.css';
 
 import { MenuBlockForArea } from './coffeemenubox';
 
-// 試しに設定する
+// Areaセクションのエリア紹介部分のコンポ
 const AreaBoxCmp = () => {
   const text1 = (
     <>

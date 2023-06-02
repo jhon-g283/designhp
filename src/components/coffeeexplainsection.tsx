@@ -6,6 +6,7 @@ interface Props {
   widthOfBorder?: number; //後ろにつけるボーダーの長さ（ピクセル）
 }
 
+// セクションの説明文のコンポーネント、テキストと後に使うボーター選を設定できる
 const ExplainSectionComp = ({
   text,
   useClassName,

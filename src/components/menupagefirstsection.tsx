@@ -1,4 +1,4 @@
-// Moreページの最初のセクション
+// メニュー一覧ページ
 
 export interface arrayText {
   name: string;
@@ -23,7 +23,7 @@ const textBlack1 = (
 
 const menuTitle1 = (
   <>
-    <p>フード</p>
+    <p>ドリンク</p>
   </>
 );
 
@@ -37,7 +37,7 @@ const textBlack2 = (
 
 const menuTitle2 = (
   <>
-    <p>ドリンク</p>
+    <p>フード</p>
   </>
 );
 
@@ -55,6 +55,7 @@ const menuTitle3 = (
   </>
 );
 
+// メニュー一覧のデータ類
 const menuArrayDrink: arrayText[] = [
   { name: 'ブレンドコーヒー', price: '500', path: '/img/Drink1.png', key: 'A' },
   {
@@ -180,7 +181,7 @@ const MenuFirstSection = () => {
           <Paragraph
             useClassName={styles.menuTitleLabel}
             fontColor="white"
-            paragramText={menuTitle1}
+            paragramText={menuTitle2}
           />
         </div>
         <Paragraph

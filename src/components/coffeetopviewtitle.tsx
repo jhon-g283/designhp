@@ -7,6 +7,7 @@ interface Props {
   subTTitleParagraph?: JSX.Element;
 }
 
+// トップビューのタイトル名
 const TopViewTextCmp = ({
   useClassName,
   fontColor,
@@ -22,7 +23,7 @@ const TopViewTextCmp = ({
     </>
   );
 };
-
+// トップビューのタイトル名（メニュー画面用）
 export const TopViewTextMenuCmp = ({
   useClassName,
   fontColor,

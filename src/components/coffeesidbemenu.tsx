@@ -2,12 +2,16 @@ import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
 
+// サイドメニューのコンポーネント
 const SideMenuBar = () => {
   const [flg, changeFlg] = useState<boolean>(false);
 
+  // リンク部分
   const topPageLink = './cafetoppage';
   const morePageLink = './cafemorepage';
   const menuPageLink = './cafemenupage';
+
+  // サイドメニューの部分、フラグで表示
   const sideMenueNav = (
     <>
       <div className={styles.navarea}>
@@ -51,6 +55,7 @@ const SideMenuBar = () => {
       </div>
     </>
   );
+  // サイドバー部分、フラグでメニュー部を上（右）につける
   return (
     <>
       {flg ? sideMenueNav : <></>}

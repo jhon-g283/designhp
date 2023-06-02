@@ -1,6 +1,7 @@
+// Moreページテンプレ
+import Header from '../components/coffeeheader';
 import styles from '../../styles/cafe/cafe.module.css';
 
-import Header from '../components/coffeeheader';
 import Footer from '../components/coffeefooter';
 
 import SideMenuBar from '../components/coffeesidbemenu';

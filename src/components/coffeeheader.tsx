@@ -1,5 +1,6 @@
 import styles from '../../styles/cafe/cafe.module.css';
 
+// ヘッダー部分のコンポーネント
 const Header = () => {
   const topPageLink = './cafetoppage';
   return (

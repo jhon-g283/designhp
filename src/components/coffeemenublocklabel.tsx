@@ -11,7 +11,7 @@ interface Props {
   classNameArray?: string[];
 }
 
-// あとでクラスを分けられるように修正する。
+// メニュー部分の説明文（ラベル）用のコンポーネント
 const MenuBoxLabel = ({
   useClassName,
   fontColor,

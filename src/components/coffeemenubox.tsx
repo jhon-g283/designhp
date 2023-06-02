@@ -17,6 +17,7 @@ interface Props {
   displayPattern: string;
 }
 
+// トップページのメニュー部分の紹介コンポーネント
 const MenuBlock = ({
   classNameOfBox,
   classNameOfBoxLabel,

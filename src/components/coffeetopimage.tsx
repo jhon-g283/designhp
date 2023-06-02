@@ -5,6 +5,7 @@ interface Props {
   imagePath: string;
 }
 
+// トップ部分の画像コンポーネント
 const TopImage = ({ useClassName, imagePath }: Props) => {
   return (
     <div className={useClassName}>
