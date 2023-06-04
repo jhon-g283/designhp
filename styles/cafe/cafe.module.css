@@ -250,6 +250,12 @@
 
   display: grid;
   background-color: rgba(0, 0, 0, 0.77);
+
+  @media (max-width: 768px) {
+    left: 0%;
+    width: 100%;
+    /* opacity: 0.1; */
+  }
 }
 
 .navItem {
@@ -675,20 +681,24 @@
 }
 
 /* 逆パターン */
-/* .menuBlockImgReverse {
-  background-color: #9a9797;
-} */
+.menuBlockImgReverse {
+  /* background-color: #9a9797; */
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
 /* あとで編集するかも */
 
 /* スマホ専用 */
 .menuBlockImgOnlySp {
   margin: auto 0 auto auto;
   background-color: #827171;
-  display: none;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  /* display: none; */
 }
 .menuTextLabelBlack {
-  /* top: 3143px;
-left: 128px; */
   width: 447px;
   height: 410px;
   background: #000000 0% 0% no-repeat padding-box;
@@ -702,13 +712,17 @@ left: 128px; */
 
 /* 逆パターン */
 .menuTextLabelBlackReverse {
-  /* top: 3143px;
-left: 128px; */
   width: 447px;
   height: 410px;
   margin: auto 0 auto auto;
   background: #000000 0% 0% no-repeat padding-box;
   position: relative;
+  @media (max-width: 768px) {
+    height: 250px;
+    width: 207px;
+    margin: auto auto 0 auto;
+    /* background-color: #827181; */
+  }
 }
 
 .menuNumWrapper {
