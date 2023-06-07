@@ -675,7 +675,9 @@
 .menuBlockImg {
   margin: auto 0 auto auto;
   @media (max-width: 768px) {
-    /* height: 250px; */
+    width: 150px;
+
+    background-color: #827171;
   }
   /* background-color: #827171; */
 }
@@ -735,6 +737,27 @@
     z-index: 20;
     margin-left: 250px;
     margin-right: 0px;
+    display: none;
+    /* background-color: #c6c8c7; */
+  }
+}
+
+.menuNumWrapperSP {
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    text-align: right;
+    padding-right: 20px;
+    opacity: 0.85;
+    height: 100px;
+    /* position: relative; */
+    /* margin-top: 0px; */
+    z-index: 20;
+    margin-left: auto;
+    margin-right: 0px;
+    margin-bottom: 0px;
     /* background-color: #c6c8c7; */
   }
 }
@@ -760,13 +783,34 @@ p.menuNumber {
   /* letter-spacing: 3.43px; */
 }
 
+p.menuNumberSP {
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: -59px;
+    padding-right: 6px;
+    margin-bottom: 0px;
+    /* font: normal normal bold 59px Noto Nastaliq Urdu; */
+    letter-spacing: 7.49px;
+    font: normal normal bold 45px Noto Nastaliq Urdu;
+    /* margin-left: auto;
+    margin-right: 0px;
+    margin-bottom: 0px; */
+  }
+
+  /* letter-spacing: 3.43px; */
+}
+
 .menuText {
   padding-left: 68px;
   /* padding-top: 0; */
   position: absolute;
   margin-top: -95px;
   @media (max-width: 768px) {
-    padding-left: 28px;
+    padding-left: 12px;
+    margin-left: 0px;
 
     position: absolute;
     margin-top: 50px;
@@ -783,7 +827,7 @@ p.menuNumber {
   letter-spacing: 0px;
 
   @media (max-width: 768px) {
-    font: normal normal normal 22px Noto Serif Myanmar;
+    font: normal normal normal 20px Noto Serif Myanmar;
   }
 }
 

@@ -39,10 +39,7 @@ const MenuBoxLabel = ({
         ) : (
           <></>
         )}
-        {/* <div className={styles.menuNumWrapper}>
-          <p>MENU</p>
-          <p className={styles.menuNumber}>{menuNum}</p>
-        </div> */}
+
         <div className={styles.menuText}>
           <Paragraph
             useClassName={styles.paragramCmpClass}

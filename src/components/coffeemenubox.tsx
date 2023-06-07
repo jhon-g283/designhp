@@ -45,6 +45,10 @@ const MenuBlock = ({
             classNameArray={['11', '22']}
           />
           <div className={classNameOfBoxImg}>
+            <div className={styles.menuNumWrapperSP} style={{ color: 'white' }}>
+              <p>MENU</p>
+              <p className={styles.menuNumberSP}>{textOfMenuNameNum}</p>
+            </div>
             <Image
               src={pathToImg}
               width={200} // Specify different width values based on device or viewport size
@@ -53,6 +57,11 @@ const MenuBlock = ({
               layout="responsive"
             ></Image>
           </div>
+
+          {/* <div className={styles.menuNumWrapperSP} style={{ color: 'white' }}>
+            <p>MENU</p>
+            <p className={styles.menuNumberSP}>{textOfMenuNameNum}</p>
+          </div> */}
         </div>
       </div>
     </>
