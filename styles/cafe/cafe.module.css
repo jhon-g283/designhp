@@ -676,7 +676,7 @@
   margin: auto 0 auto auto;
   @media (max-width: 768px) {
     width: 150px;
-
+    margin: auto auto auto 0;
     background-color: #827171;
   }
   /* background-color: #827171; */
@@ -789,12 +789,13 @@ p.menuNumberSP {
   }
 
   @media (max-width: 768px) {
-    margin-top: -59px;
+    /* margin-top: -35px; */
+    margin: 0px;
     padding-right: 6px;
     margin-bottom: 0px;
     /* font: normal normal bold 59px Noto Nastaliq Urdu; */
     letter-spacing: 7.49px;
-    font: normal normal bold 45px Noto Nastaliq Urdu;
+    font: normal normal bold 36px Noto Nastaliq Urdu;
     /* margin-left: auto;
     margin-right: 0px;
     margin-bottom: 0px; */
