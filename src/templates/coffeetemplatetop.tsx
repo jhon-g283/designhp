@@ -20,10 +20,12 @@ const HeroImage = (
     <Image
       src="/img/hero.png"
       // src="/img/hero2.jpg"
-      width={1500} // Specify different width values based on device or viewport size
-      height={727}
+      // width={1500} // Specify different width values based on device or viewport size
+      // height={727}
       alt="Your Image"
-      layout="responsive"
+      // layout="responsive"
+      fill
+      style={{ objectFit: 'cover' }}
     ></Image>
   </div>
 );

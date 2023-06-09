@@ -23,29 +23,33 @@ export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
       <div
         style={{
           display: 'flex',
+          margin: 15,
         }}
       >
         <div
           style={{
-            // height: 238,
+            height: 238,
             // width: 669,
             width: `${widthVal}%`,
 
             backgroundColor: 'black',
             margin: 0,
+            position: 'relative',
           }}
         >
           <Image
             src={path1}
-            width={150} // Specify different width values based on device or viewport size
-            height={727}
+            // width={150} // Specify different width values based on device or viewport size
+            // height={727}
             alt="Your Image"
-            layout="responsive"
+            // layout="responsive"
+            style={{ objectFit: 'cover' }}
+            fill
           ></Image>
         </div>
         <div
           style={{
-            // height: 238,
+            height: 238,
             // width: '40%',
             backgroundColor: 'black',
             flex: 1,
@@ -54,14 +58,17 @@ export const GalleryBlockCmp = ({ imagePath1, imagePath2, width1 }: Props) => {
 
             // display: 'table-cell',
             // zIndex: 2,
+            position: 'relative',
           }}
         >
           <Image
             src={path2}
-            width={150} // Specify different width values based on device or viewport size
-            height={727}
+            // width={150} // Specify different width values based on device or viewport size
+            // height={727}
             alt="Your Image"
-            layout="responsive"
+            // layout="responsive"
+            style={{ objectFit: 'cover' }}
+            fill
           ></Image>
         </div>
       </div>
@@ -90,24 +97,29 @@ export const GalleryBlockCmp3Images = ({
         style={{
           display: 'flex',
           flexDirection: `${flg ? 'row-reverse' : 'row'}`,
+          position: 'relative',
+          margin: 15,
         }}
       >
         <div
           style={{
-            // height: 238,
+            height: 238,
             // width: 669,
             width: `${widthVal}%`,
 
             backgroundColor: 'black',
-            margin: 0,
+            margin: 5,
+            position: 'relative',
           }}
         >
           <Image
             src={path1}
-            width={150} // Specify different width values based on device or viewport size
-            height={727}
+            // width={150} // Specify different width values based on device or viewport size
+            // height={727}
             alt="Your Image"
-            layout="responsive"
+            // layout="responsive"
+            style={{ objectFit: 'cover' }}
+            fill
           ></Image>
         </div>
         <div
@@ -116,7 +128,8 @@ export const GalleryBlockCmp3Images = ({
             // width: '40%',
             backgroundColor: 'black',
             flex: 1,
-            margin: 0,
+            margin: 5,
+            position: 'relative',
             // marginRight: 0,
 
             // display: 'table-cell',
@@ -127,24 +140,49 @@ export const GalleryBlockCmp3Images = ({
             style={{
               // display: 'block',
               backgroundColor: 'black',
-              // height: 238,
+              height: 283,
+              position: 'relative',
             }}
           >
-            <Image
-              src={path2}
-              width={150} // Specify different width values based on device or viewport size
-              height={727}
-              alt="Your Image"
-              layout="responsive"
-            ></Image>
+            <div
+              style={{
+                // display: 'block',
+                backgroundColor: 'black',
+                height: 120,
+                position: 'relative',
+                margin: 5,
+              }}
+            >
+              <Image
+                src={path2}
+                // width={150} // Specify different width values based on device or viewport size
+                // height={727}
+                alt="Your Image"
+                // layout="responsive"
+                style={{ objectFit: 'cover' }}
+                fill
+              ></Image>
+            </div>
 
-            <Image
-              src={path3}
-              width={700} // Specify different width values based on device or viewport size
-              height={727}
-              alt="Your Image"
-              layout="responsive"
-            ></Image>
+            <div
+              style={{
+                // display: 'block',
+                backgroundColor: 'black',
+                height: 120,
+                position: 'relative',
+                margin: 5,
+              }}
+            >
+              <Image
+                src={path3}
+                // width={700} // Specify different width values based on device or viewport size
+                // height={727}
+                alt="Your Image"
+                // layout="responsive"
+                style={{ objectFit: 'cover' }}
+                fill
+              ></Image>
+            </div>
           </div>
         </div>
       </div>

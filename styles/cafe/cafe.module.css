@@ -674,7 +674,9 @@
 
 .menuBlockImg {
   margin: auto 0 auto auto;
+  position: relative;
   @media (max-width: 768px) {
+    position: relative;
     width: 150px;
     margin: auto auto auto 0;
     background-color: #827171;
@@ -684,6 +686,7 @@
 
 /* 逆パターン */
 .menuBlockImgReverse {
+  position: relative;
   /* background-color: #9a9797; */
   @media (max-width: 768px) {
     display: none;
@@ -693,6 +696,7 @@
 
 /* スマホ専用 */
 .menuBlockImgOnlySp {
+  position: relative;
   margin: auto 0 auto auto;
   background-color: #827171;
   @media (min-width: 768px) {
