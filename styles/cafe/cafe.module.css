@@ -674,7 +674,7 @@
 
 .menuBlockImg {
   margin: auto 0 auto auto;
-  position: relative;
+  position: relative !important;
   @media (max-width: 768px) {
     position: relative;
     width: 150px;
@@ -682,6 +682,10 @@
     background-color: #827171;
   }
   /* background-color: #827171; */
+}
+
+.menuBlockImg img {
+  position: relative !important;
 }
 
 /* 逆パターン */
@@ -703,6 +707,10 @@
     display: none;
   }
   /* display: none; */
+}
+
+.menuBlockImgOnlySp img {
+  position: relative !important;
 }
 .menuTextLabelBlack {
   width: 447px;
