@@ -46,8 +46,16 @@ const MenuBlock = ({
           />
           <div className={classNameOfBoxImg}>
             <div className={styles.menuNumWrapperSP} style={{ color: 'white' }}>
-              <p>MENU</p>
-              <p className={styles.menuNumberSP}>{textOfMenuNameNum}</p>
+              {/* <p>MENU</p>
+              <p className={styles.menuNumberSP}>{textOfMenuNameNum}</p> */}
+              {/* menu01Logo */}
+              <Image
+                src={'/img/menu01Logo.svg'}
+                width={200} // Specify different width values based on device or viewport size
+                height={200}
+                alt="Your Image"
+                layout="responsive"
+              ></Image>
             </div>
             <Image
               src={pathToImg}

@@ -1,5 +1,6 @@
 import Paragraph from './coffeeparagraph';
 import styles from '../../styles/cafe/cafe.module.css';
+import Image from 'next/image';
 interface Props {
   useClassName: string;
   fontColor: string;
@@ -32,8 +33,15 @@ const MenuBoxLabel = ({
         {menuNum != '' ? (
           <>
             <div className={styles.menuNumWrapper}>
-              <p>MENU</p>
-              <p className={styles.menuNumber}>{menuNum}</p>
+              {/* <p>MENU</p>
+              <p className={styles.menuNumber}>{menuNum}</p> */}
+              <Image
+                src={'/img/menu01Logo.svg'}
+                width={200} // Specify different width values based on device or viewport size
+                height={200}
+                alt="Your Image"
+                layout="responsive"
+              ></Image>
             </div>
           </>
         ) : (
