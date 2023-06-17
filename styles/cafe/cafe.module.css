@@ -615,8 +615,9 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+
   @media (max-width: 768px) {
-    margin-top: -300px;
+    /* margin-top: -300px; */
   }
 }
 
@@ -646,6 +647,7 @@
 
   /* background-color: #ccb4e7; */
   /* padding-left: 128px; */
+  position: relative !important;
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
 
@@ -663,11 +665,12 @@
   }
 }
 
+/* メニュー部分の大枠 */
 .menuBlock {
   display: flex;
   @media (max-width: 768px) {
     background: #000000 0% 0% no-repeat padding-box;
-    height: 300px;
+    height: 200px;
     margin-bottom: 10px;
   }
 }
@@ -685,6 +688,7 @@
 /* 逆パターン */
 .menuBlockImgReverse {
   /* background-color: #9a9797; */
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -706,7 +710,7 @@
   background: #000000 0% 0% no-repeat padding-box;
   position: relative;
   @media (max-width: 768px) {
-    height: 250px;
+    height: 200px;
     width: 207px;
     /* background-color: #827181; */
   }
@@ -720,9 +724,11 @@
   background: #000000 0% 0% no-repeat padding-box;
   position: relative;
   @media (max-width: 768px) {
-    height: 250px;
+    margin: auto auto auto 0;
+
     width: 207px;
-    margin: auto auto 0 auto;
+    height: 200px;
+
     /* background-color: #827181; */
   }
 }
@@ -754,14 +760,14 @@
   @media (max-width: 768px) {
     text-align: right;
     padding-right: 20px;
-    opacity: 0.85;
+    /* opacity: 0.85; */
     height: 100px;
     /* position: relative; */
     /* margin-top: 0px; */
-    z-index: 20;
+    /* z-index: 20; */
     margin-left: auto;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: -30px;
     width: 50px;
     /* background-color: #c6c8c7; */
   }
@@ -812,14 +818,14 @@ p.menuNumberSP {
 .menuText {
   padding-left: 68px;
   /* padding-top: 0; */
-  position: absolute;
+  /* position: absolute; */
   margin-top: -95px;
   @media (max-width: 768px) {
     padding-left: 12px;
     margin-left: 0px;
 
-    position: absolute;
-    margin-top: 50px;
+    /* position: absolute; */
+    margin-top: 30px;
   }
   /* background-color: rgba(169, 68, 68, 0.77); */
 }
@@ -1157,15 +1163,6 @@ a.mapAppButton:visited {
 }
 
 /* 逆パターン */
-.menuTextLabelBlackReverse {
-  /* top: 3143px;
-left: 128px; */
-  width: 447px;
-  height: 410px;
-  margin: auto 0 auto auto;
-  background: #000000 0% 0% no-repeat padding-box;
-  position: relative;
-}
 
 .areaTextLabelBlackReverse {
   width: 447px;
