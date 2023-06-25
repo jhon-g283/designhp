@@ -338,13 +338,24 @@
   }
 }
 
+.sectionTitle {
+  font-size: 78px;
+}
+
 .sectionTitle h2 {
   /* top: 870px;
   left: 128px; */
   /* width: 317px; */
   height: 78px;
   text-align: left;
-  font: normal normal bold 78px/195px Noto Nastaliq Urdu;
+  /* font: normal normal bold 78px/195px Noto Nastaliq Urdu; */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  /* font-size: 78px; */
+
+  line-height: 195px;
+  font-family: 'Noto Nastaliq Urdu';
   letter-spacing: 9.91px;
   /* color: #ffffff; */
   text-transform: uppercase;
@@ -352,8 +363,10 @@
   /* background-color: #c5b3b3; */
 
   @media (max-width: 768px) {
-    height: 48px;
-    font: normal normal bold 39px Noto Nastaliq Urdu;
+    /* height: 48px; */
+    /* font: normal normal bold 39px Noto Nastaliq Urdu; */
+
+    font-size: 0.5em;
   }
 }
 
@@ -388,24 +401,35 @@
 }
 
 .topFirstWiteBack {
-  width: 151px;
+  width: 11vw; /* width: 151px; */
+  min-width: 151px;
+
   height: 49px;
 
   text-align: left;
   padding-left: 11px;
 
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 46px;
+  font-family: 'Noto Sans JP Thin';
+
   color: #000000;
 
-  background: #ffffff 0% 0% no-repeat padding-box;
+  background: #ffffff;
 
   @media (max-width: 768px) {
-    width: 113px;
+    /* 174 */
+
+    width: 22vw;
     height: 30px;
   }
 }
 
 .topFirstWiteBack p {
-  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
+  font-size: 1em;
   letter-spacing: 3.44px;
   @media (max-width: 768px) {
     font: normal normal bold 19px Noto Sans JP Thin;
@@ -421,16 +445,25 @@
 
   background: #ffffff 0% 0% no-repeat padding-box;
 
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 46px;
+  font-family: 'Noto Sans JP Thin';
+
   @media (max-width: 768px) {
     width: 100%;
   }
 }
 
 .topFirstWiteBack2 p {
-  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
+  font-size: 1em;
   letter-spacing: 3.17px;
   @media (max-width: 768px) {
-    font: normal normal bold 12px Noto Sans JP Thin;
+    /* font: normal normal bold 12px Noto Sans JP Thin; */
+
+    font-size: 0.63em;
   }
 }
 
@@ -447,30 +480,44 @@
 .topFirstBlackBack {
   text-align: left;
   /* font: normal normal normal 19px/39px Noto Sans JP Thin; */
-  letter-spacing: 3.17px;
+  /* letter-spacing: 3.17px; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 39px;
+  font-family: 'Noto Sans JP Thin';
   color: #ffffff;
 
-  width: 569px;
-  height: 197px;
-  padding-left: 9px; /* 139-128 */
+  width: 41vw;
+
+  height: 207px;
+  padding-left: 19px;
+  /* 139-128 */
   background: rgba(0, 0, 0, 0.72) 0% 0% no-repeat padding-box;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     padding-top: 20px;
 
-    height: flex-wrap;
+    /* height: flex-wrap; */
+  }
+
+  @media screen and (min-width: 769px) {
+    min-width: 569px;
   }
 }
 
 .topFirstBlackBack p {
   margin: 0;
-  font: normal normal normal 19px/39px Noto Sans JP Thin;
-  letter-spacing: 3.17px;
+  /* font: normal normal normal 19px/39px Noto Sans JP Thin; */
+  /* letter-spacing: 3.17px; */
   /* color: #ffffff; */
+  font-size: 1em;
   opacity: 1;
-  @media (max-width: 768px) {
-    font: normal normal normal 11px Noto Sans JP Thin;
+  @media screen and (max-width: 768px) {
+    /* font: normal normal normal 11px Noto Sans JP Thin; */
+    font-size: 0.57em;
+    line-height: 2em;
 
     flex-wrap: wrap; /* 行を折り返す */
   }
@@ -533,6 +580,7 @@
 
   width: 303px;
   height: 49px;
+  /* ここの幅の調整が必要 */
   background: #ffffff 0% 0% no-repeat padding-box;
   @media (max-width: 768px) {
     /* margin: 0px; */
@@ -711,7 +759,7 @@
 /* ラベル部分 */
 .menuTextLabelBlack {
   /* width: 447px; */
-  width: 40wh;
+  width: 40vw;
 
   /* height: 410px; */
   height: 45vh;
@@ -720,9 +768,9 @@
   @media screen and (max-width: 768px) {
     /* height: 200px;
     width: 150px; */
-    width: 38wh;
+    width: 38vh;
 
-    height: 19vh;
+    height: 100%;
 
     background-color: #827181;
   }
