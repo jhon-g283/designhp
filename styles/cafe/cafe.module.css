@@ -729,8 +729,8 @@
 .menuBlockImg {
   margin: auto 0 auto auto;
   @media (max-width: 768px) {
-    width: 150px;
-    margin: auto auto auto 0;
+    /* width: 150px; */
+    margin: 0 0 auto auto;
     background-color: #827171;
   }
   /* background-color: #827171; */
@@ -760,6 +760,7 @@
 .menuTextLabelBlack {
   /* width: 447px; */
   width: 40vw;
+  max-width: 447px;
 
   /* height: 410px; */
   height: 45vh;
@@ -768,7 +769,8 @@
   @media screen and (max-width: 768px) {
     /* height: 200px;
     width: 150px; */
-    width: 38vh;
+    width: 39.5vh;
+    max-width: 304px;
 
     height: 100%;
 
@@ -819,17 +821,18 @@
 
   @media (max-width: 768px) {
     text-align: right;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     /* opacity: 0.85; */
-    height: 100px;
+    /* height: 100px; */
     /* position: relative; */
     /* margin-top: 0px; */
     /* z-index: 20; */
     margin-left: auto;
     margin-right: 0px;
-    margin-bottom: -30px;
-    width: 50px;
-    /* background-color: #c6c8c7; */
+    /* margin-bottom: -30px; */
+    /* width: 50px; */
+    width: 12vw; /* 98/768 */
+    background-color: #c6c8c7;
   }
 }
 
@@ -939,9 +942,17 @@ p.menuNumberSP {
   margin-top: 35px;
 
   /* padding: 40px; */
-  padding-left: 40px;
+  /* padding-left: 40px; */
+  padding-left: 2vw;
   padding-top: 40px;
   padding-bottom: 80px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: normal;
+  font-family: 'Noto Sans JP Thin';
+
   background-color: rgb(255, 255, 255);
 }
 
@@ -950,13 +961,18 @@ p.menuNumberSP {
 }
 
 .addressTextLeft {
-  width: 188px;
+  /* width: 188px; */
+  width: 13vw;
 }
 
 .addressAreaParagraph {
-  font: normal normal normal 17px Noto Sans JP Thin;
+  /* font: normal normal normal 17px Noto Sans JP Thin; */
+  font-size: 1em;
   letter-spacing: 2.23px;
   color: #000000;
+  @media screen and (max-width: 768px) {
+    font-size: 0.5em;
+  }
 }
 
 .addressPayLogo1 {
