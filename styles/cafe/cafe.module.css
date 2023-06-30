@@ -909,8 +909,13 @@ p.menuNumberSP {
 .priceText {
   padding-top: 5px;
   letter-spacing: 2.67px;
-  @media (max-width: 768px) {
-    font: normal normal normal 12px Noto Serif Myanmar;
+  @media screen and (max-width: 768px) {
+    /* font: normal normal normal 12px Noto Serif Myanmar; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: normal;
+    font-family: 'Noto Serif Myanmar';
   }
   /* background-color: #825858; */
 }
@@ -934,7 +939,11 @@ p.menuNumberSP {
 
 .locationImage {
   /* width: 1084px; */
-  height: 453px;
+
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    max-height: 322px;
+  }
 }
 
 /* 住所情報 */
@@ -953,7 +962,13 @@ p.menuNumberSP {
   line-height: normal;
   font-family: 'Noto Sans JP Thin';
 
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #d1c9c9;
+  }
 }
 
 .addressText {
