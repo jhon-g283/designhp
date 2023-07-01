@@ -45,11 +45,11 @@ const address = (
           }
         ></Paragraph>
         <Paragraph
-          useClassName={styles.addressAreaParagraph}
+          useClassName={styles.addressAreaParagraph02}
           fontColor={'black'}
           paragramText={
             <a>
-              最寄駅
+              <span className={styles.addresAreaSpan06}>最寄駅</span>
               <span className={styles.addresAreaSpan02}>
                 JR 東京駅<br></br>
                 <span className={styles.addresAreaSpan03}>
@@ -83,7 +83,8 @@ const openText = (
           paragramText={
             <>
               <p>
-                ７：００〜２３：００<br></br>年中無休
+                ７：００〜２３：００<br></br>{' '}
+                <span className={styles.addresAreaSpan07}>年中無休</span>
               </p>
             </>
           }
@@ -182,6 +183,15 @@ const mapImage = (
     <div className={styles.mapImage}>
       <Image
         src="/img/GoogleMap.png"
+        className={styles.imgPC}
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+      ></Image>
+      <Image
+        src="/img/GoogleMapSP.jpg"
+        className={styles.imgSP}
         width={200} // Specify different width values based on device or viewport size
         height={200}
         alt="Your Image"

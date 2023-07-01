@@ -73,6 +73,20 @@
 
   @media (max-width: 768px) {
     background-color: #d7baf7;
+    height: 100vh;
+  }
+}
+
+/* PCとスマホで画像の切り替えを行うためのクラス */
+.imgPC {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.imgSP {
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 
@@ -87,6 +101,9 @@
 
   letter-spacing: 1.3px;
   color: #ffffff;
+  @media (max-width: 768px) {
+    margin-top: 53vh;
+  }
   /* background-color: bisque; */
 }
 .heroword p {
@@ -332,7 +349,6 @@
   padding-right: min(calc(10%), 128px);
 
   @media (max-width: 768px) {
-    margin-top: -544px;
     padding-left: min(calc(10%), 28px);
     padding-right: min(calc(10%), 28px);
   }
@@ -946,7 +962,7 @@ p.menuNumberSP {
   }
 }
 
-/* 住所情報 */
+/* 住所情報大枠 */
 .addressArea {
   margin-top: 35px;
 
@@ -964,22 +980,34 @@ p.menuNumberSP {
 
   background-color: #ffffff;
   @media screen and (max-width: 768px) {
+    font-size: 0.5em;
     margin-top: 30px;
     padding-top: 0px;
     padding-bottom: 0px;
-    background-color: #d1c9c9;
+    /* background-color: #d1c9c9; */
   }
 }
 
+/* 並べ方 */
 .addressText {
   display: flex;
+  /*  */
+
+  @media screen and (max-width: 768px) {
+    margin-top: 5px;
+  }
 }
 
+/* 左側のテキスト */
 .addressTextLeft {
   /* width: 188px; */
   width: 13vw;
+  @media screen and (max-width: 768px) {
+    width: 23vw;
+  }
 }
 
+/* 住所のフォント */
 .addressAreaParagraph {
   /* font: normal normal normal 17px Noto Sans JP Thin; */
   font-size: 1em;
@@ -990,53 +1018,143 @@ p.menuNumberSP {
   }
 }
 
-.addressPayLogo1 {
-  /* margin-top: auto; */
-  margin-bottom: -20px;
-  width: 104px;
-  height: 67px;
+/* 住所のフォント */
+.addressAreaParagraph02 {
+  /* font: normal normal normal 17px Noto Sans JP Thin; */
+  font-size: 1em;
+  letter-spacing: 2.23px;
+  color: #000000;
+  @media screen and (max-width: 768px) {
+    font-size: 0.5em;
+    /* height: 20px; */
+    display: flexbox;
+  }
 }
 
+/* ロゴ */
+.addressPayLogo1 {
+  /* margin-top: auto; */
+  /* margin-bottom: -20px; */
+  /* width: 104px; */
+  width: 7vw;
+
+  @media screen and (max-width: 768px) {
+    width: 13vw;
+
+    margin-top: -1em;
+  }
+}
+
+/* ロゴ */
 .addressPayLogo2 {
   /* margin-top: auto;
   margin-bottom: auto; */
-  margin-bottom: -20px;
-  width: 174px;
-  height: 63px;
+  /* margin-bottom: -20px; */
+  /* width: 174px; */
+  width: 12vw;
+  @media screen and (max-width: 768px) {
+    width: 22vw;
+
+    margin-top: -1em;
+  }
 }
 
+/* CAFE CUCUAの文字 */
 .addresAreaSpan01 {
   margin-left: 30px;
 }
 
+/* スマホ版のみ改行させる */
+@media screen and (max-width: 768px) {
+  .addresAreaSpan01::before {
+    content: '\A\A';
+    white-space: pre;
+  }
+}
+
+/* JR東京駅部分 */
 .addresAreaSpan02 {
   margin-left: 40px;
 }
-.addresAreaSpan03 {
-  margin-left: 95px;
+/* スマホ版だけブロックレイアウト左寄せ */
+@media screen and (max-width: 768px) {
+  .addresAreaSpan02 {
+    display: block;
+    margin-left: 0px;
+  }
+
+  /* 最寄えきは非表示にして入れ直す */
+  .addresAreaSpan06 {
+    display: none;
+  }
+
+  .addresAreaSpan02::before {
+    content: '最寄駅';
+    margin-right: 3vh;
+    color: #020202;
+  }
+
+  .addresAreaSpan03::before {
+    content: '最寄駅';
+    margin-right: 3vh;
+    color: #ffffff;
+  }
+
+  .addresAreaSpan04::before {
+    margin-right: 3vh;
+    white-space: pre;
+    content: '\A最寄駅';
+    color: #ffffff;
+    /* margin-left: 0px; */
+  }
+
+  .addresAreaSpan07 {
+    line-height: 17px;
+  }
 }
 
+/* 東京メトロ */
+.addresAreaSpan03 {
+  margin-left: 95px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
+}
+
+/* 徒歩5分 */
 .addresAreaSpan04 {
   margin-left: 30px;
 }
 
 .addresAreaSpan05 {
   margin-right: 30px;
+  @media screen and (max-width: 768px) {
+    margin-right: 0px;
+  }
 }
-
+/* 地図画像 */
 .mapImage {
   /* width: 1040px; */
   height: 284px;
+  @media screen and (max-width: 768px) {
+    height: 349px;
+  }
 }
 
 .addressWrapper {
   background-color: #ffffff;
 }
 
+/* 画像とボタンのエリア */
 .addressImgWrapper {
   text-align: end;
+  @media screen and (max-width: 768px) {
+    text-align: start;
+  }
 }
 
+/* ボタン */
 a.mapAppButton {
   width: 200px;
   height: 43px;

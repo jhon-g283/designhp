@@ -19,6 +19,16 @@ const HeroImage = (
   <div className={styles.heroimgclass}>
     <Image
       src="/img/hero.png"
+      className={styles.imgPC}
+      // src="/img/hero2.jpg"
+      width={1500} // Specify different width values based on device or viewport size
+      height={727}
+      alt="Your Image"
+      layout="responsive"
+    ></Image>
+    <Image
+      className="imgSP"
+      src="/img/heroSP.jpg"
       // src="/img/hero2.jpg"
       width={1500} // Specify different width values based on device or viewport size
       height={727}
