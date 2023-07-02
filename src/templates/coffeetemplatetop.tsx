@@ -19,7 +19,7 @@ const HeroImage = (
   <div className={styles.heroimgclass}>
     <Image
       src="/img/hero.png"
-      className={styles.imgPC}
+      className={styles.imgPC} //PCのみ表示
       // src="/img/hero2.jpg"
       width={1500} // Specify different width values based on device or viewport size
       height={727}
@@ -27,7 +27,7 @@ const HeroImage = (
       layout="responsive"
     ></Image>
     <Image
-      className="imgSP"
+      className={styles.imgSP} //SPのみ表示
       src="/img/heroSP.jpg"
       // src="/img/hero2.jpg"
       width={1500} // Specify different width values based on device or viewport size

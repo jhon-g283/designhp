@@ -71,21 +71,22 @@
   width: 100%;
   height: 727px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     background-color: #d7baf7;
     height: 100vh;
   }
 }
 
 /* PCとスマホで画像の切り替えを行うためのクラス */
-.imgPC {
-  @media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  /* buildで読み込まないためメディアクエリ内に記載*/
+  .imgPC {
     display: none;
   }
 }
 
-.imgSP {
-  @media (min-width: 768px) {
+@media screen and (min-width: 769px) {
+  .imgSP {
     display: none;
   }
 }
@@ -115,7 +116,7 @@
   }
 }
 
-.shopname {
+p.shopname {
   /* font: normal normal bold 45px Noto Nastaliq Urdu; */
   /* フォントを行間の都合で変更 */
   font-family: 'Amiri';
@@ -124,7 +125,7 @@
 
   letter-spacing: 5.71px;
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 4vh;
     padding-left: 0;
     padding-right: auto;
   }
@@ -848,7 +849,9 @@
     /* margin-bottom: -30px; */
     /* width: 50px; */
     width: 12vw; /* 98/768 */
-    background-color: #c6c8c7;
+    max-height: 100px;
+    max-width: 90px;
+    background-color: #4bed9c;
   }
 }
 
@@ -914,11 +917,26 @@ p.menuNumberSP {
 }
 
 .menuItemName {
-  font: normal normal normal 32px/80px Noto Serif Myanmar;
+  /* font: normal normal normal 32px/80px Noto Serif Myanmar; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 80px;
+  font-family: 'Noto Serif Myanmar';
   letter-spacing: 0px;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     font: normal normal normal 20px Noto Serif Myanmar;
+  } */
+}
+
+.menuItemName p {
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    /* font: normal normal normal 20px Noto Serif Myanmar; */
+    font-size: 0.6em;
+    line-height: 1em;
   }
 }
 
@@ -1138,7 +1156,8 @@ p.menuNumberSP {
   /* width: 1040px; */
   height: 284px;
   @media screen and (max-width: 768px) {
-    height: 349px;
+    height: 100%;
+    /* height: 349px; */
   }
 }
 
@@ -1154,6 +1173,11 @@ p.menuNumberSP {
   }
 }
 
+/* ボタンのフォント用 */
+.mapImage {
+  font: normal normal normal 17px Noto Sans JP Thin;
+}
+
 /* ボタン */
 a.mapAppButton {
   width: 200px;
@@ -1161,15 +1185,18 @@ a.mapAppButton {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 4px solid #000000;
 
-  font: normal normal normal 17px Noto Sans JP Thin;
+  /* font: normal normal normal 17px Noto Sans JP Thin; */
+  font-size: 1em;
   letter-spacing: 0px;
 
   text-decoration: none;
 
   padding-top: 5px;
-  padding-left: 28px;
+
+  padding-left: 2em; /* padding-left: 28px; */
+
   padding-bottom: 7px;
-  padding-right: 50px;
+  padding-right: 3em; /* padding-right: 50px; */
   /* display: flex; */
   text-align: right;
   margin-left: auto;
@@ -1178,13 +1205,35 @@ a.mapAppButton {
   margin-bottom: auto;
   z-index: 4;
   opacity: 0.99;
+  @media screen and (max-width: 768px) {
+    color: #ffffff;
+    height: 100%;
+    width: 211px;
+    height: 69px;
+    padding-top: 5px;
+    font-size: 0.5em;
+    /* padding-left: 28px; */
+    padding-bottom: 7px;
+    /* padding-right: 50px; */
+    margin-left: 5px;
+    border: none;
+    background: #000000 0% 0% no-repeat padding-box;
+  }
 
   /* justify-content: flex-end; */
 }
 
 a.mapAppButton:visited {
   color: inherit;
+
   justify-content: flex-end;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+  a.mapAppButton:visited {
+    color: #ffffff;
+  }
 }
 
 /* マップ下のスペース用 */
