@@ -103,7 +103,7 @@
   letter-spacing: 1.3px;
   color: #ffffff;
   @media (max-width: 768px) {
-    margin-top: 53vh;
+    margin-top: 30vh;
   }
   /* background-color: bisque; */
 }
@@ -684,17 +684,33 @@ p.shopname {
   justify-content: flex-end;
   margin-top: 10px;
 
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: 'Noto Nastaliq Urdu';
+
   @media (max-width: 768px) {
     /* margin-top: -300px; */
   }
 }
 
+@media screen and (max-width: 768px) {
+  .moreWrapper img {
+    background-color: #4bed9c;
+    /* margin-bottom: 10px;
+    width: 101px; */
+    /* margin-bottom: 0.2em; */
+  }
+}
+
 .moreWrapper a {
-  font: normal normal bold 32px Noto Nastaliq Urdu;
+  /* font: normal normal bold 32px Noto Nastaliq Urdu; */
+  font-size: 1em;
   padding-right: 5px;
   padding-bottom: 5px;
   @media (max-width: 768px) {
-    font: normal normal bold 16px Noto Nastaliq Urdu;
+    /* font: normal normal bold 16px Noto Nastaliq Urdu; */
+    font-size: 0.5em;
   }
 
   color: #ffffff;
@@ -730,6 +746,23 @@ p.shopname {
   letter-spacing: 2.67px;
   @media (max-width: 768px) {
     font: normal normal normal 13px Noto Sans JP Thin;
+  }
+}
+
+.paragramMenuText {
+  /* font: normal normal normal 16px/39px Noto Sans JP Thin; */
+  letter-spacing: 2.67px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  /* line-height: 39px; */
+  font-family: 'Noto Sans JP Thin;';
+}
+
+.paragramMenuText p {
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.85em;
   }
 }
 
@@ -936,7 +969,7 @@ p.menuNumberSP {
   @media (max-width: 768px) {
     /* font: normal normal normal 20px Noto Serif Myanmar; */
     font-size: 0.6em;
-    line-height: 1em;
+    line-height: 2em;
   }
 }
 

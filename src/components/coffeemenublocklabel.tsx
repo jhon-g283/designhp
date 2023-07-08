@@ -50,7 +50,7 @@ const MenuBoxLabel = ({
 
         <div className={styles.menuText}>
           <Paragraph
-            useClassName={styles.paragramCmpClass}
+            useClassName={styles.paragramMenuText}
             fontColor={fontColor}
             paragramText={menuJp}
           />
@@ -60,7 +60,7 @@ const MenuBoxLabel = ({
             paragramText={menuEn}
           />
           <Paragraph
-            useClassName={styles.paragramCmpClass}
+            useClassName={styles.paragramMenuText}
             fontColor={fontColor}
             paragramText={paragramMenuText}
           />
