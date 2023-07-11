@@ -20,7 +20,8 @@ const intoroText = (
 const menuText1 = (
   <>
     <p>
-      Cucua Beansを使用した <br></br>オリジナルブレンドのコーヒーです。
+      Cucua Beansを使用した <br className={styles.brOnlyPC}></br>
+      オリジナルブレンドのコーヒーです。
     </p>
   </>
 );
@@ -35,7 +36,8 @@ const menuText2 = (
 const menuText3 = (
   <>
     <p>
-      柔らかいパン生地と新鮮な具材から作る <br></br>サンドウィッチセットです。
+      柔らかいパン生地と新鮮な具材から作る <br className={styles.brOnlyPC}></br>
+      サンドウィッチセットです。
     </p>
   </>
 );
