@@ -28,7 +28,8 @@ const menuText1 = (
 const menuText2 = (
   <>
     <p>
-      とれたてのベリーと蜂蜜シロップを <br></br>あしらったパンケーキになります。
+      とれたてのベリーと蜂蜜シロップを <br className={styles.brOnlyPC}></br>
+      あしらったパンケーキになります。
     </p>
   </>
 );
