@@ -141,7 +141,7 @@ p.shopname {
   font: normal normal bold 13px/19px Noto Sans JP Thin;
   /* background-color: #d0b3b3; */
   @media (max-width: 768px) {
-    font-size: 6px;
+    /* font-size: 6px; */
   }
 }
 
@@ -149,7 +149,7 @@ p.shopname {
   font: normal normal bold 13px/19px Noto Sans JP Thin;
   /* background-color: #827171; */
   @media (max-width: 768px) {
-    font-size: 6px;
+    /* font-size: 6px; */
   }
 }
 
@@ -715,6 +715,8 @@ p.shopname {
   @media (max-width: 768px) {
     /* font: normal normal bold 16px Noto Nastaliq Urdu; */
     font-size: 0.5em;
+    padding-right: 0px;
+    padding-bottom: 0px;
   }
 
   color: #ffffff;
@@ -1179,6 +1181,7 @@ p.menuNumberSP {
 
   @media screen and (max-width: 768px) {
     margin-left: 0px;
+    white-space: nowrap;
   }
 }
 
