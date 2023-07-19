@@ -11,7 +11,7 @@ import MenuBlock from './coffeemenubox';
 const intoroText = (
   <>
     <p>
-      クリエイティブ作業やブレイクタイムに<br></br>
+      クリエイティブ作業やブレイクタイムに<br className={styles.brOnlyPC}></br>
       癒しとなるドリンク・フードをご用意いたしました。
     </p>
   </>

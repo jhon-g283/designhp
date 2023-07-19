@@ -595,7 +595,9 @@ p.shopname {
   /* background-color: #917878; */
   z-index: 9;
   @media (max-width: 768px) {
-    width: 290px;
+    /* width: 290px; */
+    width: 30vh;
+
     height: 230px;
   }
 }
@@ -697,7 +699,7 @@ p.shopname {
   margin-left: -150px;
 
   @media (max-width: 768px) {
-    width: 50vh;
+    width: 40vh;
     height: 230px;
     background-color: #6e13d0;
   }

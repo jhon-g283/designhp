@@ -66,7 +66,16 @@ const Image1 = (
         height={200}
         alt="Your Image"
         layout="responsive"
+        // className={styles.imgPC}
       ></Image>
+      {/* <Image
+        src="/img/FirstSectionImg1SP.jpg"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgSP}
+      ></Image> */}
     </div>
   </>
 );
@@ -90,6 +99,15 @@ const Image2 = (
         height={400}
         alt="Your Image"
         layout="responsive"
+        className={styles.imgPC}
+      ></Image>
+      <Image
+        src="/img/FirstSectionImg2SP.jpg"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgSP}
       ></Image>
     </div>
   </>
@@ -128,6 +146,15 @@ const Image3 = (
         height={200}
         alt="Your Image"
         layout="responsive"
+        className={styles.imgPC}
+      ></Image>
+      <Image
+        src="/img/FirstSectionImg3SP.jpg"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgSP}
       ></Image>
     </div>
   </>
