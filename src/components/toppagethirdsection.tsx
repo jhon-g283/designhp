@@ -160,20 +160,22 @@ const cashText = (
       </div>
 
       <div className={styles.addressTextRight}>
-        <Paragraph
-          useClassName={styles.addressAreaParagraph}
-          fontColor={'black'}
-          paragramText={
-            <>
-              <p>
-                <span className={styles.addresAreaSpan05}>現金</span>
-              </p>
-            </>
-          }
-        ></Paragraph>
+        <div className={styles.logoCenter}>
+          <Paragraph
+            useClassName={styles.addressAreaParagraph}
+            fontColor={'black'}
+            paragramText={
+              <>
+                <p>
+                  <span className={styles.addresAreaSpan05}>現金</span>
+                </p>
+              </>
+            }
+          ></Paragraph>
+          {logoImgPayPay}
+          {logoImgApple}
+        </div>
       </div>
-      {logoImgPayPay}
-      {logoImgApple}
     </div>
   </>
 );

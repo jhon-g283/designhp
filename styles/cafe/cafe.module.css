@@ -1069,7 +1069,7 @@ p.menuNumberSP {
 
   background-color: #ffffff;
   @media screen and (max-width: 768px) {
-    font-size: 0.5em;
+    /* font-size: em; */
     margin-top: 30px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1093,6 +1093,7 @@ p.menuNumberSP {
   width: 13vw;
   @media screen and (max-width: 768px) {
     width: 23vw;
+    margin-right: 0.5em;
   }
 }
 
@@ -1103,7 +1104,7 @@ p.menuNumberSP {
   letter-spacing: 2.23px;
   color: #000000;
   @media screen and (max-width: 768px) {
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 }
 
@@ -1114,7 +1115,7 @@ p.menuNumberSP {
   letter-spacing: 2.23px;
   color: #000000;
   @media screen and (max-width: 768px) {
-    font-size: 0.5em;
+    font-size: 0.7em;
     /* height: 20px; */
     display: flexbox;
   }
@@ -1130,7 +1131,9 @@ p.menuNumberSP {
   @media screen and (max-width: 768px) {
     width: 13vw;
 
-    margin-top: -1em;
+    /* margin-top: -1em; */
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -1144,7 +1147,18 @@ p.menuNumberSP {
   @media screen and (max-width: 768px) {
     width: 22vw;
 
-    margin-top: -1em;
+    /* margin-top: -1em; */
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (max-width: 788px) {
+  .logoCenter {
+    align-items: center;
+    /* background-color: #4bed9c; */
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -1179,18 +1193,18 @@ p.menuNumberSP {
 
   .addresAreaSpan02::before {
     content: '最寄駅';
-    margin-right: 3vh;
+    margin-right: 0.7em;
     color: #020202;
   }
 
   .addresAreaSpan03::before {
     content: '最寄駅';
-    margin-right: 3vh;
+    margin-right: 0.7em;
     color: #ffffff;
   }
 
   .addresAreaSpan04::before {
-    margin-right: 3vh;
+    margin-right: 0.7em;
     white-space: pre;
     content: '\A最寄駅';
     color: #ffffff;
