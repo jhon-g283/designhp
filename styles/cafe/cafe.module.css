@@ -1039,8 +1039,8 @@ p.menuNumberSP {
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
   @media (max-width: 768px) {
-    padding-left: min(calc(8%), 18px);
-    padding-right: min(calc(8%), 18px);
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
   }
 
   /* padding-right: 128px; */
@@ -1108,7 +1108,7 @@ p.menuNumberSP {
   letter-spacing: 2.23px;
   color: #000000;
   @media screen and (max-width: 768px) {
-    font-size: 0.7em;
+    font-size: 0.66em;
   }
 }
 
@@ -1120,7 +1120,7 @@ p.menuNumberSP {
   color: #000000;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.7em;
+    font-size: 0.66em;
     /* height: 20px; */
     display: flexbox;
   }
