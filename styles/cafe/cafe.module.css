@@ -1038,6 +1038,10 @@ p.menuNumberSP {
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
+  @media (max-width: 768px) {
+    padding-left: min(calc(8%), 18px);
+    padding-right: min(calc(8%), 18px);
+  }
 
   /* padding-right: 128px; */
 }
@@ -1092,7 +1096,7 @@ p.menuNumberSP {
   /* width: 188px; */
   width: 13vw;
   @media screen and (max-width: 768px) {
-    width: 23vw;
+    width: 20vw;
     margin-right: 0.5em;
   }
 }
@@ -1114,6 +1118,7 @@ p.menuNumberSP {
   font-size: 1em;
   letter-spacing: 2.23px;
   color: #000000;
+
   @media screen and (max-width: 768px) {
     font-size: 0.7em;
     /* height: 20px; */
@@ -1153,13 +1158,11 @@ p.menuNumberSP {
   }
 }
 
-@media screen and (max-width: 788px) {
-  .logoCenter {
-    align-items: center;
-    /* background-color: #4bed9c; */
-    display: flex;
-    justify-content: center;
-  }
+.logoCenter {
+  align-items: center;
+  /* background-color: #4bed9c; */
+  display: flex;
+  justify-content: center;
 }
 
 /* CAFE CUCUAの文字 */
