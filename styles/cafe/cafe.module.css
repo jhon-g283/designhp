@@ -392,8 +392,9 @@ p.shopname {
     /* background-color: #4bed9c; */
     margin: 0px;
     font-size: 0.5em;
-    /* line-height: 0.5em; */
-    /* height: 1em; */
+    line-height: 0.5em;
+    padding-top: 0.5em;
+    height: 1em;
   }
 }
 
