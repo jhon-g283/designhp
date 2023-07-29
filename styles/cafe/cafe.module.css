@@ -73,7 +73,7 @@
 
   @media screen and (max-width: 768px) {
     background-color: #d7baf7;
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -354,8 +354,10 @@ p.shopname {
   padding-right: min(calc(10%), 128px);
 
   @media (max-width: 768px) {
-    padding-left: min(calc(10%), 28px);
-    padding-right: min(calc(10%), 28px);
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+    margin-top: -3px;
+    padding-bottom: 30px;
   }
 }
 
@@ -373,9 +375,10 @@ p.shopname {
   font-style: normal;
   font-weight: bold;
   font-size: 1em;
+
   /* font-size: 78px; */
 
-  line-height: 195px;
+  /* line-height: 195px; */
   font-family: 'Noto Nastaliq Urdu';
   letter-spacing: 9.91px;
   /* color: #ffffff; */
@@ -386,8 +389,11 @@ p.shopname {
   @media (max-width: 768px) {
     /* height: 48px; */
     /* font: normal normal bold 39px Noto Nastaliq Urdu; */
-
+    /* background-color: #4bed9c; */
+    margin: 0px;
     font-size: 0.5em;
+    /* line-height: 0.5em; */
+    /* height: 1em; */
   }
 }
 
@@ -397,8 +403,12 @@ p.shopname {
   margin-top: 80px;
   /* 951-870 */
   display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-family: Noto Nastaliq Urdu;
+  font-size: 34px;
   @media (max-width: 768px) {
-    margin: 0;
+    margin-top: 0;
 
     /* background-color: #c5b3b3; */
   }
@@ -406,11 +416,18 @@ p.shopname {
 
 .explainsection p {
   position: relative; /*絶対値指定の親要素に必要*/
-  font: normal normal normal 34px/85px Noto Nastaliq Urdu;
+  /* font: normal normal normal 34px/85px Noto Nastaliq Urdu; */
+  font-size: 1em;
+
   letter-spacing: 2.45px;
+
   @media (max-width: 768px) {
     padding-bottom: 10px;
-    font: normal normal bold 17px Noto Nastaliq Urdu;
+    margin: 0;
+    /* font: normal normal bold 17px Noto Nastaliq Urdu; */
+    /* margin-top: auto; */
+    font-weight: bold;
+    font-size: 0.5em;
   }
 }
 
@@ -768,8 +785,10 @@ p.shopname {
   padding-right: min(calc(10%), 128px);
 
   @media (max-width: 768px) {
-    padding-left: min(calc(10%), 28px);
-    padding-right: min(calc(10%), 28px);
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+    margin-top: 0px;
+    padding-bottom: 30px;
   }
 }
 
@@ -802,7 +821,22 @@ p.shopname {
 /* メニュー部分の大枠 */
 .menuBlock {
   display: flex;
+
   @media (max-width: 768px) {
+    background: #000000;
+    height: 35vh;
+    max-height: 300px;
+    margin-bottom: 10px;
+  }
+}
+
+/* 項目の反転バージョン */
+.menuBlockReverse {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
     background: #000000;
     height: 35vh;
     max-height: 300px;
@@ -812,6 +846,17 @@ p.shopname {
 
 .menuBlockImg {
   margin: auto 0 auto auto;
+  @media (max-width: 768px) {
+    /* width: 150px; */
+    margin: 0 0 auto auto;
+    background-color: #827171;
+  }
+  /* background-color: #827171; */
+}
+
+.menuBlockImgR {
+  margin: auto auto auto 0;
+
   @media (max-width: 768px) {
     /* width: 150px; */
     margin: 0 0 auto auto;
@@ -1041,6 +1086,8 @@ p.menuNumberSP {
   @media (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
+    margin-top: 0px;
+    padding-bottom: 90px;
   }
 
   /* padding-right: 128px; */

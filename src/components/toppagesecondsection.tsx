@@ -85,6 +85,19 @@ const TopSecondSection = () => {
         />
 
         <MenuBlock
+          classNameOfBox={styles.menuBlockReverse}
+          classNameOfBoxLabel={styles.menuTextLabelBlack}
+          classNameOfBoxImg={styles.menuBlockImgR}
+          paragramMenuTextOfLabel={menuText2}
+          textOfMenuNameJp={'ベリーズパンケーキ'}
+          textOfMenuNameEn={'Berrys Cake'}
+          textOfMenuNameNum={'01'}
+          textOfMenuprice={'600'}
+          pathToImg={'/img/PanCake.png'}
+          displayPattern={'01'}
+        />
+        {/* 
+        <MenuBlock
           classNameOfBox={styles.menuBlock}
           classNameOfBoxLabel={styles.menuTextLabelBlackReverse}
           classNameOfBoxImg={styles.menuBlockImgReverse}
@@ -95,7 +108,7 @@ const TopSecondSection = () => {
           textOfMenuprice={'600'}
           pathToImg={'/img/PanCake.png'}
           displayPattern={'0'}
-        />
+        /> */}
 
         <MenuBlock
           classNameOfBox={styles.menuBlock}

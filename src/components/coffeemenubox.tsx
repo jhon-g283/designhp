@@ -77,7 +77,10 @@ const MenuBlock = ({
     <>
       <div>
         <div className={classNameOfBox}>
-          <div className={classNameOfBoxImg}>
+          <div
+            className={classNameOfBoxImg}
+            style={{ flexDirection: 'row-reverse' }}
+          >
             <Image
               src={pathToImg}
               width={200} // Specify different width values based on device or viewport size
