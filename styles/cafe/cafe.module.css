@@ -1395,8 +1395,15 @@ a.mapAppButton:visited {
 }
 
 .moretopviewTitle {
-  font: normal normal bold 45px Noto Nastaliq Urdu;
+  /* font: normal normal bold 45px Noto Nastaliq Urdu; */
+  font-style: normal;
+  font-weight: bold;
+  font-family: Noto Nastaliq Urdu;
+  font-size: 45px;
   letter-spacing: 5.71px;
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+  }
 }
 
 .moretopviewSubTitle {
@@ -1418,12 +1425,24 @@ a.mapAppButton:visited {
 
   letter-spacing: 1.3px;
   color: #ffffff;
+  @media screen and (max-width: 768px) {
+    /* padding-left: 0px; */
+    padding-top: 40%;
+    /* background-color: #6e13d0; */
+    /* font: normal normal bold 25px Noto Nastaliq Urdu; */
+  }
   /* background-color: bisque; */
 }
 
 .moreTopTitleWrap p {
   padding-left: 55%;
   margin: 0;
+  @media screen and (max-width: 768px) {
+    padding-left: 0px;
+
+    /* background-color: #6e13d0; */
+    /* font: normal normal bold 25px Noto Nastaliq Urdu; */
+  }
 }
 
 .moreTextBlack {
@@ -1432,10 +1451,18 @@ a.mapAppButton:visited {
   padding-left: 14px;
   padding-bottom: 9px;
   background: #ffffff 0% 0% no-repeat padding-box;
+  font-style: normal;
+  font-weight: bold;
+  font-family: Noto Sans JP Thin;
+  font-size: 19px;
+  line-height: 46px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .moreTextBlack p {
-  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
   letter-spacing: 3.17px;
   color: #000000;
 }
@@ -1452,6 +1479,9 @@ a.mapAppButton:visited {
   padding-left: 26px;
   /* padding-bottom: 9px; */
   background: #ffffff 0% 0% no-repeat padding-box;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 /* Planセクション */
 
@@ -1487,6 +1517,9 @@ a.mapAppButton:visited {
   padding-left: 26px;
   /* padding-bottom: 9px; */
   background: #ffffff 0% 0% no-repeat padding-box;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .planLabel {
@@ -1510,6 +1543,11 @@ a.mapAppButton:visited {
 
   font: normal normal bold 67px Noto Nastaliq Urdu;
   letter-spacing: 8.51px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 30px;
+  }
 }
 
 .areaBlock {

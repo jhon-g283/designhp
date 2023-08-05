@@ -17,6 +17,7 @@ const Top = () => {
       <TopImage
         useClassName={styles.topviewimg}
         imagePath={'/img/topviewmore.png'}
+        imagePathSP={'/img/topviewmoreSP.jpg'}
       />
 
       <TopViewTextCmp
