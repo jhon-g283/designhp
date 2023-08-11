@@ -1450,7 +1450,7 @@ a.mapAppButton:visited {
   height: 88px;
   padding-left: 14px;
   padding-bottom: 9px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+  background-color: #ffffff;
   font-style: normal;
   font-weight: bold;
   font-family: Noto Sans JP Thin;
@@ -1458,13 +1458,23 @@ a.mapAppButton:visited {
   line-height: 46px;
   @media screen and (max-width: 768px) {
     width: 100%;
+    padding-left: 0px;
+    padding-bottom: 0px;
   }
 }
 
 .moreTextBlack p {
   /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
   letter-spacing: 3.17px;
+  font-size: 1em;
   color: #000000;
+  @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding: auto;
+    line-height: 1.5em;
+  }
 }
 
 .morePageGalleryArea {
@@ -1479,8 +1489,17 @@ a.mapAppButton:visited {
   padding-left: 26px;
   /* padding-bottom: 9px; */
   background: #ffffff 0% 0% no-repeat padding-box;
+  /* font: normal normal bold 16px/39px Noto Sans JP Thin; */
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 39px;
+  font-family: 'Noto Sans JP Thin';
+
   @media screen and (max-width: 768px) {
     width: 100%;
+    height: auto;
+    max-height: 50px;
+    padding-left: 0px;
   }
 }
 /* Planセクション */
@@ -1507,7 +1526,13 @@ a.mapAppButton:visited {
 
 .moreTextBlackWhiteBack p,
 .moreTextBlackWhiteBack2 p {
-  font: normal normal bold 16px/39px Noto Sans JP Thin;
+  font-size: 1em;
+  @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    padding-left: 1em;
+  }
+
+  /* font: normal normal bold 16px/39px Noto Sans JP Thin; */
   /* letter-spacing: 2.67px; */
 }
 
@@ -1517,7 +1542,11 @@ a.mapAppButton:visited {
   padding-left: 26px;
   /* padding-bottom: 9px; */
   background: #ffffff 0% 0% no-repeat padding-box;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 39px;
   @media screen and (max-width: 768px) {
+    padding-left: 0px;
     width: 100%;
   }
 }
@@ -1528,25 +1557,64 @@ a.mapAppButton:visited {
   background: #000000 0% 0% no-repeat padding-box;
   margin-bottom: 10px;
   display: flex;
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
+    display: block;
+    height: auto;
+    min-height: 88px;
+  }
 }
 
 .planLabelTextLeft {
   padding-left: 19px;
-  font: normal normal bold 19px/46px Noto Sans JP Thin;
+  /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
+  font-weight: bold;
+  font-size: 19px;
+  font-family: 'Noto Sans JP Thin';
+  line-height: 46px;
+
   letter-spacing: 3.17px;
 }
 
+.planLabelTextLeft p {
+  font-size: 1em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8em;
+    padding-top: 1em;
+    line-height: 0px;
+  }
+}
+
 .planLabelTextRight {
-  margin-top: -120px;
+  /* margin-top: -120px; */
   margin-left: auto;
   margin-right: 0;
 
-  font: normal normal bold 67px Noto Nastaliq Urdu;
-  letter-spacing: 8.51px;
+  /* font: normal normal bold 67px Noto Nastaliq Urdu; */
+  font-weight: bold;
+  font-size: 67px;
+  font-family: 'Noto Nastaliq Urdu';
+  line-height: 67px;
 
+  letter-spacing: 8.51px;
   @media screen and (max-width: 768px) {
-    width: 100%;
-    font-size: 30px;
+    text-align: end;
+    line-height: 0px;
+  }
+}
+
+.planLabelTextRight a {
+  font-size: 1em;
+  @media screen and (max-width: 768px) {
+    font-size: 0.4em;
+  }
+}
+
+.planLabelTextRight a::before {
+  margin-top: 0.8em;
+  @media screen and (max-width: 768px) {
+    margin-top: 1em;
   }
 }
 

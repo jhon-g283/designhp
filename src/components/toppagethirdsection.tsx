@@ -83,7 +83,7 @@ const openText = (
           paragramText={
             <>
               <p>
-                ７：００〜２３：００<br></br>{' '}
+                ７：００〜２３：００<br></br>
                 <span className={styles.addresAreaSpan07}>年中無休</span>
               </p>
             </>

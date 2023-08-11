@@ -1,5 +1,7 @@
 import styles from '../../styles/cafe/cafe.module.css';
 import styled from 'styled-components';
+import Image from 'next/image';
+import { relative } from 'path';
 interface Props {
   useClassName?: string;
   fontColor?: string;
@@ -8,9 +10,9 @@ interface Props {
 }
 
 // Moreページのラベルのコンポーネントの棒線ありの部分
-const ParagraphWithBorder = styled.p`
+const ParagraphWithBorder = styled.a`
   &::before {
-    margin-top: 103px;
+    // margin-top: 50px;
 
     width: 220px;
 
@@ -21,6 +23,10 @@ const ParagraphWithBorder = styled.p`
     content: ''; /*疑似要素の中身を指定*/
     position: absolute; /*絶対位置指定*/
     background-color: white;
+
+    @media screen and (max-width: 768px) {
+      width: 100px;
+    }
   }
 `;
 // Moreページのラベルのコンポーネント
@@ -35,6 +41,16 @@ const PlanLabel = ({ useClassName, fontColor, text1, text2 }: Props) => {
         <div className={styles.planLabelTextRight}>
           {/* <p className={styles.planLabelTextRight}>{text2}</p> */}
           <ParagraphWithBorder>{text2}</ParagraphWithBorder>
+          {/* <div className={styles.logoLabel}>
+            <Image
+              src={'/img/arealogo.svg'}
+              width={100} // Specify different width values based on device or viewport size
+              height={200}
+              alt="Your Image"
+              style={{ objectFit: 'contain' }}
+              // layout="responsive"
+            ></Image>
+          </div> */}
         </div>
       </div>
     </>
