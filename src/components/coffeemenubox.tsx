@@ -14,6 +14,7 @@ interface Props {
   textOfMenuNameNum: string;
   textOfMenuprice: string;
   pathToImg: string;
+  pathToImgSP?: string;
   displayPattern: string;
 }
 
@@ -123,6 +124,8 @@ export const MenuBlockForArea = ({
   textOfMenuNameNum,
   textOfMenuprice,
   pathToImg,
+  pathToImgSP,
+
   displayPattern,
 }: Props) => {
   return displayPattern == '01' ? (
@@ -146,6 +149,15 @@ export const MenuBlockForArea = ({
               height={200}
               alt="Your Image"
               layout="responsive"
+              className={styles.imgPC}
+            ></Image>
+            <Image
+              src={pathToImgSP || pathToImg}
+              width={200} // Specify different width values based on device or viewport size
+              height={200}
+              alt="Your Image"
+              layout="responsive"
+              className={styles.imgSP}
             ></Image>
           </div>
         </div>

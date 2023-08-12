@@ -12,6 +12,24 @@ const AreaBoxCmp = () => {
       </p>
     </>
   );
+  const text2 = (
+    <>
+      <p>
+        自然にアイデアの湧き出る開放感のあるエリア。
+        <br className={styles.brOnlyPC}></br>
+        他クリエイターとの交流の場にもなります。
+      </p>
+    </>
+  );
+  const text3 = (
+    <>
+      <p>
+        業務上重要な作業や会議を鍵と防音のある場所
+        <br className={styles.brOnlyPC}></br>
+        で行いたい、集中した場所が必要な方への エリア
+      </p>
+    </>
+  );
   return (
     <>
       <div>
@@ -25,21 +43,23 @@ const AreaBoxCmp = () => {
           textOfMenuNameNum={''}
           textOfMenuprice={''}
           pathToImg={'/img/meeting.png'}
+          pathToImgSP={'/img/meetingSP.jpg'}
           displayPattern={'01'}
         />
       </div>
       <div>
         <MenuBlockForArea
-          classNameOfBox={styles.areaBlock}
+          classNameOfBox={styles.areaBlockReverse}
           classNameOfBoxLabel={styles.areaTextLabelBlackReverse}
           classNameOfBoxImg={styles.areaBlockImgReverse}
-          paragramMenuTextOfLabel={text1}
-          textOfMenuNameJp={'ミーティングエリア'}
-          textOfMenuNameEn={'Meeting Area'}
+          paragramMenuTextOfLabel={text2}
+          textOfMenuNameJp={'プレミアムエリア'}
+          textOfMenuNameEn={'Premium Area'}
           textOfMenuNameNum={''}
           textOfMenuprice={''}
-          pathToImg={'/img/meeting.png'}
-          displayPattern={'02'}
+          pathToImg={'/img/premiumarea.jpg'}
+          pathToImgSP={'/img/premiumareaSP.jpg'}
+          displayPattern={'01'}
         />
       </div>
       <div>
@@ -47,12 +67,13 @@ const AreaBoxCmp = () => {
           classNameOfBox={styles.areaBlock}
           classNameOfBoxLabel={styles.areaTextLabelBlack}
           classNameOfBoxImg={styles.areaBlockImg}
-          paragramMenuTextOfLabel={text1}
-          textOfMenuNameJp={'ミーティングエリア'}
-          textOfMenuNameEn={'Meeting Area'}
+          paragramMenuTextOfLabel={text3}
+          textOfMenuNameJp={'セキュアエリア'}
+          textOfMenuNameEn={'Secure Area'}
           textOfMenuNameNum={''}
           textOfMenuprice={''}
-          pathToImg={'/img/meeting.png'}
+          pathToImg={'/img/securearea.jpg'}
+          pathToImgSP={'/img/secureareaSP.jpg'}
           displayPattern={'01'}
         />
       </div>

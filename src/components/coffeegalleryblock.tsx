@@ -112,7 +112,7 @@ export const GalleryBlockCmp3Images = ({
         </div>
         <div
           style={{
-            height: 238,
+            // height: 238,
             // width: '40%',
             backgroundColor: 'black',
             flex: 1,

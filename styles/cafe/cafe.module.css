@@ -1510,6 +1510,10 @@ a.mapAppButton:visited {
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
+  @media (max-width: 768px) {
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+  }
 }
 
 .moresecondsectionwrapper {
@@ -1520,6 +1524,10 @@ a.mapAppButton:visited {
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
+  @media (max-width: 768px) {
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+  }
 
   /* padding-right: 128px; */
 }
@@ -1551,6 +1559,7 @@ a.mapAppButton:visited {
   }
 }
 
+/* ラベル部分 */
 .planLabel {
   height: 88px;
   margin-top: 40px;
@@ -1565,6 +1574,7 @@ a.mapAppButton:visited {
   }
 }
 
+/* エリア紹介　左側のテキスト */
 .planLabelTextLeft {
   padding-left: 19px;
   /* font: normal normal bold 19px/46px Noto Sans JP Thin; */
@@ -1586,6 +1596,7 @@ a.mapAppButton:visited {
   }
 }
 
+/*エリア紹介 右側の英字部分 */
 .planLabelTextRight {
   /* margin-top: -120px; */
   margin-left: auto;
@@ -1618,20 +1629,40 @@ a.mapAppButton:visited {
   }
 }
 
+/* エリアの外枠 */
 .areaBlock {
   /*  */
   display: flex;
   background-color: #000000;
   margin-bottom: 10px;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 }
 
+.areaBlockReverse {
+  /*  */
+  display: flex;
+  background-color: #000000;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+/* エリアのテキスト部分の外枠 */
 .areaTextLabelBlack {
-  width: 447px;
+  /* width: 447px; */
   /* height: 410px; */
   /* background: #c53131 0% 0% no-repeat padding-box; */
   position: relative;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
+/* エリアのテキスト部分 */
 .areaText {
   padding-left: 68px;
   /* flex: 1; */
@@ -1642,46 +1673,95 @@ a.mapAppButton:visited {
   /* position: absolute; */
   /* margin-top: -95px; */
   background-color: rgba(0, 0, 0);
+  @media screen and (max-width: 768px) {
+    padding-left: 19px;
+    padding-top: 30px;
+  }
 }
 
+/* エリア説明 */
 .paragramOfArea {
-  font: normal normal normal 16px Noto Sans JP Thin;
+  /* font: normal normal normal 16px Noto Sans JP Thin; */
+
+  font-size: 16px;
+  font-family: 'Noto Sans JP Thin';
+
   letter-spacing: 2.67px;
 
   /* background-color: #d7baf7; */
   margin-top: -16px;
 }
 
+.paragramOfArea p {
+  font-size: 1em;
+  @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    margin-bottom: 0px;
+  }
+}
+
+/* エリア名 */
 .areaItemName {
-  font: normal normal normal 32px Noto Serif Myanmar;
+  /* font: normal normal normal 32px Noto Serif Myanmar; */
+
+  font-size: 32px;
+  font-family: 'Noto Serif Myanmar';
   letter-spacing: 0px;
   margin-top: -32px;
+  @media screen and (max-width: 768px) {
+    margin-top: 0px;
+  }
 
   /* background-color: #77be8b; */
 }
 
+.areaItemName p {
+  font-size: 1em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    margin: 0px;
+  }
+}
+
+/* エリア画像 */
 .areaBlockImg {
   width: 487px;
   height: 267px;
   margin: auto 0 auto auto;
   /* background-color: #000000; */
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
 }
 
 /* 逆パターン */
-
 .areaTextLabelBlackReverse {
-  width: 447px;
+  /* width: 447px; */
   /* height: 410px; */
-  margin: auto 0 auto auto;
+  /* margin: auto 0 auto auto; */
   /* background: #c53131 0% 0% no-repeat padding-box; */
   position: relative;
+  padding-right: 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
-
+/* 逆パターン　画像 */
 .areaBlockImgReverse {
   width: 487px;
   height: 267px;
-  /* margin: auto 0 auto auto; */
+  margin: auto auto auto 0;
   /* background-color: #ac2a2a; */
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
 }
 
 .usagePC {
@@ -1703,12 +1783,17 @@ a.mapAppButton:visited {
   height: 60px;
 }
 
+/* moreページの３セクション全体 */
 .morethirdsectionwrapper {
   margin-top: -65px;
   /* padding-bottom: 100px; */
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
+  @media (max-width: 768px) {
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+  }
 }
 
 /*メニューページ  */

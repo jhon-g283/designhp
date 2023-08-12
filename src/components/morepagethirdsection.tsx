@@ -34,7 +34,7 @@ const MorethirdSection = () => {
           widthOfBorder={300}
         />
         <div className={styles.morePageGalleryArea}>
-          {/* a */}
+          {/* A */}
           <GalleryBlockCmp3Images
             imagePath1="/img/A1.png"
             imagePath2="/img/A2.png"
@@ -53,7 +53,7 @@ const MorethirdSection = () => {
             imagePath1="/img/C1.png"
             imagePath2="/img/C2.png"
             imagePath3="/img/C3.png"
-            width1="60"
+            width1="63"
             flg={true}
           />
           {/* D */}
