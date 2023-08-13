@@ -1636,7 +1636,7 @@ a.mapAppButton:visited {
   background-color: #000000;
   margin-bottom: 10px;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -1645,7 +1645,6 @@ a.mapAppButton:visited {
   display: flex;
   background-color: #000000;
   margin-bottom: 10px;
-  display: flex;
   flex-direction: row-reverse;
   @media screen and (max-width: 768px) {
     display: block;
@@ -1659,6 +1658,7 @@ a.mapAppButton:visited {
   position: relative;
   @media screen and (max-width: 768px) {
     width: 100%;
+    max-width: 80vh;
   }
 }
 
@@ -1772,15 +1772,17 @@ a.mapAppButton:visited {
   width: 235px;
   height: 73px;
   margin: auto 10px auto auto;
-}
-
-.usageSP {
-  display: none;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 /* スペース用　エリア使用量 */
 .spaceDivUsage {
   height: 60px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 /* moreページの３セクション全体 */

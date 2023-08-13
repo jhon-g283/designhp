@@ -12,6 +12,7 @@ const UsageTableCmp = () => {
           height={200}
           alt="Your Image"
           layout="responsive"
+          className={styles.imgPC}
         ></Image>
         <div className={styles.specialPanel}>
           <Image
@@ -20,26 +21,19 @@ const UsageTableCmp = () => {
             height={200}
             alt="Your Image"
             layout="responsive"
+            className={styles.imgPC}
           ></Image>
         </div>
       </div>
-      <div className={styles.usageSP}>
+      <div>
         <Image
-          src={'/img/usage.svg'}
+          src={'/img/usageSP.svg'}
           width={200} // Specify different width values based on device or viewport size
           height={200}
           alt="Your Image"
           layout="responsive"
+          className={styles.imgSP}
         ></Image>
-        <div className={styles.specialPanel}>
-          <Image
-            src={'/img/special.svg'}
-            width={200} // Specify different width values based on device or viewport size
-            height={200}
-            alt="Your Image"
-            layout="responsive"
-          ></Image>
-        </div>
       </div>
     </>
   );
