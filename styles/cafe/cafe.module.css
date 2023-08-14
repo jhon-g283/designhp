@@ -353,7 +353,7 @@ p.shopname {
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
     margin-top: -3px;
@@ -586,7 +586,7 @@ p.shopname {
   padding-right: 200px; */
 
   margin-left: min(calc(30%), 502px);
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-left: 0px;
     margin-top: -350px;
     width: 320px;
@@ -785,7 +785,7 @@ p.shopname {
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
     margin-top: 0px;
@@ -1084,7 +1084,7 @@ p.menuNumberSP {
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
     margin-top: 0px;
@@ -1510,7 +1510,7 @@ a.mapAppButton:visited {
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media (max-width: 768px) {
+  @media screen and(max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
   }
@@ -1524,7 +1524,7 @@ a.mapAppButton:visited {
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media (max-width: 768px) {
+  @media screen and(max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
   }
@@ -1792,7 +1792,7 @@ a.mapAppButton:visited {
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
   }
@@ -1806,6 +1806,10 @@ a.mapAppButton:visited {
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
+  @media (max-width: 768px) {
+    padding-left: min(calc(8%), 28px);
+    padding-right: min(calc(8%), 28px);
+  }
 }
 
 .menutopviewTitle {
@@ -1824,6 +1828,7 @@ a.mapAppButton:visited {
 
   letter-spacing: 1.3px;
   color: #000000;
+
   /* background-color: bisque; */
 }
 
@@ -1831,6 +1836,10 @@ a.mapAppButton:visited {
   padding-left: 55%;
   margin: 0;
   color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 0px;
+  }
 }
 
 .menutopviewSubTitle {

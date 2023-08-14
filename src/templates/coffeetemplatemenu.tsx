@@ -24,6 +24,7 @@ const Top = () => {
       <TopImage
         useClassName={styles.topviewimg}
         imagePath={'/img/menupagebackground.png'}
+        imagePathSP={'/img/menupagebackgroundSP.jpg'}
       />
 
       <TopViewTextMenuCmp
