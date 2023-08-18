@@ -1893,17 +1893,38 @@ p.menutopviewSubTitle {
   margin-bottom: 2px;
   text-align: center;
 
+  font-size: 16px;
+  font-family: Hei;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   background: rgba(0, 0, 0, 0.76);
+  @media screen and (max-width: 768px) {
+    width: 20vh;
+    max-width: 130px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    /* width: 130px; */
+  }
 }
 
 .menuTitleLabelUnderbar {
   width: 253px;
   border-bottom: solid rgba(0, 0, 0, 0.76) 2px;
+
+  @media screen and (max-width: 768px) {
+    width: 20vh;
+    max-width: 130px;
+  }
 }
 
 .menuTitleLabel p {
+  font-size: 1em;
   margin: 0;
   border-radius: 2px;
+  @media screen and (max-width: 768px) {
+    font-size: 0.6em;
+  }
 }
 
 .itemPanelImg {
