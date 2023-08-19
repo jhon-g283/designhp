@@ -1930,18 +1930,47 @@ p.menutopviewSubTitle {
 .itemPanelImg {
   width: 359px;
   height: 267px;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: auto;
+    padding-bottom: 0px;
+    background-color: #6e13d0;
+  }
 }
 
 .menuItemText {
   padding-left: 25px;
 
-  font: normal normal normal 16px Noto Sans JP Thin;
+  /* font: normal normal normal 16px Noto Sans JP Thin; */
+  font-size: 16px;
+  font-family: Noto Sans JP Thin;
   letter-spacing: 0px;
+
+  @media (max-width: 768px) {
+    /* padding-left: 5px; */
+    /* position: relative; */
+
+    /* font: normal normal normal 6px Noto Sans JP Thin; */
+    padding-left: 5px;
+    letter-spacing: 0px;
+  }
 }
 
 .menuItemText p {
   margin: 5px;
   letter-spacing: 2.67px;
+
+  font-size: 1em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.5em;
+    line-height: 0.8em;
+    /* padding-left: 5px; */
+    /* position: relative; */
+    /* margin: 5px; */
+    /* letter-spacing: 2.67px; */
+  }
 }
 
 .menuListWrap {
@@ -1954,28 +1983,29 @@ p.menutopviewSubTitle {
   @media (max-width: 768px) {
     flex-wrap: wrap; /* 行を折り返す */
     justify-content: center; /* 要素を中央に配置 */
+    padding-bottom: 50px;
   }
 }
 
 /* あとで移植すること */
 @media (max-width: 768px) {
-  .itemPanelImg {
+  /* .itemPanelImg {
     width: 150px;
     height: 120px;
     padding-bottom: -10px;
     background-color: #6e13d0;
-  }
+  } */
 
-  .menuItemText {
+  /* .menuItemText {
     padding-left: 5px;
     position: relative;
 
     font: normal normal normal 6px Noto Sans JP Thin;
     letter-spacing: 0px;
-  }
+  } */
 
-  .menuItemText p {
+  /* .menuItemText p {
     margin: 5px;
     letter-spacing: 2.67px;
-  }
+  } */
 }
