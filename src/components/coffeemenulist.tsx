@@ -30,14 +30,15 @@ const ItemPanel = ({ imagePath, menuName, menuPrice }: PropsItemPanel) => {
   );
   return (
     <>
-      <div>
+      <div className={styles.itemBox}>
         <div className={styles.itemPanelImg}>
           <Image
             src={imagePath}
-            width={180} // Specify different width values based on device or viewport size
-            height={135}
+            // width={180} // Specify different width values based on device or viewport size
+            // height={135}
             alt="Your Image"
-            layout="responsive"
+            fill={true}
+            // layout="responsive"
           ></Image>
         </div>
         <div>

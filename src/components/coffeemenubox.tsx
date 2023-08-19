@@ -60,10 +60,11 @@ const MenuBlock = ({
             </div>
             <Image
               src={pathToImg}
-              width={200} // Specify different width values based on device or viewport size
-              height={200}
+              // width={200} // Specify different width values based on device or viewport size
+              // height={200}
               alt="Your Image"
-              layout="responsive"
+              // layout="responsive"
+              fill={true}
             ></Image>
           </div>
 
@@ -107,6 +108,7 @@ const MenuBlock = ({
               height={200}
               alt="Your Image"
               layout="responsive"
+              fill={true}
             ></Image>
           </div>
         </div>
