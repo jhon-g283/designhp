@@ -11,23 +11,27 @@
   font-family: 'Noto Nastaliq Urdu';
   font-weight: bold;
   font-size: 24px;
+  line-height: 24px;
   letter-spacing: 0.13em;
 
   text-align: left;
   color: #ffffff;
+  background-color: black;
   @media screen and (max-width: 768px) {
-    height: 40px;
+    height: 50px;
   }
 }
 .headerarea h1 {
   height: 72px;
   font-size: 1em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
 
   color: #ffffff;
 
   padding-left: 30px;
   margin: 0;
-  background-color: black;
+
   @media screen and (max-width: 768px) {
     font-size: 0.8em;
   }
@@ -57,13 +61,17 @@
 
 .footer h2 {
   margin-top: 0px;
+  padding-top: 1em;
 
   /* font: normal normal bold 24px Noto Nastaliq Urdu; */
   font-size: 1em;
+  line-height: 1em;
   letter-spacing: 3.05px;
   color: #ffffff;
   @media screen and (max-width: 768px) {
+    line-height: 0.8em;
     font-size: 0.8em;
+    /* padding-top: 1em; */
   }
 }
 
@@ -883,6 +891,7 @@ p.shopname {
   @media (max-width: 768px) {
     /* width: 150px; */
     margin: 0 0 auto auto;
+    max-width: 160px;
     background-color: #827171;
   }
   /* background-color: #827171; */
