@@ -52,10 +52,11 @@ const MenuBlock = ({
               {/* menu01Logo */}
               <Image
                 src={'/img/menu01Logo.svg'}
-                width={200} // Specify different width values based on device or viewport size
-                height={200}
+                // width={200} // Specify different width values based on device or viewport size
+                // height={200}
                 alt="Your Image"
-                layout="responsive"
+                // layout="responsive"
+                fill={true}
               ></Image>
             </div>
             <Image

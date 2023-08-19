@@ -908,6 +908,7 @@ p.shopname {
   @media (max-width: 768px) {
     /* width: 150px; */
     margin: 0 0 auto auto;
+    max-width: 160px;
     background-color: #827171;
   }
   /* background-color: #827171; */
@@ -1011,9 +1012,13 @@ p.shopname {
     /* width: 50px; */
     width: 12vw; /* 98/768 */
     max-height: 100px;
-    max-width: 90px;
+    max-width: 45px;
     background-color: #4bed9c;
   }
+}
+
+.menuNumWrapperSP img {
+  position: relative !important;
 }
 
 .menuNumWrapper p {
