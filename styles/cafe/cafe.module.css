@@ -867,6 +867,7 @@ p.shopname {
     background: #000000;
     height: 35vh;
     max-height: 300px;
+    max-width: 400px;
     margin-bottom: 10px;
   }
 }
@@ -1511,11 +1512,12 @@ a.mapAppButton:visited {
   background-color: #ffffff;
   font-style: normal;
   font-weight: bold;
-  font-family: Noto Sans JP Thin;
+  font-family: 'Noto Sans JP Thin';
   font-size: 19px;
   line-height: 46px;
   @media screen and (max-width: 768px) {
     width: 100%;
+    max-width: 80vh;
     padding-left: 0px;
     padding-bottom: 0px;
   }
@@ -1596,6 +1598,22 @@ a.mapAppButton:visited {
 
   /* padding-right: 128px; */
 }
+.moreTextBlackWhiteBack2 {
+  width: 341px;
+  height: 37px;
+  padding-left: 26px;
+  /* padding-bottom: 9px; */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 39px;
+  font-family: 'Noto Sans JP Thin';
+
+  @media screen and (max-width: 768px) {
+    padding-left: 0px;
+    width: 100%;
+  }
+}
 
 .moreTextBlackWhiteBack p,
 .moreTextBlackWhiteBack2 p {
@@ -1607,21 +1625,6 @@ a.mapAppButton:visited {
 
   /* font: normal normal bold 16px/39px Noto Sans JP Thin; */
   /* letter-spacing: 2.67px; */
-}
-
-.moreTextBlackWhiteBack2 {
-  width: 341px;
-  height: 37px;
-  padding-left: 26px;
-  /* padding-bottom: 9px; */
-  background: #ffffff 0% 0% no-repeat padding-box;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 39px;
-  @media screen and (max-width: 768px) {
-    padding-left: 0px;
-    width: 100%;
-  }
 }
 
 /* ラベル部分 */
