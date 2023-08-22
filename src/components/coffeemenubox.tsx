@@ -15,6 +15,7 @@ interface Props {
   textOfMenuprice: string;
   pathToImg: string;
   pathToImgSP?: string;
+  pathToNumberImg?: string;
   displayPattern: string;
 }
 
@@ -29,6 +30,8 @@ const MenuBlock = ({
   textOfMenuNameNum,
   textOfMenuprice,
   pathToImg,
+  pathToImgSP,
+  pathToNumberImg,
   displayPattern,
 }: Props) => {
   return displayPattern == '01' ? (
@@ -44,14 +47,15 @@ const MenuBlock = ({
             menuNum={textOfMenuNameNum}
             price={textOfMenuprice}
             classNameArray={['11', '22']}
+            pathToNomberImage={pathToNumberImg || '/img/menu01Logo.svg'}
           />
           <div className={classNameOfBoxImg}>
             <div className={styles.menuNumWrapperSP} style={{ color: 'white' }}>
               {/* <p>MENU</p>
               <p className={styles.menuNumberSP}>{textOfMenuNameNum}</p> */}
-              {/* menu01Logo */}
+              {/* スマホ用 */}
               <Image
-                src={'/img/menu01Logo.svg'}
+                src={pathToNumberImg || '/img/menu01Logo.svg'}
                 // width={200} // Specify different width values based on device or viewport size
                 // height={200}
                 alt="Your Image"
@@ -101,6 +105,7 @@ const MenuBlock = ({
             menuNum={textOfMenuNameNum}
             price={textOfMenuprice}
             classNameArray={['11', '22']}
+            pathToNomberImage={'/img/menu02Logo.svg'}
           />
           <div className={styles.menuBlockImgOnlySp}>
             <Image
@@ -188,6 +193,7 @@ export const MenuBlockForArea = ({
             menuNum={textOfMenuNameNum}
             price={textOfMenuprice}
             classNameArray={['11', '22']}
+            pathToNomberImage={'/img/menu03Logo.svg'}
           />
           <div className={styles.menuBlockImgOnlySp}>
             <Image

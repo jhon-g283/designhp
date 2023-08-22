@@ -81,6 +81,7 @@ const TopSecondSection = () => {
           textOfMenuNameNum={'01'}
           textOfMenuprice={'500'}
           pathToImg={'/img/BrendCoffee.png'}
+          pathToNumberImg={'/img/menu01Logo.svg'}
           displayPattern={'01'}
         />
 
@@ -94,6 +95,7 @@ const TopSecondSection = () => {
           textOfMenuNameNum={'01'}
           textOfMenuprice={'600'}
           pathToImg={'/img/PanCake.png'}
+          pathToNumberImg={'/img/menu02Logo.svg'}
           displayPattern={'01'}
         />
         {/* 
@@ -120,6 +122,7 @@ const TopSecondSection = () => {
           textOfMenuNameNum={'03'}
           textOfMenuprice={'700'}
           pathToImg={'/img/Sandwitch.png'}
+          pathToNumberImg={'/img/menu03Logo.svg'}
           displayPattern={'01'}
         />
 

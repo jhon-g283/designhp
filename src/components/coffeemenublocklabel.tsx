@@ -10,6 +10,7 @@ interface Props {
   price: string;
   menuNum: string;
   classNameArray?: string[];
+  pathToNomberImage?: string;
 }
 
 // メニュー部分の説明文（ラベル）用のコンポーネント
@@ -22,6 +23,7 @@ const MenuBoxLabel = ({
   price,
   menuNum,
   classNameArray,
+  pathToNomberImage,
 }: Props) => {
   const menuJp = <p>{menuNameJp}</p>;
   const menuEn = <p>{menuNameEn}</p>;
@@ -36,7 +38,7 @@ const MenuBoxLabel = ({
               {/* <p>MENU</p>
               <p className={styles.menuNumber}>{menuNum}</p> */}
               <Image
-                src={'/img/menu01Logo.svg'}
+                src={pathToNomberImage || '/img/menu01Logo.svg'}
                 width={200} // Specify different width values based on device or viewport size
                 height={200}
                 alt="Your Image"
