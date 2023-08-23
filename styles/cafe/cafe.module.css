@@ -883,6 +883,7 @@ p.shopname {
     background: #000000;
     height: 35vh;
     max-height: 300px;
+    max-width: 400px;
     margin-bottom: 10px;
   }
 }
