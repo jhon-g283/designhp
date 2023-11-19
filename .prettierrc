@@ -3,6 +3,7 @@
     {
       "files": "*.tsx",
       "options": {
+        "semi": true,
         "singleQuote": true,
         "tabWidth": 2
       }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
 import MoreButtonComp from './morebutton';
+import InViewWrapper from '../common/observecomponent';
 
 import BackGroundImg from '../../public/img/firstbackbroundimg.png';
 
@@ -169,6 +170,12 @@ const image3Wrapper = (
   </>
 );
 
+// -----
+
+// const testWrap1=InViewWrapper(SectionTitleComp,"","",true,"")
+
+// -----
+
 const TopFirstSection = () => {
   return (
     <>
@@ -195,12 +202,25 @@ const TopFirstSection = () => {
         {image2Wrapper}
         {image3Wrapper}
 
-        <MoreButtonComp
+        <InViewWrapper
+          afterClass="testA"
+          beforeClass="testB"
+          once={true}
+          rootMargin="100px"
+        >
+          <MoreButtonComp
+            text={'MORE'}
+            useClassName={styles.moreWrapper}
+            fontColor={'white'}
+            linkUrl={'./cafemorepage'}
+          />
+        </InViewWrapper>
+        {/* <MoreButtonComp
           text={'MORE'}
           useClassName={styles.moreWrapper}
           fontColor={'white'}
           linkUrl={'./cafemorepage'}
-        />
+        /> */}
       </div>
     </>
   );

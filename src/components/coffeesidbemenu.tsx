@@ -90,7 +90,7 @@ const SideMenuBar = () => {
             </div>
             <div className={styles.snsicon}>
               <Image
-                src="/img/maillogo.png"
+                src="/img/mailLogo.png"
                 width={23} // Specify different width values based on device or viewport size
                 height={22}
                 alt="Your Image"
