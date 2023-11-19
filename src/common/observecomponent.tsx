@@ -69,6 +69,8 @@ const WrapWithRefComponent = forwardRef<
     </span>
   );
 
+  // const clone = React.cloneElement(props.children)
+
   return animationComponent;
 });
 

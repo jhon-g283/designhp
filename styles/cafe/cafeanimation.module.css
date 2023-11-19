@@ -1,0 +1,60 @@
+@keyframes feedinTest {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.feedinTestA {
+  opacity: 1;
+}
+
+.feedinTestB {
+  animation: feedinTest 1s;
+}
+
+.slideinLeftA {
+  display: inline-block;
+  animation: slideinLeft 2s;
+}
+
+.slideinLeftB {
+  opacity: 0;
+  .test {
+    color: antiquewhite;
+  }
+}
+
+@keyframes slideinLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+    width: 0%;
+    .topFirstWiteBack {
+      background-color: rgb(238, 216, 216);
+    }
+  }
+
+  50% {
+    .topFirstWiteBack {
+      background-color: rgb(219, 12, 12);
+    }
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    width: 200px;
+    .topFirstWiteBack {
+      background-color: rgb(0, 0, 0);
+    }
+
+    /* background-color: rgba(255, 255, 255, 0.436); */
+  }
+}

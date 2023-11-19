@@ -1,6 +1,7 @@
 // Topページの最初のセクション
 
 import styles from '../../styles/cafe/cafe.module.css';
+import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
 import Image from 'next/image';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
@@ -15,9 +16,16 @@ import BackGroundImg from '../../public/img/firstbackbroundimg.png';
 
 const TextBlackConsept = (
   <>
-    <div className={styles.topFirstWiteBack}>
-      <p>Concept</p>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.slideinLeftA}
+      beforeClass={''}
+      once={true}
+      rootMargin="100px"
+    >
+      <div className={styles.topFirstWiteBack}>
+        <p>Concept</p>
+      </div>
+    </InViewWrapper>
   </>
 );
 
@@ -170,12 +178,6 @@ const image3Wrapper = (
   </>
 );
 
-// -----
-
-// const testWrap1=InViewWrapper(SectionTitleComp,"","",true,"")
-
-// -----
-
 const TopFirstSection = () => {
   return (
     <>
@@ -203,8 +205,8 @@ const TopFirstSection = () => {
         {image3Wrapper}
 
         <InViewWrapper
-          afterClass="testA"
-          beforeClass="testB"
+          afterClass={stylesAnimation.feedinTestB}
+          beforeClass={stylesAnimation.feedinTestA}
           once={true}
           rootMargin="100px"
         >
