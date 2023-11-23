@@ -32,12 +32,20 @@
   }
 }
 
+.slideinLeftC {
+  animation: colorChange1 1s;
+}
+
 @keyframes slideinLeft {
   0% {
     transform: translateX(-50px);
     opacity: 0;
     width: 0%;
     .topFirstWiteBack {
+      background-color: rgb(238, 216, 216);
+    }
+    p.test * {
+      color: rgb(150, 150, 255);
       background-color: rgb(238, 216, 216);
     }
   }
@@ -51,9 +59,36 @@
     transform: translateX(0px);
     opacity: 1;
     width: 200px;
+    p.test * {
+      color: blue;
+      background-color: rgb(238, 216, 216);
+    }
     .topFirstWiteBack {
       background-color: rgb(0, 0, 0);
     }
+
+    /* background-color: rgba(255, 255, 255, 0.436); */
+  }
+}
+
+@keyframes colorChange1 {
+  0% {
+    opacity: 0;
+    background-color: rgb(238, 216, 216);
+    transform: translateX(-50px);
+    color: rgb(150, 150, 255);
+  }
+
+  50% {
+    background-color: rgb(106, 35, 35);
+    opacity: 0.4;
+    color: rgb(217, 210, 12);
+  }
+  100% {
+    background-color: rgb(131, 116, 116);
+    opacity: 0.7;
+    color: rgb(105, 105, 136);
+    transform: translateX(0px);
 
     /* background-color: rgba(255, 255, 255, 0.436); */
   }

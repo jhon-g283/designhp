@@ -23,7 +23,14 @@ const TextBlackConsept = (
       rootMargin="100px"
     >
       <div className={styles.topFirstWiteBack}>
-        <p>Concept</p>
+        <InViewWrapper
+          afterClass={stylesAnimation.slideinLeftC}
+          beforeClass={''}
+          once={true}
+          rootMargin="100px"
+        >
+          <p>Concept</p>
+        </InViewWrapper>
       </div>
     </InViewWrapper>
   </>
