@@ -34,6 +34,7 @@ const ExplainSectionComp = ({
       // display: block;
       // width: ${width}px;
       height: 2px;
+      top:-0.3em;
       position: absolute;
     }
   }

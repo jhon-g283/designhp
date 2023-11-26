@@ -17,14 +17,14 @@ import BackGroundImg from '../../public/img/firstbackbroundimg.png';
 const TextBlackConsept = (
   <>
     <InViewWrapper
-      afterClass={stylesAnimation.slideinLeftA}
+      afterClass={stylesAnimation.slideinLeft1}
       beforeClass={''}
       once={true}
       rootMargin="100px"
     >
       <div className={styles.topFirstWiteBack}>
         <InViewWrapper
-          afterClass={stylesAnimation.slideinLeftC}
+          afterClass={stylesAnimation.textFeedIn}
           beforeClass={''}
           once={true}
           rootMargin="100px"
@@ -38,12 +38,26 @@ const TextBlackConsept = (
 
 const TextBalckFor = (
   <>
-    <div className={styles.topFirstWiteBack2}>
-      <p>
-        <span className={styles.forCreater}>”クリエイターのため”</span>
-        に作られたカフェ
-      </p>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.slideinLeft2}
+      beforeClass={''}
+      once={true}
+      rootMargin="100px"
+    >
+      <div className={styles.topFirstWiteBack2}>
+        <InViewWrapper
+          afterClass={stylesAnimation.textFeedIn}
+          beforeClass={''}
+          once={true}
+          rootMargin="100px"
+        >
+          <p>
+            <span className={styles.forCreater}>”クリエイターのため”</span>
+            に作られたカフェ
+          </p>
+        </InViewWrapper>
+      </div>
+    </InViewWrapper>
   </>
 );
 
