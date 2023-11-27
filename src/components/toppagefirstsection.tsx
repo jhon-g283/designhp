@@ -20,14 +20,14 @@ const TextBlackConsept = (
       afterClass={stylesAnimation.slideinLeft1}
       beforeClass={''}
       once={true}
-      rootMargin="100px"
+      rootMargin="10px"
     >
       <div className={styles.topFirstWiteBack}>
         <InViewWrapper
           afterClass={stylesAnimation.textFeedIn}
           beforeClass={''}
           once={true}
-          rootMargin="100px"
+          rootMargin="10px"
         >
           <p>Concept</p>
         </InViewWrapper>
@@ -42,14 +42,14 @@ const TextBalckFor = (
       afterClass={stylesAnimation.slideinLeft2}
       beforeClass={''}
       once={true}
-      rootMargin="100px"
+      rootMargin="10px"
     >
       <div className={styles.topFirstWiteBack2}>
         <InViewWrapper
           afterClass={stylesAnimation.textFeedIn}
           beforeClass={''}
           once={true}
-          rootMargin="100px"
+          rootMargin="10px"
         >
           <p>
             <span className={styles.forCreater}>”クリエイターのため”</span>
@@ -79,26 +79,39 @@ const ListWite = (
 
 const BlackBackGroundDiv = (
   <>
-    <div className={styles.topFirstBlackBack}>
-      {TextWite}
-      {ListWite}
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.slideinLeft2}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.topFirstBlackBack}>
+        {TextWite}
+        {ListWite}
+      </div>
+    </InViewWrapper>
   </>
 );
 
 // ToDo
 const Image1 = (
   <>
-    <div className={styles.sectionImage1}>
-      <Image
-        src="/img/FirstSectionImg1.png"
-        width={200} // Specify different width values based on device or viewport size
-        height={200}
-        alt="Your Image"
-        layout="responsive"
-        // className={styles.imgPC}
-      ></Image>
-      {/* <Image
+    <InViewWrapper
+      afterClass={stylesAnimation.feedinTestB}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.sectionImage1}>
+        <Image
+          src="/img/FirstSectionImg1.png"
+          width={200} // Specify different width values based on device or viewport size
+          height={200}
+          alt="Your Image"
+          layout="responsive"
+          // className={styles.imgPC}
+        ></Image>
+        {/* <Image
         src="/img/FirstSectionImg1SP.jpg"
         width={200} // Specify different width values based on device or viewport size
         height={200}
@@ -106,7 +119,8 @@ const Image1 = (
         layout="responsive"
         className={styles.imgSP}
       ></Image> */}
-    </div>
+      </div>
+    </InViewWrapper>
   </>
 );
 const Image1Wrapper = (
@@ -122,24 +136,31 @@ const Image1Wrapper = (
 
 const Image2 = (
   <>
-    <div className={styles.sectionImage2}>
-      <Image
-        src="/img/FirstSectionImg2-2.png"
-        width={500} // Specify different width values based on device or viewport size
-        height={400}
-        alt="Your Image"
-        layout="responsive"
-        className={styles.imgPC}
-      ></Image>
-      <Image
-        src="/img/FirstSectionImg2SP.jpg"
-        width={200} // Specify different width values based on device or viewport size
-        height={200}
-        alt="Your Image"
-        layout="responsive"
-        className={styles.imgSP}
-      ></Image>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.imgFeedIn2}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.sectionImage2}>
+        <Image
+          src="/img/FirstSectionImg2-2.png"
+          width={500} // Specify different width values based on device or viewport size
+          height={400}
+          alt="Your Image"
+          layout="responsive"
+          className={styles.imgPC}
+        ></Image>
+        <Image
+          src="/img/FirstSectionImg2SP.jpg"
+          width={200} // Specify different width values based on device or viewport size
+          height={200}
+          alt="Your Image"
+          layout="responsive"
+          className={styles.imgSP}
+        ></Image>
+      </div>
+    </InViewWrapper>
   </>
 );
 

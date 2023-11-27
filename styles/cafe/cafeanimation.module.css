@@ -4,7 +4,7 @@
   }
 
   60% {
-    opacity: 0.6;
+    opacity: 0.4;
   }
 
   100% {
@@ -17,14 +17,16 @@
 }
 
 .feedinTestB {
-  animation: feedinTest 1s;
+  animation: feedinTest 0.6s;
 }
 
+/* Conscept */
 .slideinLeft1 {
   display: inline-block;
   animation: slideinLeft 1s ease-in;
 }
 
+/* ”クリエイターのため”に作られたカフェ */
 .slideinLeft2 {
   display: block;
   animation: slideinLeft 1.5s ease-in 0s;
@@ -37,13 +39,25 @@
   }
 }
 
+/* トップ画面イメージ */
+.topImage {
+  animation: imageEffect 1s;
+}
+
+/* テキスト部分のフェードイン */
 .textFeedIn {
   animation: animationTextFeedin1 1s;
 }
 
-/* トップ画面イメージ */
-.topImage {
-  animation: imageEffect 1s;
+/* 画像のフェードイン */
+.imgFeedIn {
+  /* テキストと同じフェードインを使用 */
+  animation: animationTextFeedin1 1s;
+}
+
+/*  */
+.imgFeedIn2 {
+  animation: imageFeedIn2 1s;
 }
 
 .topImage::before {
@@ -87,6 +101,7 @@
   50% {
     clip-path: inset(0 50 0 0);
   }
+
   100% {
     /* transform: translateX(0px) scaleX(1); */
     clip-path: inset(0 0 0 0);
@@ -109,6 +124,7 @@
   }
 }
 
+/* 背景のフェードイン */
 @keyframes imageEffectBackGround {
   0% {
     opacity: 1;
@@ -121,6 +137,24 @@
   100% {
     clip-path: inset(0 0 100% 0);
     opacity: 1;
+
+    /* background-color: rgba(255, 255, 255, 0.436); */
+  }
+}
+
+/* 背景のフェードイン */
+@keyframes imageFeedIn2 {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 30px);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
 
     /* background-color: rgba(255, 255, 255, 0.436); */
   }
