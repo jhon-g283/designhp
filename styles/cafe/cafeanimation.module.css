@@ -23,25 +23,30 @@
 /* Conscept */
 .slideinLeft1 {
   display: inline-block;
-  animation: slideinLeft 1s ease-in;
+  animation: frameSlideinLeftA 1s ease-in;
 }
 
 /* ”クリエイターのため”に作られたカフェ */
 .slideinLeft2 {
   display: block;
-  animation: slideinLeft 1.5s ease-in 0s;
+  animation: frameSlideinLeftA 1.5s ease-in 0s;
 }
 
-.slideinLeftB {
-  opacity: 0;
-  .test {
-    color: antiquewhite;
-  }
+/*  */
+.slideinLeft3 {
+  display: flex;
+  animation: flameSlideinLeftB 1s ease-in;
+}
+
+/*  */
+.slideinRight {
+  display: flex;
+  animation: flameSlideinLeftC 1s ease-in;
 }
 
 /* トップ画面イメージ */
 .topImage {
-  animation: imageEffect 1s;
+  animation: frameImageEffect 1s;
 }
 
 /* テキスト部分のフェードイン */
@@ -55,9 +60,14 @@
   animation: animationTextFeedin1 1s;
 }
 
-/*  */
+/* 画像のフェードイン */
 .imgFeedIn2 {
   animation: imageFeedIn2 1s;
+}
+
+/* 画像のフェードイン */
+.imgFeedIn3 {
+  animation: imageFeedIn3 1.5s;
 }
 
 .topImage::before {
@@ -72,7 +82,8 @@
   opacity: 0;
   background-color: rgb(0, 0, 0);
 }
-@keyframes imageEffect {
+
+@keyframes frameImageEffect {
   /* カーテンを上へスライド */
   0% {
     filter: brightness(0);
@@ -89,7 +100,7 @@
 }
 
 /* 左からスライドイン */
-@keyframes slideinLeft {
+@keyframes frameSlideinLeftA {
   /* マスキングのように左から右へ切り抜きを解除する */
   0% {
     /* transform: translateX(-50px) scaleX(0); */
@@ -109,6 +120,72 @@
   }
 }
 
+/* 左からスライドイン */
+@keyframes flameSlideinLeftB {
+  /* マスキングのように左から右へ切り抜きを解除する */
+  0% {
+    transform: translateX(-30px);
+    /* clip-path: inset(0 100% 0 0); */
+    /* z-index: 100; */
+    /* width: 0%; */
+    opacity: 0;
+  }
+
+  50% {
+    /* clip-path: inset(0 50 0 0); */
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    /* clip-path: inset(0 0 0 0); */
+  }
+}
+
+/* 左からスライドイン */
+@keyframes flameSlideinLeftC {
+  /* マスキングのように左から右へ切り抜きを解除する */
+  0% {
+    transform: translateX(30px);
+    /* clip-path: inset(0 100% 0 0); */
+    /* z-index: 100; */
+    /* width: 0%; */
+    opacity: 0;
+  }
+
+  50% {
+    /* clip-path: inset(0 50 0 0); */
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    /* clip-path: inset(0 0 0 0); */
+  }
+}
+
+/* 左からスライドイン */
+@keyframes flameSlideinRightA {
+  /* マスキングのように左から右へ切り抜きを解除する */
+  0% {
+    transform: translateX(30px);
+    /* clip-path: inset(0 100% 0 0); */
+    /* z-index: 100; */
+    /* width: 0%; */
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+    /* clip-path: inset(0 50 0 0); */
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    /* clip-path: inset(0 0 0 0); */
+  }
+}
 /* テキストをフェードイン */
 @keyframes animationTextFeedin1 {
   0% {
@@ -137,8 +214,6 @@
   100% {
     clip-path: inset(0 0 100% 0);
     opacity: 1;
-
-    /* background-color: rgba(255, 255, 255, 0.436); */
   }
 }
 
@@ -146,7 +221,7 @@
 @keyframes imageFeedIn2 {
   0% {
     opacity: 0;
-    transform: translate(-30px, 30px);
+    transform: translate(-30px, 0px);
   }
 
   50% {
@@ -155,7 +230,21 @@
   100% {
     opacity: 1;
     transform: translate(0px, 0px);
+  }
+}
 
-    /* background-color: rgba(255, 255, 255, 0.436); */
+/* 背景のフェードイン */
+@keyframes imageFeedIn3 {
+  0% {
+    opacity: 0;
+    transform: translate(30px, 0px);
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
 }

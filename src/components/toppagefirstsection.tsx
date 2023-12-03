@@ -166,9 +166,16 @@ const Image2 = (
 
 const TextBlackImage2 = (
   <>
-    <div className={styles.textBlackImage2}>
-      <p>アイデアが湧く癒しの空間</p>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.slideinLeft3}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.textBlackImage2}>
+        <p>アイデアが湧く癒しの空間</p>
+      </div>
+    </InViewWrapper>
   </>
 );
 
@@ -182,32 +189,46 @@ const image2Wrapper = (
 );
 const TextBlackImage3 = (
   <>
-    <div className={styles.textBlackImage3}>
-      <p>シンプルで集中できるスペース</p>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.slideinRight}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.textBlackImage3}>
+        <p>シンプルで集中できるスペース</p>
+      </div>
+    </InViewWrapper>
   </>
 );
 
 const Image3 = (
   <>
-    <div className={styles.sectionImage3}>
-      <Image
-        src="/img/FirstSectionImg3.png"
-        width={200} // Specify different width values based on device or viewport size
-        height={200}
-        alt="Your Image"
-        layout="responsive"
-        className={styles.imgPC}
-      ></Image>
-      <Image
-        src="/img/FirstSectionImg3SP.jpg"
-        width={200} // Specify different width values based on device or viewport size
-        height={200}
-        alt="Your Image"
-        layout="responsive"
-        className={styles.imgSP}
-      ></Image>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.imgFeedIn3}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.sectionImage3}>
+        <Image
+          src="/img/FirstSectionImg3.png"
+          width={200} // Specify different width values based on device or viewport size
+          height={200}
+          alt="Your Image"
+          layout="responsive"
+          className={styles.imgPC}
+        ></Image>
+        <Image
+          src="/img/FirstSectionImg3SP.jpg"
+          width={200} // Specify different width values based on device or viewport size
+          height={200}
+          alt="Your Image"
+          layout="responsive"
+          className={styles.imgSP}
+        ></Image>
+      </div>
+    </InViewWrapper>
   </>
 );
 
