@@ -862,7 +862,7 @@ p.shopname {
 /* メニュー部分の大枠 */
 .menuBlock {
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 
   @media (max-width: 768px) {
     background: #000000;
@@ -891,6 +891,7 @@ p.shopname {
 
 .menuBlockImg {
   margin: auto 0 auto auto;
+
   @media (max-width: 768px) {
     /* width: 150px; */
     margin: 0 0 auto auto;
@@ -903,6 +904,7 @@ p.shopname {
 .menuBlockImg img,
 .menuBlockImgR img {
   position: relative !important;
+  max-height: 410px;
 }
 
 .menuBlockImgR {
@@ -945,7 +947,7 @@ p.shopname {
 
   /* height: 410px; */
   height: 45vh;
-  max-height: 410;
+  max-height: 450px;
   background: #000000;
   position: relative;
   @media screen and (max-width: 768px) {

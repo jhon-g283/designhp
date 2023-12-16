@@ -1,5 +1,6 @@
 // トップページ第２セクション
 import styles from '../../styles/cafe/cafe.module.css';
+import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
 
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
@@ -7,6 +8,7 @@ import MoreButtonComp from './morebutton';
 import Paragraph from './coffeeparagraph';
 import BackGroundImg from '../../public/img/topSecondSectionBackground.png';
 import MenuBlock from './coffeemenubox';
+import InViewWrapper from '../common/observecomponent';
 
 const intoroText = (
   <>
@@ -70,35 +72,47 @@ const TopSecondSection = () => {
           fontColor="black"
           paragramText={intoroText}
         />
+        <InViewWrapper
+          afterClass={stylesAnimation.menuSlideinFromRight}
+          beforeClass={''}
+          once={true}
+          rootMargin="10px"
+        >
+          <MenuBlock
+            classNameOfBox={styles.menuBlock}
+            classNameOfBoxLabel={styles.menuTextLabelBlack}
+            classNameOfBoxImg={styles.menuBlockImg}
+            paragramMenuTextOfLabel={menuText1}
+            textOfMenuNameJp={'ブレンドコーヒー'}
+            textOfMenuNameEn={'Brend Coffee'}
+            textOfMenuNameNum={'01'}
+            textOfMenuprice={'500'}
+            pathToImg={'/img/BrendCoffee.png'}
+            pathToNumberImg={'/img/menu01Logo.svg'}
+            displayPattern={'01'}
+          />
+        </InViewWrapper>
 
-        <MenuBlock
-          classNameOfBox={styles.menuBlock}
-          classNameOfBoxLabel={styles.menuTextLabelBlack}
-          classNameOfBoxImg={styles.menuBlockImg}
-          paragramMenuTextOfLabel={menuText1}
-          textOfMenuNameJp={'ブレンドコーヒー'}
-          textOfMenuNameEn={'Brend Coffee'}
-          textOfMenuNameNum={'01'}
-          textOfMenuprice={'500'}
-          pathToImg={'/img/BrendCoffee.png'}
-          pathToNumberImg={'/img/menu01Logo.svg'}
-          displayPattern={'01'}
-        />
-
-        <MenuBlock
-          classNameOfBox={styles.menuBlockReverse}
-          classNameOfBoxLabel={styles.menuTextLabelBlack}
-          classNameOfBoxImg={styles.menuBlockImgR}
-          paragramMenuTextOfLabel={menuText2}
-          textOfMenuNameJp={'ベリーズパンケーキ'}
-          textOfMenuNameEn={'Berrys Cake'}
-          textOfMenuNameNum={'01'}
-          textOfMenuprice={'600'}
-          pathToImg={'/img/PanCake.png'}
-          pathToNumberImg={'/img/menu02Logo.svg'}
-          displayPattern={'01'}
-        />
-        {/* 
+        <InViewWrapper
+          afterClass={stylesAnimation.menuSlideinFromLeft}
+          beforeClass={''}
+          once={true}
+          rootMargin="10px"
+        >
+          <MenuBlock
+            classNameOfBox={styles.menuBlockReverse}
+            classNameOfBoxLabel={styles.menuTextLabelBlack}
+            classNameOfBoxImg={styles.menuBlockImgR}
+            paragramMenuTextOfLabel={menuText2}
+            textOfMenuNameJp={'ベリーズパンケーキ'}
+            textOfMenuNameEn={'Berrys Cake'}
+            textOfMenuNameNum={'01'}
+            textOfMenuprice={'600'}
+            pathToImg={'/img/PanCake.png'}
+            pathToNumberImg={'/img/menu02Logo.svg'}
+            displayPattern={'01'}
+          />
+          {/* 
         <MenuBlock
           classNameOfBox={styles.menuBlock}
           classNameOfBoxLabel={styles.menuTextLabelBlackReverse}
@@ -111,20 +125,28 @@ const TopSecondSection = () => {
           pathToImg={'/img/PanCake.png'}
           displayPattern={'0'}
         /> */}
+        </InViewWrapper>
 
-        <MenuBlock
-          classNameOfBox={styles.menuBlock}
-          classNameOfBoxLabel={styles.menuTextLabelBlack}
-          classNameOfBoxImg={styles.menuBlockImg}
-          paragramMenuTextOfLabel={menuText3}
-          textOfMenuNameJp={'サンドウィッチセット'}
-          textOfMenuNameEn={'Sandwitch'}
-          textOfMenuNameNum={'03'}
-          textOfMenuprice={'700'}
-          pathToImg={'/img/Sandwitch.png'}
-          pathToNumberImg={'/img/menu03Logo.svg'}
-          displayPattern={'01'}
-        />
+        <InViewWrapper
+          afterClass={stylesAnimation.menuSlideinFromLeft}
+          beforeClass={''}
+          once={true}
+          rootMargin="10px"
+        >
+          <MenuBlock
+            classNameOfBox={styles.menuBlock}
+            classNameOfBoxLabel={styles.menuTextLabelBlack}
+            classNameOfBoxImg={styles.menuBlockImg}
+            paragramMenuTextOfLabel={menuText3}
+            textOfMenuNameJp={'サンドウィッチセット'}
+            textOfMenuNameEn={'Sandwitch'}
+            textOfMenuNameNum={'03'}
+            textOfMenuprice={'700'}
+            pathToImg={'/img/Sandwitch.png'}
+            pathToNumberImg={'/img/menu03Logo.svg'}
+            displayPattern={'01'}
+          />
+        </InViewWrapper>
 
         <MoreButtonComp
           text={'MORE'}

@@ -1,22 +1,32 @@
 // トップページ第３セクション
 import styles from '../../styles/cafe/cafe.module.css';
+import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
+
 import Image from 'next/image';
 import Paragraph from './coffeeparagraph';
 import SectionTitleComp from './coffeesectiontitle';
 import ExplainSectionComp from './coffeeexplainsection';
 import BackGroundImg from '../../public/img/topThirdSectionBackGround.png';
+import InViewWrapper from '../common/observecomponent';
 
 const LocationImage = (
   <>
-    <div className={styles.locationImage}>
-      <Image
-        src="/img/location.png"
-        width={200} // Specify different width values based on device or viewport size
-        height={200}
-        alt="Your Image"
-        layout="responsive"
-      ></Image>
-    </div>
+    <InViewWrapper
+      afterClass={stylesAnimation.locationImageEnd}
+      beforeClass={stylesAnimation.locationImageStart}
+      once={true}
+      rootMargin="10px"
+    >
+      <div className={styles.locationImage}>
+        <Image
+          src="/img/location.png"
+          width={200} // Specify different width values based on device or viewport size
+          height={200}
+          alt="Your Image"
+          layout="responsive"
+        ></Image>
+      </div>
+    </InViewWrapper>
   </>
 );
 
@@ -225,26 +235,33 @@ const TopThirdSection = () => {
           widthOfBorder={150}
         />
 
-        <div className={styles.addressWrapper}>
-          {LocationImage}
-          <div className={styles.addressArea}>
-            {address}
-            {openText}
-            {tellText}
-            {cashText}
+        <InViewWrapper
+          afterClass={stylesAnimation.locationWrapperEnd}
+          beforeClass={stylesAnimation.locationWrapperStart}
+          once={true}
+          rootMargin="10px"
+        >
+          <div className={styles.addressWrapper}>
+            {LocationImage}
+            <div className={styles.addressArea}>
+              {address}
+              {openText}
+              {tellText}
+              {cashText}
+            </div>
+            <div className={styles.addressImgWrapper}>
+              {mapImage}
+              <a
+                className={styles.mapAppButton}
+                target="_blank"
+                href="https://goo.gl/maps/TkLrfcW6kFee2NMz6"
+              >
+                Mapアプリで開く
+              </a>
+              <div className={styles.addressEndDiv}></div>
+            </div>
           </div>
-          <div className={styles.addressImgWrapper}>
-            {mapImage}
-            <a
-              className={styles.mapAppButton}
-              target="_blank"
-              href="https://goo.gl/maps/TkLrfcW6kFee2NMz6"
-            >
-              Mapアプリで開く
-            </a>
-            <div className={styles.addressEndDiv}></div>
-          </div>
-        </div>
+        </InViewWrapper>
       </div>
     </>
   );

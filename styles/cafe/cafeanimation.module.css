@@ -83,6 +83,51 @@
   background-color: rgb(0, 0, 0);
 }
 
+/* メニューのスライドイン左＝＞右 */
+.menuSlideinFromLeft {
+  /* translateが動かないので実装 */
+  display: block;
+
+  animation: animationoMenuSlideInA 1s ease-in;
+}
+
+/* メニューのスライドイン右＝＞左 */
+.menuSlideinFromRight {
+  /* translateが動かないので実装 */
+  display: block;
+
+  animation: animationMenuSlideInB 1s ease-in;
+}
+
+/*当店へのご案内の画像 */
+.locationImageStart {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  background-color: black;
+}
+/* 当店へのご案内の画像 */
+.locationImageEnd {
+  /* translateが動かないので実装 */
+  background-color: black;
+  animation: animationLocationImageFeedin 1s ease-in;
+}
+
+/* 当店へのご案内の外枠 */
+.locationWrapperStart {
+  background-color: black;
+}
+
+/* 当店へのご案内の外枠 */
+.locationWrapperEnd {
+  animation: animationLocationWrapperFeedin 1s ease-in;
+}
+
+.moreWrapperAnimate::before {
+  content: '--';
+}
+
+/* --------------------------------------------- */
+
 @keyframes frameImageEffect {
   /* カーテンを上へスライド */
   0% {
@@ -246,5 +291,66 @@
   100% {
     opacity: 1;
     transform: translate(0px, 0px);
+  }
+}
+
+/* メニューのスライドイン（左＝＞右） */
+@keyframes animationoMenuSlideInA {
+  0% {
+    opacity: 0;
+    transform: translate(-150px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+/* メニューのスライドイン（左＝＞右） */
+@keyframes animationMenuSlideInB {
+  0% {
+    opacity: 0;
+    transform: translate(150px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+/* 店舗イメージの画像をフェードイン */
+@keyframes animationLocationImageFeedin {
+  0% {
+    /* opacity: 0; */
+    filter: brightness(0);
+  }
+
+  50% {
+    /* opacity: 0.6; */
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 店舗イメージの大枠部分ををフェードイン */
+@keyframes animationLocationWrapperFeedin {
+  0% {
+    filter: brightness(0);
+  }
+
+  30% {
+    filter: brightness(0.6);
+  }
+  100% {
+    filter: brightness(1);
   }
 }
