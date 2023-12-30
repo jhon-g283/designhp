@@ -128,7 +128,7 @@ const TopSecondSection = () => {
         </InViewWrapper>
 
         <InViewWrapper
-          afterClass={stylesAnimation.menuSlideinFromLeft}
+          afterClass={stylesAnimation.menuSlideinFromRight}
           beforeClass={''}
           once={true}
           rootMargin="10px"

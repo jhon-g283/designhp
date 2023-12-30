@@ -34,13 +34,13 @@
 
 /*  */
 .slideinLeft3 {
-  display: flex;
+  display: block;
   animation: flameSlideinLeftB 1s ease-in;
 }
 
 /*  */
 .slideinRight {
-  display: flex;
+  display: block; /*スライドインが動かないため実装 */
   animation: flameSlideinLeftC 1s ease-in;
 }
 

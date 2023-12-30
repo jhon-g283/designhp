@@ -136,35 +136,50 @@ const Image1Wrapper = (
 
 const Image2 = (
   <>
-    <InViewWrapper
+    {/* <InViewWrapper
       afterClass={stylesAnimation.imgFeedIn2}
       beforeClass={''}
       once={true}
       rootMargin="10px"
-    >
-      <div className={styles.sectionImage2}>
-        <Image
-          src="/img/FirstSectionImg2-2.png"
-          width={500} // Specify different width values based on device or viewport size
-          height={400}
-          alt="Your Image"
-          layout="responsive"
-          className={styles.imgPC}
-        ></Image>
-        <Image
-          src="/img/FirstSectionImg2SP.jpg"
-          width={200} // Specify different width values based on device or viewport size
-          height={200}
-          alt="Your Image"
-          layout="responsive"
-          className={styles.imgSP}
-        ></Image>
-      </div>
-    </InViewWrapper>
+    > */}
+    <div className={styles.sectionImage2}>
+      <Image
+        src="/img/FirstSectionImg2-2.png"
+        width={500} // Specify different width values based on device or viewport size
+        height={400}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgPC}
+      ></Image>
+      <Image
+        src="/img/FirstSectionImg2SP.jpg"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgSP}
+      ></Image>
+    </div>
+    {/* </InViewWrapper> */}
   </>
 );
 
 const TextBlackImage2 = (
+  <>
+    {/* <InViewWrapper
+      afterClass={stylesAnimation.slideinLeft3}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    > */}
+    <div className={styles.textBlackImage2}>
+      <p>アイデアが湧く癒しの空間</p>
+    </div>
+    {/* </InViewWrapper> */}
+  </>
+);
+
+const image2Wrapper = (
   <>
     <InViewWrapper
       afterClass={stylesAnimation.slideinLeft3}
@@ -172,22 +187,59 @@ const TextBlackImage2 = (
       once={true}
       rootMargin="10px"
     >
-      <div className={styles.textBlackImage2}>
-        <p>アイデアが湧く癒しの空間</p>
+      <div className={styles.image2Wrapper}>
+        {Image2}
+        {TextBlackImage2}
       </div>
     </InViewWrapper>
   </>
 );
-
-const image2Wrapper = (
+const TextBlackImage3 = (
   <>
-    <div className={styles.image2Wrapper}>
-      {Image2}
-      {TextBlackImage2}
+    {/* <InViewWrapper
+      afterClass={stylesAnimation.slideinRight}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    > */}
+    <div className={styles.textBlackImage3}>
+      <p>シンプルで集中できるスペース</p>
     </div>
+    {/* </InViewWrapper> */}
   </>
 );
-const TextBlackImage3 = (
+
+const Image3 = (
+  <>
+    {/* <InViewWrapper
+      afterClass={stylesAnimation.imgFeedIn3}
+      beforeClass={''}
+      once={true}
+      rootMargin="10px"
+    > */}
+    <div className={styles.sectionImage3}>
+      <Image
+        src="/img/FirstSectionImg3.png"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgPC}
+      ></Image>
+      <Image
+        src="/img/FirstSectionImg3SP.jpg"
+        width={200} // Specify different width values based on device or viewport size
+        height={200}
+        alt="Your Image"
+        layout="responsive"
+        className={styles.imgSP}
+      ></Image>
+    </div>
+    {/* </InViewWrapper> */}
+  </>
+);
+
+const image3Wrapper = (
   <>
     <InViewWrapper
       afterClass={stylesAnimation.slideinRight}
@@ -195,49 +247,11 @@ const TextBlackImage3 = (
       once={true}
       rootMargin="10px"
     >
-      <div className={styles.textBlackImage3}>
-        <p>シンプルで集中できるスペース</p>
+      <div className={styles.image3Wrapper}>
+        {TextBlackImage3}
+        {Image3}
       </div>
     </InViewWrapper>
-  </>
-);
-
-const Image3 = (
-  <>
-    <InViewWrapper
-      afterClass={stylesAnimation.imgFeedIn3}
-      beforeClass={''}
-      once={true}
-      rootMargin="10px"
-    >
-      <div className={styles.sectionImage3}>
-        <Image
-          src="/img/FirstSectionImg3.png"
-          width={200} // Specify different width values based on device or viewport size
-          height={200}
-          alt="Your Image"
-          layout="responsive"
-          className={styles.imgPC}
-        ></Image>
-        <Image
-          src="/img/FirstSectionImg3SP.jpg"
-          width={200} // Specify different width values based on device or viewport size
-          height={200}
-          alt="Your Image"
-          layout="responsive"
-          className={styles.imgSP}
-        ></Image>
-      </div>
-    </InViewWrapper>
-  </>
-);
-
-const image3Wrapper = (
-  <>
-    <div className={styles.image3Wrapper}>
-      {TextBlackImage3}
-      {Image3}
-    </div>
   </>
 );
 
@@ -264,7 +278,9 @@ const TopFirstSection = () => {
         />
 
         {Image1Wrapper}
+
         {image2Wrapper}
+
         {image3Wrapper}
 
         <InViewWrapper

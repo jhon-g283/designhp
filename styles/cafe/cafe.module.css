@@ -631,6 +631,7 @@ p.shopname {
   display: flex;
 
   margin-bottom: 0px;
+  /* z-index: 30; */
   /* background-color: #f7faf9; */
 }
 
@@ -641,6 +642,7 @@ p.shopname {
   margin-bottom: 0px;
   /* background-color: #917878; */
   z-index: 9;
+  /* z-index: 29; */
   @media (max-width: 768px) {
     /* width: 290px; */
     width: 30vh;
@@ -660,10 +662,12 @@ p.shopname {
 
   width: 303px;
   height: 49px;
+  /* z-index: 28; */
   /* ここの幅の調整が必要 */
   background: #ffffff 0% 0% no-repeat padding-box;
   @media (max-width: 768px) {
     /* margin: 0px; */
+
     padding: auto;
     width: 303px;
     height: 32px;
@@ -689,6 +693,7 @@ p.shopname {
   align-items: center;
   margin-top: -200px;
   padding-right: 100px;
+  /* z-index: 27; */
 
   @media (max-width: 768px) {
     margin-top: -50px;
@@ -709,6 +714,7 @@ p.shopname {
   @media (max-width: 768px) {
     width: 333px;
     height: 25px;
+
     /* margin-top: -250px; */
     background: none;
     /* padding-bottom: 5px; */
@@ -742,13 +748,15 @@ p.shopname {
   height: 460px;
 
   z-index: 7;
+  /* z-index: 25; */
   margin-top: -50px;
   margin-left: -150px;
 
   @media (max-width: 768px) {
     width: 40vh;
     height: 230px;
-    background-color: #6e13d0;
+
+    /* background: rgba(0, 0, 0, 0.72) 0% 0% no-repeat padding-box; */
   }
 }
 
@@ -770,15 +778,12 @@ p.shopname {
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .moreWrapper img {
     background-color: #4bed9c;
-    /* padding-bottom: 0.5em; */
-    /* margin-bottom: 10px;
-    width: 101px; */
-    /* margin-bottom: 0.2em; */
+ 
   }
-}
+} */
 
 .moreWrapper a {
   /* font: normal normal bold 32px Noto Nastaliq Urdu; */
@@ -896,7 +901,7 @@ p.shopname {
     /* width: 150px; */
     margin: 0 0 auto auto;
     max-width: 160px;
-    background-color: #827171;
+    /* background-color: #827171; */
   }
   /* background-color: #827171; */
 }
@@ -914,7 +919,7 @@ p.shopname {
     /* width: 150px; */
     margin: 0 0 auto auto;
     max-width: 160px;
-    background-color: #827171;
+    /* background-color: #827171; */
   }
   /* background-color: #827171; */
 }
@@ -932,7 +937,7 @@ p.shopname {
 /* スマホ専用 */
 .menuBlockImgOnlySp {
   margin: auto 0 auto auto;
-  background-color: #827171;
+  /* background-color: #827171; */
   @media (min-width: 768px) {
     display: none;
   }
@@ -958,7 +963,7 @@ p.shopname {
 
     height: 100%;
 
-    background-color: #827181;
+    /* background-color: #827181; */
   }
 }
 
@@ -1018,7 +1023,7 @@ p.shopname {
     width: 12vw; /* 98/768 */
     max-height: 100px;
     max-width: 45px;
-    background-color: #4bed9c;
+    /* background-color: #4bed9c; */
   }
 }
 
