@@ -1,3 +1,13 @@
+インストールしたライブラリや実施コマンド
+[CMD]
+npx create-next-app --typescript new-project
+npm install styled-components   
+npm i --save-dev @types/styled-components
+redux
+npm install @reduxjs/toolkit
+npm install react-redux
+
+
 
 SSRレンダリング時のエラー用に追加
 npm install --save-dev babel-plugin-styled-components
