@@ -51,10 +51,6 @@ const WrapWithRefComponent = forwardRef<
   HTMLSpanElement,
   PropsWithChildren<ResultProps>
 >((props, ref) => {
-  console.log(props.children);
-
-  console.log(props.inView);
-
   const flag = props.inView;
   const startClass = props.startClass;
   const animateClass = props.animateClass;

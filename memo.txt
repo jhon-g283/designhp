@@ -13,3 +13,6 @@ SSRレンダリング時のエラー用に追加
 npm install --save-dev babel-plugin-styled-components
 
 https://zenn.dev/syu/articles/1070055effa6e2
+
+https://github.com/rt2zz/redux-persist
+npm i redux-persist

@@ -15,12 +15,14 @@ const initialState: cartData = {
 //問合せURL
 
 const cartReducer = createSlice({
-  name: "cartList",
+  name: "cartInfo",
   initialState: initialState, //初期のStateセット
   reducers: {
     addCart(state, action) {
       // カートボタンで追加した時の処理
       console.log("action addCart ");
+      console.log(state);
+
       //追加するデータ
       const newCount: number =
         state?.totalCountcount != undefined ? state?.totalCountcount + 1 : 0; //カート数をインクリメント
@@ -41,6 +43,10 @@ const cartReducer = createSlice({
 // selectorをエクスポート
 
 export const { addCart, removeCart } = cartReducer.actions; // Action Createrをエクスポート
+
+// 現在のcountの値を取得するためのSelectorをexportする
+export const selectCount = ({ cartInfo }: { cartInfo: cartData }) =>
+  cartInfo.totalCountcount;
 
 // Reducerをエクスポート
 // 読み込み時にはuseSelectで[state.設定したreducer名.State名]で読み込む
