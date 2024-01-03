@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
-import { cartData, itemData } from "../../types";
+import { cartData } from "../../types";
 
 // ToDo カート情報の全量分の追加（Id連番含む）
 //
@@ -14,7 +14,7 @@ const initialState: cartData = {
 
 //問合せURL
 
-const cartReducer = createSlice({
+const cartReducerSlice = createSlice({
   name: "cartInfo",
   initialState: initialState, //初期のStateセット
   reducers: {
@@ -42,7 +42,7 @@ const cartReducer = createSlice({
 
 // selectorをエクスポート
 
-export const { addCart, removeCart } = cartReducer.actions; // Action Createrをエクスポート
+export const { addCart, removeCart } = cartReducerSlice.actions; // Action Createrをエクスポート
 
 // 現在のcountの値を取得するためのSelectorをexportする
 export const selectCount = ({ cartInfo }: { cartInfo: cartData }) =>
@@ -50,4 +50,4 @@ export const selectCount = ({ cartInfo }: { cartInfo: cartData }) =>
 
 // Reducerをエクスポート
 // 読み込み時にはuseSelectで[state.設定したreducer名.State名]で読み込む
-export default cartReducer.reducer;
+export default cartReducerSlice.reducer;

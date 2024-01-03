@@ -1,15 +1,17 @@
 // Reducerのエリアス
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import thunk from "redux-thunk";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import cartReducer from "./reducers/addCartDataSlice";
+import cartReducerSlice from "./reducers/addCartDataSlice";
+import getItemListSlice from "./reducers/searchItemsSlice";
 
 export type AppDispatch = typeof store.dispatch; // dispatchの方で怒られるので追加
 
+// Reducer、CombineでStateをまとめる
 const reducers = combineReducers({
-  cartreducer: cartReducer,
+  cartreducer: cartReducerSlice, //カートの状態をcartreducerというStateにする。中身はcartReducer
+  itemListReducer: getItemListSlice,
 
   // reducer: {
   //   // reducer名：インポートしたReducerファイル(XX.reducer)
@@ -18,17 +20,21 @@ const reducers = combineReducers({
   // },
 });
 
+// persistReducerの必須項目の引数（デフォルト値を設定）
 const persistConfig = {
-  key: "root",
-  storage,
+  key: "root", // 永続化のキー
+  storage, // 使用するストレージエンジン
+  whitelist: ["cartreducer"], //cartreducerのみを永続化する
 };
 
+// 永続化が適用されるpersistReducerにconfigとreducerをセットしてルートReducer作成
 const persistedReducer = persistReducer(persistConfig, reducers);
 
+// StoreにReducerとmiddlewareを設定
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false,
+      serializableCheck: false, // JSON としてシリアライズを無効
     }),
 });
