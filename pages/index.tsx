@@ -17,6 +17,7 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <a href="./designpage/cafetoppage">test</a>
+        <a href="./sweep/top">test2</a>
 
         <p className={styles.description}>
           Get started by editing{' '}
