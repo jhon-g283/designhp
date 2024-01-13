@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import '../styles/sweep/slider.css';
+import '../styles/sweep/sweepmain.css';
 import type { AppProps } from 'next/app';
 import { store } from '../src/store'; //Store読み込み
 import { Provider } from 'react-redux'; //Providerが子コンポーネントのStoreの参照で必要

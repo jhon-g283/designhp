@@ -1,8 +1,9 @@
 // トップページテンプレ
-import styles from '../../styles/cafe/cafe.module.css';
-import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
+import styles from '../../styles/sweep/sweep.module.css';
+
 import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+
 // デフォルトのテーマ
 import '@splidejs/react-splide/css';
 
@@ -10,6 +11,7 @@ import '@splidejs/react-splide/css';
 // import '@splidejs/react-splide/css/core';
 
 import Header from '../organisms/sweepheader';
+import SliderComponent from '../organisms/sweepSliderView';
 
 const SweepTopPageTemplate = () => {
   const sliderTest = (
@@ -65,29 +67,36 @@ const SweepTopPageTemplate = () => {
 
   return (
     <>
-      {/* header */}
+      <div className="sweep">
+        {/* ヘッダー */}
+        <Header />
+        {/* FV */}
+        <div className={styles.firstViewArea}>
+          <SliderComponent />
+        </div>
+        {/* コンテンツ部分 */}
+        <div className={styles.mainWrapper}></div>
 
-      <Header />
-      {/* FV */}
-      <p>fv</p>
-      {sliderTest}
-      {/* news */}
-      <p>news</p>
-      {/* about */}
-      <p>about</p>
-      {/* product */}
-      <p>product</p>
-      {/* pick up */}
-      <p>pick up</p>
-      {/* campaign */}
-      <p>campaign</p>
-      {/* voice */}
-      <p>voice</p>
-      {/* sns */}
-      <p>sns</p>
-      {/* footer */}
-      <p>footer</p>
-      <p>SWEEp</p>
+        {/* {sliderTest} */}
+
+        {/* news */}
+        <p>news</p>
+        {/* about */}
+        <p>about</p>
+        {/* product */}
+        <p>product</p>
+        {/* pick up */}
+        <p>pick up</p>
+        {/* campaign */}
+        <p>campaign</p>
+        {/* voice */}
+        <p>voice</p>
+        {/* sns */}
+        <p>sns</p>
+        {/* footer */}
+        <p>footer</p>
+        <p>SWEEp</p>
+      </div>
     </>
   );
 };

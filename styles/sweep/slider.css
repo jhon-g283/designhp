@@ -4,3 +4,9 @@
     color: aliceblue;
   }
 }
+
+button.slider-arrow-right {
+  top: 82vh;
+  left: 0;
+  position: absolute;
+}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import { useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import styles from '../../styles/sweep/sweep.module.css';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+
 import { addCart, selectCount } from '../store/reducers/addCartDataSlice';
 import { cartData } from '../types';
 
@@ -13,41 +14,48 @@ const Header = () => {
     state.cartreducer?.totalCountcount ? state.cartreducer.totalCountcount : 0
   ); //商品リスト取得(カート数)
 
-  // const cartCount2 = useSelector(selectCount); //商品リスト取得(カート数)
-  // console.log(selectCount);
-  // console.log(cartCount2);
-  console.log(cartCount);
-
   const addCartFunction = () => {
     dispatch(addCart('77'));
   };
   return (
     <>
-      <div style={{ backgroundColor: 'black', color: 'white' }}>
-        <Image
-          src={'/imgSweep/sweeplogo.svg'}
-          width={135} // Specify different width values based on device or viewport size
-          height={40}
-          alt="Your Image"
-          // fill={true}
-          // layout="responsive"
-        ></Image>
+      <div className={styles.header}>
+        <div className={styles.headerItemWrapper}>
+          {/* ロゴアイコン */}
+          <Image
+            src={'/imgSweep/sweeplogo.svg'}
+            width={135} // Specify different width values based on device or viewport size
+            height={40}
+            alt="Your Image"
+            className={styles.logoImage}
+          ></Image>
 
-        <a href="./top">top</a>
-        <a href="./lineup">lineup</a>
-        <a>news</a>
+          {/* メニュー */}
+          <div className={styles.headerMenu}>
+            <div className={styles.linkMenuWraper}>
+              <a href="./top">top</a>
+              <a href="./lineup">lineup</a>
+              <a>news</a>
+            </div>
 
-        <Image
-          src={'/imgSweep/cartImage.svg'}
-          width={40} // Specify different width values based on device or viewport size
-          height={40}
-          alt="Your Image"
-          // fill={true}
-          // layout="responsive"
-        ></Image>
+            {/* カート数、アイコン */}
+            <Image
+              src={'/imgSweep/cartImage.svg'}
+              width={44} // Specify different width values based on device or viewport size
+              height={44}
+              alt="Your Image"
+              className={`${styles.cartIconImage} showOnlyPC`}
+            ></Image>
+            <div className={styles.cartNumberWrapper}>
+              <div>
+                <a>{cartCount}</a>
+              </div>
+            </div>
+          </div>
+          <p>{cartCount}</p>
+          <button onClick={() => addCartFunction()}>test</button>
+        </div>
       </div>
-      <p>{cartCount}</p>
-      <button onClick={() => addCartFunction()}>test</button>
     </>
   );
 };

@@ -1,0 +1,113 @@
+/* トップページ */
+/* ヘッダー */
+.header {
+  background-color: black;
+
+  /* 幅を設定してFixed */
+  top: 0px;
+  width: 100%;
+  height: 88px;
+  position: fixed;
+  z-index: 10;
+
+  /* ---- */
+  color: #fff;
+  font-family: Noto Sans Javanese;
+  font-size: 20px;
+  font-style: normal;
+  /* font-weight: 400; */
+  /* line-height: 49px; */
+  /* 245% */
+  /* -- */
+}
+
+/* ヘッダー内の要素の大枠部分 */
+.headerItemWrapper {
+  /* 横並びにして右寄せにする */
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  /* 左右の内側の幅を設定 */
+  margin-left: min(calc(5%), 88px);
+  margin-right: min(calc(5%), 94px);
+
+  background-color: rgb(140, 138, 135);
+  @media screen and (max-width: 768px) {
+  }
+}
+/* ロゴイメージ */
+.logoImage {
+  /* 上下の位置を設定して絶対値固定する */
+  background-color: rgb(93, 97, 97);
+  left: 0px;
+  top: 25px;
+
+  position: absolute;
+}
+
+/* ヘッダーのメニュー部分 */
+.headerMenu {
+  display: flex;
+  padding-top: 18.5px;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+/* ヘッダー中のリンク部分 */
+.headerMenu a {
+  margin-left: 22px;
+  margin-right: 22px;
+
+  /* line-height: 20px; */
+}
+
+/* リンク部分をまとめる外枠 */
+.linkMenuWraper {
+  margin-right: 57px;
+}
+
+/* カート部数外枠 */
+.cartNumberWrapper {
+  background-color: aqua;
+
+  /* 幅を設定して丸型にする */
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+
+  margin-bottom: 18px;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+
+  /* text-align: center; */
+}
+
+/* カート数 */
+.cartNumberWrapper a {
+  margin: 0 auto;
+}
+/* カート数の位置調整*/
+.cartNumberWrapper div {
+  padding-top: 1.5px;
+}
+
+/* カートのアイコン */
+.cartIconImage {
+  padding-bottom: 20px;
+}
+
+.mainWrapper {
+  /* 左右の内側の幅を設定 */
+  margin-left: min(calc(5%), 88px);
+  margin-right: min(calc(5%), 94px);
+}
+.firstViewArea {
+  position: relative;
+  padding-top: 88px;
+}
+
+.fvImageWrapper1 {
+  width: 50%;
+}
