@@ -1,11 +1,11 @@
 // お知らせ情報用のAPI
 import type { NextApiRequest, NextApiResponse } from "next";
-import { infomationArray } from "../../src/types";
-import jsonData from "./stbdata/infomation.json";
+import { newsDataResponse } from "../../src/types";
+import jsonData from "./stbdata/newsList.json";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<infomationArray>
+  res: NextApiResponse<newsDataResponse>
 ) {
   console.log("req infomationApi");
 

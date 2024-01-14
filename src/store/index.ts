@@ -5,6 +5,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import cartReducerSlice from "./reducers/addCartDataSlice";
 import getItemListSlice from "./reducers/searchItemsSlice";
+import getNewsListSlice from "./reducers/getNewsDataSlice";
 
 export type AppDispatch = typeof store.dispatch; // dispatchの方で怒られるので追加
 
@@ -12,6 +13,7 @@ export type AppDispatch = typeof store.dispatch; // dispatchの方で怒られ�
 const reducers = combineReducers({
   cartreducer: cartReducerSlice, //カートの状態をcartreducerというStateにする。中身はcartReducer
   itemListReducer: getItemListSlice,
+  newsListReducer: getNewsListSlice,
 
   // reducer: {
   //   // reducer名：インポートしたReducerファイル(XX.reducer)

@@ -9,4 +9,10 @@ button.slider-arrow-right {
   top: 82vh;
   left: 0;
   position: absolute;
+  background-color: black;
+  width: 183px;
+  height: 47px;
+  border-radius: 0px;
+  padding-left: 40px;
+  font-size: 20px;
 }

@@ -1,15 +1,41 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
-
+import styled from 'styled-components';
 // デフォルトのテーマ
 import '@splidejs/react-splide/css';
-import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 // ヘッダー部分のコンポーネント
 const SliderComponent = () => {
-  const sliderTest = (
+  const width = 83;
+  const PagerButton = styled.button`
+    @media (min-width: 768px) {
+      &::before {
+        content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='2'><rect width='100%' height='100%' fill='white' /></svg>");
+        // display: block;
+        // width: ${width}px;
+        height: 2px;
+        top: 0px;
+        padding-top: 7px;
+
+        left: 0px;
+        position: absolute;
+      }
+    }
+  `;
+
+  const AddClassNameButton = () => {
+    return (
+      <PagerButton className="splide__arrow splide__arrow--prev slider-arrow-right">
+        PREV
+      </PagerButton>
+    );
+  };
+
+  const PrevButton = AddClassNameButton;
+
+  const sliderArea = (
     <>
       <Splide
         hasTrack={false}
@@ -49,16 +75,17 @@ const SliderComponent = () => {
           </SplideSlide>
         </SplideTrack>
         <div className="splide__arrows">
-          <button className="splide__arrow splide__arrow--prev slider-arrow-right">
+          <PrevButton />
+          {/* <button className="splide__arrow splide__arrow--prev slider-arrow-right">
             Prev
-          </button>
+          </button> */}
           <button className="splide__arrow splide__arrow--next">Next</button>
         </div>
       </Splide>
     </>
   );
 
-  return <>{sliderTest}</>;
+  return <>{sliderArea}</>;
 };
 
 export default SliderComponent;

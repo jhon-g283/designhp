@@ -57,20 +57,20 @@ export interface itemDetail {
 }
 
 //API用 お知らせデータ
-export interface infomationArray {
-  data: infoData[]; //
+export interface newsDataResponse {
+  data: newsData[]; //
 }
 
-// Redux 用 お知らせデータ
-export interface infoDataList {
-  data: infoData[]; //
+// Redux 用 お知らせ(一覧)データ
+export interface newsDataList {
+  data: newsData[]; //
   status: string; //
 }
 
 // お知らせ情報データ部分
-export interface infoData {
+export interface newsData {
   date: string; //日付（後でDateになおす）
   title: string; //タイトル
-  message: string; //メッセージ
+  imageUrl: string; //メッセージ
   type: string; //お知らせのタイプ
 }
