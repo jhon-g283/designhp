@@ -2,19 +2,18 @@ import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
 import styled from 'styled-components';
 // デフォルトのテーマ
-import '@splidejs/react-splide/css';
+// import '@splidejs/react-splide/css';
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 // ヘッダー部分のコンポーネント
 const SliderComponent = () => {
   const width = 83;
-  const PagerButton = styled.button`
+  const PagerButtonLeft = styled.button`
     @media (min-width: 768px) {
       &::before {
         content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='2'><rect width='100%' height='100%' fill='white' /></svg>");
-        // display: block;
-        // width: ${width}px;
+
         height: 2px;
         top: 0px;
         padding-top: 7px;
@@ -25,15 +24,41 @@ const SliderComponent = () => {
     }
   `;
 
-  const AddClassNameButton = () => {
+  const PagerButtonRight = styled.button`
+    @media (min-width: 768px) {
+      &::after {
+        content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='2'><rect width='100%' height='100%' fill='white' /></svg>");
+
+        height: 2px;
+        top: 0px;
+        padding-top: 7px;
+
+        right: 0px;
+        position: absolute;
+      }
+    }
+  `;
+
+  // Prevボタン
+  const AddPagerClassPrevButton = () => {
     return (
-      <PagerButton className="splide__arrow splide__arrow--prev slider-arrow-right">
+      <PagerButtonLeft className="splide__arrow splide__arrow--prev slider-arrow-prev">
         PREV
-      </PagerButton>
+      </PagerButtonLeft>
     );
   };
 
-  const PrevButton = AddClassNameButton;
+  // Nextボタン
+  const AddPagerClassNextButton = () => {
+    return (
+      <PagerButtonRight className="splide__arrow splide__arrow--next slider-arrow-next">
+        NEXT
+      </PagerButtonRight>
+    );
+  };
+
+  const PrevButton = AddPagerClassPrevButton;
+  const NextButton = AddPagerClassNextButton;
 
   const sliderArea = (
     <>
@@ -76,10 +101,8 @@ const SliderComponent = () => {
         </SplideTrack>
         <div className="splide__arrows">
           <PrevButton />
-          {/* <button className="splide__arrow splide__arrow--prev slider-arrow-right">
-            Prev
-          </button> */}
-          <button className="splide__arrow splide__arrow--next">Next</button>
+
+          <NextButton />
         </div>
       </Splide>
     </>

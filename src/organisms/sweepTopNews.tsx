@@ -7,6 +7,7 @@ import { NewsItemTop } from '../molecules/sweepTopNewsItemComponent';
 import { fetchInfomations } from '../store/reducers/getNewsDataSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import styled from 'styled-components';
 
 // ヘッダー部分のコンポーネント
 const NewsComponent = () => {
@@ -21,7 +22,21 @@ const NewsComponent = () => {
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 
-  console.log(newsData);
+  const newsList = newsData.map((item) => {
+    return (
+      <>
+        <div>
+          <NewsItemTop
+            topickType={item.type}
+            imageUrl={item.imageUrl}
+            date={item.date}
+            title={item.title}
+          />
+        </div>
+      </>
+    );
+  });
+
   return (
     <>
       <Div
@@ -33,20 +48,22 @@ const NewsComponent = () => {
       >
         <p>ooooo</p>
       </Div>
-      <div>
-        <div>ss</div>
-        <Title className={styles.title1}>News</Title>
-        <p>
-          注目のトピック 新作商品やキャンペーンなど気になる情報は こちらから
-        </p>
+      <div className={styles.newsConponentWrapper}>
+        <div>
+          <div>ss</div>
+          <Title className={`${styles.titleNews} ${styles.sectionHeader}`}>
+            News
+          </Title>
+          <p>
+            注目のトピック 新作商品やキャンペーンなど気になる情報は こちらから
+          </p>
+        </div>
+        <div className={styles.newsListWrapper}>{newsList}</div>
       </div>
-      <div>
-        <NewsItemTop
-          topickType="news"
-          imageUrl="/img/FirstSectionImg2-2.png"
-          date="2023.02.02"
-          title="New Item"
-        />
+      <div className={styles.linkButtonWrapper}>
+        <div className={styles.readMoreButton}>
+          <a>READ MORE</a>
+        </div>
       </div>
     </>
   );

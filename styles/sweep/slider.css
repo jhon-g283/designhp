@@ -5,7 +5,8 @@
   }
 }
 
-button.slider-arrow-right {
+button.slider-arrow-prev {
+  color: white;
   top: 82vh;
   left: 0;
   position: absolute;
@@ -14,5 +15,18 @@ button.slider-arrow-right {
   height: 47px;
   border-radius: 0px;
   padding-left: 40px;
+  font-size: 20px;
+}
+
+button.slider-arrow-next {
+  color: white;
+  top: 82vh;
+  right: 0;
+  position: absolute;
+  background-color: black;
+  width: 183px;
+  height: 47px;
+  border-radius: 0px;
+  padding-right: 40px;
   font-size: 20px;
 }

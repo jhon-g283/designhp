@@ -12,6 +12,7 @@ import '@splidejs/react-splide/css';
 import Header from '../organisms/sweepHeader';
 import SliderComponent from '../organisms/sweepSliderView';
 import NewsComponent from '../organisms/sweepTopNews';
+import AboutComponent from '../organisms/sweepTopAbout';
 
 const SweepTopPageTemplate = () => {
   return (
@@ -24,13 +25,15 @@ const SweepTopPageTemplate = () => {
           <SliderComponent />
         </div>
         {/* コンテンツ部分 */}
-        <div className={styles.mainWrapper}></div>
+        <div className={styles.mainWrapper}>
+          {/* news */}
+
+          <NewsComponent />
+          {/* about */}
+          <AboutComponent />
+        </div>
 
         {/* {sliderTest} */}
-
-        {/* news */}
-
-        <NewsComponent />
 
         {/* about */}
         <p>about</p>

@@ -3,25 +3,25 @@
     {
       "date": "2022/12/1",
       "title": "お知らせ１",
-      "imageUrl": "メッセージの内容を表示する",
+      "imageUrl": "/img/FirstSectionImg2-2.png",
       "type": "1"
     },
     {
       "date": "2022/12/2",
       "title": "お知らせ2",
-      "imageUrl": "22メッセージの内容を表示する",
+      "imageUrl": "/img/FirstSectionImg2-2.png",
       "type": "2"
     },
     {
       "date": "2022/12/3",
       "title": "お知らせ3",
-      "imageUrl": "メッセージの内容を表示する33",
+      "imageUrl": "/img/FirstSectionImg2-2.png",
       "type": "1"
     },
     {
       "date": "2022/12/4",
       "title": "お知らせ4",
-      "imageUrl": "22メッセージの内容を表示する44",
+      "imageUrl": "/img/FirstSectionImg2-2.png",
       "type": "2"
     }
   ]

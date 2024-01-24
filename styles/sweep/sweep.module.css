@@ -98,11 +98,14 @@
   padding-bottom: 20px;
 }
 
+/*ページの外枠  */
 .mainWrapper {
   /* 左右の内側の幅を設定 */
   margin-left: min(calc(5%), 88px);
   margin-right: min(calc(5%), 94px);
 }
+
+/* ファーストビュー調整用 */
 .firstViewArea {
   position: relative;
   padding-top: 88px;
@@ -110,4 +113,64 @@
 
 .fvImageWrapper1 {
   width: 50%;
+}
+
+/*  */
+.newsListWrapper {
+  display: flex;
+}
+
+/*  */
+.newsConponentWrapper {
+  display: flex;
+}
+
+/* Newsのセクション名 */
+.titleNews::before {
+  /* beforeを非表示 */
+  display: none;
+}
+
+/* セクション名のボーダー */
+.sectionHeader::after {
+  /* ボーダーの調整 */
+  position: relative;
+  /* background-color: bisque; */
+  left: 10px;
+  bottom: 0.2em;
+}
+
+.sectionHeader::before {
+  /* ボーダーの調整 */
+  position: relative;
+  /* background-color: bisque; */
+  right: 10px;
+  bottom: 0.2em;
+}
+
+/* リンクの外枠 */
+.linkButtonWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+/* ReadMoreボタン */
+.readMoreButton {
+  border: #fff 2px solid;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+/* news一覧のの日付とタイトルの外枠部分 */
+.newsTitleWrapper {
+  /* color: #fff; */
+  border-left: #fff solid 1px;
+}
+
+/* Aboutのセクション名 */
+.titleAbout::after {
+  /* beforeを非表示 */
+  display: none;
 }

@@ -27,8 +27,10 @@ const NewsItemTop = ({
         alt="Your Image"
         className={styles.imgPC}
       ></Image>
-      <p>{date}</p>
-      <p>{text}</p>
+      <div className={styles.newsTitleWrapper}>
+        <p>{date}</p>
+        <p>{text}</p>
+      </div>
     </>
   );
 };
