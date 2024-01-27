@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import Title from '../atoms/sweepTitleComponent';
+import SectionTitle from '../atoms/sweepTitleComponent';
+import SectionSubTitle from '../atoms/sweepSubTitleComponent';
 
 // ヘッダー部分のコンポーネント
 const AboutComponent = () => {
@@ -11,10 +12,26 @@ const AboutComponent = () => {
     <>
       <div className={styles.newsConponentWrapper}>
         <div>
-          <Title className={`${styles.titleAbout} ${styles.sectionHeader}`}>
+          <SectionTitle
+            className={`${styles.titleAbout} ${styles.sectionHeader}`}
+          >
             About
-          </Title>
-          <p>Sweepとは？</p>
+          </SectionTitle>
+          <SectionSubTitle>Seepとは？</SectionSubTitle>
+          <div>
+            <a>Sweet</a>
+            <span>X</span>
+            <a>Sleep</a>
+          </div>
+          <div className={styles.textWrap}>
+            <p>睡眠を改善するチョコレート</p>
+          </div>
+          <div className={styles.textWrap}>
+            <p>ストレスを改善する香り</p>
+          </div>
+          <div className={styles.textWrap}>
+            <p>血糖値を穏やかに、ベッドで自然な眠気</p>
+          </div>
         </div>
       </div>
     </>

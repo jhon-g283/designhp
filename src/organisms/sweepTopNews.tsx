@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import Title from '../atoms/sweepTitleComponent';
+import SectionTitle from '../atoms/sweepTitleComponent';
 import { newsDataList } from '../types';
 import { NewsItemTop } from '../molecules/sweepTopNewsItemComponent';
 import { fetchInfomations } from '../store/reducers/getNewsDataSlice';
@@ -51,9 +51,11 @@ const NewsComponent = () => {
       <div className={styles.newsConponentWrapper}>
         <div>
           <div>ss</div>
-          <Title className={`${styles.titleNews} ${styles.sectionHeader}`}>
+          <SectionTitle
+            className={`${styles.titleNews} ${styles.sectionHeader}`}
+          >
             News
-          </Title>
+          </SectionTitle>
           <p>
             注目のトピック 新作商品やキャンペーンなど気になる情報は こちらから
           </p>

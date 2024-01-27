@@ -174,3 +174,8 @@
   /* beforeを非表示 */
   display: none;
 }
+
+.textWrap {
+  border: #fff 2px solid;
+  color: #fff;
+}
