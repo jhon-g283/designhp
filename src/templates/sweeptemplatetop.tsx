@@ -19,7 +19,7 @@ const SweepTopPageTemplate = () => {
     <>
       <div className="sweep">
         {/* ヘッダー */}
-        <SweepHeader />
+        <SweepHeader></SweepHeader>
         {/* FV */}
         <div className={styles.firstViewArea}>
           <SliderComponent />
