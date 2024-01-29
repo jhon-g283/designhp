@@ -123,6 +123,7 @@
 /*  */
 .newsConponentWrapper {
   display: flex;
+  justify-content: flex-end;
 }
 
 /* Newsのセクション名 */
@@ -178,4 +179,21 @@
 .textWrap {
   border: #fff 2px solid;
   color: #fff;
+}
+
+.aboutImageArea {
+  display: flex;
+}
+
+.aboutImage1 {
+  width: 507px;
+  height: 319px;
+
+  position: relative;
+}
+
+.aboutImage2 {
+  width: 334px;
+  height: 210px;
+  position: relative;
 }
