@@ -6,7 +6,7 @@ import { addCart, selectCount } from '../store/reducers/addCartDataSlice';
 import { cartData } from '../types';
 
 // ヘッダー部分のコンポーネント
-const Header = () => {
+const SweepHeader = () => {
   // Redux
   const dispatch = useDispatch();
   const topPageLink = './cafetoppage';
@@ -60,4 +60,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SweepHeader;

@@ -9,7 +9,7 @@ import '@splidejs/react-splide/css';
 // あるいは、コアスタイルのみ
 // import '@splidejs/react-splide/css/core';
 
-import Header from '../organisms/sweepHeader';
+import SweepHeader from '../organisms/sweepHeader';
 import SliderComponent from '../organisms/sweepSliderView';
 import NewsComponent from '../organisms/sweepTopNews';
 import AboutComponent from '../organisms/sweepTopAbout';
@@ -19,7 +19,7 @@ const SweepTopPageTemplate = () => {
     <>
       <div className="sweep">
         {/* ヘッダー */}
-        <Header />
+        <SweepHeader />
         {/* FV */}
         <div className={styles.firstViewArea}>
           <SliderComponent />
