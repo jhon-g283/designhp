@@ -9,10 +9,10 @@ import '@splidejs/react-splide/css';
 // あるいは、コアスタイルのみ
 // import '@splidejs/react-splide/css/core';
 
-import SweepHeader from '../organisms/sweepHeader';
 import SliderComponent from '../organisms/sweepSliderView';
 import NewsComponent from '../organisms/sweepTopNews';
 import AboutComponent from '../organisms/sweepTopAbout';
+import SweepHeader from '../organisms/sweepHeader';
 
 const SweepTopPageTemplate = () => {
   return (
