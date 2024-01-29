@@ -4,7 +4,6 @@ import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
 import Image from 'next/image';
 
 import Header from '../organisms/sweepHeader';
-import Header from '../organisms/sweepHeader';
 
 const SweepLineUpPageTemplate = () => {
   return (
