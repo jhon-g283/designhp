@@ -127,7 +127,8 @@
 }
 
 /* Newsのセクション名 */
-.titleNews::before {
+.titleNews::before,
+.titleProduct::before {
   /* beforeを非表示 */
   display: none;
 }
@@ -196,4 +197,23 @@
   width: 334px;
   height: 210px;
   position: relative;
+}
+
+/* Product */
+
+.productConponentWrapper {
+  display: flex;
+}
+
+.lineUpButtonWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lineUpButton {
+  border: #fff 2px solid;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
 }
