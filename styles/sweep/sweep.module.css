@@ -217,3 +217,7 @@
   padding: 20px;
   color: #fff;
 }
+
+.itemLink {
+  display: flex;
+}
