@@ -39,28 +39,24 @@ const ProductComponent = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className={styles.productWrapper}>
         <div>
-          {/* wrapper */}
-          <div className={styles.itemLink}>
-            {/* Common　Compoents */}
-            <div className={styles.aboutImage2}>
-              <Image
-                src="/img/FirstSectionImg1.png"
-                // width={1200} // Specify different width values based on device or viewport size
-                // height={200}
-                alt="Your Image"
-                fill={true}
-                // className={styles.imgPC}
-              ></Image>
-            </div>
-            <div>
-              <p>１ヶ月セット</p>
-              <p>1Week</p>
-            </div>
-          </div>
+          <CategoryLink
+            itemName="１ヶ月セット"
+            subName="1Week"
+            imageUrl="/img/FirstSectionImg1.png"
+          />
+          <CategoryLink
+            itemName="１ヶ月セット"
+            subName="1Week"
+            imageUrl="/img/FirstSectionImg1.png"
+          />
+          <CategoryLink
+            itemName="１ヶ月セット"
+            subName="1Week"
+            imageUrl="/img/FirstSectionImg1.png"
+          />
         </div>
-        <CategoryLink itemName="１ヶ月セット" subName="1Week" imageUrl="" />
 
         <div className={styles.aboutImage2}>
           <Image

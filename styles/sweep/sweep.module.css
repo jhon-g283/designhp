@@ -221,3 +221,7 @@
 .itemLink {
   display: flex;
 }
+
+.productWrapper {
+  display: flex;
+}

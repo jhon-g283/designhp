@@ -16,7 +16,7 @@ const CategoryLink = ({
 }: Props) => {
   return (
     <>
-      <div>
+      <div className={styles.itemLink}>
         <Image
           // src="/img/FirstSectionImg2-2.png"
           src={imageUrl}

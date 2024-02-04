@@ -12,6 +12,7 @@ import Header from '../organisms/sweepHeader';
 import SliderComponent from '../organisms/sweepSliderView';
 import NewsComponent from '../organisms/sweepTopNews';
 import AboutComponent from '../organisms/sweepTopAbout';
+import CategoryComponent from '../organisms/sweepTopCategory';
 
 import ProductComponent from '../organisms/sweepTopProduct';
 
@@ -33,6 +34,7 @@ const SweepTopPageTemplate = () => {
           {/* about */}
           <AboutComponent />
           <ProductComponent />
+          <CategoryComponent />
         </div>
 
         {/* {sliderTest} */}
