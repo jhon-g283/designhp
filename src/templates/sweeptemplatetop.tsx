@@ -13,8 +13,10 @@ import SliderComponent from '../organisms/sweepSliderView';
 import NewsComponent from '../organisms/sweepTopNews';
 import AboutComponent from '../organisms/sweepTopAbout';
 import CategoryComponent from '../organisms/sweepTopCategory';
-
+import PickUpComponent from '../organisms/sweepTopPickUp';
+import CampaignComponent from '../organisms/sweepTopCampaign';
 import ProductComponent from '../organisms/sweepTopProduct';
+import VoiceComponent from '../organisms/sweepTopVoice';
 
 const SweepTopPageTemplate = () => {
   return (
@@ -35,16 +37,11 @@ const SweepTopPageTemplate = () => {
           <AboutComponent />
           <ProductComponent />
           <CategoryComponent />
+          <PickUpComponent />
+          <CampaignComponent />
+          <VoiceComponent />
         </div>
 
-        {/* {sliderTest} */}
-
-        {/* about */}
-
-        {/* product */}
-        <p>product</p>
-        {/* pick up */}
-        <p>pick up</p>
         {/* campaign */}
         <p>campaign</p>
         {/* voice */}

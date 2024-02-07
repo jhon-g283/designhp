@@ -225,3 +225,24 @@
 .productWrapper {
   display: flex;
 }
+
+.pickUpConponentWrapper {
+  display: flex;
+}
+
+.pickUpListWrapper {
+  display: flex;
+}
+
+.campaginItemListtWrapper {
+  display: flex;
+}
+
+.voiceConponentWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.reviewBoxWrapper {
+  display: flex;
+}
