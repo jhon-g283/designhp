@@ -21,7 +21,15 @@ const VoiceComponent = () => {
           <SectionSubTitle>お客様の声</SectionSubTitle>
         </div>
       </div>
-      <ReviewItem />
+      <ReviewItem
+        imageUrl="/img/FirstSectionImg1.png"
+        itemName="チョコ"
+        price="200"
+        review="333"
+        linkParam="a"
+        reviewerInfo="情報ううう"
+        commentText="コメントおおおお"
+      />
     </>
   );
 };

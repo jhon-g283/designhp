@@ -1,32 +1,49 @@
-.slider-arrow-right {
-  color: red;
-  p {
-    color: aliceblue;
+/* スライダーボタン */
+button.slider-button {
+  /* button */
+  color: white;
+  background-color: black;
+  width: 183px;
+  height: 47px;
+  border-radius: 0px;
+  top: 82vh;
+  /* font */
+  font-size: 20px;
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+/* Prevボタン */
+button.slider-arrow-prev {
+  left: 0;
+  position: absolute;
+
+  padding-left: 40px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  /* テキスト*/
+  .buttonText {
+    padding-left: 38px;
+
+    /* padding-right: 18px; */
   }
 }
 
-button.slider-arrow-prev {
-  color: white;
-  top: 82vh;
-  left: 0;
-  position: absolute;
-  background-color: black;
-  width: 183px;
-  height: 47px;
-  border-radius: 0px;
-  padding-left: 40px;
-  font-size: 20px;
-}
-
+/* Nextボタン */
 button.slider-arrow-next {
-  color: white;
-  top: 82vh;
   right: 0;
   position: absolute;
-  background-color: black;
-  width: 183px;
-  height: 47px;
-  border-radius: 0px;
+
   padding-right: 40px;
-  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+
+  /* テキスト*/
+  .buttonText {
+    padding-right: 38px;
+
+    /* padding-right: 18px; */
+  }
 }

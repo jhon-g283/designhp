@@ -9,6 +9,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 // ヘッダー部分のコンポーネント
 const SliderComponent = () => {
   const width = 83;
+  // ページャー左
   const PagerButtonLeft = styled.button`
     @media (min-width: 768px) {
       &::before {
@@ -16,7 +17,6 @@ const SliderComponent = () => {
 
         height: 2px;
         top: 0px;
-        padding-top: 7px;
 
         left: 0px;
         position: absolute;
@@ -24,6 +24,7 @@ const SliderComponent = () => {
     }
   `;
 
+  // ページャー右
   const PagerButtonRight = styled.button`
     @media (min-width: 768px) {
       &::after {
@@ -31,7 +32,6 @@ const SliderComponent = () => {
 
         height: 2px;
         top: 0px;
-        padding-top: 7px;
 
         right: 0px;
         position: absolute;
@@ -42,8 +42,8 @@ const SliderComponent = () => {
   // Prevボタン
   const AddPagerClassPrevButton = () => {
     return (
-      <PagerButtonLeft className="splide__arrow splide__arrow--prev slider-arrow-prev">
-        PREV
+      <PagerButtonLeft className="splide__arrow splide__arrow--prev slider-button  slider-arrow-prev">
+        <span className="buttonText">PREV</span>
       </PagerButtonLeft>
     );
   };
@@ -51,23 +51,26 @@ const SliderComponent = () => {
   // Nextボタン
   const AddPagerClassNextButton = () => {
     return (
-      <PagerButtonRight className="splide__arrow splide__arrow--next slider-arrow-next">
-        NEXT
+      <PagerButtonRight className="splide__arrow splide__arrow--next slider-button slider-arrow-next">
+        <span className="buttonText">NEXT</span>
       </PagerButtonRight>
     );
   };
 
+  // ボタン作成
   const PrevButton = AddPagerClassPrevButton;
   const NextButton = AddPagerClassNextButton;
 
+  // スライダー
   const sliderArea = (
     <>
       <Splide
         hasTrack={false}
         options={{
-          width: '100%',
+          autoHeight: true,
+
           lazyLoad: true,
-          autoplay: true,
+          autoplay: false,
           rewind: true,
           // padding: 100,
           perPage: 1,
@@ -78,14 +81,42 @@ const SliderComponent = () => {
         <SplideTrack>
           <SplideSlide>
             <div className={styles.fvImageWrapper1}>
-              <Image
-                src="/img/FirstSectionImg1.png"
-                // width={1200} // Specify different width values based on device or viewport size
-                // height={200}
+              {/* backImage */}
+              <div className={styles.fvInnerWrapper}>
+                <div className={styles.fvLogoArea}>
+                  <Image
+                    src="/img/FVLogo.svg"
+                    width={284} // Specify different width values based on device or viewport size
+                    height={83}
+                    alt="Your Image"
+                    // fill={true}
+                    className={styles.imgPC}
+                  ></Image>
+                  <p className={styles.fvCopyWrite}>
+                    食べるとスッキリ<br></br>起きれるチョコレート
+                  </p>
+                </div>
+
+                <div className={styles.fvImageArea}>
+                  <Image
+                    src="/img/FVTopImage1PC.jpg"
+                    width={880} // Specify different width values based on device or viewport size
+                    height={674}
+                    alt="Your Image"
+                    // fill={true}
+                    className={`${styles.imgPC} ${styles.fvImage1} `}
+                  ></Image>
+                </div>
+              </div>
+
+              {/* <Image
+                src="/img/FirstView_Image1PC.jpg"
+                width={1538} // Specify different width values based on device or viewport size
+                height={893}
                 alt="Your Image"
-                fill={true}
-                // className={styles.imgPC}
-              ></Image>
+                // fill={true}
+                className={styles.imgPC}
+              ></Image> */}
             </div>
           </SplideSlide>
           <SplideSlide>
