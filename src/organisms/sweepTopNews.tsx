@@ -15,7 +15,7 @@ const NewsComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
   const newsData = useSelector((state: { newsListReducer: newsDataList }) =>
     state.newsListReducer?.data ? state.newsListReducer.data : []
-  ); //商品リスト取得(カート数)
+  ); //商品リスト取得
   //dispatch実行
   useEffect(() => {
     console.log('useEffect dispatch fetchinfomation');
@@ -49,15 +49,18 @@ const NewsComponent = () => {
         <p>ooooo</p>
       </Div>
       <div className={styles.newsConponentWrapper}>
-        <div>
-          <div>ss</div>
-          <SectionTitle
-            className={`${styles.titleNews} ${styles.sectionHeader}`}
-          >
-            News
-          </SectionTitle>
-          <p>
-            注目のトピック 新作商品やキャンペーンなど気になる情報は こちらから
+        <div className={styles.newsCompoTitleArea}>
+          <div className={styles.sectionHeaderWrapper}>
+            <SectionTitle
+              className={`${styles.titleNews} ${styles.sectionHeader}`}
+            >
+              News
+            </SectionTitle>
+          </div>
+
+          <p className={styles.paragraph}>
+            注目のトピック<br></br>新作商品やキャンペーンなど気になる情報は
+            こちらから
           </p>
         </div>
         <div className={styles.newsListWrapper}>{newsList}</div>

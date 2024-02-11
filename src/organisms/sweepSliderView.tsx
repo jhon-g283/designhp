@@ -67,7 +67,8 @@ const SliderComponent = () => {
       <Splide
         hasTrack={false}
         options={{
-          autoHeight: true,
+          // autoHeight: true,
+          height: 893,
 
           lazyLoad: true,
           autoplay: false,
@@ -81,8 +82,8 @@ const SliderComponent = () => {
         <SplideTrack>
           <SplideSlide>
             <div className={styles.fvImageWrapper1}>
-              {/* backImage */}
               <div className={styles.fvInnerWrapper}>
+                {/* ロゴ部分 */}
                 <div className={styles.fvLogoArea}>
                   <Image
                     src="/img/FVLogo.svg"
@@ -104,19 +105,22 @@ const SliderComponent = () => {
                     height={674}
                     alt="Your Image"
                     // fill={true}
+
                     className={`${styles.imgPC} ${styles.fvImage1} `}
                   ></Image>
                 </div>
               </div>
 
-              {/* <Image
-                src="/img/FirstView_Image1PC.jpg"
-                width={1538} // Specify different width values based on device or viewport size
+              {/* 背景画像 */}
+              <Image
+                src="/img/backGroundFV1.jpg"
+                width={1980} // Specify different width values based on device or viewport size
                 height={893}
                 alt="Your Image"
                 // fill={true}
-                className={styles.imgPC}
-              ></Image> */}
+                objectFit="cover"
+                className={`${styles.imgPC} ${styles.fvbackImage1} `}
+              ></Image>
             </div>
           </SplideSlide>
           <SplideSlide>

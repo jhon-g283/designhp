@@ -28,8 +28,13 @@ const NewsItemTop = ({
         className={styles.imgPC}
       ></Image>
       <div className={styles.newsTitleWrapper}>
-        <p>{date}</p>
-        <p>{text}</p>
+        <div className={styles.newsDateWrapper}>
+          <p>{date}</p>
+        </div>
+
+        <div>
+          <p>{text}</p>
+        </div>
       </div>
     </>
   );
