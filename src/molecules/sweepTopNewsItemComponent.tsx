@@ -1,24 +1,28 @@
 import Image from 'next/image';
+import { default as Div } from '../common/observeDivComponent';
 import styles from '../../styles/sweep/sweep.module.css';
 
 // ヘッダー部分のコンポーネント
 
 interface Props {
-  topickType?: string; //ニュースタイプ
+  topicType?: string; //ニュースタイプ
   imageUrl: string; //画像Url
   date?: string; //日付
   title?: string; //タイトル
 }
 
 const NewsItemTop = ({
-  topickType = '',
+  topicType = '',
   imageUrl = '',
   date = '',
   title: text = '',
 }: Props) => {
   return (
     <>
-      <p>{topickType}</p>
+      <div className={styles.topicTypeWrrapper}>
+        <p className={styles.topicType}>{topicType}</p>
+      </div>
+
       <Image
         // src="/img/FirstSectionImg2-2.png"
         src={imageUrl}
@@ -29,11 +33,11 @@ const NewsItemTop = ({
       ></Image>
       <div className={styles.newsTitleWrapper}>
         <div className={styles.newsDateWrapper}>
-          <p>{date}</p>
+          <p className={styles.newsDate}>{date}</p>
         </div>
 
-        <div>
-          <p>{text}</p>
+        <div className={styles.newsTitleTextWrapper}>
+          <p className={styles.newsTitleText}>{text}</p>
         </div>
       </div>
     </>

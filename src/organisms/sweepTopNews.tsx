@@ -22,12 +22,13 @@ const NewsComponent = () => {
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 
+  // 次は背景色
   const newsList = newsData.map((item) => {
     return (
       <>
-        <div>
+        <div className={styles.newsItemWrapper}>
           <NewsItemTop
-            topickType={item.type}
+            topicType={item.type}
             imageUrl={item.imageUrl}
             date={item.date}
             title={item.title}
@@ -39,17 +40,20 @@ const NewsComponent = () => {
 
   return (
     <>
-      <Div
-        afterClass="test"
-        beforeClass="pre--"
-        className="defoooo"
-        once={true}
-        rootMargin="0px"
-      >
-        <p>ooooo</p>
-      </Div>
+      <div className={styles.marginBlock}>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet1}></div>
+        </Div>
+      </div>
       <div className={styles.newsConponentWrapper}>
         <div className={styles.newsCompoTitleArea}>
+          {/* タイトル名 */}
           <div className={styles.sectionHeaderWrapper}>
             <SectionTitle
               className={`${styles.titleNews} ${styles.sectionHeader}`}
@@ -63,6 +67,16 @@ const NewsComponent = () => {
             こちらから
           </p>
         </div>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet2}></div>
+        </Div>
+
         <div className={styles.newsListWrapper}>{newsList}</div>
       </div>
       <div className={styles.linkButtonWrapper}>

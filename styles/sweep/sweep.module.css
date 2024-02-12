@@ -202,10 +202,38 @@
   position: relative;
 }
 
+/* FVとNewsの間のエリア */
+.marginBlock {
+  width: 100%;
+  height: 119px;
+}
+.backGroundSheet1 {
+  background-color: black;
+  width: 265px;
+  height: 119px;
+  flex-shrink: 0;
+  right: 0px;
+  margin-left: auto;
+  margin-right: 0px;
+  position: absolute;
+}
+.backGroundSheet2 {
+  background-color: black;
+  width: 209px;
+  height: 404px;
+  flex-shrink: 0;
+  left: 0px;
+  margin-left: 1.5em;
+  z-index: 0;
+  position: absolute;
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;
   position: absolute;
+  max-width: 300px;
+  z-index: 5;
 
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -219,8 +247,14 @@
 /* セクション名の外枠 */
 .sectionHeaderWrapper {
   color: #ffffff;
-  font-family: 'Frank Ruhl Libre';
+
   font-size: 55px;
+}
+
+/* セクション名 */
+.sectionHeader {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 1em;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -228,9 +262,12 @@
   text-transform: uppercase;
 }
 
+/* 文章部分 */
 .paragraph {
   font-size: 1em;
 }
+
+/* News */
 
 /* Newsのセクション名 */
 .titleNews::before,
@@ -239,11 +276,54 @@
   display: none;
 }
 
-.sectionHeader {
-  font-size: 1em;
+/* Newsアイテムの外側 */
+.newsItemWrapper {
+  margin-left: 33px;
 }
 
-/* newsDateWrapper */
+.topicTypeWrrapper {
+  font-size: 12px;
+}
+
+.topicType {
+  color: #b6b6b6;
+  font-family: 'Frank Ruhl Libre';
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
+}
+/* newsの日付の外枠 */
+.newsDateWrapper {
+  font-size: 12px;
+}
+
+/* Newsの日付部分 */
+.newsDate {
+  color: #fff;
+  font-family: 'Playfair Display';
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.newsTitleTextWrapper {
+  font-size: 20px;
+}
+.newsTitleText {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2px;
+  margin: 0px;
+}
 
 /* セクション名のボーダー */
 .sectionHeader::after {
@@ -270,17 +350,43 @@
 
 /* ReadMoreボタン */
 .readMoreButton {
-  border: #fff 2px solid;
-  align-items: center;
+  border: 1px solid #a4a4a4;
+  background: rgba(62, 59, 59, 0.64);
+
   text-align: center;
-  padding: 20px;
+  padding: 11px 33px;
   color: #fff;
+
+  font-family: 'Frank Ruhl Libre';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.76px;
+}
+
+.readMoreButton {
+  font-size: 1em;
 }
 
 /* news一覧のの日付とタイトルの外枠部分 */
 .newsTitleWrapper {
-  /* color: #fff; */
-  border-left: #fff solid 1px;
+  border-left: #a4a4a4 solid 2px;
+  padding-left: 17px;
+}
+
+.newsTextWrapper {
+  font-size: 12px;
+}
+
+.newsText {
+  color: #fff;
+  font-family: 'Playfair Display';
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.2px;
 }
 
 /* Aboutのセクション名 */
