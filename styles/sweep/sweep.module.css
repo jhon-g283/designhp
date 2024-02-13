@@ -395,6 +395,34 @@
   display: none;
 }
 
+/* サブタイトルの外枠 */
+.sectionSubTitleWrapper {
+  font-size: 25px;
+}
+
+/* サブタイトル */
+.sectionSubTitle {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  letter-spacing: 2.75px;
+}
+
+/* aboutのSweep X Sleep部分 */
+.aboutSweepSleep {
+  color: #fff;
+  font-family: 'Frank Ruhl Libre';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.8px;
+}
+
 .textWrap {
   border: #fff 2px solid;
   color: #fff;

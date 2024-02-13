@@ -9,20 +9,30 @@ import Image from 'next/image';
 const AboutComponent = () => {
   // Redux
 
+  // jApAsUkA-9
+  // jApUAsUkA-9
+  //
+
   return (
     <>
       <div className={styles.newsConponentWrapper}>
         <div>
-          <SectionTitle
-            className={`${styles.titleAbout} ${styles.sectionHeader}`}
-          >
-            About
-          </SectionTitle>
-          <SectionSubTitle>Seepとは？</SectionSubTitle>
-          <div>
-            <a>Sweet</a>
+          <div className={styles.sectionHeaderWrapper}>
+            <SectionTitle
+              className={`${styles.titleAbout} ${styles.sectionHeader}`}
+            >
+              About
+            </SectionTitle>
+          </div>
+          <div className={styles.sectionSubTitleWrapper}>
+            <SectionSubTitle className={styles.sectionSubTitle}>
+              Seepとは？
+            </SectionSubTitle>
+          </div>
+          <div className={styles.aboutSweepSleepWrapper}>
+            <a className={styles.aboutSweepSleep}>Sweet</a>
             <span>X</span>
-            <a>Sleep</a>
+            <a className={styles.aboutSweepSleep}>Sleep</a>
           </div>
           <div className={styles.textWrap}>
             <p>睡眠を改善するチョコレート</p>
