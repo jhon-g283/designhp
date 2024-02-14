@@ -348,7 +348,7 @@
   justify-content: end;
 }
 
-/* ReadMoreボタン */
+/* ReadMoreボタンの外枠 */
 .readMoreButton {
   border: 1px solid #a4a4a4;
   background: rgba(62, 59, 59, 0.64);
@@ -412,8 +412,15 @@
   letter-spacing: 2.75px;
 }
 
-/* aboutのSweep X Sleep部分 */
-.aboutSweepSleep {
+/* About部分 */
+.aboutConponentWrapper {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+/* aboutのSweep X Sleep部分外枠 */
+.aboutSweepSleepWrapper {
   color: #fff;
   font-family: 'Frank Ruhl Libre';
   font-size: 20px;
@@ -422,10 +429,53 @@
   line-height: normal;
   letter-spacing: 1.8px;
 }
+/* aboutのSweep X Sleep部分 */
+.aboutSweepSleep {
+  font-size: 1em;
+}
+/* spanの色が違う部分 */
+.SweepSleepSpan {
+  color: #c0c0c0;
+}
 
-.textWrap {
-  border: #fff 2px solid;
+/* 睡眠効果のあるチョコレート部分　外枠 */
+.aboutDiscription1Wrapper {
   color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+/* 睡眠効果のあるチョコレート部分　外枠 */
+.aboutDiscription1 {
+  font-size: 1em;
+}
+
+/*  */
+.textWrap {
+  border: 1px solid #a4a4a4;
+
+  align-items: center;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 9px;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.3px;
+
+  margin-bottom: 7px;
+}
+
+.textWrap p {
+  margin: 0;
+  font-size: 1em;
 }
 
 .aboutImageArea {

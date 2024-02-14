@@ -15,7 +15,7 @@ const AboutComponent = () => {
 
   return (
     <>
-      <div className={styles.newsConponentWrapper}>
+      <div className={styles.aboutConponentWrapper}>
         <div>
           <div className={styles.sectionHeaderWrapper}>
             <SectionTitle
@@ -30,12 +30,32 @@ const AboutComponent = () => {
             </SectionSubTitle>
           </div>
           <div className={styles.aboutSweepSleepWrapper}>
-            <a className={styles.aboutSweepSleep}>Sweet</a>
-            <span>X</span>
-            <a className={styles.aboutSweepSleep}>Sleep</a>
+            <a className={styles.aboutSweepSleep}>
+              Sw<span className={styles.SweepSleepSpan}>eet</span>
+            </a>
+
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.899638 0.907491L9.68854 9.68902" stroke="white" />
+              <path d="M9.64345 0.858543L0.854514 9.64768" stroke="white" />
+            </svg>
+
+            <a className={styles.aboutSweepSleep}>
+              <span className={styles.SweepSleepSpan}>Sl</span>eep
+            </a>
           </div>
-          <div className={styles.textWrap}>
+
+          <div className={styles.aboutDiscription1Wrapper}>
             <p>睡眠を改善するチョコレート</p>
+          </div>
+
+          <div className={styles.textWrap}>
+            <p>安眠効果のある成分</p>
           </div>
           <div className={styles.textWrap}>
             <p>ストレスを改善する香り</p>
