@@ -13,29 +13,43 @@ const ProductComponent = () => {
     <>
       <div className={styles.productConponentWrapper}>
         <div>
-          <SectionTitle
-            className={`${styles.titleProduct} ${styles.sectionHeader}`}
-          >
-            Product
-          </SectionTitle>
-          <SectionSubTitle>商品を探す</SectionSubTitle>
-          <div>
-            <p>
-              サイズとカテゴリーの中からお好みのセット、 商品をお選びください。
-            </p>
+          <div className={styles.sectionHeaderWrapper}>
+            <SectionTitle
+              className={`${styles.titleProduct} ${styles.sectionHeader}`}
+            >
+              Product
+            </SectionTitle>
           </div>
-          <div className={styles.lineUpButtonWrapper}>
-            <div className={styles.lineUpButton}>
-              <a>READ MORE</a>
+
+          <div>
+            <div className={styles.sectionSubTitleWrapper}>
+              <SectionSubTitle className={styles.sectionSubTitle}>
+                商品を探す
+              </SectionSubTitle>
+            </div>
+
+            <div>
+              <p>
+                サイズとカテゴリーの中からお好みのセット、
+                商品をお選びください。
+              </p>
+            </div>
+            <div className={styles.lineUpButtonWrapper}>
+              <div className={styles.lineUpButton}>
+                <a>READ MORE</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <SectionSubTitle>商品を探す</SectionSubTitle>
           <div>
-            <p>
-              サイズとカテゴリーの中からお好みのセット、 商品をお選びください。
-            </p>
+            <SectionSubTitle>サイズから</SectionSubTitle>
+            <div>
+              <p>
+                セットサイズは１週間セットからご用意しております。
+                長い期間味わっていきたい方は１ヶ月セット、
+                友人・ご家族で分け合いたい方はさらに量が多い
+                エクストラサイズもございます。
+              </p>
+            </div>
           </div>
         </div>
       </div>

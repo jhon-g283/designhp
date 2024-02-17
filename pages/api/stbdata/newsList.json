@@ -4,25 +4,25 @@
       "date": "2022/12/1",
       "title": "お知らせ１",
       "imageUrl": "/img/FirstSectionImg2-2.png",
-      "type": "1"
+      "type": "Release/campaign"
     },
     {
       "date": "2022/12/2",
       "title": "お知らせ2",
       "imageUrl": "/img/FirstSectionImg2-2.png",
-      "type": "2"
+      "type": "NEWS"
     },
     {
       "date": "2022/12/3",
       "title": "お知らせ3",
       "imageUrl": "/img/FirstSectionImg2-2.png",
-      "type": "1"
+      "type": "NEWS"
     },
     {
       "date": "2022/12/4",
       "title": "お知らせ4",
       "imageUrl": "/img/FirstSectionImg2-2.png",
-      "type": "2"
+      "type": "campaign"
     }
   ]
 }

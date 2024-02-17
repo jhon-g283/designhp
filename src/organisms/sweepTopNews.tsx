@@ -80,6 +80,15 @@ const NewsComponent = () => {
         <div className={styles.newsListWrapper}>{newsList}</div>
       </div>
       <div className={styles.linkButtonWrapper}>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet3}></div>
+        </Div>
         <div className={styles.readMoreButton}>
           <a>READ MORE</a>
         </div>

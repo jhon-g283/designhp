@@ -193,6 +193,7 @@
 /* ニュースの一覧の外枠 */
 .newsListWrapper {
   display: flex;
+  z-index: 2;
 }
 
 /* News部分 */
@@ -207,6 +208,8 @@
   width: 100%;
   height: 119px;
 }
+
+/* 背景の黒いブロック類 */
 .backGroundSheet1 {
   background-color: black;
   width: 265px;
@@ -228,18 +231,25 @@
   position: absolute;
 }
 
+.backGroundSheet3 {
+  background-color: black;
+  width: 604px;
+  height: 183px;
+  flex-shrink: 0;
+  right: 25px;
+  z-index: 0;
+  margin-bottom: -80px;
+  position: absolute;
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;
   position: absolute;
   max-width: 300px;
-  z-index: 5;
+  z-index: 3;
 
-  color: #fff;
-  font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
   line-height: 21px; /* 150% */
   letter-spacing: 1.12px;
 }
@@ -253,6 +263,7 @@
 
 /* セクション名 */
 .sectionHeader {
+  margin: 0;
   font-family: 'Frank Ruhl Libre';
   font-size: 1em;
   font-style: normal;
@@ -265,6 +276,12 @@
 /* 文章部分 */
 .paragraph {
   font-size: 1em;
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+
+  font-style: normal;
+  font-weight: 300;
+  margin: 0px;
 }
 
 /* News */
@@ -276,16 +293,25 @@
   display: none;
 }
 
+/* Newsのセクション名 */
+.titleNews {
+  margin-bottom: 15px;
+}
+
 /* Newsアイテムの外側 */
 .newsItemWrapper {
   margin-left: 33px;
 }
 
+/* topic名 外枠*/
 .topicTypeWrrapper {
   font-size: 12px;
 }
 
+/* topic名 */
 .topicType {
+  margin-bottom: 33px;
+
   color: #b6b6b6;
   font-family: 'Frank Ruhl Libre';
   font-size: 1em;
@@ -295,6 +321,7 @@
   letter-spacing: 1.68px;
   text-transform: uppercase;
 }
+
 /* newsの日付の外枠 */
 .newsDateWrapper {
   font-size: 12px;
@@ -302,6 +329,8 @@
 
 /* Newsの日付部分 */
 .newsDate {
+  margin-top: 0px;
+  margin-bottom: 5px;
   color: #fff;
   font-family: 'Playfair Display';
   font-size: 1em;
@@ -334,6 +363,7 @@
   bottom: 0.2em;
 }
 
+/* セクション名のボーダー */
 .sectionHeader::before {
   /* ボーダーの調整 */
   position: relative;
@@ -353,9 +383,10 @@
   border: 1px solid #a4a4a4;
   background: rgba(62, 59, 59, 0.64);
 
+  color: #fff;
   text-align: center;
   padding: 11px 33px;
-  color: #fff;
+  margin-top: 33px;
 
   font-family: 'Frank Ruhl Libre';
   font-size: 16px;
@@ -363,6 +394,8 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.76px;
+
+  z-index: 3;
 }
 
 .readMoreButton {
@@ -373,6 +406,7 @@
 .newsTitleWrapper {
   border-left: #a4a4a4 solid 2px;
   padding-left: 17px;
+  margin-top: 22px;
 }
 
 .newsTextWrapper {
@@ -402,21 +436,37 @@
 
 /* サブタイトル */
 .sectionSubTitle {
+  margin: 0;
+  /* フォント */
   color: #fff;
   font-family: YuMincho;
   font-size: 1em;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
   letter-spacing: 2.75px;
 }
 
 /* About部分 */
 .aboutConponentWrapper {
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 180px;
+  /* display: flex; */
+  /* justify-content: flex-end; */
   position: relative;
+}
+
+/* セクション名などの大枠 */
+.aboutSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Sweepとは？の部分 */
+.aboutDiscriptionWrapper {
+  display: inline-block;
+  width: 306px;
+  text-align: start;
 }
 
 /* aboutのSweep X Sleep部分外枠 */
@@ -453,7 +503,7 @@
   font-size: 1em;
 }
 
-/*  */
+/* 特徴の項目部分　外枠 */
 .textWrap {
   border: 1px solid #a4a4a4;
 
@@ -462,6 +512,7 @@
   padding-top: 8px;
   padding-bottom: 9px;
 
+  /* フォント */
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 13px;
@@ -470,18 +521,83 @@
   line-height: normal;
   letter-spacing: 1.3px;
 
+  width: 306px;
+  /* height: 37px; */
+  flex-shrink: 0;
+
   margin-bottom: 7px;
 }
 
-.textWrap p {
+/* 特徴の文字部分 */
+.textWrap p,
+.textWrap2 p {
   margin: 0;
   font-size: 1em;
 }
 
+/* aboutの画像部分　大枠 */
 .aboutImageArea {
   display: flex;
+  position: relative;
+
+  margin-top: -200px;
+
+  z-index: 3;
+
+  /* フォント */
+  color: #b6b6b6;
+  font-family: 'Frank Ruhl Libre';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
 }
 
+/* aboutの画像エリア */
+.aboutImageArea p {
+  font-size: 1em;
+  margin-top: 8px;
+  margin-bottom: 11px;
+}
+
+/* 特徴の項目部分　外枠 */
+.textWrap2 {
+  border: 1px solid #a4a4a4;
+
+  align-items: center;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 9px;
+
+  /* フォント */
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.3px;
+
+  width: 312px;
+
+  /* height: 37px; */
+  flex-shrink: 0;
+
+  margin-bottom: 7px;
+}
+
+/* aboutの説明文　外枠 */
+.aboutIntroduceTextWrap {
+  width: 430px;
+  margin-top: 19px;
+
+  /* フォント */
+  font-size: 14px;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 1.4px;
+}
 .aboutImage1 {
   width: 507px;
   height: 319px;
@@ -492,13 +608,37 @@
 .aboutImage2 {
   width: 334px;
   height: 210px;
+  margin-top: 240px;
+  margin-left: -40px;
+
   position: relative;
+}
+
+/* 画像に隣接する文字（Sweet） */
+.aboutImage2 + p {
+  text-align: end;
+}
+
+.aboutTextArea {
+  margin-top: 40px;
+
+  /* top: -10px; */
+  /* position: absolute; */
 }
 
 /* Product */
 
 .productConponentWrapper {
   display: flex;
+
+  /* フォント */
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  letter-spacing: 1.12px;
 }
 
 .lineUpButtonWrapper {
