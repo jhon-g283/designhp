@@ -241,6 +241,42 @@
   margin-bottom: -80px;
   position: absolute;
 }
+.backGroundSheet4 {
+  background-color: black;
+  width: 993px;
+  height: 380px;
+  flex-shrink: 0;
+  right: 0px;
+  z-index: 0;
+  margin-right: -80px;
+  position: absolute;
+}
+.backGroundSheet5 {
+  background-color: black;
+  width: 1079px;
+  height: 304px;
+  flex-shrink: 0;
+  flex-shrink: 0;
+  left: 0px;
+  margin: -30px 0px 0px -80px;
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet6 {
+  background-color: black;
+  width: 707px;
+  height: 359px;
+
+  /* margin-top: 120px; */
+  flex-shrink: 0;
+  left: 0px;
+
+  z-index: 0;
+
+  position: absolute;
+}
 
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
@@ -450,8 +486,7 @@
 /* About部分 */
 .aboutConponentWrapper {
   margin-top: 180px;
-  /* display: flex; */
-  /* justify-content: flex-end; */
+
   position: relative;
 }
 
@@ -460,6 +495,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+  z-index: 3;
 }
 
 /* Sweepとは？の部分 */
@@ -601,6 +638,7 @@
 .aboutImage1 {
   width: 507px;
   height: 319px;
+  z-index: 4;
 
   position: relative;
 }
@@ -611,26 +649,31 @@
   margin-top: 240px;
   margin-left: -40px;
 
+  z-index: 3;
   position: relative;
 }
 
 /* 画像に隣接する文字（Sweet） */
 .aboutImage2 + p {
   text-align: end;
+  /* z-indexを適応させるための設定」 */
+  z-index: 4;
+  position: relative;
 }
 
 .aboutTextArea {
   margin-top: 40px;
 
+  z-index: 3;
   /* top: -10px; */
-  /* position: absolute; */
+  position: relative;
 }
 
 /* Product */
-
 .productConponentWrapper {
-  display: flex;
-
+  z-index: 3;
+  position: relative;
+  margin-top: 150px;
   /* フォント */
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -641,24 +684,74 @@
   letter-spacing: 1.12px;
 }
 
+.productlineupWrapper {
+  z-index: 3;
+  position: relative;
+}
+
+/* サイズとカテゴリーの中の部分 */
+.lineupCopntext {
+  padding-top: 13px;
+  padding-bottom: 32px;
+}
+
+/* Lineupの外枠 */
 .lineUpButtonWrapper {
   display: flex;
   justify-content: flex-start;
 }
 
+/* Lineupボタン */
 .lineUpButton {
-  border: #fff 2px solid;
+  border: 1px solid #a4a4a4;
+  background: rgba(62, 59, 59, 0.64);
   align-items: center;
   text-align: center;
-  padding: 20px;
+
   color: #fff;
+  font-family: 'Frank Ruhl Libre';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.76px;
+
+  padding-top: 12px;
+  padding-bottom: 10px;
+  width: 167px;
+}
+
+/* lineupのリンク部分 */
+.lineUpButton a {
+  font-size: 1em;
+}
+
+/* セクション名などの大枠 */
+.sizeContextWrapper {
+  /* 横並び、かつ１列表示で画面末尾に寄せる */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* サイズのテキスト部分 */
+.sizeContext {
+  /* 中身は縦方向にセット＆文字は左よせにする */
+  display: inline-block;
+  width: 306px;
+  text-align: start;
 }
 
 .itemLink {
   display: flex;
+  width: 373px;
+  height: 150px;
+  flex-shrink: 0;
+
+  border: 1px solid #a4a4a4;
 }
 
-.productWrapper {
+.produtlineupSizeWrapper {
   display: flex;
 }
 

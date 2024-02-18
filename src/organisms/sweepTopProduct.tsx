@@ -11,49 +11,68 @@ const ProductComponent = () => {
 
   return (
     <>
-      <div className={styles.productConponentWrapper}>
+      <div>
         <div>
-          <div className={styles.sectionHeaderWrapper}>
-            <SectionTitle
-              className={`${styles.titleProduct} ${styles.sectionHeader}`}
-            >
-              Product
-            </SectionTitle>
-          </div>
-
-          <div>
-            <div className={styles.sectionSubTitleWrapper}>
-              <SectionSubTitle className={styles.sectionSubTitle}>
-                商品を探す
-              </SectionSubTitle>
+          <Div
+            afterClass="test"
+            beforeClass="pre--"
+            className="defoooo"
+            once={true}
+            rootMargin="0px"
+          >
+            <div className={styles.backGroundSheet6}></div>
+          </Div>
+          <div className={styles.productConponentWrapper}>
+            <div className={styles.sectionHeaderWrapper}>
+              <SectionTitle
+                className={`${styles.titleProduct} ${styles.sectionHeader}`}
+              >
+                Product
+              </SectionTitle>
             </div>
 
             <div>
-              <p>
-                サイズとカテゴリーの中からお好みのセット、
-                商品をお選びください。
-              </p>
-            </div>
-            <div className={styles.lineUpButtonWrapper}>
-              <div className={styles.lineUpButton}>
-                <a>READ MORE</a>
+              <div className={styles.sectionSubTitleWrapper}>
+                <SectionSubTitle className={styles.sectionSubTitle}>
+                  商品を探す
+                </SectionSubTitle>
+              </div>
+
+              <div className={styles.lineupCopntext}>
+                <p className={styles.paragraph}>
+                  サイズとカテゴリーの中からお好みのセット、
+                  商品をお選びください。
+                </p>
+              </div>
+              <div className={styles.lineUpButtonWrapper}>
+                <div className={styles.lineUpButton}>
+                  <a>LINEUP</a>
+                </div>
               </div>
             </div>
           </div>
-          <div>
-            <SectionSubTitle>サイズから</SectionSubTitle>
-            <div>
-              <p>
-                セットサイズは１週間セットからご用意しております。
-                長い期間味わっていきたい方は１ヶ月セット、
-                友人・ご家族で分け合いたい方はさらに量が多い
-                エクストラサイズもございます。
-              </p>
+
+          <div className={styles.sizeContextWrapper}>
+            <div className={styles.sizeContext}>
+              <div className={styles.sectionSubTitleWrapper}>
+                <SectionSubTitle className={styles.sectionSubTitle}>
+                  サイズから
+                </SectionSubTitle>
+              </div>
+              <div>
+                <p className={styles.paragraph}>
+                  セットサイズは１週間セットからご用意しております。
+                  長い期間味わっていきたい方は１ヶ月セット、
+                  友人・ご家族で分け合いたい方はさらに量が多い
+                  エクストラサイズもございます。
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.productWrapper}>
+
+      <div className={styles.produtlineupSizeWrapper}>
         <div>
           <CategoryLink
             itemName="１ヶ月セット"

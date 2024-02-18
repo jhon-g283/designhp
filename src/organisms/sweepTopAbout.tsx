@@ -16,6 +16,15 @@ const AboutComponent = () => {
   return (
     <>
       <div className={styles.aboutConponentWrapper}>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet4}></div>
+        </Div>
         <div className={styles.aboutSectionWrapper}>
           <div className={styles.sectionHeaderWrapper}>
             <SectionTitle
@@ -78,6 +87,15 @@ const AboutComponent = () => {
                 // className={styles.imgPC}
               ></Image>
             </div>
+            <Div
+              afterClass="test"
+              beforeClass="pre--"
+              className="defoooo"
+              once={true}
+              rootMargin="0px"
+            >
+              <div className={styles.backGroundSheet5}></div>
+            </Div>
             <div className={styles.aboutTextArea}>
               <div className={styles.textWrap2}>
                 <p>食後の一口で寝不足の改善</p>

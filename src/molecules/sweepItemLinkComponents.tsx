@@ -20,12 +20,12 @@ const CategoryLink = ({
         <Image
           // src="/img/FirstSectionImg2-2.png"
           src={imageUrl}
-          width={236} // Specify different width values based on device or viewport size
-          height={244}
+          width={129} // Specify different width values based on device or viewport size
+          height={110}
           alt="Your Image"
           className={styles.imgPC}
         ></Image>
-        <div className={styles.newsTitleWrapper}>
+        <div className={styles.itemNameWrapper}>
           <p>{itemName}</p>
           <p>{subName}</p>
         </div>
