@@ -2,5 +2,9 @@
 
 .sweep {
   /* ページの背景をクラスで指定 */
-  background-color: rgb(148, 152, 156);
+
+  border: 1px solid #000;
+  background: linear-gradient(0deg, #353338 0%, #353338 100%),
+    rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(0px);
 }

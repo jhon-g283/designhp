@@ -2,7 +2,7 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
-import { CategoryLink } from '../molecules/sweepItemLinkComponents';
+import { ItemLinkSize } from '../molecules/sweepItemLinkComponents';
 import Image from 'next/image';
 
 // ヘッダー部分のコンポーネント
@@ -51,7 +51,15 @@ const ProductComponent = () => {
               </div>
             </div>
           </div>
-
+          <Div
+            afterClass="test"
+            beforeClass="pre--"
+            className="defoooo"
+            once={true}
+            rootMargin="0px"
+          >
+            <div className={styles.backGroundSheet7}></div>
+          </Div>
           <div className={styles.sizeContextWrapper}>
             <div className={styles.sizeContext}>
               <div className={styles.sectionSubTitleWrapper}>
@@ -74,24 +82,24 @@ const ProductComponent = () => {
 
       <div className={styles.produtlineupSizeWrapper}>
         <div>
-          <CategoryLink
+          <ItemLinkSize
             itemName="１ヶ月セット"
             subName="1Week"
             imageUrl="/img/FirstSectionImg1.png"
           />
-          <CategoryLink
+          <ItemLinkSize
             itemName="１ヶ月セット"
-            subName="1Week"
+            subName="1Month"
             imageUrl="/img/FirstSectionImg1.png"
           />
-          <CategoryLink
-            itemName="１ヶ月セット"
-            subName="1Week"
+          <ItemLinkSize
+            itemName="エクストラ"
+            subName="Extra"
             imageUrl="/img/FirstSectionImg1.png"
           />
         </div>
 
-        <div className={styles.aboutImage2}>
+        <div className={styles.productImage}>
           <Image
             src="/img/FirstSectionImg1.png"
             // width={1200} // Specify different width values based on device or viewport size

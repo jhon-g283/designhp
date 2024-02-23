@@ -269,9 +269,68 @@
   width: 707px;
   height: 359px;
 
-  /* margin-top: 120px; */
+  margin-top: -20px;
   flex-shrink: 0;
   left: 0px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet7 {
+  background-color: black;
+  width: 670px;
+  height: 309px;
+
+  margin-top: -36px;
+  flex-shrink: 0;
+  right: 0px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet8 {
+  background-color: black;
+  width: 749px;
+  height: 251px;
+  flex-shrink: 0;
+
+  margin-top: -36px;
+  flex-shrink: 0;
+  left: 0px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet9 {
+  background-color: black;
+  width: 390px;
+  height: 380px;
+  flex-shrink: 0;
+
+  margin-top: -36px;
+  flex-shrink: 0;
+  right: 40px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet10 {
+  background-color: black;
+  width: 934px;
+  height: 194px;
+  flex-shrink: 0;
+
+  margin-top: 20px;
+  flex-shrink: 0;
+  left: -67px;
 
   z-index: 0;
 
@@ -282,7 +341,7 @@
 .newsCompoTitleArea {
   left: 0px;
   position: absolute;
-  max-width: 300px;
+  /* max-width: 300px; */
   z-index: 3;
 
   font-size: 14px;
@@ -324,7 +383,8 @@
 
 /* Newsのセクション名 */
 .titleNews::before,
-.titleProduct::before {
+.titleProduct::before,
+.titleCampaign::before {
   /* beforeを非表示 */
   display: none;
 }
@@ -460,9 +520,18 @@
 }
 
 /* Aboutのセクション名 */
-.titleAbout::after {
+.titleAbout::after,
+.titlePickUp::after {
   /* beforeを非表示 */
   display: none;
+}
+
+/* カテゴリの文字列部分 */
+.categoryTextWrapper {
+  z-index: 3;
+  position: relative;
+
+  margin-left: 70px;
 }
 
 /* サブタイトルの外枠 */
@@ -544,7 +613,6 @@
 .textWrap {
   border: 1px solid #a4a4a4;
 
-  align-items: center;
   text-align: center;
   padding-top: 8px;
   padding-bottom: 9px;
@@ -732,37 +800,377 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  z-index: 3;
+  position: relative;
 }
 
 /* サイズのテキスト部分 */
 .sizeContext {
   /* 中身は縦方向にセット＆文字は左よせにする */
   display: inline-block;
-  width: 306px;
+  width: 401px;
   text-align: start;
 }
 
-.itemLink {
+/* 項目の外枠（サイズ） */
+.itemLinkSize {
   display: flex;
   width: 373px;
   height: 150px;
   flex-shrink: 0;
 
+  align-items: center;
   border: 1px solid #a4a4a4;
+
+  margin-bottom: 30px;
+  margin-left: 50px;
+
+  position: relative;
 }
 
+/* 矢印部分 */
+.itemLinkSize svg {
+  /* margin-left: 20px; */
+  right: 33px;
+  position: absolute;
+}
+
+/* 項目の画像 */
+.itemImageWrapper {
+  margin-left: 32px;
+  width: 129px;
+  height: 110px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* 項目の外枠（カテゴリ） */
+.itemLinkCategory {
+  display: flex;
+  width: 342px;
+  height: 150px;
+  flex-shrink: 0;
+
+  align-items: center;
+
+  position: relative;
+}
+
+/* 矢印部分 */
+.itemLinkCategory svg {
+  margin-left: 20px;
+  right: 0px;
+  position: absolute;
+}
+
+/* 項目の画像 */
+.itemImageCategoryWrapper {
+  width: 115px;
+  height: 111px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* 項目名　外枠 */
+.itemNameWrapper {
+  color: #fff;
+
+  margin-left: 22px;
+  margin-top: 23px;
+
+  align-items: center;
+  /* フォント */
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+/* 項目名 */
+.itemName {
+  margin-top: 0px;
+  margin-bottom: 7px;
+
+  font-size: 1em;
+}
+
+.itemSubNameWrapper {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.2px;
+
+  padding-left: 2px;
+}
+
+.itemSubName {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  font-size: 1em;
+}
+
+/* productのサイズの項目の外枠 */
 .produtlineupSizeWrapper {
   display: flex;
+
+  margin-top: 59px;
+
+  position: relative;
 }
 
 .pickUpConponentWrapper {
   display: flex;
 }
 
-.pickUpListWrapper {
-  display: flex;
+.productImage {
+  width: 880px;
+  height: 511px;
+  flex-shrink: 0;
+
+  z-index: 3;
+  right: 0;
+  position: absolute;
 }
 
+.categoryConponentWrapper {
+  margin-top: 188px;
+  position: relative;
+
+  /* font */
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  letter-spacing: 1.4px;
+}
+
+/* カテゴリーのテキスト部分 */
+.categoryTextWrapper p {
+  margin-top: 14px;
+}
+
+/* カテゴリーの画像の外枠 */
+.categoryImageOuterWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 91px;
+  padding-bottom: 51px;
+}
+/* 画像の外枠 */
+.categoryImageWrapper {
+  width: 1097px;
+  height: 441px;
+  flex-shrink: 0;
+
+  position: relative;
+}
+/* リストの外枠 */
+.categoryListWrapper {
+  display: flex;
+  justify-content: center;
+}
+/* カテゴリーのリスト */
+.categoryList {
+  width: 1097px;
+
+  display: inline-flex;
+  flex-wrap: wrap; /* 行を折り返す */
+
+  align-items: flex-start;
+  gap: 32px 34px; /* 34px間隔で並べる */
+}
+/* カテゴリーリストの３つ目の要素まで下線部追加 */
+.categoryList > div:nth-child(-n + 3) {
+  border-bottom: 1px solid #a4a4a4;
+}
+
+/* カテゴリー名の外枠 */
+.itemCategoryNameWrapper {
+  margin-left: 19px;
+  margin-top: 30px;
+}
+
+/* カテゴリー名の外枠 */
+.itemCategoryNameWrapper {
+  color: #fff;
+  font-family: 'Noto Sans Javanese';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* カテゴリー名 */
+.itemCategoryName {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 1em;
+}
+
+/* カテゴリー名の外枠（英字） */
+.itemCategorySubNameWrapper {
+  color: #fff;
+  font-family: 'Noto Sans Javanese';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+/* カテゴリー名の（英字） */
+.itemCategorySubName {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  font-size: 1em;
+}
+
+/* PickUp */
+/* コンポーネント全体の外枠 */
+.pickUpConponentWrapper {
+  position: relative;
+  margin-top: 175px;
+}
+
+/* pickUpリストの設定 */
+.pickUpListWrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 33px;
+  position: relative;
+
+  margin-top: 100px;
+}
+
+/* トップページ内のアイテムボックス */
+.topItemBox {
+  /* width: 266px; */
+
+  flex-shrink: 0;
+  background: linear-gradient(0deg, #fff 0%, #fff 100%), rgba(0, 0, 0, 0.34);
+
+  /* 高さ・長さは固定せずpaddingで調整 */
+  display: block;
+  padding: 28px 33px 27px 33px;
+}
+
+.topItemBoxImageWrapper {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* セクション名などの大枠 */
+.pickupSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+}
+
+/* PickUpの文章部分*/
+.pickupDiscriptionWrapper {
+  display: inline-block;
+  width: 306px;
+  text-align: start;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+/* アイテムボックス */
+.topItemInfoWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+/* 商品名（外枠） */
+.topItemNameWrapper {
+  font-size: 16px;
+  letter-spacing: 1.6px;
+}
+
+/* 商品名 */
+.topItemName {
+  margin-bottom: 11px;
+  font-size: 1em;
+}
+
+/* 商品価格 */
+.topItemPrice {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* クチコミ */
+.topItemReview {
+  font-size: 1em;
+  margin-top: 3px;
+  margin-bottom: 14px;
+}
+
+/* 価格の余白部分 */
+.priceSpan {
+  padding-right: 1em;
+}
+
+/* カートボタンの外枠 */
+.topItemButtonWrapper {
+  font-size: 16px;
+}
+
+/* カートボタン */
+.topItemButton {
+  width: 198px;
+  height: 43px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: YuGothic;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.76px;
+  background: #343434;
+
+  border: none;
+}
+
+/* Campaign */
+
+.campaignComponentWrapper {
+  margin-top: 136px;
+}
+
+.campaignText1Wrapper {
+  margin-left: 61px;
+}
 .campaginItemListtWrapper {
   display: flex;
 }

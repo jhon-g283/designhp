@@ -61,9 +61,9 @@ const NewsComponent = () => {
               News
             </SectionTitle>
           </div>
-
           <p className={styles.paragraph}>
-            注目のトピック<br></br>新作商品やキャンペーンなど気になる情報は
+            注目のトピック<br></br>
+            新作商品やキャンペーンなど気になる情報は<br></br>
             こちらから
           </p>
         </div>

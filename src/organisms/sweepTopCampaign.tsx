@@ -2,7 +2,7 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
-import { ItemBox } from '../molecules/sweepItemBoxComponents';
+import { TopPageItemBox } from '../molecules/sweepItemBoxComponents';
 import Image from 'next/image';
 
 // ヘッダー部分のコンポーネント
@@ -11,43 +11,51 @@ const CampaignComponent = () => {
 
   return (
     <>
-      <div>
-        <div>
-          <SectionTitle
-            className={`${styles.titleCampaign} ${styles.sectionHeader}`}
-          >
-            CAMPAIGN
-          </SectionTitle>
-          <SectionSubTitle>夏の夜もぐっすりキャンペーン</SectionSubTitle>
-          <p>
-            食欲が大きく落ちる夏そんな食べたくない時期でもスッと自然にお口に入れることのできる爽やかな味わい。
-            今なら夏におすすめの味の商品を２つ以上購入すると対象商品の合計を10％OFFにするキャンペーンを実施しています。
-          </p>
+      <div className={styles.campaignComponentWrapper}>
+        <div className={styles.campaignTextArea1Wrapper}>
+          <div className={styles.sectionHeaderWrapper}>
+            <SectionTitle
+              className={`${styles.titleCampaign} ${styles.sectionHeader}`}
+            >
+              CAMPAIGN
+            </SectionTitle>
+          </div>
+          <div>
+            <div className={styles.sectionSubTitleWrapper}>
+              <SectionSubTitle className={styles.sectionSubTitle}>
+                夏の夜もぐっすりキャンペーン
+              </SectionSubTitle>
+            </div>
+            <p>
+              食欲が大きく落ちる夏そんな食べたくない時期でもスッと自然にお口に入れることのできる爽やかな味わい。
+              今なら夏におすすめの味の商品を２つ以上購入すると対象商品の合計を10％OFFにするキャンペーンを実施しています。
+            </p>
+          </div>
         </div>
         <p>対象商品</p>
         <div className={styles.campaginItemListtWrapper}>
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
@@ -67,28 +75,28 @@ const CampaignComponent = () => {
 
         <p>対象商品</p>
         <div className={styles.campaginItemListtWrapper}>
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"
             review="aaa"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
             itemName="チョコ"
             price="500"

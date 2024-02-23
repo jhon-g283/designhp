@@ -9,10 +9,6 @@ import Image from 'next/image';
 const AboutComponent = () => {
   // Redux
 
-  // jApAsUkA-9
-  // jApUAsUkA-9
-  //
-
   return (
     <>
       <div className={styles.aboutConponentWrapper}>

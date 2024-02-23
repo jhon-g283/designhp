@@ -2,7 +2,7 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
-import { ItemBox } from '../molecules/sweepItemBoxComponents';
+import { TopPageItemBox } from '../molecules/sweepItemBoxComponents';
 import Image from 'next/image';
 
 // ヘッダー部分のコンポーネント
@@ -12,44 +12,64 @@ const PickUpComponent = () => {
   return (
     <>
       <div className={styles.pickUpConponentWrapper}>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet10}></div>
+        </Div>
         <div className={styles.pickUpListWrapper}>
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
-            itemName="チョコ"
+            itemName="ビターチョコ(7個)"
             price="500"
-            review="aaa"
+            review="2"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
-            itemName="チョコ"
+            itemName="ビターチョコ(7個)"
             price="500"
-            review="aaa"
+            review="2"
             linkParam="bbb"
           />
-          <ItemBox
+          <TopPageItemBox
             imageUrl="/img/FirstSectionImg1.png"
-            itemName="チョコ"
+            itemName="ビターチョコ(7個)"
             price="500"
-            review="aaa"
-            linkParam="bbb"
-          />
-          <ItemBox
-            imageUrl="/img/FirstSectionImg1.png"
-            itemName="チョコ"
-            price="500"
-            review="aaa"
+            review="2"
             linkParam="bbb"
           />
         </div>
-        <div>
-          <SectionTitle
-            className={`${styles.titleAbout} ${styles.sectionHeader}`}
-          >
-            PICK UP
-          </SectionTitle>
-          <SectionSubTitle>あなたにおすすめの商品</SectionSubTitle>
-          <p>こちらの商品をぜひお試しになっては いかがでしょうか？</p>
+        <Div
+          afterClass="test"
+          beforeClass="pre--"
+          className="defoooo"
+          once={true}
+          rootMargin="0px"
+        >
+          <div className={styles.backGroundSheet9}></div>
+        </Div>
+        <div className={styles.pickupSectionWrapper}>
+          <div className={styles.sectionHeaderWrapper}>
+            <SectionTitle
+              className={`${styles.titlePickUp} ${styles.sectionHeader}`}
+            >
+              PICK UP
+            </SectionTitle>
+          </div>
+          <div className={styles.pickupDiscriptionWrapper}>
+            <div className={styles.sectionSubTitleWrapper}>
+              <SectionSubTitle className={styles.sectionSubTitle}>
+                あなたにおすすめの商品
+              </SectionSubTitle>
+            </div>
+
+            <p>こちらの商品をぜひお試しになっては いかがでしょうか？</p>
+          </div>
         </div>
       </div>
     </>
