@@ -26,26 +26,54 @@ const ReviewItem = ({
   return (
     <>
       <div className={styles.reviewBoxWrapper}>
-        <Image
-          // src="/img/FirstSectionImg2-2.png"
-          src={imageUrl}
-          width={236} // Specify different width values based on device or viewport size
-          height={244}
-          alt="Your Image"
-          className={styles.imgPC}
-        ></Image>
-        <div className={''}>
-          <a>{itemName}</a>
-          <a>{price}</a>
-          <div>
-            <a>{reviewerInfo}</a>
-            <a>{review}</a>
-          </div>
-          <p>コメント</p>
-          <p>{commentText}</p>
+        <div className={styles.reviewImageWrapper}>
+          <Image
+            // src="/img/FirstSectionImg2-2.png"
+            src={imageUrl}
+            // width={236} // Specify different width values based on device or viewport size
+            // height={244}
+            alt="Your Image"
+            fill={true}
+            className={styles.imgPC}
+          ></Image>
+        </div>
 
-          <div>
-            <a href={link}>商品詳細へ</a>
+        <div className={styles.reviewTextWrapper}>
+          <div className={styles.reviewItemNameWrapper}>
+            <a className={styles.reviewItemName}>{itemName}</a>
+            <a className={styles.reviewItemPrice}>¥{price}</a>
+          </div>
+
+          <div className={styles.reviewInfoWrapper}>
+            <a className={styles.reviewReviewer}>{reviewerInfo}</a>
+            <a className={styles.reviewStar}>{review}</a>
+          </div>
+
+          <div className={styles.reviewCommentWrapper}>
+            <p className={styles.reviewCommentWord}>コメント</p>
+            <p className={styles.reviewComment}>{commentText}</p>
+          </div>
+
+          <div className={styles.reviewLinkWrapper}>
+            <a className={styles.reviewLink} href={link}>
+              商品ページへ
+            </a>
+            <svg
+              width="6"
+              height="9"
+              viewBox="0 0 6 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="1.35355"
+                y1="0.646447"
+                x2="4.88909"
+                y2="4.18198"
+                stroke="white"
+              />
+              <path d="M4.62404 4.27538L0.971311 7.9281" stroke="white" />
+            </svg>
           </div>
         </div>
       </div>

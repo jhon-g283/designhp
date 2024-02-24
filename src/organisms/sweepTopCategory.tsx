@@ -15,7 +15,6 @@ const CategoryComponent = () => {
   return (
     <>
       <div className={styles.categoryConponentWrapper}>
-        {/* 背景の黒 */}
         <Div
           afterClass="test"
           beforeClass="pre--"
@@ -25,7 +24,7 @@ const CategoryComponent = () => {
         >
           <div className={styles.backGroundSheet8}></div>
         </Div>
-        <div className={styles.campaignText1Wrapper}>
+        <div className={styles.categoryTextWrapper}>
           <div className={styles.sectionSubTitleWrapper}>
             <SectionSubTitle className={styles.sectionSubTitle}>
               カテゴリから

@@ -337,6 +337,104 @@
   position: absolute;
 }
 
+.backGroundSheet11 {
+  background-color: black;
+  width: 522px;
+  height: 104px;
+  flex-shrink: 0;
+
+  margin-top: -13px;
+  flex-shrink: 0;
+  left: -90px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet12 {
+  background-color: black;
+  width: 1011px;
+  height: 156px;
+  flex-shrink: 0;
+
+  margin-top: 75px;
+  flex-shrink: 0;
+  left: -20px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet13 {
+  background-color: black;
+  width: 254px;
+  height: 233px;
+  flex-shrink: 0;
+
+  margin-top: 70px;
+  margin-left: 30px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet14 {
+  background-color: black;
+  width: 963px;
+  height: 291px;
+  flex-shrink: 0;
+
+  margin-top: 30px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet15 {
+  background-color: black;
+  width: 273px;
+  height: 229px;
+  flex-shrink: 0;
+
+  margin-top: 90px;
+  margin-left: 50px;
+
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet16 {
+  background-color: black;
+  width: 398px;
+  height: 227px;
+  flex-shrink: 0;
+
+  margin-top: -20px;
+  margin-right: -59px;
+  right: 0px;
+  z-index: 0;
+
+  position: absolute;
+}
+.backGroundSheet17 {
+  background-color: black;
+  width: 378px;
+  height: 700px;
+  flex-shrink: 0;
+
+  margin-top: -20px;
+  margin-left: -20px;
+  left: 0px;
+  z-index: 0;
+
+  position: absolute;
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;
@@ -521,7 +619,8 @@
 
 /* Aboutのセクション名 */
 .titleAbout::after,
-.titlePickUp::after {
+.titlePickUp::after,
+.titleVoice::after {
   /* beforeを非表示 */
   display: none;
 }
@@ -1061,7 +1160,7 @@
 
   flex-shrink: 0;
   background: linear-gradient(0deg, #fff 0%, #fff 100%), rgba(0, 0, 0, 0.34);
-
+  /* background-color: rgba(255, 255, 255, 0.971); */
   /* 高さ・長さは固定せずpaddingで調整 */
   display: block;
   padding: 28px 33px 27px 33px;
@@ -1163,23 +1262,268 @@
 }
 
 /* Campaign */
-
 .campaignComponentWrapper {
   margin-top: 136px;
+  position: relative;
+  z-index: 3;
 }
 
-.campaignText1Wrapper {
+.campaignTextArea1Wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+/* １つ目のキャンペーン文字部分 */
+.campaignTextArea1_2Wrapper {
+  margin-top: 86px;
   margin-left: 61px;
-}
-.campaginItemListtWrapper {
-  display: flex;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  letter-spacing: 1.4px;
+
+  position: relative;
+  z-index: 3;
 }
 
+/* キャンペーン対象商品 （外枠）*/
+.campaginItemListWrapper {
+  margin-left: 105px;
+  position: relative;
+  z-index: 3;
+}
+/* 対象商品の一覧 */
+.campaginItemList {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 29px;
+
+  position: relative;
+  z-index: 3;
+}
+
+/* 対象商品の文字 */
+.targetItemWrapper {
+  margin-top: 105px;
+  margin-left: -9px;
+  margin-bottom: 36px;
+
+  position: relative;
+  z-index: 3;
+
+  /* font */
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 105% */
+  letter-spacing: 2px;
+}
+
+.campaignDiscription1 {
+  font-size: 1em;
+}
+
+/* 今発売している。。の部分 */
+.campaignDiscription2 {
+  font-size: 1em;
+  margin-top: 18px;
+}
+
+/* 選べるプレゼント内容 */
+.campaignDiscription3 {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* 選べるプレゼント内容 */
+.campaignDiscription4 {
+  font-size: 1em;
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+
+/*  対象商品の文字（外枠） */
+.targetItem {
+  font-size: 1em;
+}
+
+.campaignTextArea2Wrapper {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 45px;
+  margin-left: 61px;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px; /* 150% */
+  letter-spacing: 1.4px;
+}
+
+/* Voice */
 .voiceConponentWrapper {
-  display: flex;
-  justify-content: end;
+  margin-top: 89px;
+  position: relative;
 }
 
+/* セクション名などの大枠 */
+.voiceSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  z-index: 3;
+  right: 0;
+}
+
+/* レビューのリスト部分(外枠) */
+.reviewItemListWrapper {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* レビューのリスト部分 */
+.reviewItemList {
+  width: 1291px;
+  display: inline-flex;
+  flex-wrap: wrap; /* 行を折り返す */
+
+  align-items: flex-start;
+  gap: 45px; /* 34px間隔で並べる */
+
+  position: relative;
+}
+
+/* レビューのアイテムボックス */
 .reviewBoxWrapper {
   display: flex;
+  background: #232225;
+
+  padding: 64px 57px 60px 57px;
+}
+.reviewTextWrapper {
+  margin-top: -5px;
+  margin-left: 21px;
+}
+
+/* 商品名の行（外枠） */
+.reviewItemNameWrapper {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+/* 商品名 */
+.reviewItemName {
+  font-size: 1em;
+}
+
+/* 価格 */
+.reviewItemPrice {
+  font-size: 1em;
+  padding-left: 10px;
+}
+
+/* レビュー者（外枠） */
+.reviewInfoWrapper {
+  margin-top: 13px;
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+/* レビュー者 */
+.reviewInfoWrapper {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+/* レビュアー */
+.reviewReviewer {
+  font-size: 1em;
+}
+.reviewCommentWrapper {
+  width: 256px;
+
+  flex-shrink: 0;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+.reviewCommentWord {
+  letter-spacing: 1.3px;
+  margin-bottom: 0px;
+}
+
+.reviewComment {
+  text-wrap: wrap;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
+.reviewCommentWrapper {
+  margin-top: 10px;
+}
+
+/* リンクタグの外枠 */
+.reviewLinkWrapper {
+  text-align: end;
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.3px;
+}
+
+/* リンクタグの書式を設定 */
+
+a.reviewLink:link,
+a.reviewLink:visited,
+a.reviewLink:active {
+  color: #fff;
+  text-decoration: none;
+}
+/* 矢印の位置調整 */
+.reviewLink {
+  padding-right: 7px;
+}
+
+.reviewImageWrapper {
+  width: 203px;
+  height: 200px;
+  flex-shrink: 0;
+  position: relative;
 }
