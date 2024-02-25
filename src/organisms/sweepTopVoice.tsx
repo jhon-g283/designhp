@@ -76,12 +76,12 @@ const VoiceComponent = () => {
             />
             <ReviewItem
               imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="200"
-              review="333"
+              itemName="リッチビター(7個)"
+              price="600"
+              review="2"
               linkParam="a"
-              reviewerInfo="情報ううう"
-              commentText="コメントおおおお"
+              reviewerInfo="(30代 会社員 女性)"
+              commentText="甘すぎず苦すぎない絶妙な口当たりで、食後に最適。自然と夜もベッドに入れるようになったので、買ってよかったです。"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import { createReviewStars } from '../common/sweep/createReviewStars';
 
 // ヘッダー部分のコンポーネント
 
@@ -23,6 +24,11 @@ const ReviewItem = ({
   commentText = '',
 }: Props) => {
   const link = 'domein:::::' + linkParam;
+
+  const starCount = parseInt(review);
+
+  const stars = createReviewStars(starCount, '#FFFFFF', '#A7A7A7');
+
   return (
     <>
       <div className={styles.reviewBoxWrapper}>
@@ -46,12 +52,13 @@ const ReviewItem = ({
 
           <div className={styles.reviewInfoWrapper}>
             <a className={styles.reviewReviewer}>{reviewerInfo}</a>
-            <a className={styles.reviewStar}>{review}</a>
+            <span className={styles.reviewStar}>{stars}</span>
           </div>
 
           <div className={styles.reviewCommentWrapper}>
             <p className={styles.reviewCommentWord}>コメント</p>
             <p className={styles.reviewComment}>{commentText}</p>
+            {/* 処理追加 */}
           </div>
 
           <div className={styles.reviewLinkWrapper}>

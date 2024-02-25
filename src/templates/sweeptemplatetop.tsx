@@ -17,6 +17,7 @@ import PickUpComponent from '../organisms/sweepTopPickUp';
 import CampaignComponent from '../organisms/sweepTopCampaign';
 import ProductComponent from '../organisms/sweepTopProduct';
 import VoiceComponent from '../organisms/sweepTopVoice';
+import SNSComponent from '../organisms/sweepTopSNS';
 
 const SweepTopPageTemplate = () => {
   return (
@@ -40,17 +41,10 @@ const SweepTopPageTemplate = () => {
           <PickUpComponent />
           <CampaignComponent />
           <VoiceComponent />
+          <SNSComponent />
         </div>
 
-        {/* campaign */}
-        <p>campaign</p>
-        {/* voice */}
-        <p>voice</p>
-        {/* sns */}
-        <p>sns</p>
-        {/* footer */}
         <p>footer</p>
-        <p>SWEEp</p>
       </div>
     </>
   );

@@ -435,6 +435,49 @@
   position: absolute;
 }
 
+.backGroundSheet18 {
+  background-color: black;
+  width: 175px;
+  height: 348px;
+  flex-shrink: 0;
+
+  margin-top: -20px;
+  margin-right: -59px;
+  left: 0px;
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet19 {
+  background-color: black;
+  width: 572px;
+  height: 183px;
+  flex-shrink: 0;
+
+  margin-top: 80px;
+  margin-left: -89px;
+  left: 0px;
+  z-index: 0;
+
+  position: absolute;
+}
+
+.backGroundSheet20 {
+  background-color: black;
+  width: 802px;
+  height: 213px;
+  flex-shrink: 0;
+
+  margin-top: 280px;
+  margin-right: -90px;
+
+  right: 0px;
+  z-index: 0;
+
+  position: absolute;
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;
@@ -482,7 +525,8 @@
 /* Newsのセクション名 */
 .titleNews::before,
 .titleProduct::before,
-.titleCampaign::before {
+.titleCampaign::before,
+.snsTitle::before {
   /* beforeを非表示 */
   display: none;
 }
@@ -1428,6 +1472,8 @@
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+
+  position: relative;
 }
 
 /* 商品名 */
@@ -1437,8 +1483,11 @@
 
 /* 価格 */
 .reviewItemPrice {
+  right: 0px;
+  position: absolute;
+
   font-size: 1em;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 /* レビュー者（外枠） */
@@ -1521,9 +1570,109 @@ a.reviewLink:active {
   padding-right: 7px;
 }
 
+.reviewStar {
+  margin-left: 15px;
+}
+/* レビューの画像 */
 .reviewImageWrapper {
   width: 203px;
   height: 200px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* SNS */
+.snsConponentWrapper {
+  margin-top: 97px;
+  position: relative;
+  z-index: 3;
+}
+
+.snsSectionWrapper {
+  position: relative;
+  z-index: 3;
+}
+
+.snsSectionWrapper {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 150% */
+  letter-spacing: 1.4px;
+}
+
+.snsTextAreaWrapper {
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+.snsTextArea {
+  font-size: 1em;
+}
+
+.snsTitleWrapper {
+  margin-left: 20px;
+  margin-top: 21px;
+  display: inline-flex;
+  gap: 165px;
+}
+
+.logoAndId {
+  display: flex;
+  margin-top: 17px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.snsIconImageWrapper {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.snsId {
+  padding-left: 13px;
+  padding-top: 2px;
+  font-size: 1em;
+  letter-spacing: 1.3px;
+}
+
+.snsImageListWrapper {
+  margin-left: 80px;
+  /* width: 1225px; */
+  display: flex;
+
+  /* justify-content: center; */
+  position: relative;
+  z-index: 3;
+}
+
+.snsMainImageWrapper {
+  width: 350px;
+  height: 350px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.snsImageListWrapper {
+  margin-top: 41px;
+  display: flex;
+}
+
+.snsSubImageList {
+  width: 801px;
+  margin-left: 58px;
+  display: inline-flex;
+  gap: 16px 17px;
+  flex-wrap: wrap;
+}
+
+.snsSubImageWrapper {
+  width: 167px;
+  height: 167px;
   flex-shrink: 0;
   position: relative;
 }
