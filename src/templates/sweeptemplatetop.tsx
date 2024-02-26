@@ -18,6 +18,7 @@ import CampaignComponent from '../organisms/sweepTopCampaign';
 import ProductComponent from '../organisms/sweepTopProduct';
 import VoiceComponent from '../organisms/sweepTopVoice';
 import SNSComponent from '../organisms/sweepTopSNS';
+import Footer from '../organisms/sweepFooter';
 
 const SweepTopPageTemplate = () => {
   return (
@@ -44,6 +45,7 @@ const SweepTopPageTemplate = () => {
           <SNSComponent />
         </div>
 
+        <Footer />
         <p>footer</p>
       </div>
     </>

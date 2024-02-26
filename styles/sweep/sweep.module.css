@@ -1676,3 +1676,52 @@ a.reviewLink:active {
   flex-shrink: 0;
   position: relative;
 }
+
+/* フッター */
+
+.footerConponentWrapper {
+  margin-top: 200px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+  background-color: #000;
+  /* width: 1512px; */
+  height: 255px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.footerLogoImage {
+  width: 230px;
+  height: 70px;
+  flex-shrink: 0;
+  left: 0px;
+  position: absolute;
+}
+
+.footerInfoArea {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.68px;
+}
+
+.footerSNSIcons {
+  /* display: inline-flex; */
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 24px;
+  right: 0px;
+  /* position: absolute; */
+}
+
+.snsIconImage {
+  width: 38px;
+  height: 38px;
+  position: relative;
+}
