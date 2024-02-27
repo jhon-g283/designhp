@@ -2,7 +2,8 @@
 const createReviewStars = (
   reviewCount: number,
   activeColor: string = '#000000',
-  deactiveColor: string = '#A7A7A7'
+  deactiveColor: string = '#A7A7A7',
+  keyInfo: string = ''
 ) => {
   let starArray = [];
 
@@ -10,6 +11,7 @@ const createReviewStars = (
     // レビューの数値より低い場合は星の色を黒くする。
     const flag = i < reviewCount;
     const color = flag ? activeColor : deactiveColor;
+    const key = keyInfo + '_' + i;
     //
     const star = (
       <svg
@@ -18,6 +20,7 @@ const createReviewStars = (
         viewBox="0 0 13 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        key={key}
       >
         <path
           d="M2.37976 11.738L3.87776 7.286L0.265758 4.864H4.68976L6.27176 0.0899992L7.88176 4.864H12.2778L8.66576 7.286L10.1918 11.738L6.27176 8.896L2.37976 11.738Z"

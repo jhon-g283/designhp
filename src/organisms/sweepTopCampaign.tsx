@@ -9,6 +9,65 @@ import Image from 'next/image';
 const CampaignComponent = () => {
   // Redux
 
+  const campainArray = [
+    {
+      imageUrl: '/img/FirstSectionImg1.png',
+      itemName: 'チョコ',
+      price: '500',
+      review: '4',
+      linkParam: 'bbb',
+    },
+    {
+      imageUrl: '/img/FirstSectionImg1.png',
+      itemName: 'チョコ',
+      price: '500',
+      review: '4',
+      linkParam: 'bbb',
+    },
+    {
+      imageUrl: '/img/FirstSectionImg1.png',
+      itemName: 'チョコ',
+      price: '500',
+      review: '4',
+      linkParam: 'bbb',
+    },
+    {
+      imageUrl: '/img/FirstSectionImg1.png',
+      itemName: 'チョコ',
+      price: '500',
+      review: '4',
+      linkParam: 'bbb',
+    },
+  ];
+
+  const campaignList1 = campainArray.map((item, index) => {
+    const key = 'campaignList1_Items_' + index;
+    return (
+      <TopPageItemBox
+        key={key} //
+        imageUrl={item.imageUrl}
+        itemName={item.itemName}
+        price={item.price}
+        review={item.review}
+        linkParam={item.linkParam}
+      />
+    );
+  });
+
+  const campaignList12 = campainArray.map((item, index) => {
+    const key = 'campaignList2_Items_' + index;
+    return (
+      <TopPageItemBox
+        key={key} //
+        imageUrl={item.imageUrl}
+        itemName={item.itemName}
+        price={item.price}
+        review={item.review}
+        linkParam={item.linkParam}
+      />
+    );
+  });
+
   return (
     <>
       <div className={styles.campaignComponentWrapper}>
@@ -66,36 +125,7 @@ const CampaignComponent = () => {
             <p className={styles.targetItem}>対象商品</p>
           </div>
 
-          <div className={styles.campaginItemList}>
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-          </div>
+          <div className={styles.campaginItemList}>{campaignList1}</div>
         </div>
 
         <Div
@@ -143,36 +173,7 @@ const CampaignComponent = () => {
           <div className={styles.targetItemWrapper}>
             <p className={styles.targetItem}>対象商品</p>
           </div>
-          <div className={styles.campaginItemList}>
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-            <TopPageItemBox
-              imageUrl="/img/FirstSectionImg1.png"
-              itemName="チョコ"
-              price="500"
-              review="aaa"
-              linkParam="bbb"
-            />
-          </div>
+          <div className={styles.campaginItemList}>{campaignList12}</div>
         </div>
       </div>
     </>

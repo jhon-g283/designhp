@@ -20,9 +20,10 @@ const SNSComponent = () => {
     '/img/FirstSectionImg2-2.png',
   ];
 
-  const subImagesMap = subImageURLArray.map((item) => {
+  const subImagesMap = subImageURLArray.map((item, index) => {
+    const key = 'newsItemWrapper_' + index;
     const result = (
-      <div className={styles.snsSubImageWrapper}>
+      <div className={styles.snsSubImageWrapper} key={key}>
         <Image
           // src="/img/FirstSectionImg2-2.png"
           src={item}

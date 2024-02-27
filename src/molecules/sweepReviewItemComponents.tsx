@@ -27,7 +27,12 @@ const ReviewItem = ({
 
   const starCount = parseInt(review);
 
-  const stars = createReviewStars(starCount, '#FFFFFF', '#A7A7A7');
+  const stars = createReviewStars(
+    starCount,
+    '#FFFFFF',
+    '#A7A7A7',
+    'review_item_box'
+  );
 
   return (
     <>

@@ -27,7 +27,12 @@ const TopPageItemBox = ({
 
   const starCount = parseInt(review);
 
-  const stars = createReviewStars(starCount, '#000000', '#A7A7A7');
+  const stars = createReviewStars(
+    starCount,
+    '#000000',
+    '#A7A7A7',
+    'top_item_box'
+  );
 
   return (
     <>

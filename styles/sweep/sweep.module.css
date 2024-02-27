@@ -101,8 +101,8 @@
 /*ページの外枠  */
 .mainWrapper {
   /* 左右の内側の幅を設定 */
-  margin-left: min(calc(5%), 88px);
-  margin-right: min(calc(5%), 94px);
+  margin-left: min(calc(5%), 83px);
+  margin-right: min(calc(5%), 87px);
 }
 
 /* ファーストビュー調整用 */
@@ -189,18 +189,6 @@
   width: 100%; /* 親要素の幅に合わせる */
   height: auto; /* 高さは自動調整してアスペクト比を保持 */
   object-fit: contain; /* 画像全体がコンテナに収まるように調整 */
-}
-/* ニュースの一覧の外枠 */
-.newsListWrapper {
-  display: flex;
-  z-index: 2;
-}
-
-/* News部分 */
-.newsConponentWrapper {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
 }
 
 /* FVとNewsの間のエリア */
@@ -478,9 +466,24 @@
   position: absolute;
 }
 
+/* News部分 */
+.newsConponentWrapper {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+/* ニュースの一覧の外枠 */
+.newsListWrapper {
+  display: flex;
+  z-index: 2;
+  margin-right: -60px;
+  /* right: 0; */
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;
+  margin-top: 117px;
   position: absolute;
   /* max-width: 300px; */
   z-index: 3;
@@ -954,6 +957,10 @@
   display: inline-block;
   width: 401px;
   text-align: start;
+}
+.sizeContext p {
+  margin-top: 14px;
+  font-size: 1em;
 }
 
 /* 項目の外枠（サイズ） */
@@ -1680,6 +1687,9 @@ a.reviewLink:active {
 /* フッター */
 
 .footerConponentWrapper {
+  /* 左右の内側の幅を設定 */
+  padding-left: min(calc(5%), 88px);
+  padding-right: min(calc(5%), 94px);
   margin-top: 200px;
   display: flex;
   justify-content: flex-end;
@@ -1696,7 +1706,7 @@ a.reviewLink:active {
   width: 230px;
   height: 70px;
   flex-shrink: 0;
-  left: 0px;
+  left: 88px;
   position: absolute;
 }
 
@@ -1710,6 +1720,11 @@ a.reviewLink:active {
   letter-spacing: 1.68px;
 }
 
+.footerInfoArea svg {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
 .footerSNSIcons {
   /* display: inline-flex; */
   display: flex;
@@ -1717,6 +1732,7 @@ a.reviewLink:active {
 
   gap: 24px;
   right: 0px;
+  padding-bottom: 17px;
   /* position: absolute; */
 }
 
@@ -1724,4 +1740,11 @@ a.reviewLink:active {
   width: 38px;
   height: 38px;
   position: relative;
+}
+
+.sweepCopyWrite {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 17px;
 }

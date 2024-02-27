@@ -23,18 +23,16 @@ const NewsComponent = () => {
   }, [dispatch]);
 
   // 次は背景色
-  const newsList = newsData.map((item) => {
+  const newsList = newsData.map((item, index) => {
     return (
-      <>
-        <div className={styles.newsItemWrapper}>
-          <NewsItemTop
-            topicType={item.type}
-            imageUrl={item.imageUrl}
-            date={item.date}
-            title={item.title}
-          />
-        </div>
-      </>
+      <div className={styles.newsItemWrapper} key={'news_div_' + index}>
+        <NewsItemTop
+          topicType={item.type}
+          imageUrl={item.imageUrl}
+          date={item.date}
+          title={item.title}
+        />
+      </div>
     );
   });
 
@@ -61,11 +59,14 @@ const NewsComponent = () => {
               News
             </SectionTitle>
           </div>
-          <p className={styles.paragraph}>
-            注目のトピック<br></br>
-            新作商品やキャンペーンなど気になる情報は<br></br>
-            こちらから
-          </p>
+
+          <div className={styles.newsParagraph}>
+            <p className={styles.paragraph}>
+              注目のトピック<br></br>
+              新作商品やキャンペーンなど気になる情報は<br></br>
+              こちらから
+            </p>
+          </div>
         </div>
         <Div
           afterClass="test"

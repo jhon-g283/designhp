@@ -55,7 +55,7 @@ const ItemLinkSize = ({
             <path
               d="M7.97597 15.7982L16.0784 7.74667M16.0336 8.97333L8.04262 0.933939"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </mask>
           <g mask="url(#mask0_2640_114)">
@@ -111,7 +111,7 @@ const ItemLinkCategory = ({
             <path
               d="M7.97597 15.7982L16.0784 7.74667M16.0336 8.97333L8.04262 0.933939"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </mask>
           <g mask="url(#mask0_2640_114)">
