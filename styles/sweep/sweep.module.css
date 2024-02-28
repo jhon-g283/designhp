@@ -480,6 +480,12 @@
   /* right: 0; */
 }
 
+.newsImageWrapper {
+  width: 236px;
+  height: 244px;
+  position: relative;
+}
+
 /* ニュースのタイトルエリア */
 .newsCompoTitleArea {
   left: 0px;

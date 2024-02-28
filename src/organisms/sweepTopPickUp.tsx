@@ -23,8 +23,6 @@ const PickUpComponent = () => {
         </Div>
         <div className={styles.pickUpListWrapper}>
           <TopPageItemBox
-            index={1}
-            uniqueKey={'item2'}
             imageUrl="/img/FirstSectionImg1.png"
             itemName="ビターチョコ(7個)"
             price="500"
@@ -32,8 +30,6 @@ const PickUpComponent = () => {
             linkParam="bbb"
           />
           <TopPageItemBox
-            index={2}
-            uniqueKey={'item2'}
             imageUrl="/img/FirstSectionImg1.png"
             itemName="ビターチョコ(7個)"
             price="500"
@@ -41,8 +37,6 @@ const PickUpComponent = () => {
             linkParam="bbb"
           />
           <TopPageItemBox
-            index={3}
-            uniqueKey={'item2'}
             imageUrl="/img/FirstSectionImg1.png"
             itemName="ビターチョコ(7個)"
             price="500"

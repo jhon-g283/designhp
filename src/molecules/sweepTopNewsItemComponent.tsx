@@ -23,14 +23,18 @@ const NewsItemTop = ({
         <p className={styles.topicType}>{topicType}</p>
       </div>
 
-      <Image
-        // src="/img/FirstSectionImg2-2.png"
-        src={imageUrl}
-        width={236} // Specify different width values based on device or viewport size
-        height={244}
-        alt="Your Image"
-        className={styles.imgPC}
-      ></Image>
+      <div className={styles.newsImageWrapper}>
+        <Image
+          // src="/img/FirstSectionImg2-2.png"
+          src={imageUrl}
+          // width={236} // Specify different width values based on device or viewport size
+          // height={244}
+          alt="Your Image"
+          fill={true}
+          className={styles.imgPC}
+        ></Image>
+      </div>
+
       <div className={styles.newsTitleWrapper}>
         <div className={styles.newsDateWrapper}>
           <p className={styles.newsDate}>{date}</p>

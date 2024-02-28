@@ -1,27 +1,27 @@
 {
   "data": [
     {
-      "date": "2022/12/1",
-      "title": "お知らせ１",
-      "imageUrl": "/img/FirstSectionImg2-2.png",
+      "date": "2023.07.02",
+      "title": "夏の新商品の紹介",
+      "imageUrl": "/imgSweep/Product_milk.jpg",
       "type": "Release/campaign"
     },
     {
-      "date": "2022/12/2",
-      "title": "お知らせ2",
-      "imageUrl": "/img/FirstSectionImg2-2.png",
+      "date": "2023.06.11",
+      "title": "より良い効果を実感",
+      "imageUrl": "/imgSweep/News_sleep.jpg",
       "type": "NEWS"
     },
     {
-      "date": "2022/12/3",
-      "title": "お知らせ3",
-      "imageUrl": "/img/FirstSectionImg2-2.png",
+      "date": "2023.05.27",
+      "title": "素材へのこだわり",
+      "imageUrl": "/imgSweep/News_sozai.jpg",
       "type": "NEWS"
     },
     {
-      "date": "2022/12/4",
-      "title": "お知らせ4",
-      "imageUrl": "/img/FirstSectionImg2-2.png",
+      "date": "2023.04.14",
+      "title": "Sweepショップ東京",
+      "imageUrl": "/imgSweep/News_shop.jpg",
       "type": "campaign"
     }
   ]

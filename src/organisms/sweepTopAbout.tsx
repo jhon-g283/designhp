@@ -75,7 +75,7 @@ const AboutComponent = () => {
             <p>SLEEP</p>
             <div className={styles.aboutImage1}>
               <Image
-                src="/img/FirstSectionImg1.png"
+                src="/imgSweep/About_Image1.jpg"
                 // width={1200} // Specify different width values based on device or viewport size
                 // height={200}
                 alt="Your Image"
@@ -110,7 +110,7 @@ const AboutComponent = () => {
           <div className={styles.aboutImage2Wrapper}>
             <div className={styles.aboutImage2}>
               <Image
-                src="/img/FirstSectionImg1.png"
+                src="/imgSweep/About_Image2.jpg"
                 // width={1200} // Specify different width values based on device or viewport size
                 // height={200}
                 alt="Your Image"
