@@ -1075,11 +1075,22 @@
 
 /* productのサイズの項目の外枠 */
 .produtlineupSizeWrapper {
+  /* 横並べで右寄せ */
   display: flex;
 
+  flex-direction: column;
   margin-top: 59px;
 
+  align-items: end;
+
   position: relative;
+}
+
+/* 右へ幅寄せするためにもう１つWrapper用意 */
+.produtlineupSizeInnerWrapper {
+  /* 等間隔で横並び */
+  display: inline-flex;
+  gap: 38px;
 }
 
 .pickUpConponentWrapper {
@@ -1093,7 +1104,8 @@
 
   z-index: 3;
   right: 0;
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
 }
 
 .categoryConponentWrapper {

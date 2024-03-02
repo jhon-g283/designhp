@@ -48,7 +48,7 @@ const VoiceComponent = () => {
         <div className={styles.reviewItemListWrapper}>
           <div className={styles.reviewItemList}>
             <ReviewItem
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_Bitter.jpg"
               itemName="ビターチョコ(7個)"
               price="600"
               review="3"
@@ -57,7 +57,7 @@ const VoiceComponent = () => {
               commentText="甘すぎず苦すぎない絶妙な口当たりで、食後に最適。自然と夜もベッドに入れるようになったので、買ってよかったです。"
             />
             <ReviewItem
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_sakura.jpg"
               itemName="サクラ(7個)"
               price="700"
               review="3"
@@ -66,7 +66,7 @@ const VoiceComponent = () => {
               commentText="夕食後に食べるものですが、好きすぎてお昼ご飯の後にも食べてしまいます。ほんのりとした桜の香りが好きなポイントです。"
             />
             <ReviewItem
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_strawberry.jpg"
               itemName="ストロベリー(7個)"
               price="600"
               review="3"
@@ -75,7 +75,7 @@ const VoiceComponent = () => {
               commentText="上品な大人な感じの苺の味がします。娘にちょうだいとよく言われますがもったいなくてあげれません。"
             />
             <ReviewItem
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_Rich_bitter.jpg"
               itemName="リッチビター(7個)"
               price="600"
               review="2"

@@ -10,14 +10,14 @@ const SNSComponent = () => {
   // Redux
 
   const subImageURLArray = [
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
-    '/img/FirstSectionImg2-2.png',
+    '/imgSweep/1Month_set.jpg',
+    '/imgSweep/Product_milk.jpg',
+    '/imgSweep/Bowl_choco.jpg',
+    '/imgSweep/Caramel.jpg',
+    '/imgSweep/News_shop.jpg',
+    '/imgSweep/Choco_sns_image1.jpg',
+    '/imgSweep/News_sozai.jpg',
+    '/imgSweep/Product_sakura.jpg',
   ];
 
   const subImagesMap = subImageURLArray.map((item, index) => {
@@ -137,7 +137,7 @@ const SNSComponent = () => {
           <div className={styles.snsMainImageWrapper}>
             <Image
               // src="/img/FirstSectionImg2-2.png"
-              src={'/img/FirstSectionImg2-2.png'}
+              src={'/imgSweep/Product_Rich_bitter.jpg'}
               // width={236} // Specify different width values based on device or viewport size
               // height={244}
               alt="Your Image"

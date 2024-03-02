@@ -46,7 +46,6 @@ const SweepTopPageTemplate = () => {
         </div>
 
         <Footer />
-        <p>footer</p>
       </div>
     </>
   );

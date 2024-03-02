@@ -81,33 +81,35 @@ const ProductComponent = () => {
       </div>
 
       <div className={styles.produtlineupSizeWrapper}>
-        <div>
-          <ItemLinkSize
-            itemName="１ヶ月セット"
-            subName="1Week"
-            imageUrl="/img/FirstSectionImg1.png"
-          />
-          <ItemLinkSize
-            itemName="１ヶ月セット"
-            subName="1Month"
-            imageUrl="/img/FirstSectionImg1.png"
-          />
-          <ItemLinkSize
-            itemName="エクストラ"
-            subName="Extra"
-            imageUrl="/img/FirstSectionImg1.png"
-          />
-        </div>
+        <div className={styles.produtlineupSizeInnerWrapper}>
+          <div>
+            <ItemLinkSize
+              itemName="１ヶ月セット"
+              subName="1Week"
+              imageUrl="/imgSweep/1week_set.jpg"
+            />
+            <ItemLinkSize
+              itemName="１ヶ月セット"
+              subName="1Month"
+              imageUrl="/imgSweep/1Month_set.jpg"
+            />
+            <ItemLinkSize
+              itemName="エクストラ"
+              subName="Extra"
+              imageUrl="/imgSweep/Extra_set.jpg"
+            />
+          </div>
 
-        <div className={styles.productImage}>
-          <Image
-            src="/img/FirstSectionImg1.png"
-            // width={1200} // Specify different width values based on device or viewport size
-            // height={200}
-            alt="Your Image"
-            fill={true}
-            // className={styles.imgPC}
-          ></Image>
+          <div className={styles.productImage}>
+            <Image
+              src="/imgSweep/Size_main.jpg"
+              // width={1200} // Specify different width values based on device or viewport size
+              // height={200}
+              alt="Your Image"
+              fill={true}
+              // className={styles.imgPC}
+            ></Image>
+          </div>
         </div>
       </div>
     </>

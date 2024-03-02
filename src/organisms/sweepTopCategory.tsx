@@ -38,7 +38,7 @@ const CategoryComponent = () => {
         <div className={styles.categoryImageOuterWrapper}>
           <div className={styles.categoryImageWrapper}>
             <Image
-              src="/img/FirstSectionImg1.png"
+              src="/imgSweep/Category_main.jpg"
               // width={1200} // Specify different width values based on device or viewport size
               // height={200}
               alt="Your Image"
@@ -53,32 +53,32 @@ const CategoryComponent = () => {
             <ItemLinkCategory
               itemName="ベーシック"
               subName="Basic"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Basic.jpg"
             />
             <ItemLinkCategory
               itemName="キャラメル"
               subName="caramel"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Caramel.jpg"
             />
             <ItemLinkCategory
               itemName="ベジタブル"
               subName="vegetable"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Vegitable.jpg"
             />
             <ItemLinkCategory
               itemName="ミルク"
               subName="Milk"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_milk.jpg"
             />
             <ItemLinkCategory
               itemName="ストロベリー"
               subName="Strawberry"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_strawberry.jpg"
             />
             <ItemLinkCategory
               itemName="サクラ"
               subName="Sakura"
-              imageUrl="/img/FirstSectionImg1.png"
+              imageUrl="/imgSweep/Product_sakura.jpg"
             />
           </div>
         </div>

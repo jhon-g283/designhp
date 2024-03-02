@@ -23,21 +23,21 @@ const PickUpComponent = () => {
         </Div>
         <div className={styles.pickUpListWrapper}>
           <TopPageItemBox
-            imageUrl="/img/FirstSectionImg1.png"
+            imageUrl="/imgSweep/Product_Bitter.jpg"
             itemName="ビターチョコ(7個)"
             price="500"
             review="2"
             linkParam="bbb"
           />
           <TopPageItemBox
-            imageUrl="/img/FirstSectionImg1.png"
+            imageUrl="/imgSweep/Product_Bitter.jpg"
             itemName="ビターチョコ(7個)"
             price="500"
             review="2"
             linkParam="bbb"
           />
           <TopPageItemBox
-            imageUrl="/img/FirstSectionImg1.png"
+            imageUrl="/imgSweep/Product_Bitter.jpg"
             itemName="ビターチョコ(7個)"
             price="500"
             review="2"
