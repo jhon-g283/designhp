@@ -85,14 +85,17 @@ const SliderComponent = () => {
               <div className={styles.fvInnerWrapper}>
                 {/* ロゴ部分 */}
                 <div className={styles.fvLogoArea}>
-                  <Image
-                    src="/img/FVLogo.svg"
-                    width={284} // Specify different width values based on device or viewport size
-                    height={83}
-                    alt="Your Image"
-                    // fill={true}
-                    className={styles.imgPC}
-                  ></Image>
+                  <div className={styles.logoImageWrapper}>
+                    <Image
+                      src="/img/FVLogo.svg"
+                      // width={284} // Specify different width values based on device or viewport size
+                      // height={83}
+                      alt="Your Image"
+                      fill={true}
+                      className={styles.imgOnlyPC}
+                    ></Image>
+                  </div>
+
                   <p className={styles.fvCopyWrite}>
                     食べるとスッキリ<br></br>起きれるチョコレート
                   </p>
@@ -100,7 +103,7 @@ const SliderComponent = () => {
 
                 <div className={styles.fvImageArea}>
                   <Image
-                    src="/img/FVTopImage1PC.jpg"
+                    src="/imgSweep/FVTopImage1PC.jpg"
                     width={880} // Specify different width values based on device or viewport size
                     height={674}
                     alt="Your Image"
@@ -113,13 +116,21 @@ const SliderComponent = () => {
 
               {/* 背景画像 */}
               <Image
-                src="/img/backGroundFV1.jpg"
+                src="/imgSweep/backGroundFV1PC.jpg"
                 width={1980} // Specify different width values based on device or viewport size
                 height={893}
                 alt="Your Image"
                 // fill={true}
-                objectFit="cover"
+
                 className={`${styles.imgPC} ${styles.fvbackImage1} `}
+              ></Image>
+              <Image
+                src="/imgSweep/backGroundFV1SP.jpg"
+                // width={1980} // Specify different width values based on device or viewport size
+                // height={893}
+                alt="Your Image"
+                fill={true}
+                className={`${styles.imgSP} ${styles.fvbackImage1} `}
               ></Image>
             </div>
           </SplideSlide>
@@ -130,7 +141,7 @@ const SliderComponent = () => {
               height={400}
               alt="Your Image"
               layout="responsive"
-              className={styles.imgPC}
+              // className={styles.imgPC}
             ></Image>
           </SplideSlide>
         </SplideTrack>

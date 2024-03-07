@@ -45,7 +45,7 @@ const TopPageItemBox = ({
             // height={244}
             alt="Your Image"
             fill={true}
-            className={styles.imgPC}
+            // className={styles.imgPC}
           ></Image>
         </div>
 
@@ -97,7 +97,7 @@ const ItemBox = ({
           width={236} // Specify different width values based on device or viewport size
           height={244}
           alt="Your Image"
-          className={styles.imgPC}
+          // className={styles.imgPC}
         ></Image>
         <div className={''}>
           <p>{itemName}</p>

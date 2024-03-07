@@ -45,7 +45,7 @@ const ReviewItem = ({
             // height={244}
             alt="Your Image"
             fill={true}
-            className={styles.imgPC}
+            // className={styles.imgPC}
           ></Image>
         </div>
 

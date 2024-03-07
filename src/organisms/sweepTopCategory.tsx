@@ -43,7 +43,7 @@ const CategoryComponent = () => {
               // height={200}
               alt="Your Image"
               fill={true}
-              className={styles.imgPC}
+              // className={styles.imgPC}
             ></Image>
           </div>
         </div>

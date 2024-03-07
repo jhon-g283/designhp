@@ -20,7 +20,7 @@ const Footer = () => {
             // height={244}
             alt="Your Image"
             fill={true}
-            className={styles.imgPC}
+            // className={styles.imgPC}
           ></Image>
         </div>
 
@@ -34,7 +34,7 @@ const Footer = () => {
                 // height={244}
                 alt="Your Image"
                 fill={true}
-                className={styles.imgPC}
+                // className={styles.imgPC}
               ></Image>
             </div>
             <div className={styles.snsIconImage}>
@@ -45,7 +45,7 @@ const Footer = () => {
                 // height={244}
                 alt="Your Image"
                 fill={true}
-                className={styles.imgPC}
+                // className={styles.imgPC}
               ></Image>
             </div>
             <div className={styles.snsIconImage}>
@@ -56,7 +56,7 @@ const Footer = () => {
                 // height={244}
                 alt="Your Image"
                 fill={true}
-                className={styles.imgPC}
+                // className={styles.imgPC}
               ></Image>
             </div>
           </div>

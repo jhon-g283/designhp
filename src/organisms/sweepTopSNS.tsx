@@ -31,7 +31,7 @@ const SNSComponent = () => {
           // height={244}
           alt="Your Image"
           fill={true}
-          className={styles.imgPC}
+          // className={styles.imgPC}
         ></Image>
       </div>
     );
@@ -82,7 +82,7 @@ const SNSComponent = () => {
                       // height={244}
                       alt="Your Image"
                       fill={true}
-                      className={styles.imgPC}
+                      // className={styles.imgPC}
                     ></Image>
                   </div>
 
@@ -105,7 +105,7 @@ const SNSComponent = () => {
                       // height={244}
                       alt="Your Image"
                       fill={true}
-                      className={styles.imgPC}
+                      // className={styles.imgPC}
                     ></Image>
                   </div>
 
@@ -142,7 +142,7 @@ const SNSComponent = () => {
               // height={244}
               alt="Your Image"
               fill={true}
-              className={styles.imgPC}
+              // className={styles.imgPC}
             ></Image>
           </div>
           <div className={styles.snsSubImageList}>{subImagesMap}</div>
