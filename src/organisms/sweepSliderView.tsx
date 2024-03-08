@@ -111,6 +111,17 @@ const SliderComponent = () => {
 
                     className={`${styles.imgPC} ${styles.fvImage1} `}
                   ></Image>
+                  <div className={`${styles.imgSP} ${styles.fvImage1} `}>
+                    <Image
+                      src="/imgSweep/FVTopImage1SP.jpg"
+                      // width={664} // Specify different width values based on device or viewport size
+                      // height={827}
+                      alt="Your Image"
+                      fill={true}
+
+                      // className={`${styles.imgSP}  `}
+                    ></Image>
+                  </div>
                 </div>
               </div>
 
