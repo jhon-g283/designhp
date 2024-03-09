@@ -22,17 +22,20 @@ const Header = () => {
       <div className={styles.header}>
         <div className={styles.headerItemWrapper}>
           {/* ロゴアイコン */}
-          <Image
-            src={'/imgSweep/sweeplogo.svg'}
-            width={135} // Specify different width values based on device or viewport size
-            height={40}
-            alt="Your Image"
-            className={styles.logoImage}
-          ></Image>
+          <div className={styles.logoImage}>
+            <Image
+              src={'/imgSweep/sweeplogo.svg'}
+              // width={135} // Specify different width values based on device or viewport size
+              // height={40}
+              alt="Your Image"
+              fill={true}
+              // className={styles.logoImage}
+            ></Image>
+          </div>
 
           {/* メニュー */}
           <div className={styles.headerMenu}>
-            <div className={styles.linkMenuWraper}>
+            <div className={`${styles.linkMenuWraper} ${styles.imgPC}`}>
               <a href="./top">top</a>
               <a href="./lineup">lineup</a>
               <a>news</a>

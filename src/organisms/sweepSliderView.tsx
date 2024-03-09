@@ -61,6 +61,10 @@ const SliderComponent = () => {
   const PrevButton = AddPagerClassPrevButton;
   const NextButton = AddPagerClassNextButton;
 
+  // スライドの高さの値、vhを画面の幅（メディアクエリのブレークポイント）ごとに設定する
+  const vh = 100;
+  const vhSmaller768 = `${vh * 1}vh`;
+  const vhSmaller468 = `${vh * 0.7}vh`;
   // スライダー
   const sliderArea = (
     <>
@@ -68,7 +72,17 @@ const SliderComponent = () => {
         hasTrack={false}
         options={{
           // autoHeight: true,
-          height: 893,
+          height: '100vh',
+          breakpoints: {
+            // 768p以下
+            768: {
+              height: vhSmaller768,
+            },
+            // 468px以下
+            468: {
+              height: vhSmaller468,
+            },
+          },
 
           lazyLoad: true,
           autoplay: false,
@@ -92,11 +106,11 @@ const SliderComponent = () => {
                       // height={83}
                       alt="Your Image"
                       fill={true}
-                      className={styles.imgOnlyPC}
+                      className={styles.imgPC}
                     ></Image>
                   </div>
 
-                  <p className={styles.fvCopyWrite}>
+                  <p className={`${styles.fvCopyWrite} ${styles.imgPC}`}>
                     食べるとスッキリ<br></br>起きれるチョコレート
                   </p>
                 </div>
@@ -113,36 +127,40 @@ const SliderComponent = () => {
                   ></Image>
                   <div className={`${styles.imgSP} ${styles.fvImage1} `}>
                     <Image
-                      src="/imgSweep/FVTopImage1SP.jpg"
+                      src="/imgSweep/FVTopImage1SP2.jpg"
                       // width={664} // Specify different width values based on device or viewport size
                       // height={827}
                       alt="Your Image"
                       fill={true}
-
-                      // className={`${styles.imgSP}  `}
+                      style={{ objectFit: 'contain' }}
+                      className={styles.FVOverWritten}
                     ></Image>
                   </div>
                 </div>
               </div>
 
               {/* 背景画像 */}
-              <Image
-                src="/imgSweep/backGroundFV1PC.jpg"
-                width={1980} // Specify different width values based on device or viewport size
-                height={893}
-                alt="Your Image"
-                // fill={true}
+              <div className={styles.fvbackImage1Wrapper}>
+                <Image
+                  src="/imgSweep/backGroundFV1PC.jpg"
+                  // width={1980} // Specify different width values based on device or viewport size
+                  // height={893}
+                  alt="Your Image"
+                  fill={true}
+                  style={{ objectFit: 'contain' }}
+                  className={styles.FVBKOverWritten}
+                  // className={` ${styles.fvbackImage1} `}
+                ></Image>
+              </div>
 
-                className={`${styles.imgPC} ${styles.fvbackImage1} `}
-              ></Image>
-              <Image
+              {/* <Image
                 src="/imgSweep/backGroundFV1SP.jpg"
                 // width={1980} // Specify different width values based on device or viewport size
                 // height={893}
                 alt="Your Image"
                 fill={true}
                 className={`${styles.imgSP} ${styles.fvbackImage1} `}
-              ></Image>
+              ></Image> */}
             </div>
           </SplideSlide>
           <SplideSlide>
@@ -156,7 +174,7 @@ const SliderComponent = () => {
             ></Image>
           </SplideSlide>
         </SplideTrack>
-        <div className="splide__arrows">
+        <div className={`splide__arrows ${styles.imgPC}`}>
           <PrevButton />
 
           <NextButton />
