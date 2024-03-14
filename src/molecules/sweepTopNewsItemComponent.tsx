@@ -31,7 +31,9 @@ const NewsItemTop = ({
           // height={244}
           alt="Your Image"
           fill={true}
+          style={{ objectFit: 'contain' }}
           // className={styles.imgPC}
+          // className={styles.FVOverWritten}
         ></Image>
       </div>
 

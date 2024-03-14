@@ -8,6 +8,8 @@ import { fetchInfomations } from '../store/reducers/getNewsDataSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import styled from 'styled-components';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import { Tuple } from '@reduxjs/toolkit';
 
 // ヘッダー部分のコンポーネント
 const NewsComponent = () => {
@@ -22,19 +24,139 @@ const NewsComponent = () => {
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 
+  const width = 83;
+  // ページャー左
+
+  // ボタン作成
+
   // 次は背景色
-  const newsList = newsData.map((item, index) => {
+  // const newsList = newsData.map((item, index) => {
+  //   return (
+  //     <div className={styles.newsItemWrapper} key={'news_div_' + index}>
+  //       <NewsItemTop
+  //         topicType={item.type}
+  //         imageUrl={item.imageUrl}
+  //         date={item.date}
+  //         title={item.title}
+  //       />
+  //     </div>
+  //   );
+  // });
+
+  const newsSlide = newsData.map((item, index) => {
     return (
-      <div className={styles.newsItemWrapper} key={'news_div_' + index}>
-        <NewsItemTop
-          topicType={item.type}
-          imageUrl={item.imageUrl}
-          date={item.date}
-          title={item.title}
-        />
-      </div>
+      <SplideSlide key={`news-slide-${index}`}>
+        <div
+          className={styles.newsItemWrapper}
+          // key={'news_div_' + index}
+        >
+          <NewsItemTop
+            topicType={item.type}
+            imageUrl={item.imageUrl}
+            date={item.date}
+            title={item.title}
+          />
+        </div>
+      </SplideSlide>
     );
   });
+
+  // スライダー
+  const sliderArea = (
+    <>
+      <Splide
+        hasTrack={false}
+        options={{
+          autoHeight: true,
+          autoWidth: true,
+          perMove: 1,
+          perPage: 4,
+          padding: '0px',
+          gap: '0vw',
+          pagination: false,
+
+          // width: '100%',
+          breakpoints: {
+            // 768p以下
+            768: {
+              perPage: 2,
+              // width: '100vw',
+              padding: '12px',
+              gap: '6vw',
+            },
+            // 468px以下
+            468: {
+              perPage: 2,
+              // width: '100vw',
+              padding: '12px',
+              gap: '6vw',
+            },
+          },
+          arrows: true,
+          lazyLoad: true,
+          autoplay: false,
+          rewind: false,
+        }}
+        aria-label="お気に入りの写真"
+      >
+        <SplideTrack>{newsSlide}</SplideTrack>
+        <div className={`splide__arrows ${styles.imgSP}`}>
+          <button className="splide__arrow splide__arrow--prev news-slider-arrow-prev">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="16.7071"
+                y1="8.70711"
+                x2="8.22182"
+                y2="17.1924"
+                stroke="white"
+                stroke-width="2"
+              />
+              <line
+                x1="16.2929"
+                y1="9.70711"
+                x2="7.80761"
+                y2="1.22182"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button className="splide__arrow splide__arrow--next news-slider-arrow-next">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="16.7071"
+                y1="8.70711"
+                x2="8.22182"
+                y2="17.1924"
+                stroke="white"
+                stroke-width="2"
+              />
+              <line
+                x1="16.2929"
+                y1="9.70711"
+                x2="7.80761"
+                y2="1.22182"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </Splide>
+    </>
+  );
 
   return (
     <>
@@ -62,8 +184,9 @@ const NewsComponent = () => {
 
           <div className={styles.newsParagraph}>
             <p className={styles.paragraph}>
-              注目のトピック<br></br>
-              新作商品やキャンペーンなど気になる情報は<br></br>
+              注目のトピック<br className={styles.onlySPBr}></br>
+              新作商品やキャンペーンなど気になる情報は
+              <br className={styles.onlySPBr}></br>
               こちらから
             </p>
           </div>
@@ -78,7 +201,7 @@ const NewsComponent = () => {
           <div className={styles.backGroundSheet2}></div>
         </Div>
 
-        <div className={styles.newsListWrapper}>{newsList}</div>
+        <div className={styles.newsListWrapper}>{sliderArea}</div>
       </div>
       <div className={styles.linkButtonWrapper}>
         <Div

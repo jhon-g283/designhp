@@ -88,8 +88,8 @@ const SliderComponent = () => {
           autoplay: false,
           rewind: true,
           // padding: 100,
-          perPage: 1,
-          gap: '10%',
+          perPage: 1, //スライドは１枚ずつ
+          gap: '10%', //各スライドの感覚
         }}
         aria-label="お気に入りの写真"
       >

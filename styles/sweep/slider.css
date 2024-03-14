@@ -14,6 +14,7 @@ button.slider-button {
   font-weight: 900;
   line-height: normal;
   letter-spacing: 1.4px;
+  opacity: 1 !important;
 }
 /* Prevボタン */
 button.slider-arrow-prev {
@@ -46,4 +47,32 @@ button.slider-arrow-next {
 
     /* padding-right: 18px; */
   }
+}
+/* NewsのPrevボタン */
+button.news-slider-arrow-prev {
+  background-color: black;
+  border-radius: 0%;
+  left: max(calc(-5%), -40px);
+  height: 7vw;
+  width: 7vw;
+  opacity: 1 !important;
+  position: absolute;
+  padding-left: 1px;
+}
+
+/* NewsのNextボタン */
+button.news-slider-arrow-next {
+  background-color: black;
+  border-radius: 0%;
+  right: max(calc(-5%), -40px);
+  opacity: 1 !important;
+  position: absolute;
+  padding-right: 1px;
+}
+
+/* 内部のSVG */
+button.news-slider-arrow-prev svg,
+button.news-slider-arrow-next svg {
+  width: 30%;
+  height: 30%;
 }
