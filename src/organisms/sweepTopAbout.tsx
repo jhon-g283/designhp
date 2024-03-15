@@ -40,16 +40,30 @@ const AboutComponent = () => {
                 Sw<span className={styles.SweepSleepSpan}>eet</span>
               </a>
 
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 11 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0.899638 0.907491L9.68854 9.68902" stroke="white" />
-                <path d="M9.64345 0.858543L0.854514 9.64768" stroke="white" />
-              </svg>
+              <span className={`${styles.svgBetweenText} ${styles.imgPC}`}>
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 11 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0.899638 0.907491L9.68854 9.68902" stroke="white" />
+                  <path d="M9.64345 0.858543L0.854514 9.64768" stroke="white" />
+                </svg>
+              </span>
+              <span className={`${styles.svgBetweenText} ${styles.imgSP}`}>
+                <svg
+                  width="0.35em"
+                  height="0.35em"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0.578754 1.1168L13.0607 13.5882" stroke="white" />
+                  <path d="M12.9969 1.04722L0.514972 13.5295" stroke="white" />
+                </svg>
+              </span>
 
               <a className={styles.aboutSweepSleep}>
                 <span className={styles.SweepSleepSpan}>Sl</span>eep
@@ -60,19 +74,37 @@ const AboutComponent = () => {
             </div>
           </div>
 
-          <div className={styles.textWrap}>
-            <p>安眠効果のある成分</p>
-          </div>
-          <div className={styles.textWrap}>
-            <p>ストレスを改善する香り</p>
-          </div>
-          <div className={styles.textWrap}>
-            <p>血糖値を穏やかに、ベッドで自然な眠気</p>
+          <div className={styles.textOuterWrap}>
+            <div>
+              <div className={styles.textWrap}>
+                <p>安眠効果のある成分</p>
+              </div>
+              <div className={styles.textWrap}>
+                <p>ストレスを改善する香り</p>
+              </div>
+              <div className={styles.textWrap}>
+                <p>
+                  血糖値を穏やかに、<br className={styles.onlyPCBr}></br>
+                  ベッドで自然な眠気
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.aboutImage2SP}>
+              <Image
+                src="/imgSweep/About_Image2SP.jpg"
+                // width={1200} // Specify different width values based on device or viewport size
+                // height={200}
+                alt="Your Image"
+                fill={true}
+                className={styles.imgSP}
+              ></Image>
+            </div>
           </div>
         </div>
         <div className={styles.aboutImageArea}>
           <div>
-            <p>SLEEP</p>
+            <p className={styles.imgPC}>SLEEP</p>
             <div className={styles.aboutImage1}>
               <Image
                 src="/imgSweep/About_Image1.jpg"
@@ -80,7 +112,7 @@ const AboutComponent = () => {
                 // height={200}
                 alt="Your Image"
                 fill={true}
-                // className={styles.imgPC}
+                className={styles.imgPC}
               ></Image>
             </div>
             <Div

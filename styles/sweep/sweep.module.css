@@ -4,10 +4,24 @@
   .imgPC {
     display: none;
   }
+
+  /* セクションタイトルで左側をPCで非表示にするもの */
+  .titleAbout::before,
+  .titlePickUp::before,
+  .titleVoice::before {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 769px) {
   .imgSP {
+    display: none;
+  }
+  /* Aboutのセクション名 */
+  .titleAbout::after,
+  .titlePickUp::after,
+  .titleVoice::after {
+    /* beforeを非表示 */
     display: none;
   }
 }
@@ -15,6 +29,12 @@
 /* SPだと改行させない */
 br.onlySPBr {
   @media screen and (max-width: 769px) {
+    display: none;
+  }
+}
+/* PCだと改行させない */
+br.onlyPCBr {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 }
@@ -360,6 +380,12 @@ img.FVOverWritten {
   z-index: 0;
   margin-right: -80px;
   position: absolute;
+  @media (max-width: 768px) {
+    left: -100px;
+    width: 100vw;
+    height: 568px;
+    margin-right: 0px;
+  }
 }
 .backGroundSheet5 {
   background-color: black;
@@ -630,8 +656,7 @@ img.FVOverWritten {
 
     /* height: 38vh; */
     min-height: 150px;
-
-    /* width: 145px; */
+    min-width: 145px;
     /* height: 150px; */
   }
 }
@@ -823,10 +848,18 @@ img.FVOverWritten {
   letter-spacing: 1.76px;
 
   z-index: 3;
+  @media (max-width: 768px) {
+    margin-top: 27px;
+    padding: 11px 25px 9px 24px;
+  }
 }
 
+/* ReadMoreのテキスト部分 */
 .readMoreButton {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
 }
 
 /* news一覧のの日付とタイトルの外枠部分 */
@@ -854,12 +887,11 @@ img.FVOverWritten {
   letter-spacing: 1.2px;
 }
 
-/* Aboutのセクション名 */
-.titleAbout::after,
-.titlePickUp::after,
-.titleVoice::after {
-  /* beforeを非表示 */
-  display: none;
+.titleAbout::before {
+  /*  */
+  @media (max-width: 768px) {
+    background-color: antiquewhite;
+  }
 }
 
 /* カテゴリの文字列部分 */
@@ -886,6 +918,10 @@ img.FVOverWritten {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 2.75px;
+  @media (max-width: 768px) {
+    /*  */
+    font-size: 0.64em;
+  }
 }
 
 /* About部分 */
@@ -895,7 +931,7 @@ img.FVOverWritten {
   position: relative;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -903,9 +939,13 @@ img.FVOverWritten {
 .aboutSectionWrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-end; /* 右寄せにする */
   position: relative;
   z-index: 3;
+  @media (max-width: 768px) {
+    /* 左寄せにする */
+    align-items: flex-start;
+  }
 }
 
 /* Sweepとは？の部分 */
@@ -928,27 +968,58 @@ img.FVOverWritten {
 /* aboutのSweep X Sleep部分 */
 .aboutSweepSleep {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
 }
 /* spanの色が違う部分 */
 .SweepSleepSpan {
   color: #c0c0c0;
 }
 
+/* Sweep Sweet SleepのSVG部分（外枠）*/
+.svgBetweenText {
+  margin-left: 8px;
+  margin-right: 8px;
+  @media (max-width: 768px) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
 /* 睡眠効果のあるチョコレート部分　外枠 */
 .aboutDiscription1Wrapper {
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
-
+  font-size: 15px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.5px;
 }
+
+/* 睡眠効果のあるチョコレート部分　 */
+.aboutDiscription1Wrapper p {
+  font-size: 1em;
+  margin-top: 2px;
+  margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
+}
+
 /* 睡眠効果のあるチョコレート部分　外枠 */
 .aboutDiscription1 {
   font-size: 1em;
 }
 
+/* 項目部分の１番外枠 */
+.textOuterWrap {
+  @media (max-width: 768px) {
+    display: inline-flex;
+    gap: 29px;
+  }
+}
 /* 特徴の項目部分　外枠 */
 .textWrap {
   border: 1px solid #a4a4a4;
@@ -967,10 +1038,17 @@ img.FVOverWritten {
   letter-spacing: 1.3px;
 
   width: 306px;
-  /* height: 37px; */
+
   flex-shrink: 0;
 
   margin-bottom: 7px;
+
+  @media (max-width: 768px) {
+    width: 37vw;
+    max-width: 283px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 /* 特徴の文字部分 */
@@ -978,6 +1056,10 @@ img.FVOverWritten {
 .textWrap2 p {
   margin: 0;
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.7em;
+  }
 }
 
 /* aboutの画像部分　大枠 */
@@ -1059,6 +1141,18 @@ img.FVOverWritten {
 
   z-index: 3;
   position: relative;
+}
+
+/* SP用のAboutの画像 */
+.aboutImage2SP {
+  @media (max-width: 768px) {
+    width: 43vw;
+    height: auto;
+  }
+}
+
+.aboutImage2SP img {
+  position: relative !important;
 }
 
 /* 画像に隣接する文字（Sweet） */

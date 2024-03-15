@@ -24,25 +24,6 @@ const NewsComponent = () => {
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 
-  const width = 83;
-  // ページャー左
-
-  // ボタン作成
-
-  // 次は背景色
-  // const newsList = newsData.map((item, index) => {
-  //   return (
-  //     <div className={styles.newsItemWrapper} key={'news_div_' + index}>
-  //       <NewsItemTop
-  //         topicType={item.type}
-  //         imageUrl={item.imageUrl}
-  //         date={item.date}
-  //         title={item.title}
-  //       />
-  //     </div>
-  //   );
-  // });
-
   const newsSlide = newsData.map((item, index) => {
     return (
       <SplideSlide key={`news-slide-${index}`}>
