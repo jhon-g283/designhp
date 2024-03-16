@@ -31,7 +31,7 @@ const ProductComponent = () => {
               </SectionTitle>
             </div>
 
-            <div>
+            <div className={styles.productTextWrapper}>
               <div className={styles.sectionSubTitleWrapper}>
                 <SectionSubTitle className={styles.sectionSubTitle}>
                   商品を探す
@@ -61,6 +61,17 @@ const ProductComponent = () => {
             <div className={styles.backGroundSheet7}></div>
           </Div>
           <div className={styles.sizeContextWrapper}>
+            <div className={styles.productImageSP}>
+              <Image
+                src="/imgSweep/Size_mainSP.jpg"
+                // width={1200} // Specify different width values based on device or viewport size
+                // height={200}
+                alt="Your Image"
+                fill={true}
+                className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
+              ></Image>
+            </div>
+
             <div className={styles.sizeContext}>
               <div className={styles.sectionSubTitleWrapper}>
                 <SectionSubTitle className={styles.sectionSubTitle}>
@@ -84,7 +95,7 @@ const ProductComponent = () => {
         <div className={styles.produtlineupSizeInnerWrapper}>
           <div>
             <ItemLinkSize
-              itemName="１ヶ月セット"
+              itemName="1週間セット"
               subName="1Week"
               imageUrl="/imgSweep/1week_set.jpg"
             />
@@ -107,7 +118,7 @@ const ProductComponent = () => {
               // height={200}
               alt="Your Image"
               fill={true}
-              // className={styles.imgPC}
+              className={styles.imgPC}
             ></Image>
           </div>
         </div>

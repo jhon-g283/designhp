@@ -97,7 +97,7 @@ const AboutComponent = () => {
                 // height={200}
                 alt="Your Image"
                 fill={true}
-                className={styles.imgSP}
+                className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
               ></Image>
             </div>
           </div>
@@ -125,16 +125,28 @@ const AboutComponent = () => {
               <div className={styles.backGroundSheet5}></div>
             </Div>
             <div className={styles.aboutTextArea}>
-              <div className={styles.textWrap2}>
-                <p>食後の一口で寝不足の改善</p>
+              <div className={styles.aboutImage1SP}>
+                <Image
+                  src="/imgSweep/About_Image1SP.jpg"
+                  // width={1200} // Specify different width values based on device or viewport size
+                  // height={200}
+                  alt="Your Image"
+                  fill={true}
+                  className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
+                ></Image>
               </div>
-              <div className={styles.aboutIntroduceTextWrap}>
-                <p className={styles.paragraph}>
-                  昨日はよく眠れたと最後に思えたのはいつですか？<br></br>
-                  夜の睡眠は翌日からの人生の明るさと切っても切れない関係。
-                  食後に一口食べれば睡眠薬に頼らななくても自然と眠りの質が
-                  改善されます。
-                </p>
+              <div>
+                <div className={styles.textWrap2}>
+                  <p>食後の一口で寝不足の改善</p>
+                </div>
+                <div className={styles.aboutIntroduceTextWrap}>
+                  <p className={styles.paragraph}>
+                    昨日はよく眠れたと最後に思えたのはいつですか？<br></br>
+                    夜の睡眠は翌日からの人生の明るさと切っても切れない関係。
+                    食後に一口食べれば睡眠薬に頼らななくても自然と眠りの質が
+                    改善されます。
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -147,10 +159,10 @@ const AboutComponent = () => {
                 // height={200}
                 alt="Your Image"
                 fill={true}
-                // className={styles.imgPC}
+                className={styles.imgPC}
               ></Image>
             </div>
-            <p>SWEETS</p>
+            <p className={styles.imgPC}>SWEETS</p>
           </div>
           {/* ーーーーー */}
         </div>

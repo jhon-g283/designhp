@@ -26,7 +26,7 @@ const ItemLinkSize = ({
             // height={110}
             alt="Your Image"
             fill={true}
-            // className={styles.imgPC}
+            className={styles.positionOverWrittenRelationOnSP}
           ></Image>
         </div>
         <div className={styles.itemNameWrapper}>

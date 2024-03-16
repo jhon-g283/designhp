@@ -39,6 +39,14 @@ br.onlyPCBr {
   }
 }
 
+img.positionOverWrittenRelationOnSP {
+  /*　SP表示の時 Imageコンポーネントのposition:absoluteを上書き */
+
+  @media (max-width: 768px) {
+    position: relative !important;
+  }
+}
+
 /* トップページ */
 /* ヘッダー */
 .header {
@@ -392,12 +400,19 @@ img.FVOverWritten {
   width: 1079px;
   height: 304px;
   flex-shrink: 0;
-  flex-shrink: 0;
+
   left: 0px;
   margin: -30px 0px 0px -80px;
   z-index: 0;
 
   position: absolute;
+
+  @media (max-width: 768px) {
+    /* left: -100px; */
+    width: 100vw;
+    margin: 0px;
+    margin-left: min(calc(-5%), 40px);
+  }
 }
 
 .backGroundSheet6 {
@@ -445,6 +460,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet9 {
@@ -711,7 +730,12 @@ img.FVOverWritten {
 
   font-style: normal;
   font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.3px;
   margin: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.8em !important;
+  }
 }
 
 /* News */
@@ -930,8 +954,7 @@ img.FVOverWritten {
 
   position: relative;
   @media (max-width: 768px) {
-    /*  */
-    /* display: none; */
+    margin-top: 180px;
   }
 }
 
@@ -1051,14 +1074,49 @@ img.FVOverWritten {
   }
 }
 
+/* 特徴の項目部分　外枠 */
+.textWrap2 {
+  border: 1px solid #a4a4a4;
+
+  align-items: center;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 9px;
+
+  /* フォント */
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.3px;
+
+  width: 312px;
+
+  /* height: 37px; */
+  flex-shrink: 0;
+
+  margin-bottom: 7px;
+
+  @media (max-width: 768px) {
+    width: 37vw;
+    max-width: 283px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
 /* 特徴の文字部分 */
 .textWrap p,
 .textWrap2 p {
-  margin: 0;
+  margin: 0px !important;
   font-size: 1em;
 
   @media (max-width: 768px) {
-    font-size: 0.7em;
+    font-size: 0.7em !important;
   }
 }
 
@@ -1089,50 +1147,43 @@ img.FVOverWritten {
   margin-bottom: 11px;
 }
 
-/* 特徴の項目部分　外枠 */
-.textWrap2 {
-  border: 1px solid #a4a4a4;
-
-  align-items: center;
-  text-align: center;
-  padding-top: 8px;
-  padding-bottom: 9px;
-
-  /* フォント */
-  color: #fff;
-  font-family: 'Hiragino Kaku Gothic Pro';
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  letter-spacing: 1.3px;
-
-  width: 312px;
-
-  /* height: 37px; */
-  flex-shrink: 0;
-
-  margin-bottom: 7px;
-}
-
 /* aboutの説明文　外枠 */
 .aboutIntroduceTextWrap {
   width: 430px;
   margin-top: 19px;
 
   /* フォント */
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 24px; /* 171.429% */
   letter-spacing: 1.4px;
+
+  @media (max-width: 768px) {
+    width: 42vw;
+    max-width: 371px;
+    text-wrap: wrap;
+    margin-top: 0px;
+  }
 }
+
+.aboutIntroduceTextWrap p {
+  margin-bottom: 0px !important;
+}
+/* Aboutの画像部分（外枠） */
 .aboutImage1 {
   width: 507px;
   height: 319px;
   z-index: 4;
 
   position: relative;
+
+  @media (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
+/* Aboutの画像２（外枠） */
 .aboutImage2 {
   width: 334px;
   height: 210px;
@@ -1141,6 +1192,16 @@ img.FVOverWritten {
 
   z-index: 3;
   position: relative;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+/* SP用のAboutの画像 */
+.aboutImage1SP {
+  @media (max-width: 768px) {
+    width: 38vw;
+    height: auto;
+  }
 }
 
 /* SP用のAboutの画像 */
@@ -1149,10 +1210,6 @@ img.FVOverWritten {
     width: 43vw;
     height: auto;
   }
-}
-
-.aboutImage2SP img {
-  position: relative !important;
 }
 
 /* 画像に隣接する文字（Sweet） */
@@ -1169,6 +1226,12 @@ img.FVOverWritten {
   z-index: 3;
   /* top: -10px; */
   position: relative;
+  @media (max-width: 768px) {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 29px;
+    margin-top: 20px;
+  }
 }
 
 /* Product */
@@ -1186,7 +1249,18 @@ img.FVOverWritten {
   letter-spacing: 1.12px;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+
+    margin-top: 150px;
+    /* 崩れるのでpaddingで追加する形で調整 */
+    padding-top: 150px;
+  }
+}
+
+/* Productのテキスト部分の内枠 */
+.productTextWrapper {
+  padding-left: 20px;
+  @media (max-width: 768px) {
+    padding-left: 10px;
   }
 }
 
@@ -1195,7 +1269,7 @@ img.FVOverWritten {
   position: relative;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -1204,8 +1278,9 @@ img.FVOverWritten {
   padding-top: 13px;
   padding-bottom: 32px;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
+    width: 78vw;
+    padding-top: 6px;
+    padding-bottom: 1em;
   }
 }
 
@@ -1214,8 +1289,7 @@ img.FVOverWritten {
   display: flex;
   justify-content: flex-start;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
+    margin-left: 0.6em;
   }
 }
 
@@ -1237,11 +1311,20 @@ img.FVOverWritten {
   padding-top: 12px;
   padding-bottom: 10px;
   width: 167px;
+  @media (max-width: 768px) {
+    width: 27vw;
+    max-width: 202px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+  }
 }
 
 /* lineupのリンク部分 */
 .lineUpButton a {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
 }
 
 /* セクション名などの大枠 */
@@ -1253,6 +1336,9 @@ img.FVOverWritten {
 
   z-index: 3;
   position: relative;
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 }
 
 /* サイズのテキスト部分 */
@@ -1261,15 +1347,25 @@ img.FVOverWritten {
   display: inline-block;
   width: 401px;
   text-align: start;
+  @media (max-width: 768px) {
+    margin-top: 18px;
+    margin-left: 12px;
+    width: 90vw;
+  }
 }
+
 .sizeContext p {
   margin-top: 14px;
   font-size: 1em;
+  @media (max-width: 768px) {
+    margin-top: 6px;
+  }
 }
 
 /* 項目の外枠（サイズ） */
 .itemLinkSize {
-  display: flex;
+  display: inline-flex;
+  gap: 22px;
   width: 373px;
   height: 150px;
   flex-shrink: 0;
@@ -1281,6 +1377,17 @@ img.FVOverWritten {
   margin-left: 50px;
 
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 88%;
+    height: 116px;
+    max-width: 663px;
+    margin-left: 0px;
+    margin-bottom: 12px;
+
+    padding-left: min(calc(8%), 56px);
+    gap: 9%;
+  }
 }
 
 /* 矢印部分 */
@@ -1288,6 +1395,9 @@ img.FVOverWritten {
   /* margin-left: 20px; */
   right: 33px;
   position: absolute;
+  @media (max-width: 768px) {
+    right: 10%;
+  }
 }
 
 /* 項目の画像 */
@@ -1297,6 +1407,12 @@ img.FVOverWritten {
   height: 110px;
   flex-shrink: 0;
   position: relative;
+  @media (max-width: 768px) {
+    width: 29vw;
+    max-width: 220px;
+    height: auto;
+    margin-left: 0px;
+  }
 }
 
 /* 項目の外枠（カテゴリ） */
@@ -1330,7 +1446,7 @@ img.FVOverWritten {
 .itemNameWrapper {
   color: #fff;
 
-  margin-left: 22px;
+  /* margin-left: 22px; */
   margin-top: 23px;
 
   align-items: center;
@@ -1341,6 +1457,9 @@ img.FVOverWritten {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 /* 項目名 */
@@ -1349,6 +1468,10 @@ img.FVOverWritten {
   margin-bottom: 7px;
 
   font-size: 1em;
+  @media (max-width: 768px) {
+    margin-top: 1.5em;
+    font-size: 0.75em;
+  }
 }
 
 .itemSubNameWrapper {
@@ -1369,6 +1492,9 @@ img.FVOverWritten {
   margin-bottom: 0px;
 
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
 }
 
 /* productのサイズの項目の外枠 */
@@ -1383,8 +1509,8 @@ img.FVOverWritten {
 
   position: relative;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
+    width: 100%;
+    display: block;
   }
 }
 
@@ -1403,6 +1529,7 @@ img.FVOverWritten {
   }
 }
 
+/* productの画像部分 */
 .productImage {
   width: 880px;
   height: 511px;
@@ -1410,8 +1537,22 @@ img.FVOverWritten {
 
   z-index: 3;
   right: 0;
-  /* position: absolute; */
+
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* productの画像部分（SP） */
+.productImageSP {
+  @media (max-width: 768px) {
+    margin-top: 42px;
+
+    width: 100%;
+    height: auto;
+  }
 }
 
 .categoryConponentWrapper {
@@ -1427,8 +1568,7 @@ img.FVOverWritten {
   line-height: 21px; /* 150% */
   letter-spacing: 1.4px;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
+    margin-top: 18px;
   }
 }
 
@@ -1444,6 +1584,10 @@ img.FVOverWritten {
   justify-content: center;
   padding-top: 91px;
   padding-bottom: 51px;
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 /* 画像の外枠 */
 .categoryImageWrapper {
@@ -1452,7 +1596,19 @@ img.FVOverWritten {
   flex-shrink: 0;
 
   position: relative;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
+
+.categoryImageWrapperSP {
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: auto;
+    position: relative;
+  }
+}
+
 /* リストの外枠 */
 .categoryListWrapper {
   display: flex;

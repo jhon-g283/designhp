@@ -42,6 +42,12 @@ const NewsComponent = () => {
     );
   });
 
+  if (newsData.length == 0) {
+    // alert(newsData.length);
+    // newsSlide = [<></>, <></>, <></>, <></>];
+  } else {
+  }
+
   // スライダー
   const sliderArea = (
     <>
@@ -56,6 +62,7 @@ const NewsComponent = () => {
           gap: '0vw',
           pagination: false,
 
+          mediaQuery: 'max',
           // width: '100%',
           breakpoints: {
             // 768p以下

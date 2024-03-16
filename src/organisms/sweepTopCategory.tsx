@@ -43,7 +43,17 @@ const CategoryComponent = () => {
               // height={200}
               alt="Your Image"
               fill={true}
-              // className={styles.imgPC}
+              className={styles.imgPC}
+            ></Image>
+          </div>
+          <div className={styles.categoryImageWrapperSP}>
+            <Image
+              src="/imgSweep/Category_mainSP.jpg"
+              // width={1200} // Specify different width values based on device or viewport size
+              // height={200}
+              alt="Your Image"
+              fill={true}
+              className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
             ></Image>
           </div>
         </div>
