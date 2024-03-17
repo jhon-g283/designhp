@@ -479,6 +479,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet10 {
@@ -494,6 +498,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet11 {
@@ -509,6 +517,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet12 {
@@ -524,6 +536,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet13 {
@@ -551,6 +567,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet15 {
@@ -718,7 +738,8 @@ img.FVOverWritten {
   text-transform: uppercase;
 
   @media (max-width: 768px) {
-    font-size: 0.5em;
+    /* 動かなかったのでImportant */
+    font-size: 0.5em !important;
   }
 }
 
@@ -911,19 +932,23 @@ img.FVOverWritten {
   letter-spacing: 1.2px;
 }
 
-.titleAbout::before {
-  /*  */
-  @media (max-width: 768px) {
-    background-color: antiquewhite;
-  }
-}
-
 /* カテゴリの文字列部分 */
 .categoryTextWrapper {
   z-index: 3;
   position: relative;
 
   margin-left: 70px;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    padding-top: 1em;
+    padding-left: 1.5em;
+    padding-bottom: 1.5em;
+  }
+}
+
+.categoryTextWrapper p {
+  margin-top: 4px !important;
 }
 
 /* サブタイトルの外枠 */
@@ -1397,6 +1422,7 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     right: 10%;
+    width: 12px;
   }
 }
 
@@ -1423,8 +1449,16 @@ img.FVOverWritten {
   flex-shrink: 0;
 
   align-items: center;
-
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 38vw;
+    max-width: 286px;
+    min-width: 143px;
+
+    height: auto;
+    max-height: 111px;
+  }
 }
 
 /* 矢印部分 */
@@ -1432,6 +1466,12 @@ img.FVOverWritten {
   margin-left: 20px;
   right: 0px;
   position: absolute;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    right: 0px;
+    width: 8px;
+  }
 }
 
 /* 項目の画像 */
@@ -1440,6 +1480,15 @@ img.FVOverWritten {
   height: 111px;
   flex-shrink: 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 24%;
+    height: auto;
+    /* 286 115*/
+    max-width: 115px;
+    min-width: 51px;
+    max-height: 111px;
+  }
 }
 
 /* 項目名　外枠 */
@@ -1474,6 +1523,7 @@ img.FVOverWritten {
   }
 }
 
+/* 項目（外枠） */
 .itemSubNameWrapper {
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -1525,7 +1575,6 @@ img.FVOverWritten {
   display: flex;
   @media (max-width: 768px) {
     /*  */
-    display: none;
   }
 }
 
@@ -1541,6 +1590,7 @@ img.FVOverWritten {
   position: relative;
 
   @media (max-width: 768px) {
+    /* 崩れ防止のため非表示 */
     display: none;
   }
 }
@@ -1614,6 +1664,7 @@ img.FVOverWritten {
   display: flex;
   justify-content: center;
 }
+
 /* カテゴリーのリスト */
 .categoryList {
   width: 1097px;
@@ -1623,16 +1674,33 @@ img.FVOverWritten {
 
   align-items: flex-start;
   gap: 32px 34px; /* 34px間隔で並べる */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 12px 34px; /* 34px間隔で並べる */
+  }
 }
+
 /* カテゴリーリストの３つ目の要素まで下線部追加 */
 .categoryList > div:nth-child(-n + 3) {
   border-bottom: 1px solid #a4a4a4;
+}
+
+/* SP表示の場合は4つ目の要素まで追加 */
+@media (max-width: 768px) {
+  .categoryList > div:nth-child(-n + 4) {
+    border-bottom: 1px solid #a4a4a4;
+  }
 }
 
 /* カテゴリー名の外枠 */
 .itemCategoryNameWrapper {
   margin-left: 19px;
   margin-top: 30px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
 }
 
 /* カテゴリー名の外枠 */
@@ -1643,6 +1711,10 @@ img.FVOverWritten {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media (max-width: 768px) {
+    padding-top: 0.9em;
+    padding-left: 0.5em;
+  }
 }
 
 /* カテゴリー名 */
@@ -1650,6 +1722,10 @@ img.FVOverWritten {
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.56em;
+  }
 }
 
 /* カテゴリー名の外枠（英字） */
@@ -1669,6 +1745,10 @@ img.FVOverWritten {
   margin-bottom: 0px;
 
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+    margin-top: -0.6em;
+  }
 }
 
 /* PickUp */
@@ -1676,17 +1756,28 @@ img.FVOverWritten {
 .pickUpConponentWrapper {
   position: relative;
   margin-top: 175px;
+  @media (max-width: 768px) {
+    /* margin-top: 0px; */
+    flex-direction: column-reverse;
+  }
 }
 
 /* pickUpリストの設定 */
 .pickUpListWrapper {
-  display: inline-flex;
+  display: inline-flex; /* 中心寄せ */
   justify-content: center;
   align-items: flex-start;
   gap: 33px;
   position: relative;
 
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    justify-content: flex-start; /* 左寄せへ */
+    flex-wrap: wrap; /* 行を折り返す */
+    gap: 17px;
+  }
 }
 
 /* トップページ内のアイテムボックス */
@@ -1699,13 +1790,26 @@ img.FVOverWritten {
   /* 高さ・長さは固定せずpaddingで調整 */
   display: block;
   padding: 28px 33px 27px 33px;
+  @media (max-width: 768px) {
+    padding: 14px 16px 14px 16px;
+    height: 100%;
+    max-height: 483px;
+  }
 }
 
+/* 商品ボックスの画像（外枠） */
 .topItemBoxImageWrapper {
   width: 200px;
   height: 200px;
   flex-shrink: 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 125px;
+    height: auto;
+    /* 311　259 */
+  }
 }
 
 /* セクション名などの大枠 */
@@ -1716,6 +1820,11 @@ img.FVOverWritten {
   position: absolute;
   z-index: 3;
   right: 0;
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    position: relative;
+    right: left;
+  }
 }
 
 /* PickUpの文章部分*/
@@ -1731,6 +1840,13 @@ img.FVOverWritten {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.4px;
+}
+
+.pickupDiscriptionWrapper p {
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.78em;
+  }
 }
 
 /* アイテムボックス */
@@ -1754,12 +1870,20 @@ img.FVOverWritten {
 .topItemName {
   margin-bottom: 11px;
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 }
 
 /* 商品価格 */
 .topItemPrice {
   margin: 0;
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.7em;
+  }
 }
 
 /* クチコミ */
@@ -1767,6 +1891,25 @@ img.FVOverWritten {
   font-size: 1em;
   margin-top: 3px;
   margin-bottom: 14px;
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+  }
+}
+
+/* レビューの星部分 */
+.topItemReview svg {
+  @media (max-width: 768px) {
+    width: 9px;
+    padding-bottom: 0.1em;
+  }
+}
+
+/* レブ￥ビューの星と口コミの文字のSpan */
+.topItemReview > span {
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* 価格の余白部分 */
@@ -1794,6 +1937,14 @@ img.FVOverWritten {
   background: #343434;
 
   border: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 0.7em;
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+  }
 }
 
 /* Campaign */
@@ -1802,11 +1953,10 @@ img.FVOverWritten {
   position: relative;
   z-index: 3;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
   }
 }
 
+/* キャンペーンの文字の外枠 */
 .campaignTextArea1Wrapper {
   position: relative;
   z-index: 3;
@@ -1827,6 +1977,10 @@ img.FVOverWritten {
 
   position: relative;
   z-index: 3;
+  @media (max-width: 768px) {
+    margin-top: 6em;
+    margin-left: 0px;
+  }
 }
 
 /* キャンペーン対象商品 （外枠）*/
@@ -1834,6 +1988,9 @@ img.FVOverWritten {
   margin-left: 105px;
   position: relative;
   z-index: 3;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+  }
 }
 /* 対象商品の一覧 */
 .campaginItemList {
@@ -1843,6 +2000,11 @@ img.FVOverWritten {
 
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 19px;
+  }
 }
 
 /* 対象商品の文字 */
@@ -1862,16 +2024,32 @@ img.FVOverWritten {
   font-weight: 500;
   line-height: 21px; /* 105% */
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
 }
 
+/* キャンペーン紹介文 */
 .campaignDiscription1 {
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 }
 
 /* 今発売している。。の部分 */
 .campaignDiscription2 {
   font-size: 1em;
   margin-top: 18px;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+
+    margin-bottom: 0.25em;
+    margin-top: 0.5em;
+  }
 }
 
 /* 選べるプレゼント内容 */
@@ -1879,6 +2057,9 @@ img.FVOverWritten {
   font-size: 1em;
   margin-top: 0px;
   margin-bottom: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 }
 
 /* 選べるプレゼント内容 */
@@ -1886,11 +2067,20 @@ img.FVOverWritten {
   font-size: 1em;
   margin-top: 24px;
   margin-bottom: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+    margin-top: 0.25em;
+  }
 }
 
 /*  対象商品の文字（外枠） */
 .targetItem {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    padding-left: 2.3em;
+  }
 }
 
 .campaignTextArea2Wrapper {
@@ -1907,6 +2097,9 @@ img.FVOverWritten {
   font-weight: 300;
   line-height: 21px; /* 150% */
   letter-spacing: 1.4px;
+  @media (max-width: 768px) {
+    margin-left: 0.5em;
+  }
 }
 
 /* Voice */

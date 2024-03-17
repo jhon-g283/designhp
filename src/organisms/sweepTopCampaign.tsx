@@ -11,28 +11,28 @@ const CampaignComponent = () => {
 
   const campainArray = [
     {
-      imageUrl: '/img/FirstSectionImg1.png',
+      imageUrl: '/imgSweep/Product_Bitter.jpg',
       itemName: 'チョコ',
       price: '500',
       review: '4',
       linkParam: 'bbb',
     },
     {
-      imageUrl: '/img/FirstSectionImg1.png',
+      imageUrl: '/imgSweep/Product_Bitter.jpg',
       itemName: 'チョコ',
       price: '500',
       review: '4',
       linkParam: 'bbb',
     },
     {
-      imageUrl: '/img/FirstSectionImg1.png',
+      imageUrl: '/imgSweep/Product_Bitter.jpg',
       itemName: 'チョコ',
       price: '500',
       review: '4',
       linkParam: 'bbb',
     },
     {
-      imageUrl: '/img/FirstSectionImg1.png',
+      imageUrl: '/imgSweep/Product_Bitter.jpg',
       itemName: 'チョコ',
       price: '500',
       review: '4',

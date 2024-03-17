@@ -45,7 +45,7 @@ const TopPageItemBox = ({
             // height={244}
             alt="Your Image"
             fill={true}
-            // className={styles.imgPC}
+            className={styles.positionOverWrittenRelationOnSP}
           ></Image>
         </div>
 
@@ -58,9 +58,11 @@ const TopPageItemBox = ({
             <span className={styles.priceSpan}>価格</span>¥{price}
           </p>
           <p className={styles.topItemReview}>
-            <span className={styles.priceSpan}>クチコミ</span>
+            <span>
+              <span className={styles.priceSpan}>クチコミ</span>
 
-            {stars}
+              {stars}
+            </span>
           </p>
           {/* <div>
             <a href={link}>商品詳細へ</a>

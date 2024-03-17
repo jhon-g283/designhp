@@ -24,6 +24,20 @@ const CategoryComponent = () => {
         >
           <div className={styles.backGroundSheet8}></div>
         </Div>
+
+        <div className={styles.categoryImageOuterWrapper}>
+          <div className={styles.categoryImageWrapperSP}>
+            <Image
+              src="/imgSweep/Category_mainSP.jpg"
+              // width={1200} // Specify different width values based on device or viewport size
+              // height={200}
+              alt="Your Image"
+              fill={true}
+              className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
+            ></Image>
+          </div>
+        </div>
+
         <div className={styles.categoryTextWrapper}>
           <div className={styles.sectionSubTitleWrapper}>
             <SectionSubTitle className={styles.sectionSubTitle}>
@@ -44,16 +58,6 @@ const CategoryComponent = () => {
               alt="Your Image"
               fill={true}
               className={styles.imgPC}
-            ></Image>
-          </div>
-          <div className={styles.categoryImageWrapperSP}>
-            <Image
-              src="/imgSweep/Category_mainSP.jpg"
-              // width={1200} // Specify different width values based on device or viewport size
-              // height={200}
-              alt="Your Image"
-              fill={true}
-              className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
             ></Image>
           </div>
         </div>
