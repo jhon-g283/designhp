@@ -45,25 +45,27 @@ const ReviewItem = ({
             // height={244}
             alt="Your Image"
             fill={true}
-            // className={styles.imgPC}
+            className={styles.positionOverWrittenRelationOnSP}
           ></Image>
         </div>
 
         <div className={styles.reviewTextWrapper}>
-          <div className={styles.reviewItemNameWrapper}>
-            <a className={styles.reviewItemName}>{itemName}</a>
-            <a className={styles.reviewItemPrice}>¥{price}</a>
-          </div>
+          <div className={styles.reviewTextInnerWrapper}>
+            <div className={styles.reviewItemNameWrapper}>
+              <a className={styles.reviewItemName}>{itemName}</a>
+              <a className={styles.reviewItemPrice}>¥{price}</a>
+            </div>
 
-          <div className={styles.reviewInfoWrapper}>
-            <a className={styles.reviewReviewer}>{reviewerInfo}</a>
-            <span className={styles.reviewStar}>{stars}</span>
-          </div>
+            <div className={styles.reviewInfoWrapper}>
+              <a className={styles.reviewReviewer}>{reviewerInfo}</a>
+              <span className={styles.reviewStar}>{stars}</span>
+            </div>
 
-          <div className={styles.reviewCommentWrapper}>
-            <p className={styles.reviewCommentWord}>コメント</p>
-            <p className={styles.reviewComment}>{commentText}</p>
-            {/* 処理追加 */}
+            <div className={styles.reviewCommentWrapper}>
+              <p className={styles.reviewCommentWord}>コメント</p>
+              <p className={styles.reviewComment}>{commentText}</p>
+              {/* 処理追加 */}
+            </div>
           </div>
 
           <div className={styles.reviewLinkWrapper}>
