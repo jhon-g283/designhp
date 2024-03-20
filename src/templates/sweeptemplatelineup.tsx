@@ -1,6 +1,7 @@
 // トップページテンプレ
 import styles from '../../styles/cafe/cafe.module.css';
-import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
+import Header from '../organisms/sweepHeader';
+import Footer from '../organisms/sweepFooter';
 import Image from 'next/image';
 
 // import Header from '../organisms/sweepHeader';
@@ -8,25 +9,14 @@ import Image from 'next/image';
 const SweepLineUpPageTemplate = () => {
   return (
     <>
-      {/* header */}
-      {/* <Header /> */}
-      <p>header</p>
+      <div className="sweep">
+        {/* ヘッダー */}
+        <Header />
 
-      {/* FV */}
-      <p>fv</p>
-      {/* filter */}
-      <a>filter</a>
-      {/* about */}
-      <a>explain</a>
-      {/* about */}
-      <p>itemlist</p>
-      {/* about */}
-      <p>recently itemlist</p>
-      {/* about */}
+        <div className={styles.mainWrapper}>{/* news */}</div>
 
-      {/* footer */}
-      <p>footer</p>
-      <p>SWEEp</p>
+        <Footer />
+      </div>
     </>
   );
 };

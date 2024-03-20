@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
+import { addCart } from '../store/reducers/addCartDataSlice';
+import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 
 // ヘッダー部分のコンポーネント
 
@@ -12,10 +14,6 @@ interface Props {
   linkParam: string;
 }
 
-const addCartFunction = () => {
-  console.log('add cart');
-};
-
 const TopPageItemBox = ({
   imageUrl = '',
   itemName = '',
@@ -23,6 +21,12 @@ const TopPageItemBox = ({
   review = '0',
   linkParam,
 }: Props) => {
+  const dispatch = useDispatch();
+  const addCartFunction = () => {
+    console.log('add cart');
+    dispatch(addCart('77'));
+  };
+
   const link = 'domein:::::' + linkParam;
 
   const starCount = parseInt(review);

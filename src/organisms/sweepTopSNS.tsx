@@ -31,7 +31,7 @@ const SNSComponent = () => {
           // height={244}
           alt="Your Image"
           fill={true}
-          // className={styles.imgPC}
+          className={styles.positionOverWrittenRelationOnSP}
         ></Image>
       </div>
     );
@@ -142,7 +142,15 @@ const SNSComponent = () => {
               // height={244}
               alt="Your Image"
               fill={true}
-              // className={styles.imgPC}
+              className={styles.imgPC}
+            ></Image>
+            <Image
+              src={'/imgSweep/Product_Rich_bitter_SNS_SP.jpg'}
+              // width={236} // Specify different width values based on device or viewport size
+              // height={244}
+              alt="Your Image"
+              fill={true}
+              className={`${styles.imgSP} ${styles.positionOverWrittenRelationOnSP}`}
             ></Image>
           </div>
           <div className={styles.snsSubImageList}>{subImagesMap}</div>

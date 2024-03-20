@@ -84,15 +84,20 @@ img.positionOverWrittenRelationOnSP {
   margin-left: min(calc(5%), 88px);
   margin-right: min(calc(5%), 94px);
 
-  background-color: rgb(140, 138, 135);
   @media screen and (max-width: 768px) {
-    height: 6vh;
+    height: 36px;
+
+    top: 28%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: min(calc(5%), 40px);
+    padding-right: min(calc(5%), 40px);
   }
 }
 /* ロゴイメージ */
 .logoImage {
   /* 上下の位置を設定して絶対値固定する */
-  background-color: rgb(93, 97, 97);
+
   left: 0px;
   top: 25px;
 
@@ -102,18 +107,22 @@ img.positionOverWrittenRelationOnSP {
   position: absolute;
 
   @media screen and (max-width: 768px) {
-    top: 28%;
-    width: 10vw;
-    height: 38%;
+    top: 5px;
+    width: 12vh;
+    height: auto;
+    padding-left: min(calc(5%), 40px);
   }
 }
 
 /* ヘッダーのメニュー部分 */
 .headerMenu {
   display: flex;
-  padding-top: 18.5px;
+  padding-top: 15px;
   align-items: center;
-  background-color: antiquewhite;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 0px;
+  }
 }
 
 /* ヘッダー中のリンク部分 */
@@ -127,21 +136,44 @@ img.positionOverWrittenRelationOnSP {
 /* リンク部分をまとめる外枠 */
 .linkMenuWraper {
   margin-right: 57px;
+  padding-top: 12px;
+
+  color: #fff;
+  font-family: 'Noto Sans Javanese';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 49px; /* 245% */
+}
+
+a.linkMenu:link,
+a.linkMenu:visited,
+a.linkMenu:active {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* カート部数外枠 */
 .cartNumberWrapper {
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
 
   /* 幅を設定して丸型にする */
   border-radius: 50%;
   width: 26px;
   height: 26px;
 
-  margin-bottom: 18px;
+  margin-top: 5px;
+  margin-right: 7px;
   font-size: 15px;
   text-align: center;
   font-style: normal;
+
+  color: #000;
+  font-family: 'Noto Sans Javanese';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 
   /* text-align: center; */
 }
@@ -155,9 +187,118 @@ img.positionOverWrittenRelationOnSP {
   padding-top: 1.5px;
 }
 
+/* カート画像の外枠 */
+.cartIconImageWrapper {
+  width: 44px;
+  height: 44px;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+  }
+}
+
 /* カートのアイコン */
 .cartIconImage {
   padding-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 0px;
+  }
+}
+
+/* ハンバーガーメニュー */
+
+.sweepHumburger {
+  width: 20px;
+  margin-top: 4px;
+  z-index: 102;
+}
+
+/* ハンバーガーメニュー３本線 */
+.humburgerSpan,
+.humburgerSpan:before,
+.humburgerSpan:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 20px;
+  border-radius: 3px;
+  background: #ffffff;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* ３本線（上） */
+.humburgerSpan::before {
+  bottom: 8px;
+}
+/* ３本線（下） */
+.humburgerSpan::after {
+  top: 8px;
+}
+/* ３本線（中）クリック後 */
+#sweepsweepHumburgerChecks:checked ~ label span.humburgerSpan {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* ３本線（上）クリック後 */
+#sweepsweepHumburgerChecks:checked ~ label span.humburgerSpan:before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+/* ３本線（下）クリック後 */
+#sweepsweepHumburgerChecks:checked ~ label span.humburgerSpan:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ハンバーガーメニューの大枠部分クリック前 */
+#sweepsweepHumburgerChecks ~ .humburgerMenuWrapper {
+  display: none;
+}
+
+/* ハンバーガーメニューの大枠部分クリック後 */
+#sweepsweepHumburgerChecks:checked ~ .humburgerMenuWrapper {
+  width: 100vw;
+  height: 100vh;
+  top: 6.5vh;
+
+  left: 0px;
+
+  /* margin-left: max(calc(-5%), -40px); */
+  position: fixed;
+  background-color: #000000;
+  opacity: 0.8;
+  display: block;
+  z-index: 100;
+}
+
+/* ハンバーガーメニューの大枠部分クリック後　ナビゲーション部分*/
+.humburgerMenuNav {
+  color: #fff;
+  font-family: 'Noto Sans Javanese';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding-left: 50%;
+}
+
+/*ナビゲーションリスト */
+.humburgerMenuWrapper li {
+  list-style: none;
+}
+/* ナビゲーションテキスト */
+.humburgerMenuText {
+  font-size: 0.5em;
+}
+
+a.humburgerMenuText:visited,
+a.humburgerMenuText:link,
+a.humburgerMenuText:active {
+  color: #fff;
+  text-decoration: none;
 }
 
 /*ページの外枠  */
@@ -409,7 +550,7 @@ img.FVOverWritten {
 
   @media (max-width: 768px) {
     /* left: -100px; */
-    width: 100vw;
+    width: 95vw;
     margin: 0px;
     margin-left: min(calc(-5%), 40px);
   }
@@ -644,6 +785,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 .backGroundSheet20 {
@@ -659,6 +804,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
 }
 
 /* News部分 */
@@ -1983,7 +2132,7 @@ img.FVOverWritten {
   z-index: 3;
   @media (max-width: 768px) {
     margin-top: 6em;
-    margin-left: 0px;
+    margin-left: 0.5em;
   }
 }
 
@@ -2001,6 +2150,8 @@ img.FVOverWritten {
   display: inline-flex;
   align-items: flex-start;
   gap: 29px;
+
+  flex-wrap: wrap;
 
   position: relative;
   z-index: 3;
@@ -2333,7 +2484,6 @@ img.FVOverWritten {
 }
 
 /* リンクタグの書式を設定 */
-
 a.reviewLink:link,
 a.reviewLink:visited,
 a.reviewLink:active {
@@ -2386,16 +2536,14 @@ a.reviewLink:active {
   z-index: 3;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    /* display: none; */
   }
 }
 
 .snsSectionWrapper {
   position: relative;
   z-index: 3;
-}
 
-.snsSectionWrapper {
   color: #fff;
   font-family: YuMincho;
   font-size: 14px;
@@ -2405,82 +2553,140 @@ a.reviewLink:active {
   letter-spacing: 1.4px;
 }
 
+/* SNSのテキスト部分 */
 .snsTextAreaWrapper {
   margin-top: 15px;
   margin-left: 35px;
+  @media (max-width: 768px) {
+    margin-top: 1em;
+    margin-left: 0px;
+  }
 }
 
+/* SNSの文章部分 */
 .snsTextArea {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 }
 
+/* SNS名 */
 .snsTitleWrapper {
   margin-left: 20px;
   margin-top: 21px;
   display: inline-flex;
   gap: 165px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    margin-left: 0.55em;
+    gap: 9%;
+  }
 }
 
+/* SNSのロゴとIDの外枠 */
 .logoAndId {
   display: flex;
   margin-top: 17px;
   margin-left: 10px;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-top: 8px;
+    margin-left: 5px;
+  }
 }
 
+/* SNSのアイコン */
 .snsIconImageWrapper {
   width: 23px;
   height: 23px;
   flex-shrink: 0;
   position: relative;
+  @media (max-width: 768px) {
+    width: 12px;
+    height: 12px;
+  }
 }
 
+/* SNS名 */
 .snsId {
   padding-left: 13px;
   padding-top: 2px;
   font-size: 1em;
   letter-spacing: 1.3px;
+  @media (max-width: 768px) {
+    padding-left: 1em;
+    padding-top: 2px;
+    font-size: 0.7em;
+  }
 }
 
+/* SNSの画像一覧の大枠 */
 .snsImageListWrapper {
   margin-left: 80px;
-  /* width: 1225px; */
+
   display: flex;
 
-  /* justify-content: center; */
   position: relative;
   z-index: 3;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    display: inline-block;
+  }
 }
 
+/* SNSのメインの画像 */
 .snsMainImageWrapper {
   width: 350px;
   height: 350px;
   flex-shrink: 0;
   position: relative;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 }
 
+/* SNSの画像のリストの外枠 */
 .snsImageListWrapper {
   margin-top: 41px;
   display: flex;
+  @media (max-width: 768px) {
+    display: inline-block;
+    gap: 17px;
+  }
 }
 
+/* SNSアイコンのリスト部分 */
 .snsSubImageList {
   width: 801px;
   margin-left: 58px;
   display: inline-flex;
   gap: 16px 17px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    gap: 10px 8px;
+  }
 }
 
+/* SNSアイコンイメージの外側 */
 .snsSubImageWrapper {
   width: 167px;
   height: 167px;
   flex-shrink: 0;
   position: relative;
+  @media (max-width: 768px) {
+    width: 23%;
+    height: auto;
+  }
 }
 
 /* フッター */
-
+/* フッターの外枠 */
 .footerConponentWrapper {
   /* 左右の内側の幅を設定 */
   padding-left: min(calc(5%), 88px);
@@ -2495,8 +2701,16 @@ a.reviewLink:active {
   height: 255px;
   flex-shrink: 0;
   position: relative;
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    height: 99px;
+    justify-content: center;
+    padding-left: min(calc(5%), 40px);
+    padding-right: min(calc(5%), 40px);
+  }
 }
 
+/* フッターのロゴ画像 */
 .footerLogoImage {
   width: 230px;
   height: 70px;
@@ -2505,6 +2719,7 @@ a.reviewLink:active {
   position: absolute;
 }
 
+/* 企業情報のエリア */
 .footerInfoArea {
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -2515,11 +2730,18 @@ a.reviewLink:active {
   letter-spacing: 1.68px;
 }
 
+/* 区切り線 */
 .footerInfoArea svg {
   margin-right: 12px;
   margin-left: 12px;
+  @media (max-width: 768px) {
+    margin-right: 0.6em;
+    margin-left: 0.5em;
+    height: 10px;
+  }
 }
 
+/* アイコンの外枠 */
 .footerSNSIcons {
   /* display: inline-flex; */
   display: flex;
@@ -2528,13 +2750,32 @@ a.reviewLink:active {
   gap: 24px;
   right: 0px;
   padding-bottom: 17px;
-  /* position: absolute; */
+  @media (max-width: 768px) {
+    gap: 12px;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
 }
 
+/* SNSアイコンイメージ */
 .snsIconImage {
   width: 38px;
   height: 38px;
   position: relative;
+  @media (max-width: 768px) {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.footerLinkText {
+  font-size: 1em;
+  @media (max-width: 768px) {
+    display: inline-flex;
+    align-items: center;
+    padding-top: 1.5em;
+    font-size: 0.6em;
+  }
 }
 
 .sweepCopyWrite {
@@ -2542,4 +2783,25 @@ a.reviewLink:active {
   justify-content: end;
   align-items: center;
   margin-top: 17px;
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+  }
+}
+
+/* コピーライト */
+.sweepCopyWrite svg {
+  @media (max-width: 768px) {
+    width: 1em;
+    padding-bottom: 0.105em;
+    margin-right: 0.5em;
+  }
+}
+
+.sweepCopyWrite a {
+  @media (max-width: 768px) {
+    line-height: 0.5em;
+  }
 }
