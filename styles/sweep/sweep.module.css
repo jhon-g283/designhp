@@ -54,10 +54,12 @@ img.positionOverWrittenRelationOnSP {
 
   /* 幅を設定してFixed */
   top: 0px;
+  left: 0px;
   width: 100%;
   height: 88px;
   position: fixed;
-  z-index: 10;
+
+  z-index: 100;
 
   /* ---- */
   color: #fff;
@@ -70,6 +72,7 @@ img.positionOverWrittenRelationOnSP {
   /* -- */
   @media screen and (max-width: 768px) {
     height: 6vh;
+    height: 88px;
   }
 }
 
@@ -92,6 +95,9 @@ img.positionOverWrittenRelationOnSP {
     margin-right: 0px;
     padding-left: min(calc(5%), 40px);
     padding-right: min(calc(5%), 40px);
+    padding-bottom: auto;
+    margin-top: 20px;
+    margin-top: auto;
   }
 }
 /* ロゴイメージ */
@@ -318,6 +324,7 @@ a.humburgerMenuText:active {
   padding-top: 88px;
   @media screen and (max-width: 768px) {
     padding-top: 6vh;
+    padding-top: 88px;
   }
 }
 
@@ -2804,4 +2811,35 @@ a.reviewLink:active {
   @media (max-width: 768px) {
     line-height: 0.5em;
   }
+}
+
+.lineupFVWrapper {
+  /* height: 100%; */
+  /* padding-top: ; */
+  background-color: #c0c0c0;
+  /* position: relative; */
+  @media (min-width: 1513px) {
+    /* 画像の大きさとabsoluteで隠れないように特定の幅を越えると余白を入れる */
+    padding-bottom: 20vh;
+  }
+}
+
+.lineupFVImageWrapper {
+  width: 100vw;
+  height: 54vh;
+  max-height: 54vh;
+  object-fit: contain; /* 画像全体がコンテナに収まるように調整 */
+
+  top: 0px;
+  left: 0px;
+  position: absolute;
+
+  min-height: 555px;
+  position: relative;
+}
+
+.lineupImg {
+  /* Next.jsのトリミング後に画像を上側に寄せる */
+  height: auto !important;
+  inset: 0px 0px 0px 0px !important;
 }

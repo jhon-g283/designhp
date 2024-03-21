@@ -23,9 +23,10 @@ import Footer from '../organisms/sweepFooter';
 const SweepTopPageTemplate = () => {
   return (
     <>
+      <Header />
       <div className="sweep">
         {/* ヘッダー */}
-        <Header />
+
         {/* FV */}
         <div className={styles.firstViewArea}>
           <SliderComponent />

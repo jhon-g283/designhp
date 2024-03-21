@@ -11,8 +11,16 @@ const LineupComponent = () => {
 
   return (
     <>
-      <div className={styles.lineupFVWrapper}></div>
-      <div className={styles.lineupConponentWrapper}></div>
+      <div className={styles.lineupConponentWrapper}>
+        <p>test-----</p>
+        <div>
+          {/* フィルタ */}
+          <div>
+            {/* 説明 */}
+            <div>{/* リスト */}</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
