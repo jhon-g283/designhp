@@ -1958,7 +1958,8 @@ img.FVOverWritten {
 }
 
 /* 商品ボックスの画像（外枠） */
-.topItemBoxImageWrapper {
+.topItemBoxImageWrapper,
+.itemBoxImageWrapper {
   width: 200px;
   height: 200px;
   flex-shrink: 0;
@@ -2009,8 +2010,9 @@ img.FVOverWritten {
   }
 }
 
-/* アイテムボックス */
-.topItemInfoWrapper {
+/* アイテムボックス (Top/lineup)*/
+.topItemInfoWrapper,
+.itemBoxInfoWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 14px;
@@ -2028,7 +2030,9 @@ img.FVOverWritten {
 
 /* 商品名 */
 .topItemName {
+  margin-top: 12px;
   margin-bottom: 11px;
+
   font-size: 1em;
   @media (max-width: 768px) {
     font-size: 0.75em;
@@ -2037,8 +2041,73 @@ img.FVOverWritten {
   }
 }
 
+/* アイテムボックス */
+.itemBoxName {
+  margin-top: 12px;
+  margin-bottom: 11px;
+
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* トップページ内のアイテムボックス */
+.itemBox {
+  /* width: 266px; */
+
+  flex-shrink: 0;
+  background: linear-gradient(0deg, #fff 0%, #fff 100%), rgba(0, 0, 0, 0.34);
+  /* background-color: rgba(255, 255, 255, 0.971); */
+  /* 高さ・長さは固定せずpaddingで調整 */
+  display: block;
+  padding: 16px 15px 16px 15px;
+  @media (max-width: 768px) {
+    /* padding: 14px 16px 14px 16px;
+    height: 100%;
+    max-height: 483px; */
+  }
+}
+
+/* アイテムボックス 商品名(外枠)(lineup)*/
+.itemBoxNameWrapper {
+  font-size: 15px;
+  letter-spacing: 1.6px;
+}
+
+/* アイテムボックス 商品詳細へ 外枠(lineup)*/
+.itemBoxLinkWrapper {
+  margin-top: 8px;
+  margin-bottom: 13px;
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.3px;
+  text-align: right;
+}
+
+/* アイテムボックス 商品詳細へ(lineup)*/
+.itemBoxLink {
+  font-size: 1em;
+  padding-right: 8px;
+}
+
+/* アイテムボックス 商品詳細へ(lineup)*/
+a.itemBoxLink:link,
+a.itemBoxLink:visited,
+a.itemBoxLink:active {
+  color: #000;
+  text-decoration: none;
+}
+
 /* 商品価格 */
-.topItemPrice {
+.topItemPrice,
+.itemBoxPrice {
   margin: 0;
   font-size: 1em;
   @media (max-width: 768px) {
@@ -2046,11 +2115,21 @@ img.FVOverWritten {
   }
 }
 
-/* クチコミ */
+/* クチコミ(top) */
 .topItemReview {
   font-size: 1em;
   margin-top: 3px;
   margin-bottom: 14px;
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+  }
+}
+
+/* クチコミ (lineup)*/
+.itemBoxReview {
+  font-size: 1em;
+  margin-top: 3px;
+  margin-bottom: 0px;
   @media (max-width: 768px) {
     font-size: 0.6em;
   }
@@ -2078,12 +2157,14 @@ img.FVOverWritten {
 }
 
 /* カートボタンの外枠 */
-.topItemButtonWrapper {
+.topItemButtonWrapper,
+.itemBoxButtonWrapper {
   font-size: 16px;
 }
 
 /* カートボタン */
-.topItemButton {
+.topItemButton,
+.itemBoxButton {
   width: 198px;
   height: 43px;
   flex-shrink: 0;
@@ -2342,7 +2423,7 @@ img.FVOverWritten {
     text-wrap: wrap;
     margin-left: 2%;
 
-    margin-top: -0.2em;
+    margin-top: 0.5em;
 
     max-height: 281px;
   }
@@ -2363,6 +2444,7 @@ img.FVOverWritten {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+  display: flex;
 
   position: relative;
   @media (max-width: 768px) {
@@ -2383,14 +2465,15 @@ img.FVOverWritten {
 /* 価格 */
 .reviewItemPrice {
   right: 0px;
-  position: absolute;
+  /* position: absolute; */
 
   font-size: 1em;
   @media (max-width: 768px) {
     font-size: 0.55em;
-    bottom: 0.35em;
-    /* position: relative; */
-    text-align: end;
+    /* bottom: 0.35em; */
+    position: relative;
+    margin-right: 0px;
+    margin-left: auto;
   }
 }
 
@@ -2486,6 +2569,8 @@ img.FVOverWritten {
   @media (max-width: 768px) {
     /* text-align: start; */
     bottom: 0px;
+    display: flex;
+    align-items: center;
     /* position: relative; */
   }
 }
@@ -2497,12 +2582,23 @@ a.reviewLink:active {
   color: #fff;
   text-decoration: none;
 }
-/* 矢印の位置調整 */
+/* 商品ページへ*/
 .reviewLink {
   padding-right: 7px;
   font-size: 1em;
   @media (max-width: 768px) {
     font-size: 0.65em;
+    padding-right: 0.65em;
+  }
+}
+/* 矢印 */
+.reviewLinkWrapper svg {
+  padding-bottom: 0.1em;
+
+  @media (max-width: 768px) {
+    width: 0.35em;
+    /* padding-bottom: -0.4em; */
+    padding-top: 0.1em;
   }
 }
 
@@ -2813,6 +2909,7 @@ a.reviewLink:active {
   }
 }
 
+/* 商品一覧のFVの外枠 */
 .lineupFVWrapper {
   /* height: 100%; */
   /* padding-top: ; */
@@ -2824,6 +2921,7 @@ a.reviewLink:active {
   }
 }
 
+/* 画像の外枠 */
 .lineupFVImageWrapper {
   width: 100vw;
   height: 54vh;
@@ -2838,8 +2936,87 @@ a.reviewLink:active {
   position: relative;
 }
 
+/* FV画像の調整用 */
 .lineupImg {
   /* Next.jsのトリミング後に画像を上側に寄せる */
   height: auto !important;
   inset: 0px 0px 0px 0px !important;
+}
+
+.lineupConponentWrapper {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    /* line-height: 0.5em; */
+  }
+}
+
+/* フィルターのエリア */
+.lineupFilterArea {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+/* 直下のlineupFilterBlockWrapper */
+.lineupFilterArea > .lineupFilterBlockWrapper {
+  /* カテゴリのブロックのみマージン追加 */
+  margin-bottom: 63px;
+}
+
+/* フィルターの文字 */
+.lineupFilterArea > p {
+  margin-bottom: 15px;
+}
+
+/* フィルターのブロック */
+.lineupFilterBlockWrapper {
+  padding-left: 1em;
+}
+
+/* カテゴリー名 */
+.lineupFilterBlockWrapper p {
+  /* 直下のPタグ */
+  margin: 0px;
+}
+
+/* カテゴリー */
+.lineupFilterBlockWrapper ul {
+  margin-top: 14px;
+  padding-left: 1em;
+}
+
+/* カテゴリー　リスト部分 */
+.lineupFilterBlockWrapper li {
+  list-style: none;
+}
+
+/* 商品リスト（外枠） */
+.lineupItemListWrapper {
+  display: inline-flex;
+  gap: 35px;
+  padding-top: 55px;
+  padding-left: 20px;
+  flex-wrap: wrap;
+}
+
+/* カテゴリーの説明エリア */
+.lineupCategoryExprainArea {
+  padding-left: 20px;
+  border-bottom: #a4a4a4 1px solid;
+}
+
+/* 商品の一覧 */
+.lineupItemArea {
+  right: 0px;
+  /* left: 20px; */
+  position: absolute;
+  width: 100%;
+  max-width: 1081px;
 }

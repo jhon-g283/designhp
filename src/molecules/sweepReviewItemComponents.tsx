@@ -73,20 +73,20 @@ const ReviewItem = ({
               商品ページへ
             </a>
             <svg
-              width="6"
-              height="9"
-              viewBox="0 0 6 9"
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
-                x1="1.35355"
-                y1="0.646447"
-                x2="4.88909"
-                y2="4.18198"
+                y1="-0.5"
+                x2="4.97765"
+                y2="-0.5"
+                transform="matrix(0.692852 0.72108 -0.721033 0.692901 2.95605 1.61963)"
                 stroke="white"
               />
-              <path d="M4.62404 4.27538L0.971311 7.9281" stroke="white" />
+              <path d="M6.73341 4.20799L3.1692 7.6463" stroke="white" />
             </svg>
           </div>
         </div>
