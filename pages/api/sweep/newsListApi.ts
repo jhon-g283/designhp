@@ -1,7 +1,7 @@
 // お知らせ情報用のAPI
 import type { NextApiRequest, NextApiResponse } from "next";
-import { newsDataResponse } from "../../src/types";
-import jsonData from "./stbdata/newsList.json";
+import { newsDataResponse } from "../../../src/types";
+import jsonData from "../stbdata/newsList.json";
 
 export default function handler(
   req: NextApiRequest,

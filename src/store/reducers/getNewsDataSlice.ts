@@ -18,7 +18,7 @@ const initialState: newsDataList = {
 
 //問合せURL
 const domain = process.env.NEXT_PUBLIC_HOST || "http://localhost:3000/"; //環境変数鵜より取得
-const baseulr: string = domain + "api/newsListApi";
+const baseulr: string = domain + "api/sweep/newsListApi";
 
 console.log(domain);
 // APIへの問い合わせ関数（fetchで取得する部分）

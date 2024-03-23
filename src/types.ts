@@ -18,16 +18,37 @@ export interface itemData {
 }
 
 // Reduxの型の設定　商品一覧
-export interface dataList {
-  itemlist?: {
-    id?: number;
-    itemName?: any; //商品名
-    imageUrl?: any; //画像URL
-    price?: any; //価格
-    evaluation?: any; //口コミ
-    code?: string; //商品コード
-  }[];
+export interface searchResultData {
+  itemlist?: itemDataList[];
+  categories?: categoryList[];
   status: string;
+}
+
+// API用：（商品の検索結果）（lineupで表示）
+export interface searchReaultDataAPI {
+  itemlist?: itemDataList[]; //商品リスト
+  categories?: categoryList[]; //カテゴリの概要文
+  status?: string; //取得状況
+}
+
+// 商品リストの中身
+export interface itemDataList {
+  id?: string;
+  itemName?: string; // 商品名
+  imageUrl?: string; // 画像URL
+  price?: string; // 価格
+  evaluation?: any; // 口コミ
+  code?: string; // 商品コード
+  categoryId?: string; // 商品カテゴリ
+  size?: string; // 商品サイズ
+}
+
+// カテゴリの概要文の構造
+export interface categoryList {
+  categoryId?: string; // 商品カテゴリ
+  categoryName?: string; // 商品カテゴリ名（表示用）
+  categoryDescription?: string; // 商品カテゴリの概要（表示用）
+  categoryDetail?: string; // 商品カテゴリの説明文（表示用）
 }
 
 // API用：商品情報取得

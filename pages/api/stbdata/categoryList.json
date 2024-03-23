@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "categoryId": "Basic",
+      "categoryName": "ベーシック",
+      "categoryDescription": "ほろ苦い苦味が特徴",
+      "categoryDetail": "抑えめの甘さとほろ苦い苦味が広がる味わいになっており、夜遅くに甘いものを食べるのがあまり好きでない方でも口に入れやすくチョコレートをあまり食べない方でもぜひ食べていただける商品です。"
+    },
+    {
+      "categoryId": "Caramel",
+      "categoryName": "キャラメル",
+      "categoryDescription": "キャラメルの引き立つ香りとほのかな甘み",
+      "categoryDetail": "キャラメルの引き立つ香りをベースに甘みを抑えて、夜の上品な味わいに仕上がっております。甘すぎず目が冴えないのでデザート代わりにじっくり味わいたい方におすすめです。"
+    }
+  ]
+}

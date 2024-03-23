@@ -2947,6 +2947,7 @@ a.reviewLink:active {
   display: inline-flex;
   position: relative;
   width: 100%;
+  margin-top: 40px;
 
   @media (max-width: 768px) {
     /* line-height: 0.5em; */
@@ -2955,6 +2956,11 @@ a.reviewLink:active {
 
 /* フィルターのエリア */
 .lineupFilterArea {
+  width: 100%;
+  max-width: 190px;
+  height: 100%;
+  max-height: 700px;
+
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 20px;
@@ -2973,6 +2979,7 @@ a.reviewLink:active {
 /* フィルターの文字 */
 .lineupFilterArea > p {
   margin-bottom: 15px;
+  margin-top: 0px;
 }
 
 /* フィルターのブロック */
@@ -2995,6 +3002,8 @@ a.reviewLink:active {
 /* カテゴリー　リスト部分 */
 .lineupFilterBlockWrapper li {
   list-style: none;
+  margin-bottom: 13px;
+  text-wrap: wrap;
 }
 
 /* 商品リスト（外枠） */
@@ -3003,6 +3012,7 @@ a.reviewLink:active {
   gap: 35px;
   padding-top: 55px;
   padding-left: 20px;
+  margin-bottom: 196px;
   flex-wrap: wrap;
 }
 
@@ -3010,13 +3020,85 @@ a.reviewLink:active {
 .lineupCategoryExprainArea {
   padding-left: 20px;
   border-bottom: #a4a4a4 1px solid;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+  letter-spacing: 1.6px;
+}
+
+.lineupCategoryExprainArea > p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+/*  */
+.lineupCategoryTitle {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+.lineupCategoryTitle h2 {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.lineupExplainText1 {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+.lineupExplainText1 p {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  font-size: 1em;
 }
 
 /* 商品の一覧 */
 .lineupItemArea {
-  right: 0px;
+  /* right: 0px; */
   /* left: 20px; */
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   max-width: 1081px;
+  margin-left: 68px;
+}
+
+.lineupHorizontalBarArea {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+.lineupHorizontalBarArea svg {
+  right: 0;
+  position: absolute;
+}
+
+.lineupHorizontalBarArea p {
+  font-size: 1em;
+  padding-top: 45px;
+  margin-top: 0px;
+
+  margin-bottom: 0px;
+  margin-left: -100px;
 }

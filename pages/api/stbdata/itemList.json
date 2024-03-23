@@ -1,58 +1,154 @@
 {
   "itemlist": [
     {
-      "id": 1,
-      "itemName": "モンブランs",
-      "imageUrl": "/img/test.png",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "1A"
+      "id": "1",
+      "itemName": "ビターチョコ(7個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "500",
+      "evaluation": 4,
+      "code": "ABC123",
+      "categoryId": "Basic",
+      "size": "M"
     },
     {
-      "id": 2,
-      "itemName": "モンブランa",
-      "imageUrl": "/img/pie.png",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "1A"
+      "id": "2",
+      "itemName": "ビターチョコ(7個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "500",
+      "evaluation": 3,
+      "code": "DEF456",
+      "categoryId": "Basic",
+      "size": "L"
     },
     {
-      "id": 3,
-      "itemName": "モンブランt",
-      "imageUrl": "imageUrl",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "1A"
+      "id": "3",
+      "itemName": "ビターチョコ(7個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "500",
+      "evaluation": 3,
+      "code": "DEF456",
+      "categoryId": "Caramel",
+      "size": "L"
     },
     {
-      "id": 4,
-      "itemName": "モンブランyyc",
-      "imageUrl": "imageUrl",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "1A"
+      "id": "4",
+      "itemName": "ミルクチョコ(5個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "600",
+      "evaluation": 4,
+      "code": "GHI789",
+      "categoryId": "Milk",
+      "size": "S"
     },
     {
-      "id": 5,
-      "itemName": "モンブランA",
-      "imageUrl": "imageUrl",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "A"
+      "id": "5",
+      "itemName": "ストロベリーチョコ(8個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "700",
+      "evaluation": 3,
+      "code": "JKL012",
+      "categoryId": "Strawberry",
+      "size": "M"
     },
     {
-      "id": 5,
-      "itemName": "モンブランB",
-      "imageUrl": "imageUrl",
-      "priceHole": "priceHole",
-      "pricePieace": "pricePieace",
-      "kcal": "kcal",
-      "code": "B"
+      "id": "6",
+      "itemName": "サクラチョコ(6個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "800",
+      "evaluation": 4,
+      "code": "MNO345",
+      "categoryId": "Sakura",
+      "size": "L"
+    },
+    {
+      "id": "7",
+      "itemName": "キャラメルチョコ(6個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "750",
+      "evaluation": 2,
+      "code": "PQR678",
+      "categoryId": "Caramel",
+      "size": "M"
+    },
+    {
+      "id": "8",
+      "itemName": "ビターチョコ(10個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "900",
+      "evaluation": 5,
+      "code": "STU901",
+      "categoryId": "Basic",
+      "size": "S"
+    },
+    {
+      "id": "9",
+      "itemName": "ミルクチョコ(10個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "1000",
+      "evaluation": 1,
+      "code": "VWX234",
+      "categoryId": "Milk",
+      "size": "L"
+    },
+    {
+      "id": "10",
+      "itemName": "ビターチョコ(5個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "550",
+      "evaluation": 4,
+      "code": "YZA567",
+      "categoryId": "Basic",
+      "size": "M"
+    },
+    {
+      "id": "11",
+      "itemName": "ストロベリーチョコ(5個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "650",
+      "evaluation": 3,
+      "code": "BCD890",
+      "categoryId": "Strawberry",
+      "size": "S"
+    },
+    {
+      "id": "12",
+      "itemName": "ビターチョコ(8個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "800",
+      "evaluation": 5,
+      "code": "EFG123",
+      "categoryId": "Basic",
+      "size": "L"
+    },
+    {
+      "id": "13",
+      "itemName": "ミルクチョコ(8個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "900",
+      "evaluation": 2,
+      "code": "HIJ456",
+      "categoryId": "Milk",
+      "size": "M"
+    },
+    {
+      "id": "14",
+      "itemName": "キャラメルチョコ(8個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "850",
+      "evaluation": 1,
+      "code": "KLM789",
+      "categoryId": "Caramel",
+      "size": "L"
+    },
+    {
+      "id": "15",
+      "itemName": "ビターチョコ(6個)",
+      "imageUrl": "/imgSweep/Product_Bitter.jpg",
+      "price": "700",
+      "evaluation": 3,
+      "code": "NOP012",
+      "categoryId": "Basic",
+      "size": "S"
     }
   ]
 }
