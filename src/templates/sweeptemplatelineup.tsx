@@ -25,7 +25,16 @@ const SweepLineUpPageTemplate = () => {
               alt="Your Image"
               fill={true}
               style={{ objectFit: 'contain' }}
-              className={styles.lineupImg}
+              className={`${styles.lineupImg} ${styles.imgPC}`}
+            ></Image>
+            <Image
+              src={'/imgSweep/FV_Lineup_SP.jpg'}
+              // width={135} // Specify different width values based on device or viewport size
+              // height={40}
+              alt="Your Image"
+              fill={true}
+              style={{ objectFit: 'contain' }}
+              className={`${styles.lineupImg} ${styles.imgSP}`}
             ></Image>
           </div>
         </div>

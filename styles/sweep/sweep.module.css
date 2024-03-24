@@ -2913,11 +2913,15 @@ a.reviewLink:active {
 .lineupFVWrapper {
   /* height: 100%; */
   /* padding-top: ; */
-  background-color: #c0c0c0;
+  /* background-color: #c0c0c0; */
   /* position: relative; */
   @media (min-width: 1513px) {
     /* 画像の大きさとabsoluteで隠れないように特定の幅を越えると余白を入れる */
     padding-bottom: 20vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 34vh;
   }
 }
 
@@ -2925,15 +2929,18 @@ a.reviewLink:active {
 .lineupFVImageWrapper {
   width: 100vw;
   height: 54vh;
-  max-height: 54vh;
+
   object-fit: contain; /* 画像全体がコンテナに収まるように調整 */
 
   top: 0px;
   left: 0px;
-  position: absolute;
 
   min-height: 555px;
   position: relative;
+  @media (max-width: 768px) {
+    height: 34vh;
+    max-height: 368px;
+  }
 }
 
 /* FV画像の調整用 */
@@ -2943,21 +2950,25 @@ a.reviewLink:active {
   inset: 0px 0px 0px 0px !important;
 }
 
+/* ラインナップのFV以外の外枠 */
 .lineupConponentWrapper {
+  /* 横方向にする */
   display: inline-flex;
   position: relative;
   width: 100%;
   margin-top: 40px;
 
   @media (max-width: 768px) {
-    /* line-height: 0.5em; */
+    /* 縦方向にする */
+    display: block;
+    margin-top: 0px;
   }
 }
 
 /* フィルターのエリア */
 .lineupFilterArea {
   width: 100%;
-  max-width: 190px;
+  max-width: 200px;
   height: 100%;
   max-height: 700px;
 
@@ -2968,35 +2979,85 @@ a.reviewLink:active {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    /* 中央寄せにして幅を最大に */
+    text-align: center;
+    max-width: 100vw;
+    background: #e5e5e5;
+    color: #000;
+
+    letter-spacing: 2.3px;
+    padding-top: 15px 0px;
+  }
 }
 
 /* 直下のlineupFilterBlockWrapper */
 .lineupFilterArea > .lineupFilterBlockWrapper {
   /* カテゴリのブロックのみマージン追加 */
   margin-bottom: 63px;
+  @media (max-width: 768px) {
+    margin-bottom: 0px;
+  }
 }
 
 /* フィルターの文字 */
 .lineupFilterArea > p {
   margin-bottom: 15px;
   margin-top: 0px;
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+    margin-bottom: 0.5em;
+    padding-top: 1em;
+  }
 }
 
 /* フィルターのブロック */
 .lineupFilterBlockWrapper {
   padding-left: 1em;
+  @media (max-width: 768px) {
+    padding-left: 0em;
+  }
 }
 
 /* カテゴリー名 */
 .lineupFilterBlockWrapper p {
   /* 直下のPタグ */
   margin: 0px;
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+  }
+}
+
+/* ハイフンのSVG */
+.lineupFilterBlockWrapper p span svg {
+  @media (max-width: 768px) {
+    width: 1em;
+    padding-bottom: 0.35em;
+    padding-left: 0.2em;
+    padding-right: 0.4em;
+  }
+}
+
+.lineupFilterSVG1 svg {
+  margin-bottom: -0.5em;
+  width: 1em;
 }
 
 /* カテゴリー */
 .lineupFilterBlockWrapper ul {
   margin-top: 14px;
   padding-left: 1em;
+
+  @media (max-width: 768px) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    gap: 12px 8px;
+  }
 }
 
 /* カテゴリー　リスト部分 */
@@ -3004,6 +3065,19 @@ a.reviewLink:active {
   list-style: none;
   margin-bottom: 13px;
   text-wrap: wrap;
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+    border: 1.5px solid #000;
+    text-align: center;
+
+    padding: 0.2em;
+    margin-bottom: 0px;
+
+    width: 12.5vw;
+    min-width: 91px;
+    max-width: 192px;
+  }
 }
 
 /* 商品リスト（外枠） */
@@ -3014,6 +3088,13 @@ a.reviewLink:active {
   padding-left: 20px;
   margin-bottom: 196px;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    gap: 19px;
+    padding-top: 23px;
+    padding-right: 0px;
+
+    padding-left: 0px;
+  }
 }
 
 /* カテゴリーの説明エリア */
@@ -3028,15 +3109,23 @@ a.reviewLink:active {
   font-weight: 300;
   line-height: 28px; /* 175% */
   letter-spacing: 1.6px;
+  @media (max-width: 768px) {
+    padding-left: 0px;
+  }
 }
 
 .lineupCategoryExprainArea > p {
   font-size: 1em;
   margin-top: 0px;
   margin-bottom: 32px;
+  @media (max-width: 768px) {
+    font-size: 0.7em;
+    margin-bottom: 2em;
+    line-height: 1.25em; /* 121.739% */
+  }
 }
 
-/*  */
+/* カテゴリタイトル */
 .lineupCategoryTitle {
   color: #fff;
   font-family: YuMincho;
@@ -3046,13 +3135,18 @@ a.reviewLink:active {
   line-height: normal;
   letter-spacing: 2.5px;
 }
-
+/* カテゴリの概要 */
 .lineupCategoryTitle h2 {
   font-size: 1em;
   margin-top: 0px;
   margin-bottom: 12px;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+    margin-bottom: 0px;
+  }
 }
 
+/* カテゴリの説明 */
 .lineupExplainText1 {
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -3063,10 +3157,15 @@ a.reviewLink:active {
   letter-spacing: 2.4px;
 }
 
+/* カテゴリの説明 */
 .lineupExplainText1 p {
   margin-top: 0px;
   margin-bottom: 16px;
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+    margin-bottom: 0.4em;
+  }
 }
 
 /* 商品の一覧 */
@@ -3076,9 +3175,14 @@ a.reviewLink:active {
   /* position: absolute; */
   width: 100%;
   max-width: 1081px;
-  margin-left: 68px;
+  margin-left: 48px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    margin-top: 22px;
+  }
 }
 
+/* 水平線の区切りの部分 */
 .lineupHorizontalBarArea {
   color: #fff;
   font-family: YuMincho;
@@ -3087,13 +3191,23 @@ a.reviewLink:active {
   font-weight: 800;
   line-height: normal;
   letter-spacing: 2.5px;
+
+  @media (max-width: 768px) {
+    border-bottom: #a4a4a4 1px solid;
+  }
 }
 
+/* 水平線のSVG */
 .lineupHorizontalBarArea svg {
-  right: 0;
+  left: 210;
   position: absolute;
+  @media (max-width: 768px) {
+    /* SP表示では表示しない */
+    display: none;
+  }
 }
 
+/* 最近チェックした商品 */
 .lineupHorizontalBarArea p {
   font-size: 1em;
   padding-top: 45px;
@@ -3101,4 +3215,43 @@ a.reviewLink:active {
 
   margin-bottom: 0px;
   margin-left: -100px;
+  @media (max-width: 768px) {
+    font-size: 0.64em;
+    padding-top: 0px;
+    padding-bottom: 0.7em;
+    margin: 0px;
+  }
+}
+
+/* チェックボックス */
+.lineupCheckBox {
+  display: none;
+}
+
+/* チェックボックスの隣のチェックマーク */
+input.lineupCheckBox + svg {
+  /* 未チェック時は非表示にする */
+  opacity: 0;
+  padding-left: 0.5em;
+  padding-bottom: 0.2em;
+
+  @media (max-width: 768px) {
+    /* SP表示では表示しない */
+    display: none;
+  }
+}
+
+input.lineupCheckBox:checked + svg {
+  /* チェック済みの時に表示させる。 */
+  opacity: 1;
+}
+
+/* SP表示 */
+li:has(input.lineupCheckBox:checked) {
+  /* チェックのあるLiタグを色変更 */
+  @media (max-width: 768px) {
+    color: #fff;
+
+    background: #0e0e0e;
+  }
 }

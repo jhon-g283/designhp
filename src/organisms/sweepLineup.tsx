@@ -23,9 +23,12 @@ const LineupComponent = () => {
   ); //商品リスト取得
 
   // 商品概要の表示項モックをuseSelecterから取得
-  const categoryName = categoryData[0].categoryName; //カテゴリー名
-  const categoryDescription = categoryData[0].categoryDescription; //カテゴリー概要
-  const categoryDetail = categoryData[0].categoryDetail; //カテゴリーの詳細分
+  const categoryName =
+    categoryData.length > 0 ? categoryData[0].categoryName : ''; //カテゴリー名
+  const categoryDescription =
+    categoryData.length > 0 ? categoryData[0].categoryDescription : ''; //カテゴリー概要
+  const categoryDetail =
+    categoryData.length > 0 ? categoryData[0].categoryDetail : ''; //カテゴリーの詳細分
 
   // useState(選択中のカテゴリ名)
   const [category, setCategory] = useState('Basic');
@@ -57,13 +60,51 @@ const LineupComponent = () => {
     );
   });
 
-  const CheckBox = (currentCategory: string = '') => {
+  // カテゴリカテゴリのチェックボックス
+  const CategoryCheckBox = (currentCategory: string = '') => {
     return (
       <>
         <input
           type="checkbox"
           name="category"
+          className={styles.lineupCheckBox}
           checked={category == currentCategory}
+        />
+        <svg
+          width="14"
+          height="9"
+          viewBox="0 0 14 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0.568397"
+            y1="3.69662"
+            x2="5.51815"
+            y2="8.64637"
+            stroke="white"
+          />
+          <line
+            x1="4.82079"
+            y1="8.63633"
+            x2="12.8188"
+            y2="1.08442"
+            stroke="white"
+          />
+        </svg>
+      </>
+    );
+  };
+
+  // カテゴリカテゴリのチェックボックスサイズのチェックボックス
+  const SizeCheckBox = (currentSize: string = '') => {
+    return (
+      <>
+        <input
+          type="checkbox"
+          className={styles.lineupCheckBox}
+          name="size"
+          checked={size == currentSize}
         />
         <svg
           width="14"
@@ -95,44 +136,184 @@ const LineupComponent = () => {
     <>
       <div className={styles.lineupConponentWrapper}>
         <div className={styles.lineupFilterArea}>
-          <p>フィルター</p>
+          <p>
+            フィルター
+            <span className={`${styles.lineupFilterSVG1} ${styles.imgSP}`}>
+              <svg
+                width="24"
+                height="21"
+                viewBox="0 0 24 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.9448 20.8008L23.5089 0.771301H0.380763L11.9448 20.8008Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
+          </p>
 
           <div className={styles.lineupFilterBlockWrapper}>
-            <p>カテゴリ</p>
+            <p>
+              <span>
+                <svg
+                  width="20"
+                  height="2"
+                  viewBox="0 0 20 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.533203"
+                    y1="1.22827"
+                    x2="19.9316"
+                    y2="1.22827"
+                    stroke="black"
+                  />
+                </svg>
+                カテゴリ
+                <svg
+                  width="20"
+                  height="2"
+                  viewBox="0 0 20 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.533203"
+                    y1="1.22827"
+                    x2="19.9316"
+                    y2="1.22827"
+                    stroke="black"
+                  />
+                </svg>
+              </span>
+            </p>
             <ul>
               <li
                 onClick={() => {
                   setCategory('Basic');
                 }}
               >
-                ベーシック
-                {CheckBox('Basic')}
+                ベーシック{CategoryCheckBox('Basic')}
               </li>
               <li
                 onClick={() => {
                   setCategory('Caramel');
                 }}
               >
-                キャラメル
-                {CheckBox('Caramel')}
+                キャラメル{CategoryCheckBox('Caramel')}
               </li>
-              <li>ミルク</li>
-              <li>ストロベリー</li>
-              <li>サクラ</li>
-              <li>ビター</li>
-              <li>期間限定</li>
+              <li
+                onClick={() => {
+                  setCategory('Milk');
+                }}
+              >
+                ミルク{CategoryCheckBox('Milk')}
+              </li>
+              <li
+                onClick={() => {
+                  setCategory('Strawberry');
+                }}
+              >
+                ストロベリー{CategoryCheckBox('Strawberry')}
+              </li>
+              <li
+                onClick={() => {
+                  setCategory('Sakura');
+                }}
+              >
+                サクラ{CategoryCheckBox('Sakura')}
+              </li>
+              <li
+                onClick={() => {
+                  setCategory('Bitter');
+                }}
+              >
+                ビター{CategoryCheckBox('Bitter')}
+              </li>
+              <li
+                onClick={() => {
+                  setCategory('Limited');
+                }}
+              >
+                期間限定{CategoryCheckBox('Limited')}
+              </li>
             </ul>
           </div>
 
           <div
             className={`${styles.lineupFilterBlockWrapper} ${styles.listWrapperMargin}`}
           >
-            <p>サイズ</p>
+            <p>
+              <span>
+                <svg
+                  width="20"
+                  height="2"
+                  viewBox="0 0 20 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.533203"
+                    y1="1.22827"
+                    x2="19.9316"
+                    y2="1.22827"
+                    stroke="black"
+                  />
+                </svg>
+                サイズ
+                <svg
+                  width="20"
+                  height="2"
+                  viewBox="0 0 20 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.533203"
+                    y1="1.22827"
+                    x2="19.9316"
+                    y2="1.22827"
+                    stroke="black"
+                  />
+                </svg>
+              </span>
+            </p>
             <ul>
-              <li>全サイズ</li>
-              <li>１週間セット</li>
-              <li>１ヶ月セット</li>
-              <li>エクストラ</li>
+              <li
+                onClick={() => {
+                  setSize('A');
+                }}
+              >
+                全サイズ{SizeCheckBox('A')}
+              </li>
+              <li
+                onClick={() => {
+                  setSize('S');
+                }}
+              >
+                １週間セット{SizeCheckBox('S')}
+              </li>
+              <li
+                onClick={() => {
+                  setSize('M');
+                }}
+              >
+                １ヶ月セット{SizeCheckBox('M')}
+              </li>
+              <li
+                onClick={() => {
+                  setSize('L');
+                }}
+              >
+                エクストラ{SizeCheckBox('L')}
+              </li>
             </ul>
           </div>
         </div>
