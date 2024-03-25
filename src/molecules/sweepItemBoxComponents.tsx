@@ -132,7 +132,7 @@ const ItemBox = ({
             <span className={styles.priceSpan}>価格</span>¥{price}
           </p>
           <p className={styles.itemBoxReview}>
-            <span>
+            <span className={styles.itemBoxReviewSpan}>
               <span className={styles.priceSpan}>クチコミ</span>
 
               {stars}

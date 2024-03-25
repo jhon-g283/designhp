@@ -2050,7 +2050,7 @@ img.FVOverWritten {
   @media (max-width: 768px) {
     font-size: 0.75em;
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
   }
 }
 
@@ -2065,9 +2065,7 @@ img.FVOverWritten {
   display: block;
   padding: 16px 15px 16px 15px;
   @media (max-width: 768px) {
-    /* padding: 14px 16px 14px 16px;
-    height: 100%;
-    max-height: 483px; */
+    padding: 11px 12px 11px 12px;
   }
 }
 
@@ -2089,12 +2087,23 @@ img.FVOverWritten {
   line-height: normal;
   letter-spacing: 1.3px;
   text-align: right;
+  @media (max-width: 768px) {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+
+    justify-content: flex-end;
+  }
 }
 
 /* アイテムボックス 商品詳細へ(lineup)*/
 .itemBoxLink {
   font-size: 1em;
   padding-right: 8px;
+  @media (max-width: 768px) {
+    font-size: 0.76em;
+  }
 }
 
 /* アイテムボックス 商品詳細へ(lineup)*/
@@ -2103,6 +2112,12 @@ a.itemBoxLink:visited,
 a.itemBoxLink:active {
   color: #000;
   text-decoration: none;
+}
+
+a.itemBoxLink + svg {
+  @media (max-width: 768px) {
+    width: 10px;
+  }
 }
 
 /* 商品価格 */
@@ -2120,6 +2135,7 @@ a.itemBoxLink:active {
   font-size: 1em;
   margin-top: 3px;
   margin-bottom: 14px;
+
   @media (max-width: 768px) {
     font-size: 0.6em;
   }
@@ -2132,6 +2148,23 @@ a.itemBoxLink:active {
   margin-bottom: 0px;
   @media (max-width: 768px) {
     font-size: 0.6em;
+    margin-top: 1em;
+    margin-bottom: 0px;
+  }
+}
+
+/* 口コミのspan */
+.itemBoxReviewSpan {
+  display: flex;
+  align-items: center;
+}
+
+/* レビューの星マーク */
+.itemBoxReviewSpan svg {
+  margin-left: 1px;
+  @media (max-width: 768px) {
+    width: 10px;
+    padding-bottom: 1.5px;
   }
 }
 
@@ -3199,7 +3232,8 @@ a.reviewLink:active {
 
 /* 水平線のSVG */
 .lineupHorizontalBarArea svg {
-  left: 210;
+  /* left: 210; */
+  right: 0px;
   position: absolute;
   @media (max-width: 768px) {
     /* SP表示では表示しない */
