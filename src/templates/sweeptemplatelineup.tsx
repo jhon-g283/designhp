@@ -11,10 +11,7 @@ const SweepLineUpPageTemplate = () => {
   return (
     <>
       <Header />
-      <div
-        className={styles.firstViewArea}
-        style={{ backgroundColor: 'black' }}
-      ></div>
+      <div className={styles.firstViewArea}></div>
       <div className="sweep">
         <div className={styles.lineupFVWrapper}>
           <div className={styles.lineupFVImageWrapper}>

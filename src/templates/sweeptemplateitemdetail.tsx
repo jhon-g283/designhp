@@ -1,24 +1,23 @@
 // トップページテンプレ
-import styles from '../../styles/cafe/cafe.module.css';
-import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
-import Image from 'next/image';
 
-import Header from '../components/coffeeheader';
-import Footer from '../components/coffeefooter';
-import TopFirstSection from '../components/toppagefirstsection';
+import styles from '../../styles/sweep/sweep.module.css';
+import Header from '../organisms/sweepHeader';
+import Footer from '../organisms/sweepFooter';
+import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
+import ItemDetailComponent from '../organisms/sweepItemDetail';
 
-import SideMenuBar from '../components/coffeesidbemenu';
-import TopSecondSection from '../components/toppagesecondsection';
-import TopThirdSection from '../components/toppagethirdsection';
-
-import InViewWrapper from '../common/observecomponent';
-
-const SweepCartPageTemplate = () => {
+const SweepItemDetailPageTemplate = ({ itemId }: ItemDetailProps) => {
   return (
     <>
-      {/* header */}
-      <p>header</p>
-      {/* FV */}
+      <Header />
+      <div className={styles.firstViewArea}></div>
+      <div className="sweep">
+        <div className={styles.mainWrapper}>
+          <ItemDetailComponent itemId={itemId} />
+        </div>
+      </div>
+      {/* コンテンツ部分 */}
+
       <p>progress image</p>
       <p>cart item LIST</p>
       <p>attention</p>
@@ -26,9 +25,9 @@ const SweepCartPageTemplate = () => {
 
       {/* footer */}
       <p>footer</p>
-      <p>SWEEp</p>
+      <Footer />
     </>
   );
 };
 
-export default SweepCartPageTemplate;
+export default SweepItemDetailPageTemplate;

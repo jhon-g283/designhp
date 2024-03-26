@@ -4,7 +4,6 @@ import { default as Div } from '../common/observeDivComponent';
 import { searchResultData } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import { fetchInfomations } from '../store/reducers/getNewsDataSlice';
 import { fetchItemList } from '../store/reducers/searchItemsSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 
@@ -335,21 +334,6 @@ const LineupComponent = () => {
           </div>
 
           <div className={styles.lineupHorizontalBarArea}>
-            <svg
-              width="1263"
-              height="1"
-              viewBox="0 0 1263 1"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="-4.37114e-08"
-                y1="0.5"
-                x2="1263"
-                y2="0.49989"
-                stroke="#A4A4A4"
-              />
-            </svg>
             <p>最近チェックした商品</p>
           </div>
 

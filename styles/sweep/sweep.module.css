@@ -2089,7 +2089,7 @@ img.FVOverWritten {
   text-align: right;
   @media (max-width: 768px) {
     margin-top: 0.5em;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
     display: flex;
     align-items: center;
 
@@ -2103,6 +2103,7 @@ img.FVOverWritten {
   padding-right: 8px;
   @media (max-width: 768px) {
     font-size: 0.76em;
+    padding-right: 0.38em;
   }
 }
 
@@ -2213,7 +2214,6 @@ a.itemBoxLink + svg {
   border: none;
 
   @media (max-width: 768px) {
-    width: 100%;
     font-size: 0.7em;
     width: 100%;
     height: auto;
@@ -3122,11 +3122,12 @@ a.reviewLink:active {
   margin-bottom: 196px;
   flex-wrap: wrap;
   @media (max-width: 768px) {
-    gap: 19px;
+    gap: 20px;
     padding-top: 23px;
     padding-right: 0px;
 
     padding-left: 0px;
+    margin-bottom: 59px;
   }
 }
 
@@ -3225,19 +3226,30 @@ a.reviewLink:active {
   line-height: normal;
   letter-spacing: 2.5px;
 
+  border-top: #a4a4a4 1px solid;
+  position: relative;
+
   @media (max-width: 768px) {
+    border-top: transparent;
     border-bottom: #a4a4a4 1px solid;
   }
 }
 
-/* 水平線のSVG */
-.lineupHorizontalBarArea svg {
-  /* left: 210; */
-  right: 0px;
-  position: absolute;
-  @media (max-width: 768px) {
-    /* SP表示では表示しない */
-    display: none;
+/* 線の延長部分 */
+@media (min-width: 768px) {
+  /* beforeの要素を作り出して下線部を延長させる。 */
+  .lineupHorizontalBarArea::before {
+    content: '';
+    border-bottom: #a4a4a4 1px solid;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    transform: translate(-200px, -1px);
+    position: absolute;
+    @media (max-width: 768px) {
+      display: none;
+      border-bottom: #ffffff 1px solid;
+    }
   }
 }
 
@@ -3288,4 +3300,17 @@ li:has(input.lineupCheckBox:checked) {
 
     background: #0e0e0e;
   }
+}
+
+/* 商品詳細パンクくずリスト */
+.itemDetailBreadList {
+  display: flex;
+  align-items: center;
+  color: #fcf5f5;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
 }

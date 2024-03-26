@@ -2,12 +2,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { newsDataList } from "../../types";
 
-// ToDo検索失敗やエラー発生時のデフォルト値設定やペイロードの値チェック
-//
-//
-
-// next やっぱり忘れるDispatch
-//
+// ToDo
+//Top、News用の一覧データとニュース詳細のデータを１つにまとめて取れるようにする。
 //
 
 // State初期値の設定
