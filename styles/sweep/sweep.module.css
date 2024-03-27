@@ -2478,6 +2478,7 @@ a.itemBoxLink + svg {
   line-height: normal;
   letter-spacing: 2px;
   display: flex;
+  justify-content: space-between;
 
   position: relative;
   @media (max-width: 768px) {
@@ -2504,9 +2505,9 @@ a.itemBoxLink + svg {
   @media (max-width: 768px) {
     font-size: 0.55em;
     /* bottom: 0.35em; */
-    position: relative;
-    margin-right: 0px;
-    margin-left: auto;
+    /* position: relative; */
+    /* margin-right: 0px;
+    margin-left: auto; */
   }
 }
 
@@ -2603,6 +2604,7 @@ a.itemBoxLink + svg {
     /* text-align: start; */
     bottom: 0px;
     display: flex;
+    justify-content: end;
     align-items: center;
     /* position: relative; */
   }
@@ -3073,6 +3075,7 @@ a.reviewLink:active {
   }
 }
 
+/* チェックマーク */
 .lineupFilterSVG1 svg {
   margin-bottom: -0.5em;
   width: 1em;
@@ -3313,4 +3316,147 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+}
+
+/* 商品詳細コンポーネントの大枠 */
+.itemDetailComponentWrapper {
+  padding-left: 44px;
+  padding-right: 44px;
+  display: block;
+}
+
+/* 商品情報 */
+.itemDetailItemImfomation {
+  width: 100%;
+  /* width: 1256px; */
+  height: 623px;
+  flex-shrink: 0;
+
+  background: #fff;
+  padding: 40px 38px;
+
+  display: flex;
+}
+
+/* 商品詳細の画像 */
+.itemDetailItemMainImageWrapper {
+  width: 540px;
+  height: 440px;
+  position: relative;
+}
+
+/* 商品詳細のサムネイル画像のエリア */
+.itemDetailItemThumbNailArea {
+  margin-top: 10px;
+  display: inline-flex;
+  gap: 10px;
+}
+
+/* 商品詳細のサムネイル画像 */
+.itemDetailItemThumbNailImageWrapper {
+  width: 91px;
+  height: 91px;
+  position: relative;
+}
+
+/* 商品詳細の説明部分 */
+.itemDetailTextArea {
+  padding-left: 59px;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.92px;
+}
+
+/* 商品名の外枠 */
+.itemDetailItemNameWrapper {
+  color: #000;
+  font-family: YuMincho;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 3px;
+}
+
+/* 商品名 */
+.itemDetailItemNameWrapper h2 {
+  font-size: 1em;
+  margin: 0px;
+}
+
+/* 商品の概要部分 */
+.itemDetailItemDescrib {
+  font-size: 1em;
+  margin-bottom: 9px;
+}
+
+/* 商品価格 */
+.itemDetailItemPrice {
+  font-size: 1em;
+  margin: 0px;
+}
+
+/* 商品の値段部分 */
+.itemDetailItemPriceSpan {
+  padding-left: 9px;
+  padding-right: 9px;
+
+  font-size: 1.5em; /*1em 16px => 25px*/
+
+  letter-spacing: 3px;
+}
+
+/* サイズのボタンの外枠 */
+.itemDetailSizeButtonWrapper {
+  display: inline-flex;
+
+  gap: 15px;
+
+  margin-top: 13px;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 200% */
+  letter-spacing: 1.68px;
+}
+
+/* サイズのボタン */
+.itemDetailSizeButton {
+  padding: 8px 15px;
+  border: 1px solid #7f7f7f;
+  background: #fff;
+}
+
+/* 選択中のサイズのボタン */
+.itemDetailSelectedButton {
+  padding: 8px 15px;
+  color: #fff;
+  border: 1px solid #000;
+  background: #000;
+}
+
+/* 商品詳細の評価値のエリア */
+.itemDetailEvaluationArea {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.68px;
+}
+
+/* 評価値の外枠 */
+.itemDetailEvaluationWrapper {
+  width: 203px;
+  display: flex;
+  justify-content: space-between;
 }
