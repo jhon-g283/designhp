@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import SectionTitle from '../atoms/sweepTitleComponent';
-import SectionSubTitle from '../atoms/sweepSubTitleComponent';
+import {
+  createReviewStarsLineup,
+  createReviewSquares,
+} from '../common/sweep/createReviewStars';
 import Image from 'next/image';
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
@@ -23,6 +25,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   ];
 
   const priceArray = ['600', '1300'];
+
+  const evaluationArray = [4, 1, 3, 2];
 
   // サイズのボタン
   const buttonArray = priceArray.map((item, index) => {
@@ -58,19 +62,46 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   });
 
   const starEvaluation = (title: string, evaluation: number) => {
+    const stars = createReviewStarsLineup(
+      evaluation,
+      '#000000',
+      '#A7A7A7',
+      'top_item_box'
+    );
     return (
-      <div className={styles.itemDetailEvaluationWrapper}>
+      <div className={styles.itemDetailStarEvaluationWrapper}>
         <a>{title}</a>
-        <a>{title}</a>
+        <span>{stars}</span>
       </div>
     );
   };
+
+  const squareEvaluation = (title: string, evaluation: number) => {
+    const square = createReviewSquares(
+      evaluation,
+      '#000000',
+      '#A7A7A7',
+      'top_item_box'
+    );
+    return (
+      <div className={styles.itemDetailSquareEvaluationWrapper}>
+        <a>{title}</a>
+        <span>{square}</span>
+      </div>
+    );
+  };
+
+  const category = 'ベーシック（State）';
+  const itemName = 'ビターチョコ（State）';
+  const itemDescription =
+    'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
+  const count = 3;
 
   return (
     <>
       <div className={styles.itemDetailComponentWrapper}>
         <div className={styles.itemDetailBreadList}>
-          <a>ベーシック（State）</a>
+          <a>{category}</a>
           <svg
             width="11"
             height="12"
@@ -97,14 +128,14 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
             </g>
           </svg>
 
-          <a>ベーシック（State）</a>
+          <a>{itemName}</a>
         </div>
         <div className={styles.itemDetailItemImfomation}>
           <div className={styles.itemDetailImageArea}>
             <div className={styles.itemDetailItemMainImageWrapper}>
               <Image
                 src={imageUrl}
-                // width={129} // Specify different width values based on device or viewport size
+                // width={540} // Specify different width values based on device or viewport size
                 // height={110}
                 alt="Your Image"
                 fill={true}
@@ -130,29 +161,82 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               })}
             </div>
           </div>
-          <div className={styles.itemDetailTextArea}>
-            <div className={styles.itemDetailItemNameWrapper}>
-              <h2>ビターチョコstate</h2>
+
+          <div className={styles.itemDetailDescribeArea}>
+            <div className={styles.itemDetailTextArea}>
+              <div className={styles.itemDetailItemNameWrapper}>
+                <h2>{itemName}</h2>
+              </div>
+
+              <p className={styles.itemDetailItemDescrib}>{itemDescription}</p>
+              <p className={styles.itemDetailItemPrice}>
+                価格
+                <span className={styles.itemDetailItemPriceSpan}>
+                  ¥{priceArray[selected]}
+                </span>
+                (税込)
+              </p>
+
+              <div className={styles.itemDetailSizeButtonWrapper}>
+                {buttonArray}
+              </div>
+
+              <div className={styles.itemDetailEvaluationArea}>
+                {starEvaluation('平均評価', evaluationArray[0])}
+                <p>美味しさメーター</p>
+                {squareEvaluation('甘さ', evaluationArray[1])}
+                {squareEvaluation('苦味', evaluationArray[2])}
+                {squareEvaluation('まろやかさ', evaluationArray[3])}
+              </div>
             </div>
+            <div className={styles.itemDetailButtonArea}>
+              <div className={styles.itemDetailContButtonArea}>
+                <a>数量</a>
+                {/* 共通化する ーーーーーーーーーーーーーー*/}
+                <div className={styles.itemDetailContButtonOuterWrapper}>
+                  <button className={styles.itemDetailContMinusButton}>
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line y1="8.5" x2="17" y2="8.5" stroke="black" />
+                    </svg>
+                  </button>
+                  <div className={styles.itemDetailContWrapper}>
+                    <a className={styles.itemDetailCont}>{count}</a>
+                  </div>
 
-            <p className={styles.itemDetailItemDescrib}>
-              ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです。
-            </p>
-            <p className={styles.itemDetailItemPrice}>
-              価格
-              <span className={styles.itemDetailItemPriceSpan}>
-                ¥{priceArray[selected]}
-              </span>
-              (税込)
-            </p>
-
-            <div className={styles.itemDetailSizeButtonWrapper}>
-              {buttonArray}
-            </div>
-
-            <div className={styles.itemDetailEvaluationArea}>
-              {starEvaluation('aaa', 4)}
-              <p>平均評価</p>
+                  <button className={styles.itemDetailContPlusButton}>
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line y1="8.5" x2="17" y2="8.5" stroke="black" />
+                      <line
+                        x1="8.5"
+                        y1="2.18557e-08"
+                        x2="8.5"
+                        y2="17"
+                        stroke="black"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                {/* ーーーーーーーーーーーーーーー */}
+              </div>
+              <div className={styles.itemDetailCartButtonWrapper}>
+                {/* 共通化する */}
+                <button className={styles.itemDetailCartButton}>
+                  カートへ
+                </button>
+                {/* ーーーーー */}
+              </div>
             </div>
           </div>
         </div>

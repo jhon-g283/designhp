@@ -45,17 +45,17 @@ const LineupComponent = () => {
     dispatch(fetchItemList(query));
   }, [category, size, dispatch]);
 
-  const ItemListComponent = itemlistData.map((item) => {
+  const ItemListComponent = itemlistData.map((item, index) => {
+    const uniqueKey = 'ItemListComponent_key_' + index;
     return (
-      <>
-        <ItemBox
-          imageUrl={item.imageUrl || ''}
-          itemName={item.itemName}
-          price={item.price}
-          review={item.evaluation}
-          linkParam={item.id || ''}
-        />
-      </>
+      <ItemBox
+        imageUrl={item.imageUrl || ''}
+        itemName={item.itemName}
+        price={item.price}
+        review={item.evaluation}
+        linkParam={item.id || ''}
+        key={uniqueKey}
+      />
     );
   });
 
@@ -68,6 +68,8 @@ const LineupComponent = () => {
           name="category"
           className={styles.lineupCheckBox}
           checked={category == currentCategory}
+          // onChange={() => {}}
+          readOnly
         />
         <svg
           width="14"
@@ -104,6 +106,8 @@ const LineupComponent = () => {
           className={styles.lineupCheckBox}
           name="size"
           checked={size == currentSize}
+          // onChange={() => {}}
+          readOnly
         />
         <svg
           width="14"

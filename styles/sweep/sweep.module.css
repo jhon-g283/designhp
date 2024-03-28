@@ -3307,8 +3307,11 @@ li:has(input.lineupCheckBox:checked) {
 
 /* 商品詳細パンクくずリスト */
 .itemDetailBreadList {
+  margin-top: 26px;
+  margin-bottom: 36px;
   display: flex;
   align-items: center;
+
   color: #fcf5f5;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 20px;
@@ -3316,6 +3319,10 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+}
+
+.itemDetailBreadList a {
+  font-size: 1em;
 }
 
 /* 商品詳細コンポーネントの大枠 */
@@ -3329,7 +3336,7 @@ li:has(input.lineupCheckBox:checked) {
 .itemDetailItemImfomation {
   width: 100%;
   /* width: 1256px; */
-  height: 623px;
+  max-height: 623px;
   flex-shrink: 0;
 
   background: #fff;
@@ -3359,10 +3366,14 @@ li:has(input.lineupCheckBox:checked) {
   position: relative;
 }
 
+/* 商品情報 */
+.itemDetailDescribeArea {
+  margin-left: 59px;
+  height: 100%;
+}
+
 /* 商品詳細の説明部分 */
 .itemDetailTextArea {
-  padding-left: 59px;
-
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 16px;
@@ -3370,6 +3381,10 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.92px;
+
+  min-width: 573px;
+
+  border-bottom: 1px #7f7f7f solid;
 }
 
 /* 商品名の外枠 */
@@ -3418,6 +3433,7 @@ li:has(input.lineupCheckBox:checked) {
   gap: 15px;
 
   margin-top: 13px;
+  margin-bottom: 21px;
 
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -3453,10 +3469,129 @@ li:has(input.lineupCheckBox:checked) {
   line-height: normal;
   letter-spacing: 1.68px;
 }
+.itemDetailEvaluationArea p {
+  font-size: 1em;
+  margin-top: 9px;
+  margin-bottom: 5px;
+  line-height: 28px; /* 200% */
+}
 
 /* 評価値の外枠 */
-.itemDetailEvaluationWrapper {
+.itemDetailStarEvaluationWrapper {
   width: 203px;
   display: flex;
   justify-content: space-between;
+}
+
+/* 商品の評判部分 */
+.itemDetailStarEvaluationWrapper svg {
+  padding-left: 3px;
+}
+
+/* 商品の四角形の評価部分 */
+.itemDetailSquareEvaluationWrapper {
+  width: 203px;
+  display: flex;
+  margin-bottom: 11px;
+  justify-content: space-between;
+  letter-spacing: 1.56px;
+}
+
+/* 評価（四角形） */
+.itemDetailSquareEvaluationWrapper svg {
+  padding-left: 5px;
+}
+
+/* ボタン類のエリア */
+.itemDetailButtonArea {
+  margin-top: 24px;
+}
+
+/* 数量のボタンのあるエリア */
+.itemDetailContButtonArea {
+  display: flex;
+  align-items: center;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.8px;
+}
+
+/* 数量を変更するボタンの外枠 */
+.itemDetailContButtonOuterWrapper {
+  border: 1px solid #7f7f7f;
+  background: #fff;
+
+  margin-left: 19px;
+  width: 178px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.92px;
+}
+
+/* -ボタン */
+button.itemDetailContMinusButton {
+  padding-left: 11px;
+  padding-right: 13px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+/* プラスボタン */
+button.itemDetailContPlusButton {
+  padding-left: 11px;
+  padding-right: 14px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+/* 数量の外枠 */
+.itemDetailContWrapper {
+  font-size: 1em;
+  width: 100%;
+  height: 23px;
+  text-align: center;
+  border-left: 0.5px solid #7f7f7f;
+  border-right: 0.5px solid #7f7f7f;
+}
+
+/* 数量の文字部分 */
+.itemDetailCont {
+  font-size: 1em;
+}
+
+.itemDetailCartButtonWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.itemDetailCartButton {
+  border: 1px solid #000;
+  background: #000;
+
+  padding: 19px 110px 18px 110px;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+  letter-spacing: 1.92px;
 }

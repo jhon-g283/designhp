@@ -79,6 +79,7 @@ const Header = () => {
                   type="checkbox"
                   style={{ display: 'none' }}
                   checked={check}
+                  onChange={() => {}} //checkedのエラー回避用
                 />
                 <div className={styles.humburgerMenuWrapper}>
                   <nav className={styles.humburgerMenuNav}>
