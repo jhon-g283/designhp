@@ -16,12 +16,26 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
   const [selected, setSelected] = useState(0);
 
+  const [count, setCount] = useState(1);
+
+  const increaseCount = (currentCount: number) => {
+    currentCount++;
+    setCount(currentCount);
+  };
+  const decreaseCount = (currentCount: number) => {
+    currentCount = currentCount == 0 ? 0 : currentCount - 1;
+    console.log(currentCount);
+    setCount(currentCount);
+  };
+
   const imageUrl = '/imgSweep/itemDetail_Item_Bitter.jpg';
+  const imageUrl2 = '/imgSweep/ItemDetail_Feature_1.jpg';
+  const imageUrl3 = '/imgSweep/ItemDetail_Feature_2.jpg';
 
   const thumbNailImageArray = [
     '/imgSweep/itemDetail_Item_Bitter.jpg',
-    '/imgSweep/itemDetail_Item_Bitter.jpg',
-    '/imgSweep/itemDetail_Item_Bitter.jpg',
+    '/imgSweep/ItemDetail_Feature_1.jpg',
+    '/imgSweep/ItemDetail_Feature_2.jpg',
   ];
 
   const priceArray = ['600', '1300'];
@@ -95,11 +109,11 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const itemName = 'ビターチョコ（State）';
   const itemDescription =
     'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
-  const count = 3;
 
   return (
     <>
       <div className={styles.itemDetailComponentWrapper}>
+        {/* パンクズりすと */}
         <div className={styles.itemDetailBreadList}>
           <a>{category}</a>
           <svg
@@ -130,6 +144,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
           <a>{itemName}</a>
         </div>
+        {/* 商品情報 */}
         <div className={styles.itemDetailItemImfomation}>
           <div className={styles.itemDetailImageArea}>
             <div className={styles.itemDetailItemMainImageWrapper}>
@@ -162,6 +177,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
             </div>
           </div>
 
+          {/* 商品の評価 */}
           <div className={styles.itemDetailDescribeArea}>
             <div className={styles.itemDetailTextArea}>
               <div className={styles.itemDetailItemNameWrapper}>
@@ -189,12 +205,19 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                 {squareEvaluation('まろやかさ', evaluationArray[3])}
               </div>
             </div>
+            {/* ボタン類 */}
             <div className={styles.itemDetailButtonArea}>
+              {/* 数量 */}
               <div className={styles.itemDetailContButtonArea}>
                 <a>数量</a>
                 {/* 共通化する ーーーーーーーーーーーーーー*/}
                 <div className={styles.itemDetailContButtonOuterWrapper}>
-                  <button className={styles.itemDetailContMinusButton}>
+                  <button
+                    className={styles.itemDetailContMinusButton}
+                    onClick={() => {
+                      decreaseCount(count);
+                    }}
+                  >
                     <svg
                       width="17"
                       height="17"
@@ -209,7 +232,12 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                     <a className={styles.itemDetailCont}>{count}</a>
                   </div>
 
-                  <button className={styles.itemDetailContPlusButton}>
+                  <button
+                    className={styles.itemDetailContPlusButton}
+                    onClick={() => {
+                      increaseCount(count);
+                    }}
+                  >
                     <svg
                       width="17"
                       height="17"
@@ -230,15 +258,175 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                 </div>
                 {/* ーーーーーーーーーーーーーーー */}
               </div>
+              {/* カートボタン */}
               <div className={styles.itemDetailCartButtonWrapper}>
-                {/* 共通化する */}
                 <button className={styles.itemDetailCartButton}>
                   カートへ
                 </button>
-                {/* ーーーーー */}
               </div>
             </div>
           </div>
+        </div>
+
+        {/* 商品の特徴 */}
+        <div className={styles.itemDetailItemFeaturesArea}>
+          {/* 特徴１ */}
+          <div className={styles.itemDetailItemFeatures1Wrapper}>
+            <div className={styles.itemDetailItemFeaturesText}>
+              <div className={styles.itemDetailFeaturesTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesTitle}>
+                  ビターチョコの特徴
+                </p>
+              </div>
+
+              <div className={styles.itemDetailFeaturesSubTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesSubTitle}>
+                  口に広がる程よい苦味
+                </p>
+              </div>
+
+              {/* <div className={styles.itemDetailFeaturesDescriptionWrapper}> */}
+              <p className={styles.itemDetailItemFeaturesDescription}>
+                ベーシックな苦味で食後に甘いものが苦手な方でも、<br></br>
+                甘いものが好きな方でもすぐ口に入る味わい。
+              </p>
+              {/* </div> */}
+
+              <div className={styles.itemDetailFeaturesSubTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesSubTitle}>
+                  ノンカフェイン
+                </p>
+              </div>
+
+              <p className={styles.itemDetailItemFeaturesDescription}>
+                他のチョコレートとは違い、眠りを妨げるカフェインなどは<br></br>
+                一切使用しておりません。
+              </p>
+            </div>
+
+            <div className={styles.itemDetailItemFeaturesImage}>
+              <Image
+                src={imageUrl2}
+                // width={540} // Specify different width values based on device or viewport size
+                // height={110}
+                alt="Your Image"
+                fill={true}
+                // className={styles.positionOverWrittenRelationOnSP}
+              ></Image>
+            </div>
+          </div>
+          {/* 特徴２ */}
+          <div className={styles.itemDetailItemFeatures2Wrapper}>
+            <div className={styles.itemDetailItemFeaturesText}>
+              <div className={styles.itemDetailFeaturesTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesTitle}>
+                  こだわりの原材料
+                </p>
+              </div>
+
+              <div className={styles.itemDetailFeaturesSubTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesSubTitle}>カカオ</p>
+              </div>
+
+              {/* <div className={styles.itemDetailFeaturesDescriptionWrapper}> */}
+              <p className={styles.itemDetailItemFeaturesDescription}>
+                原料に使用するカカオなどは質にこだわり現地の農家から<br></br>
+                直接仕入れを行っています。
+              </p>
+              {/* </div> */}
+
+              <div className={styles.itemDetailFeaturesSubTitleWrapper}>
+                <p className={styles.itemDetailItemFeaturesSubTitle}>砂糖</p>
+              </div>
+
+              <p className={styles.itemDetailItemFeaturesDescription}>
+                砂糖は海外産でなく国産の砂糖を使用しています。<br></br>
+                沖縄産の黒糖を材料に使用することで甘すぎず、苦過ぎない<br></br>
+                程よい味わいにしています。
+              </p>
+            </div>
+
+            <div className={styles.itemDetailItemFeaturesImage}>
+              <Image
+                src={imageUrl3}
+                // width={540} // Specify different width values based on device or viewport size
+                // height={110}
+                alt="Your Image"
+                fill={true}
+                // className={styles.positionOverWrittenRelationOnSP}
+              ></Image>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.itemDetailItemVoiceArea}>
+          <p>お客様からの声</p>
+
+          <div className={styles.itemDetailItemVoiceItem}>
+            <div className={styles.itemDetailItemVoiceItemImage}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="51"
+                height="51"
+                viewBox="0 0 51 51"
+                fill="none"
+              >
+                <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
+                <mask
+                  id="mask0_2911_1646"
+                  style={{ maskType: 'alpha' }}
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="51"
+                  height="51"
+                >
+                  <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_2911_1646)">
+                  <mask
+                    id="mask1_2911_1646"
+                    style={{ maskType: 'alpha' }}
+                    maskUnits="userSpaceOnUse"
+                    x="10"
+                    y="-3"
+                    width="31"
+                    height="60"
+                  >
+                    <rect x="10" y="-3" width="31" height="60" fill="#121212" />
+                  </mask>
+                  <g mask="url(#mask1_2911_1646)">
+                    <circle cx="25.5" cy="19.5" r="11.5" fill="white" />
+                    <circle cx="25.5" cy="51.5" r="24.5" fill="white" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div className={styles.itemDetailItemVoiceItemTextArea}>
+              <div className={styles.itemDetailItemVoiceItemNameWrapper}>
+                <a className={styles.itemDetailItemVoiceItemName}>カカオ</a>
+                <a className={styles.itemDetailItemVoiceItemAge}>30代男性</a>
+              </div>
+              <div className={styles.itemDetailItemVoiceItemTitleWrapper}>
+                <p className={styles.itemDetailItemVoiceItemTitle}>
+                  翌日スッキリ起きれる
+                </p>
+              </div>
+              <div className={styles.itemDetailItemVoiceItemStarWrapper}></div>
+              <div className={styles.itemDetailItemVoiceItemCommentWrapper}>
+                <p className={styles.itemDetailItemVoiceItemComment}>
+                  翌日スッキリ起きれる
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.itemDetailItemRecentryCheckedItem}>
+          <h3>最近チェックした商品</h3>
+          <div
+            className={styles.itemDetailItemRecentryCheckedItemListWrapper}
+          ></div>
         </div>
       </div>
 

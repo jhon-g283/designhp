@@ -2944,6 +2944,8 @@ a.reviewLink:active {
   }
 }
 
+/* 商品一覧 */
+
 /* 商品一覧のFVの外枠 */
 .lineupFVWrapper {
   /* height: 100%; */
@@ -3305,6 +3307,8 @@ li:has(input.lineupCheckBox:checked) {
   }
 }
 
+/* 商品詳細ページ */
+
 /* 商品詳細パンクくずリスト */
 .itemDetailBreadList {
   margin-top: 26px;
@@ -3334,10 +3338,10 @@ li:has(input.lineupCheckBox:checked) {
 
 /* 商品情報 */
 .itemDetailItemImfomation {
-  width: 100%;
+  /* paddingの分幅を狭める */
+  width: calc(100% - 32px -32px);
   /* width: 1256px; */
   max-height: 623px;
-  flex-shrink: 0;
 
   background: #fff;
   padding: 40px 38px;
@@ -3370,6 +3374,9 @@ li:has(input.lineupCheckBox:checked) {
 .itemDetailDescribeArea {
   margin-left: 59px;
   height: 100%;
+  min-height: 540px;
+
+  position: relative;
 }
 
 /* 商品詳細の説明部分 */
@@ -3382,9 +3389,11 @@ li:has(input.lineupCheckBox:checked) {
   line-height: normal;
   letter-spacing: 1.92px;
 
-  min-width: 573px;
+  width: 100%;
+  height: 100%;
+  /* min-width: 573px; */
 
-  border-bottom: 1px #7f7f7f solid;
+  /* border-bottom: 1px #7f7f7f solid; */
 }
 
 /* 商品名の外枠 */
@@ -3505,12 +3514,25 @@ li:has(input.lineupCheckBox:checked) {
 /* ボタン類のエリア */
 .itemDetailButtonArea {
   margin-top: 24px;
+  /* height: 100%; */
+  width: 100%;
+
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  gap: 10px;
+
+  border-top: 1px #7f7f7f solid;
 }
 
 /* 数量のボタンのあるエリア */
 .itemDetailContButtonArea {
   display: flex;
   align-items: center;
+  height: 100%;
+
+  margin-top: 24px;
+  margin-bottom: 16px;
 
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -3576,11 +3598,15 @@ button.itemDetailContPlusButton {
   font-size: 1em;
 }
 
+/* カートボタンの外枠 */
 .itemDetailCartButtonWrapper {
   display: flex;
   justify-content: end;
+
+  position: relative;
 }
 
+/* カートボタン */
 .itemDetailCartButton {
   border: 1px solid #000;
   background: #000;
@@ -3594,4 +3620,124 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: 28px; /* 175% */
   letter-spacing: 1.92px;
+}
+
+/* 商品の特徴のエリア */
+.itemDetailItemFeaturesArea {
+  border-bottom: 1px solid #4a4a4a;
+}
+
+/* 商品の特徴の画像 */
+.itemDetailItemFeaturesImage {
+  width: 586px;
+  height: 360px;
+  position: relative;
+}
+
+/* １つ目の特徴の外枠 */
+.itemDetailItemFeatures1Wrapper {
+  margin-top: 111px;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+/* 商品の特徴、文章部分 */
+.itemDetailItemFeaturesText {
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 186.667% */
+  letter-spacing: 1.8px;
+
+  max-width: 480px;
+}
+
+/* 商品の特徴、タイトル、外枠 */
+.itemDetailFeaturesTitleWrapper {
+  font-size: 25px;
+
+  letter-spacing: 2.5px;
+}
+
+/* 商品の特徴、タイトル */
+.itemDetailItemFeaturesTitle {
+  font-size: 1em; /* 1em:20px =>1.25em:25px */
+
+  margin-bottom: 33px;
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+  }
+}
+
+/* 商品の特徴、サブタイトル（外枠） */
+.itemDetailFeaturesSubTitleWrapper {
+  font-size: 20px;
+
+  letter-spacing: 2.4px;
+}
+
+/* 商品の特徴、サブタイトル */
+.itemDetailItemFeaturesSubTitle {
+  font-size: 1em;
+
+  margin-top: 0px;
+  margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+  }
+}
+
+/* 商品の特徴、説明文 */
+.itemDetailItemFeaturesDescription {
+  font-size: 1em; /* 1em:20px =>0.75em:15px */
+
+  font-style: normal;
+  margin-top: 0px;
+  margin-bottom: 33px;
+  line-height: 28px; /* 186.667% */
+  letter-spacing: 1.8px;
+}
+
+/* ２つ目の商品の特徴 */
+.itemDetailItemFeatures2Wrapper {
+  margin-top: 128px;
+  margin-bottom: 122px;
+  display: flex;
+
+  flex-direction: row-reverse;
+
+  justify-content: space-between;
+}
+
+/* お客様の声のエリア */
+.itemDetailItemVoiceArea {
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+/* お客様の声（タイトル） */
+.itemDetailItemVoiceArea p {
+  text-align: center;
+  margin: 43px;
+  font-size: 1em;
+}
+
+.itemDetailItemVoiceItem {
+  display: flex;
+  border-top: 1px solid #4a4a4a;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+.itemDetailItemVoiceItemImage {
+  width: 51px;
+  height: 51px;
 }
