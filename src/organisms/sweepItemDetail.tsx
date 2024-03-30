@@ -139,8 +139,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
     );
   };
 
-  const category = 'ベーシック（State）';
-  const itemName = 'ビターチョコ（State）';
+  const category = 'ベーシック';
+  const itemName = 'ビターチョコ';
   const itemDescription =
     'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
 
@@ -179,6 +179,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
           <a>{itemName}</a>
         </div>
         {/* 商品情報 */}
+
         <div className={styles.itemDetailItemImfomation}>
           <div className={styles.itemDetailImageArea}>
             <div className={styles.itemDetailItemMainImageWrapper}>
@@ -258,8 +259,26 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                       viewBox="0 0 17 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className={styles.imgPC}
                     >
                       <line y1="8.5" x2="17" y2="8.5" stroke="black" />
+                    </svg>
+                    <svg
+                      width="26.5"
+                      height="26.5"
+                      viewBox="0 0 53 53"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={styles.imgSP}
+                    >
+                      <line
+                        x1="0.576172"
+                        y1="26.9652"
+                        x2="52.5762"
+                        y2="26.9652"
+                        stroke="black"
+                        stroke-width="2"
+                      />
                     </svg>
                   </button>
                   <div className={styles.itemDetailContWrapper}>
@@ -278,6 +297,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                       viewBox="0 0 17 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className={styles.imgPC}
                     >
                       <line y1="8.5" x2="17" y2="8.5" stroke="black" />
                       <line
@@ -286,6 +306,31 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                         x2="8.5"
                         y2="17"
                         stroke="black"
+                      />
+                    </svg>
+                    <svg
+                      width="26.5"
+                      height="26.5"
+                      viewBox="0 0 53 53"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={styles.imgSP}
+                    >
+                      <line
+                        x1="0.576172"
+                        y1="26.9652"
+                        x2="52.5762"
+                        y2="26.9652"
+                        stroke="black"
+                        stroke-width="2"
+                      />
+                      <line
+                        x1="26.5762"
+                        y1="0.965248"
+                        x2="26.5762"
+                        y2="52.9652"
+                        stroke="black"
+                        stroke-width="2"
                       />
                     </svg>
                   </button>

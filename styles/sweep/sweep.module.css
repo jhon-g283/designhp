@@ -3323,16 +3323,32 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    margin-top: 15.5px;
+    margin-bottom: 20.5px;
+  }
 }
 
 /* パンくずリスト項目名 */
 .itemDetailBreadList a {
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+    line-height: 0.9em; /* 156.522% */
+    letter-spacing: 1.15px;
+  }
 }
 
 .itemDetailBreadList svg {
   margin-left: 14px;
   margin-right: 15px;
+  @media (max-width: 768px) {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    width: 0.35em;
+    padding-bottom: 0.2em;
+  }
 }
 
 /* 商品詳細コンポーネントの大枠 */
@@ -3365,15 +3381,16 @@ li:has(input.lineupCheckBox:checked) {
 
   display: flex;
   @media (max-width: 768px) {
-    width: 100vw;
+    width: 100%;
+
+    /* 親のmainWrapperのpaddingの値以上にずらず */
+    margin-left: max(calc(-6%), -40px);
+
     height: 100%;
     max-height: none;
     max-width: 100vw;
     display: block;
-    padding: 20px 0px;
-    /*  */
-    /* left: -10px; */
-    /* position: absolute; */
+    padding: 20px 20px 0px 20px;
   }
 }
 
@@ -3396,8 +3413,8 @@ li:has(input.lineupCheckBox:checked) {
   gap: 10px;
 
   @media (max-width: 768px) {
-    margin-top: 5px;
-    gap: 5px;
+    margin-top: 7px;
+    gap: 7px;
   }
 }
 
@@ -3422,9 +3439,9 @@ li:has(input.lineupCheckBox:checked) {
   position: relative;
 
   @media (max-width: 768px) {
+    margin-left: 0px;
   }
 }
-
 /* 商品詳細の説明部分 */
 .itemDetailTextArea {
   color: #000;
@@ -3440,6 +3457,8 @@ li:has(input.lineupCheckBox:checked) {
   /* min-width: 573px; */
 
   /* border-bottom: 1px #7f7f7f solid; */
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品名の外枠 */
@@ -3451,24 +3470,43 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 800;
   line-height: normal;
   letter-spacing: 3px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品名 */
 .itemDetailItemNameWrapper h2 {
   font-size: 1em;
   margin: 0px;
+  @media (max-width: 768px) {
+    margin-top: 1.6em;
+    font-size: 0.66em;
+    line-height: 1em; /* 152.5% */
+    letter-spacing: 4px;
+  }
 }
 
 /* 商品の概要部分 */
 .itemDetailItemDescrib {
   font-size: 1em;
   margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    margin-top: 0.65em;
+    line-height: 1.525em; /* 156.522% */
+    letter-spacing: 2.76px;
+  }
 }
 
 /* 商品価格 */
 .itemDetailItemPrice {
   font-size: 1em;
+
   margin: 0px;
+  @media (max-width: 768px) {
+    margin-top: 9px;
+    font-size: 0.71em;
+  }
 }
 
 /* 商品の値段部分 */
@@ -3479,6 +3517,15 @@ li:has(input.lineupCheckBox:checked) {
   font-size: 1.5em; /*1em 16px => 25px*/
 
   letter-spacing: 3px;
+  @media (max-width: 768px) {
+    /* pタグのフォントサイズがemへ適応されているかも */
+
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    line-height: 3em; /* 153.125% */
+
+    letter-spacing: 1.92px;
+  }
 }
 
 /* サイズのボタンの外枠 */
@@ -3497,13 +3544,24 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: 28px; /* 200% */
   letter-spacing: 1.68px;
+  @media (max-width: 768px) {
+    margin-top: 16px;
+    margin-bottom: 19.5px;
+  }
 }
 
 /* サイズのボタン */
 .itemDetailSizeButton {
+  font-size: 1em;
   padding: 8px 15px;
   border: 1px solid #7f7f7f;
   background: #fff;
+  @media (max-width: 768px) {
+    font-size: 0.82em;
+    line-height: 2em; /* 126.087% */
+    letter-spacing: 2.76px;
+    padding: 0.8em 0.46em;
+  }
 }
 
 /* 選択中のサイズのボタン */
@@ -3512,6 +3570,12 @@ li:has(input.lineupCheckBox:checked) {
   color: #fff;
   border: 1px solid #000;
   background: #000;
+  @media (max-width: 768px) {
+    font-size: 0.82em;
+    line-height: 2em; /* 126.087% */
+    letter-spacing: 2.76px;
+    padding: 0.8em 0.46em;
+  }
 }
 
 /* 商品詳細の評価値のエリア */
@@ -3523,12 +3587,46 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.68px;
+  @media (max-width: 768px) {
+  }
 }
+
 .itemDetailEvaluationArea p {
   font-size: 1em;
   margin-top: 9px;
   margin-bottom: 5px;
   line-height: 28px; /* 200% */
+  @media (max-width: 768px) {
+    font-size: 0.82em;
+
+    line-height: 1em; /* 126.087% */
+    letter-spacing: 1.38px;
+    margin-top: 8px;
+    margin-bottom: 9px;
+  }
+}
+
+/* 平均評価の項目 */
+.itemDetailEvaluationArea > .itemDetailStarEvaluationWrapper:nth-child(1) a {
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.82em;
+    line-height: 1.28em; /* 156.522% */
+    letter-spacing: 1.38px;
+  }
+}
+
+.itemDetailEvaluationArea a {
+  font-size: 1em;
+  line-height: normal;
+  letter-spacing: 1.56px;
+
+  line-height: 28px; /* 200% */
+  @media (max-width: 768px) {
+    font-size: 0.82em;
+    line-height: 1.2em; /* 154.545% */
+    letter-spacing: 1.32px;
+  }
 }
 
 /* 評価値の外枠 */
@@ -3536,11 +3634,21 @@ li:has(input.lineupCheckBox:checked) {
   width: 203px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 157px;
+  }
 }
 
 /* 商品の評判部分 */
 .itemDetailStarEvaluationWrapper svg {
+  padding-top: 2px;
   padding-left: 3px;
+  @media (max-width: 768px) {
+    padding-left: 3px;
+    padding-top: 0.2em;
+    width: 1em;
+  }
 }
 
 /* 商品の四角形の評価部分 */
@@ -3550,11 +3658,21 @@ li:has(input.lineupCheckBox:checked) {
   margin-bottom: 11px;
   justify-content: space-between;
   letter-spacing: 1.56px;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 174px;
+    margin-bottom: 0px;
+  }
 }
 
 /* 評価（四角形） */
 .itemDetailSquareEvaluationWrapper svg {
   padding-left: 5px;
+  padding-top: 3px;
+  @media (max-width: 768px) {
+    width: 1em;
+    padding-left: 0.2em;
+  }
 }
 
 /* ボタン類のエリア */
@@ -3569,6 +3687,11 @@ li:has(input.lineupCheckBox:checked) {
   gap: 10px;
 
   border-top: 1px #7f7f7f solid;
+  @media (max-width: 768px) {
+    border-top: none;
+    margin-top: 0px;
+    position: relative;
+  }
 }
 
 /* 数量のボタンのあるエリア */
@@ -3587,12 +3710,25 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.8px;
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 25.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.itemDetailContButtonArea > a {
+  /* SP表示の際は数量の野地は非表示 */
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 /* 数量を変更するボタンの外枠 */
 .itemDetailContButtonOuterWrapper {
   border: 1px solid #7f7f7f;
-  background: #fff;
 
   margin-left: 19px;
   width: 178px;
@@ -3609,6 +3745,12 @@ li:has(input.lineupCheckBox:checked) {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.92px;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    width: 100%;
+    height: 52px;
+  }
 }
 
 /* -ボタン */
@@ -3618,6 +3760,10 @@ button.itemDetailContMinusButton {
   height: 100%;
   border: none;
   background-color: transparent;
+  @media (max-width: 768px) {
+    padding-left: 21px;
+    padding-right: 20px;
+  }
 }
 
 /* プラスボタン */
@@ -3627,21 +3773,38 @@ button.itemDetailContPlusButton {
   height: 100%;
   border: none;
   background-color: transparent;
+  @media (max-width: 768px) {
+    padding-left: 21px;
+    padding-right: 20px;
+  }
 }
 
 /* 数量の外枠 */
 .itemDetailContWrapper {
-  font-size: 1em;
   width: 100%;
   height: 23px;
   text-align: center;
   border-left: 0.5px solid #7f7f7f;
   border-right: 0.5px solid #7f7f7f;
+  @media (max-width: 768px) {
+    /* 中心に調整する */
+    height: 35.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* 数量の文字部分 */
 .itemDetailCont {
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+    line-height: 1.59em; /* 154.545% */
+
+    letter-spacing: 1.98px;
+  }
 }
 
 /* カートボタンの外枠 */
@@ -3650,6 +3813,13 @@ button.itemDetailContPlusButton {
   justify-content: end;
 
   position: relative;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    /* width: 178px; */
+  }
 }
 
 /* カートボタン */
@@ -3666,6 +3836,11 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: 28px; /* 175% */
   letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    /* width: 178px; */
+    width: 100%;
+    padding: 1em 0px 1em 0px;
+  }
 }
 
 /* 商品の特徴のエリア */
@@ -3678,6 +3853,8 @@ button.itemDetailContPlusButton {
   width: 586px;
   height: 360px;
   position: relative;
+  @media (max-width: 768px) {
+  }
 }
 
 /* １つ目の特徴の外枠 */
@@ -3686,6 +3863,8 @@ button.itemDetailContPlusButton {
   display: flex;
 
   justify-content: space-between;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品の特徴、文章部分 */
@@ -3699,6 +3878,8 @@ button.itemDetailContPlusButton {
   letter-spacing: 1.8px;
 
   max-width: 480px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品の特徴、タイトル、外枠 */
@@ -3706,6 +3887,8 @@ button.itemDetailContPlusButton {
   font-size: 25px;
 
   letter-spacing: 2.5px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品の特徴、タイトル */
@@ -3723,6 +3906,8 @@ button.itemDetailContPlusButton {
   font-size: 20px;
 
   letter-spacing: 2.4px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品の特徴、サブタイトル */
@@ -3746,6 +3931,8 @@ button.itemDetailContPlusButton {
   margin-bottom: 33px;
   line-height: 28px; /* 186.667% */
   letter-spacing: 1.8px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* ２つ目の商品の特徴 */
@@ -3757,6 +3944,8 @@ button.itemDetailContPlusButton {
   flex-direction: row-reverse;
 
   justify-content: space-between;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声のエリア */
@@ -3768,6 +3957,8 @@ button.itemDetailContPlusButton {
   font-weight: 800;
   line-height: normal;
   letter-spacing: 2.5px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（タイトル） */
@@ -3775,6 +3966,8 @@ button.itemDetailContPlusButton {
   text-align: center;
   margin: 43px;
   font-size: 1em;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（外枠） */
@@ -3782,6 +3975,8 @@ button.itemDetailContPlusButton {
   width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（項目部分） */
@@ -3794,6 +3989,8 @@ button.itemDetailContPlusButton {
   padding-bottom: 45px;
 
   width: 1092px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（文字部分） */
@@ -3801,12 +3998,16 @@ button.itemDetailContPlusButton {
   > div.itemDetailItemVoiceItemWrapper:nth-child(1)
   > div.itemDetailItemVoiceItem {
   border-bottom: none;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（画像） */
 .itemDetailItemVoiceItemImage {
   width: 51px;
   height: 51px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（文章のエリア） */
@@ -3821,6 +4022,8 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: 34px; /* 154.545% */
   letter-spacing: 2.64px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（投稿者名の外枠） */
@@ -3828,12 +4031,16 @@ button.itemDetailContPlusButton {
   width: 200px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（投稿者名と年齢） */
 .itemDetailItemVoiceItemName,
 .itemDetailItemVoiceItemAge {
   font-size: 1em;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（投稿タイトル） */
@@ -3844,6 +4051,8 @@ button.itemDetailContPlusButton {
 
   margin-top: 27px;
   margin-bottom: 16px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（コメント外枠） */
@@ -3852,6 +4061,8 @@ button.itemDetailContPlusButton {
 
   font-weight: 300;
   line-height: 39px; /* 177.273% */
+  @media (max-width: 768px) {
+  }
 }
 
 /* お客様の声（コメント） */
@@ -3859,6 +4070,8 @@ button.itemDetailContPlusButton {
   font-size: 1em;
   margin-top: 10px;
   white-space: pre-wrap;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 最近チェックした商品のタイトル */
@@ -3874,6 +4087,8 @@ button.itemDetailContPlusButton {
   font-weight: 800;
   line-height: normal;
   letter-spacing: 2.5px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 最近チェックした商品のタイトル */
@@ -3883,6 +4098,8 @@ button.itemDetailContPlusButton {
 
   margin-top: 56px;
   margin-bottom: 54px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 最近チェックした商品の一覧 */
@@ -3890,4 +4107,7 @@ button.itemDetailContPlusButton {
   justify-content: center;
   display: inline-flex;
   gap: 32px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 }
