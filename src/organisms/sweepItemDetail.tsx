@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
+import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
   createReviewSquares,
@@ -41,6 +42,25 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const priceArray = ['600', '1300'];
 
   const evaluationArray = [4, 1, 3, 2];
+
+  const voiceArray = [
+    {
+      name: 'カカオ',
+      age: '30代男性',
+      titie: '翌日スッキリ起きれる',
+      evaluation: 4,
+      comment:
+        'チョコなのに甘すぎず苦すぎず、食後にすんなり食べれる。\n一口食べると翌日スッキリ起きることがで切るので毎日食べてます。',
+    },
+    {
+      name: '胡桃',
+      age: '20代女性',
+      titie: '友達に勧められて',
+      evaluation: 4,
+      comment:
+        '職場の友人に勧められて試してみました。残業気味で寝不足になりがちだったのが若干解消して\n買ってよかったです。味も普通のチョコより美味しい。',
+    },
+  ];
 
   // サイズのボタン
   const buttonArray = priceArray.map((item, index) => {
@@ -101,6 +121,20 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       <div className={styles.itemDetailSquareEvaluationWrapper}>
         <a>{title}</a>
         <span>{square}</span>
+      </div>
+    );
+  };
+
+  const starEvaluationVoive = (evaluation: number) => {
+    const stars = createReviewStarsLineup(
+      evaluation,
+      '#FFFFFF',
+      '#A7A7A7',
+      'top_item_box'
+    );
+    return (
+      <div className={styles.itemDetailStarEvaluationWrapper}>
+        <span>{stars}</span>
       </div>
     );
   };
@@ -362,71 +396,124 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         <div className={styles.itemDetailItemVoiceArea}>
           <p>お客様からの声</p>
 
-          <div className={styles.itemDetailItemVoiceItem}>
-            <div className={styles.itemDetailItemVoiceItemImage}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="51"
-                height="51"
-                viewBox="0 0 51 51"
-                fill="none"
+          {voiceArray.map((item, index) => {
+            return (
+              <div
+                className={styles.itemDetailItemVoiceItemWrapper}
+                key={'itemDetailItemVoiceItem_' + index}
               >
-                <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
-                <mask
-                  id="mask0_2911_1646"
-                  style={{ maskType: 'alpha' }}
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="51"
-                  height="51"
-                >
-                  <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_2911_1646)">
-                  <mask
-                    id="mask1_2911_1646"
-                    style={{ maskType: 'alpha' }}
-                    maskUnits="userSpaceOnUse"
-                    x="10"
-                    y="-3"
-                    width="31"
-                    height="60"
-                  >
-                    <rect x="10" y="-3" width="31" height="60" fill="#121212" />
-                  </mask>
-                  <g mask="url(#mask1_2911_1646)">
-                    <circle cx="25.5" cy="19.5" r="11.5" fill="white" />
-                    <circle cx="25.5" cy="51.5" r="24.5" fill="white" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div className={styles.itemDetailItemVoiceItemTextArea}>
-              <div className={styles.itemDetailItemVoiceItemNameWrapper}>
-                <a className={styles.itemDetailItemVoiceItemName}>カカオ</a>
-                <a className={styles.itemDetailItemVoiceItemAge}>30代男性</a>
+                <div className={styles.itemDetailItemVoiceItem}>
+                  <div className={styles.itemDetailItemVoiceItemImage}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="51"
+                      height="51"
+                      viewBox="0 0 51 51"
+                      fill="none"
+                    >
+                      <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
+                      <mask
+                        id="mask0_2911_1646"
+                        style={{ maskType: 'alpha' }}
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="51"
+                        height="51"
+                      >
+                        <circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
+                      </mask>
+                      <g mask="url(#mask0_2911_1646)">
+                        <mask
+                          id="mask1_2911_1646"
+                          style={{ maskType: 'alpha' }}
+                          maskUnits="userSpaceOnUse"
+                          x="10"
+                          y="-3"
+                          width="31"
+                          height="60"
+                        >
+                          <rect
+                            x="10"
+                            y="-3"
+                            width="31"
+                            height="60"
+                            fill="#121212"
+                          />
+                        </mask>
+                        <g mask="url(#mask1_2911_1646)">
+                          <circle cx="25.5" cy="19.5" r="11.5" fill="white" />
+                          <circle cx="25.5" cy="51.5" r="24.5" fill="white" />
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className={styles.itemDetailItemVoiceItemTextArea}>
+                    <div className={styles.itemDetailItemVoiceItemNameWrapper}>
+                      <a className={styles.itemDetailItemVoiceItemName}>
+                        {item.name}
+                      </a>
+                      <a className={styles.itemDetailItemVoiceItemAge}>
+                        {item.age}
+                      </a>
+                    </div>
+                    {/* <div className={styles.itemDetailItemVoiceItemTitleWrapper}> */}
+                    <p className={styles.itemDetailItemVoiceItemTitle}>
+                      {item.titie}
+                    </p>
+                    {/* </div> */}
+                    <div className={styles.itemDetailItemVoiceItemStarWrapper}>
+                      {starEvaluationVoive(item.evaluation)}
+                    </div>
+                    <div
+                      className={styles.itemDetailItemVoiceItemCommentWrapper}
+                    >
+                      <p
+                        className={styles.itemDetailItemVoiceItemComment}
+                        // style={{ whiteSpace: 'pre-wrap' }}
+                      >
+                        {item.comment}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className={styles.itemDetailItemVoiceItemTitleWrapper}>
-                <p className={styles.itemDetailItemVoiceItemTitle}>
-                  翌日スッキリ起きれる
-                </p>
-              </div>
-              <div className={styles.itemDetailItemVoiceItemStarWrapper}></div>
-              <div className={styles.itemDetailItemVoiceItemCommentWrapper}>
-                <p className={styles.itemDetailItemVoiceItemComment}>
-                  翌日スッキリ起きれる
-                </p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         <div className={styles.itemDetailItemRecentryCheckedItem}>
-          <h3>最近チェックした商品</h3>
-          <div
-            className={styles.itemDetailItemRecentryCheckedItemListWrapper}
-          ></div>
+          <p>最近チェックした商品</p>
+          <div className={styles.itemDetailItemRecentryCheckedItemListWrapper}>
+            <ItemBox
+              imageUrl="/imgSweep/Product_Bitter.jpg"
+              itemName="ビターチョコ(7個)"
+              price="500"
+              review="2"
+              linkParam="bbb"
+            />
+            <ItemBox
+              imageUrl="/imgSweep/Product_Bitter.jpg"
+              itemName="ビターチョコ(7個)"
+              price="500"
+              review="2"
+              linkParam="bbb"
+            />
+            <ItemBox
+              imageUrl="/imgSweep/Product_Bitter.jpg"
+              itemName="ビターチョコ(7個)"
+              price="500"
+              review="2"
+              linkParam="bbb"
+            />
+            <ItemBox
+              imageUrl="/imgSweep/Product_Bitter.jpg"
+              itemName="ビターチョコ(7個)"
+              price="500"
+              review="2"
+              linkParam="bbb"
+            />
+          </div>
         </div>
       </div>
 

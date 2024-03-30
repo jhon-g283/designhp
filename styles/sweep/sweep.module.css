@@ -3325,8 +3325,14 @@ li:has(input.lineupCheckBox:checked) {
   letter-spacing: 2px;
 }
 
+/* パンくずリスト項目名 */
 .itemDetailBreadList a {
   font-size: 1em;
+}
+
+.itemDetailBreadList svg {
+  margin-left: 14px;
+  margin-right: 15px;
 }
 
 /* 商品詳細コンポーネントの大枠 */
@@ -3334,6 +3340,17 @@ li:has(input.lineupCheckBox:checked) {
   padding-left: 44px;
   padding-right: 44px;
   display: block;
+
+  @media (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @media screen and (min-width: 1513px) {
+    /* 幅が大きい場合に中心へ寄せる */
+    padding-left: 12%;
+    padding-right: 12%;
+  }
 }
 
 /* 商品情報 */
@@ -3347,6 +3364,17 @@ li:has(input.lineupCheckBox:checked) {
   padding: 40px 38px;
 
   display: flex;
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 100%;
+    max-height: none;
+    max-width: 100vw;
+    display: block;
+    padding: 20px 0px;
+    /*  */
+    /* left: -10px; */
+    /* position: absolute; */
+  }
 }
 
 /* 商品詳細の画像 */
@@ -3354,6 +3382,11 @@ li:has(input.lineupCheckBox:checked) {
   width: 540px;
   height: 440px;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 332px;
+    height: 279.5px;
+  }
 }
 
 /* 商品詳細のサムネイル画像のエリア */
@@ -3361,6 +3394,11 @@ li:has(input.lineupCheckBox:checked) {
   margin-top: 10px;
   display: inline-flex;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    margin-top: 5px;
+    gap: 5px;
+  }
 }
 
 /* 商品詳細のサムネイル画像 */
@@ -3368,6 +3406,11 @@ li:has(input.lineupCheckBox:checked) {
   width: 91px;
   height: 91px;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 67.5px;
+    height: 67.5px;
+  }
 }
 
 /* 商品情報 */
@@ -3377,6 +3420,9 @@ li:has(input.lineupCheckBox:checked) {
   min-height: 540px;
 
   position: relative;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* 商品詳細の説明部分 */
@@ -3725,19 +3771,123 @@ button.itemDetailContPlusButton {
 }
 
 /* お客様の声（タイトル） */
-.itemDetailItemVoiceArea p {
+.itemDetailItemVoiceArea > p {
   text-align: center;
   margin: 43px;
   font-size: 1em;
 }
 
+/* お客様の声（外枠） */
+.itemDetailItemVoiceItemWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* お客様の声（項目部分） */
 .itemDetailItemVoiceItem {
   display: flex;
   border-top: 1px solid #4a4a4a;
-  border-bottom: 1px solid #4a4a4a;
+  border-bottom: 1px solid #d0aaaa;
+
+  padding-top: 36px;
+  padding-bottom: 45px;
+
+  width: 1092px;
 }
 
+/* お客様の声（文字部分） */
+.itemDetailItemVoiceArea
+  > div.itemDetailItemVoiceItemWrapper:nth-child(1)
+  > div.itemDetailItemVoiceItem {
+  border-bottom: none;
+}
+
+/* お客様の声（画像） */
 .itemDetailItemVoiceItemImage {
   width: 51px;
   height: 51px;
+}
+
+/* お客様の声（文章のエリア） */
+.itemDetailItemVoiceItemTextArea {
+  margin-top: 10px;
+  margin-left: 44px;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 34px; /* 154.545% */
+  letter-spacing: 2.64px;
+}
+
+/* お客様の声（投稿者名の外枠） */
+.itemDetailItemVoiceItemNameWrapper {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* お客様の声（投稿者名と年齢） */
+.itemDetailItemVoiceItemName,
+.itemDetailItemVoiceItemAge {
+  font-size: 1em;
+}
+
+/* お客様の声（投稿タイトル） */
+.itemDetailItemVoiceItemTitle {
+  font-size: 1em;
+
+  font-weight: 600;
+
+  margin-top: 27px;
+  margin-bottom: 16px;
+}
+
+/* お客様の声（コメント外枠） */
+.itemDetailItemVoiceItemCommentWrapper {
+  font-size: 22px;
+
+  font-weight: 300;
+  line-height: 39px; /* 177.273% */
+}
+
+/* お客様の声（コメント） */
+.itemDetailItemVoiceItemComment {
+  font-size: 1em;
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
+
+/* 最近チェックした商品のタイトル */
+.itemDetailItemRecentryCheckedItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #fff;
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+/* 最近チェックした商品のタイトル */
+.itemDetailItemRecentryCheckedItem > p {
+  font-size: 1em;
+  text-align: center;
+
+  margin-top: 56px;
+  margin-bottom: 54px;
+}
+
+/* 最近チェックした商品の一覧 */
+.itemDetailItemRecentryCheckedItemListWrapper {
+  justify-content: center;
+  display: inline-flex;
+  gap: 32px;
 }

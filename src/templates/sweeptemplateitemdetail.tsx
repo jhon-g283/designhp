@@ -15,17 +15,9 @@ const SweepItemDetailPageTemplate = ({ itemId }: ItemDetailProps) => {
         <div className={styles.mainWrapper}>
           <ItemDetailComponent itemId={itemId} />
         </div>
+
+        <Footer />
       </div>
-      {/* コンテンツ部分 */}
-
-      <p>progress image</p>
-      <p>cart item LIST</p>
-      <p>attention</p>
-      <p>delively date</p>
-
-      {/* footer */}
-      <p>footer</p>
-      <Footer />
     </>
   );
 };
