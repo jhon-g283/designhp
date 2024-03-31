@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
 import { useState } from 'react';
@@ -27,41 +28,47 @@ const Header = () => {
         <div className={styles.headerItemWrapper}>
           {/* ロゴアイコン */}
           <div className={styles.logoImage}>
-            <Image
-              src={'/imgSweep/sweeplogo.svg'}
-              // width={135} // Specify different width values based on device or viewport size
-              // height={40}
-              alt="Your Image"
-              fill={true}
-              className={styles.positionOverWrittenRelationOnSP}
-            ></Image>
+            <Link href={'./top'}>
+              <Image
+                src={'/imgSweep/sweeplogo.svg'}
+                // width={135} // Specify different width values based on device or viewport size
+                // height={40}
+                alt="Your Image"
+                fill={true}
+                className={styles.positionOverWrittenRelationOnSP}
+              ></Image>
+            </Link>
           </div>
 
           {/* メニュー */}
           <div className={styles.headerMenu}>
             <div className={`${styles.linkMenuWraper} ${styles.imgPC}`}>
-              <a className={styles.linkMenu} href="./top">
+              <Link className={styles.linkMenu} href={'/sweep/top'}>
                 top
-              </a>
-              <a className={styles.linkMenu} href="./lineup">
+              </Link>
+
+              <Link className={styles.linkMenu} href={'/sweep/lineup'}>
                 lineup
-              </a>
-              <a className={styles.linkMenu} href="./news">
+              </Link>
+
+              <Link className={styles.linkMenu} href={'/sweep/news'}>
                 news
-              </a>
+              </Link>
             </div>
 
             {/* カート数、アイコン */}
             <div className={styles.cartIconImageWrapper}>
-              <Image
-                src={'/imgSweep/cartImage.svg'}
-                // width={44} // Specify different width values based on device or viewport size
-                // height={44}
-                alt="Your Image"
-                fill={true}
-                className={`${styles.cartIconImage} showOnlyPC`}
-                style={check ? { display: 'none' } : {}}
-              ></Image>
+              <Link href={'/sweep/cart/cartItems'}>
+                <Image
+                  src={'/imgSweep/cartImage.svg'}
+                  // width={44} // Specify different width values based on device or viewport size
+                  // height={44}
+                  alt="Your Image"
+                  fill={true}
+                  className={`${styles.cartIconImage} showOnlyPC`}
+                  style={check ? { display: 'none' } : {}}
+                ></Image>
+              </Link>
             </div>
 
             <div

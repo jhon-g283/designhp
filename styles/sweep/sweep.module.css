@@ -1967,7 +1967,7 @@ img.FVOverWritten {
 
   @media (max-width: 768px) {
     width: 100%;
-    max-width: 125px;
+    /* max-width: 125px; */
     height: auto;
     /* 311　259 */
   }
@@ -3127,12 +3127,38 @@ a.reviewLink:active {
   margin-bottom: 196px;
   flex-wrap: wrap;
   @media (max-width: 768px) {
-    gap: 20px;
+    /* gap: 20px; */
+    gap: 0px;
+
     padding-top: 23px;
     padding-right: 0px;
 
     padding-left: 0px;
     margin-bottom: 59px;
+  }
+}
+
+/* 各画面のアイテムボックスの設定を上書きで行う */
+@media (max-width: 768px) {
+  /* Top画面のアイテムボックスのみ上限を設定 */
+  .topItemBoxImageWrapper {
+    max-width: 125px;
+  }
+
+  /* ラインナップ、最近選んだ商品（商品詳細） */
+  .lineupItemListWrapper div.itemBox,
+  .itemDetailItemRecentryCheckedItemListWrapper div.itemBox {
+    margin-bottom: 22px;
+
+    width: 35vw;
+    max-width: none;
+  }
+
+  /* 列の最後尾のアイテムボックス */
+  .lineupItemListWrapper div.itemBox:nth-child(2n),
+  .itemDetailItemRecentryCheckedItemListWrapper div.itemBox:nth-child(2n) {
+    /* アイテム間をautoで設定 */
+    margin-left: auto;
   }
 }
 
@@ -3813,7 +3839,7 @@ button.itemDetailContPlusButton {
   justify-content: end;
 
   position: relative;
-
+  font-size: 16px;
   @media (max-width: 768px) {
     justify-content: center;
     padding-left: 25px;
@@ -3829,15 +3855,16 @@ button.itemDetailContPlusButton {
 
   padding: 19px 110px 18px 110px;
 
+  font-size: 1em;
   color: #fff;
   font-family: 'Hiragino Kaku Gothic Pro';
-  font-size: 16px;
+
   font-style: normal;
   font-weight: 300;
   line-height: 28px; /* 175% */
   letter-spacing: 1.92px;
   @media (max-width: 768px) {
-    /* width: 178px; */
+    font-size: 0.9375;
     width: 100%;
     padding: 1em 0px 1em 0px;
   }
@@ -3846,6 +3873,13 @@ button.itemDetailContPlusButton {
 /* 商品の特徴のエリア */
 .itemDetailItemFeaturesArea {
   border-bottom: 1px solid #4a4a4a;
+  @media (max-width: 768px) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 35px;
+  }
 }
 
 /* 商品の特徴の画像 */
@@ -3854,6 +3888,8 @@ button.itemDetailContPlusButton {
   height: 360px;
   position: relative;
   @media (max-width: 768px) {
+    width: 332px;
+    height: 204px;
   }
 }
 
@@ -3864,6 +3900,8 @@ button.itemDetailContPlusButton {
 
   justify-content: space-between;
   @media (max-width: 768px) {
+    margin-top: 0px;
+    display: block;
   }
 }
 
@@ -3897,7 +3935,11 @@ button.itemDetailContPlusButton {
 
   margin-bottom: 33px;
   @media (max-width: 768px) {
-    font-size: 0.5em;
+    font-size: 0.8em;
+    margin-top: 0px;
+    margin-bottom: 0.91em;
+    line-height: 1.22em; /* 152.5% */
+    letter-spacing: 2px;
   }
 }
 
@@ -3913,12 +3955,15 @@ button.itemDetailContPlusButton {
 /* 商品の特徴、サブタイトル */
 .itemDetailItemFeaturesSubTitle {
   font-size: 1em;
-
   margin-top: 0px;
   margin-bottom: 8px;
 
   @media (max-width: 768px) {
-    font-size: 0.5em;
+    font-size: 0.75em;
+    /* line-height: 0.725em;  */
+    /* 96.667% */
+    letter-spacing: 1.8px;
+    margin-bottom: 0.425em;
   }
 }
 
@@ -3932,6 +3977,9 @@ button.itemDetailContPlusButton {
   line-height: 28px; /* 186.667% */
   letter-spacing: 1.8px;
   @media (max-width: 768px) {
+    font-size: 0.76em;
+    line-height: 1.5em; /* 186.667% */
+    letter-spacing: 1.38px;
   }
 }
 
@@ -3945,6 +3993,9 @@ button.itemDetailContPlusButton {
 
   justify-content: space-between;
   @media (max-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: block;
   }
 }
 
@@ -3967,6 +4018,26 @@ button.itemDetailContPlusButton {
   margin: 43px;
   font-size: 1em;
   @media (max-width: 768px) {
+    font-size: 0.6em;
+    /* line-height: 46px;  */
+    letter-spacing: 1.5px;
+    margin-top: 0.86em;
+    margin-bottom: 0.66em;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemDetailItemVoiceArea::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    left: 0px;
+
+    margin-top: -0.6em;
+
+    position: absolute;
+    /* background-color: #c0c0c0; */
+    border-top: #4a4a4a solid 1px;
   }
 }
 
@@ -3983,17 +4054,19 @@ button.itemDetailContPlusButton {
 .itemDetailItemVoiceItem {
   display: flex;
   border-top: 1px solid #4a4a4a;
-  border-bottom: 1px solid #d0aaaa;
+  border-bottom: 1px solid #4a4a4a;
 
   padding-top: 36px;
   padding-bottom: 45px;
 
   width: 1092px;
   @media (max-width: 768px) {
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 }
 
-/* お客様の声（文字部分） */
+/* お客様の声（最初のブロック） */
 .itemDetailItemVoiceArea
   > div.itemDetailItemVoiceItemWrapper:nth-child(1)
   > div.itemDetailItemVoiceItem {
@@ -4003,10 +4076,12 @@ button.itemDetailContPlusButton {
 }
 
 /* お客様の声（画像） */
-.itemDetailItemVoiceItemImage {
+.itemDetailItemVoiceItemImage svg {
   width: 51px;
   height: 51px;
   @media (max-width: 768px) {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -4023,6 +4098,8 @@ button.itemDetailContPlusButton {
   line-height: 34px; /* 154.545% */
   letter-spacing: 2.64px;
   @media (max-width: 768px) {
+    margin-top: 10px;
+    margin-left: 22px;
   }
 }
 
@@ -4032,6 +4109,7 @@ button.itemDetailContPlusButton {
   display: flex;
   justify-content: space-between;
   @media (max-width: 768px) {
+    width: 125px;
   }
 }
 
@@ -4040,6 +4118,9 @@ button.itemDetailContPlusButton {
 .itemDetailItemVoiceItemAge {
   font-size: 1em;
   @media (max-width: 768px) {
+    font-size: 0.55em;
+    line-height: 0.85em; /* 155% */
+    letter-spacing: 1.2px;
   }
 }
 
@@ -4052,6 +4133,34 @@ button.itemDetailContPlusButton {
   margin-top: 27px;
   margin-bottom: 16px;
   @media (max-width: 768px) {
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    font-size: 0.55em;
+    /* line-height: 0.85em;  */
+    letter-spacing: 1.2px;
+  }
+}
+
+/* 星の評価部分 */
+.itemDetailItemVoiceItemStarWrapper {
+  font-size: 14px;
+  @media (max-width: 768px) {
+    height: 1.5em;
+
+    line-height: 21px;
+    letter-spacing: 3px;
+    padding-right: 1em;
+  }
+}
+
+/* 星の評価部分（上書き用） */
+.itemDetailItemVoiceItemStarWrapper .itemDetailStarEvaluationWrapper svg {
+  @media (max-width: 768px) {
+    padding-top: 0px;
+
+    padding-left: 0px;
+    padding-right: 2px;
+    width: 1em;
   }
 }
 
@@ -4071,6 +4180,10 @@ button.itemDetailContPlusButton {
   margin-top: 10px;
   white-space: pre-wrap;
   @media (max-width: 768px) {
+    font-size: 0.55em;
+
+    line-height: 1.7em; /* 177.273% */
+    letter-spacing: 1.32px;
   }
 }
 
@@ -4099,6 +4212,10 @@ button.itemDetailContPlusButton {
   margin-top: 56px;
   margin-bottom: 54px;
   @media (max-width: 768px) {
+    font-size: 0.64em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 }
 
@@ -4106,8 +4223,14 @@ button.itemDetailContPlusButton {
 .itemDetailItemRecentryCheckedItemListWrapper {
   justify-content: center;
   display: inline-flex;
-  gap: 32px;
+  gap: 19px;
   @media (max-width: 768px) {
+    display: flex;
+    gap: 0px;
     flex-wrap: wrap;
+    justify-content: center;
+    /* justify-content: start; */
+    border-top: 1px solid #4a4a4a;
+    padding-top: 20px;
   }
 }

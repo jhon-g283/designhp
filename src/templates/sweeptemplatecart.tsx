@@ -1,32 +1,23 @@
 // トップページテンプレ
-import styles from '../../styles/cafe/cafe.module.css';
-import stylesAnimation from '../../styles/cafe/cafeanimation.module.css';
-import Image from 'next/image';
 
-import Header from '../components/coffeeheader';
-import Footer from '../components/coffeefooter';
-import TopFirstSection from '../components/toppagefirstsection';
+import styles from '../../styles/sweep/sweep.module.css';
+import Header from '../organisms/sweepHeader';
+import Footer from '../organisms/sweepFooter';
 
-import SideMenuBar from '../components/coffeesidbemenu';
-import TopSecondSection from '../components/toppagesecondsection';
-import TopThirdSection from '../components/toppagethirdsection';
-
-import InViewWrapper from '../common/observecomponent';
+import ItemDetailComponent from '../organisms/sweepItemDetail';
 
 const SweepCartPageTemplate = () => {
   return (
     <>
-      {/* header */}
-      <p>header</p>
-      {/* FV */}
-      <p>progress image</p>
-      <p>cart item LIST</p>
-      <p>attention</p>
-      <p>delively date</p>
+      <Header />
+      <div className={styles.firstViewArea}></div>
+      <div className="sweep">
+        <div className={styles.mainWrapper}>
+          <p>cat</p>
+        </div>
 
-      {/* footer */}
-      <p>footer</p>
-      <p>SWEEp</p>
+        <Footer />
+      </div>
     </>
   );
 };

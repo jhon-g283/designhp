@@ -378,7 +378,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               </div>
 
               <p className={styles.itemDetailItemFeaturesDescription}>
-                他のチョコレートとは違い、眠りを妨げるカフェインなどは<br></br>
+                他のチョコレートとは違い、眠りを妨げるカフェインなどは
+                <br className={styles.imgPC}></br>
                 一切使用しておりません。
               </p>
             </div>
@@ -409,7 +410,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
               {/* <div className={styles.itemDetailFeaturesDescriptionWrapper}> */}
               <p className={styles.itemDetailItemFeaturesDescription}>
-                原料に使用するカカオなどは質にこだわり現地の農家から<br></br>
+                原料に使用するカカオなどは質にこだわり現地の農家から
+                <br className={styles.imgPC}></br>
                 直接仕入れを行っています。
               </p>
               {/* </div> */}
@@ -419,7 +421,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               </div>
 
               <p className={styles.itemDetailItemFeaturesDescription}>
-                砂糖は海外産でなく国産の砂糖を使用しています。<br></br>
+                砂糖は海外産でなく国産の砂糖を使用しています。
+                <br className={styles.imgPC}></br>
                 沖縄産の黒糖を材料に使用することで甘すぎず、苦過ぎない<br></br>
                 程よい味わいにしています。
               </p>
@@ -438,6 +441,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
           </div>
         </div>
 
+        {/* <div className={styles.itemDetailItemVoiceAreaBorder}></div> */}
         <div className={styles.itemDetailItemVoiceArea}>
           <p>お客様からの声</p>
 
