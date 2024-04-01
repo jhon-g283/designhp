@@ -92,24 +92,36 @@ const Header = () => {
                   <nav className={styles.humburgerMenuNav}>
                     <ul className="nav_list">
                       <li className="nav_item">
-                        <a className={styles.humburgerMenuText} href="">
+                        <Link
+                          className={styles.humburgerMenuText}
+                          href={'/sweep/top'}
+                        >
                           Top
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav_item">
-                        <a className={styles.humburgerMenuText} href="">
+                        <Link
+                          className={styles.humburgerMenuText}
+                          href={'/sweep/lineup'}
+                        >
                           Lineup
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav_item">
-                        <a className={styles.humburgerMenuText} href="">
-                          News
-                        </a>
+                        <Link
+                          className={styles.humburgerMenuText}
+                          href={'/sweep/news'}
+                        >
+                          news
+                        </Link>
                       </li>
                       <li className="nav_item">
-                        <a className={styles.humburgerMenuText} href="">
+                        <Link
+                          className={styles.humburgerMenuText}
+                          href={'/sweep/cart/cartItems'}
+                        >
                           Cart
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </nav>

@@ -4234,3 +4234,25 @@ button.itemDetailContPlusButton {
     padding-top: 20px;
   }
 }
+
+.cartComponentWrapper {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartAreaTitleWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 3px;
+
+  text-align: center;
+}
+
+.cartAreaTitle {
+  font-size: 1em;
+}

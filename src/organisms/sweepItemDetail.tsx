@@ -566,7 +566,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         </div>
       </div>
 
-      {itemId}
+      {/* {itemId} */}
     </>
   );
 };
