@@ -3480,10 +3480,13 @@ li:has(input.lineupCheckBox:checked) {
 
   width: 100%;
   height: 100%;
-  /* min-width: 573px; */
 
-  /* border-bottom: 1px #7f7f7f solid; */
+  /* 位置を若干底上げ */
+  position: relative;
+  bottom: 6px;
+
   @media (max-width: 768px) {
+    bottom: 0px;
   }
 }
 
@@ -3681,7 +3684,7 @@ li:has(input.lineupCheckBox:checked) {
 .itemDetailSquareEvaluationWrapper {
   width: 203px;
   display: flex;
-  margin-bottom: 11px;
+  /* margin-bottom: 11px; */
   justify-content: space-between;
   letter-spacing: 1.56px;
   align-items: center;
@@ -4239,6 +4242,14 @@ button.itemDetailContPlusButton {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+
+  padding-left: 125px;
+  padding-right: 123px;
+}
+
+.cartProgressArea svg {
+  width: 100%;
+  max-width: 1094px;
 }
 
 .cartAreaTitleWrapper {
@@ -4255,4 +4266,128 @@ button.itemDetailContPlusButton {
 
 .cartAreaTitle {
   font-size: 1em;
+  margin-top: 52px;
+  margin-bottom: 36px;
+}
+
+.cartProgressArea {
+  width: 100%;
+}
+
+.cartAreaItemTitleWordWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.5px;
+
+  text-align: center;
+}
+
+.cartAreaItemTitleWord {
+  font-size: 1em;
+  margin-top: 81px;
+  margin-bottom: 58px;
+}
+
+.cartAreaItemListWrapper {
+  width: 100%;
+  max-width: 1094px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.cartItemBox {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+.cartItemBoxImageWrapper {
+  width: 155px;
+  height: 155px;
+  min-width: 155px;
+  position: relative;
+}
+
+.cartItemBoxItemTextWrapper {
+  margin-left: 49px;
+  max-width: 366px;
+  width: 100%;
+}
+
+.cartItemName {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+.cartItemPrice {
+  font-size: 1em;
+  margin-top: 0px;
+}
+
+.cartItemBoxButtonArea {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px 0px;
+
+  width: 100%;
+  max-width: 301px;
+  margin-top: 15px;
+}
+
+.cartItemContButtonOuterWrapper {
+  display: flex;
+  width: 173px;
+  height: 39px;
+  align-items: center;
+  border: 1px solid #a4a4a4;
+
+  font-size: 16px;
+
+  letter-spacing: 1.92px;
+}
+
+.cartItemContWrapper {
+  width: 100%;
+  height: 23px;
+  text-align: center;
+  border-left: 0.5px solid #a4a4a4;
+  border-right: 0.5px solid #a4a4a4;
+  @media (max-width: 768px) {
+    /* 中心に調整する */
+  }
+}
+
+.cartItemCont {
+  font-size: 1em;
+}
+
+.cartItemDeleteButtonWrapper {
+  font-size: 14px;
+
+  line-height: 28px; /* 200% */
+  letter-spacing: 1.68px;
+
+  width: 52px;
+  height: 35px;
+  /* top: 20px;
+  position: relative; */
+}
+
+.cartItemDeleteButton {
+  text-align: center;
+  border: 1px solid #a4a4a4;
+  background-color: transparent;
+  padding: 3px 11px 4px 11px;
 }
