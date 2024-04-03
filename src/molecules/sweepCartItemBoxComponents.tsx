@@ -101,8 +101,8 @@ const CartItemBox = ({
             <button className={styles.cartItemDeleteButton}>削除</button>
           </div>
         </div>
-        <div className={styles.cartItemTotalPriceWrapper}>
-          <p className={styles.cartItemTotalPrice}>¥{totalPrice}</p>
+        <div className={styles.cartItemSubTotalPriceWrapper}>
+          <p className={styles.cartItemSubTotalPrice}>¥{totalPrice}</p>
         </div>
       </div>
     </>

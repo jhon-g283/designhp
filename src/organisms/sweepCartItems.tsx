@@ -51,6 +51,21 @@ const CartItemComponent = () => {
         <div className={styles.cartAreaItemAreaWrapper}>
           <div className={styles.cartAreaItemListWrapper}>
             {/* title */}
+            <div className={styles.cartItemListTitleWrapper}>
+              <div className={styles.cartItemBoxImageWrapper}>
+                <a className={styles.cartItemTitleText}>商品</a>
+              </div>
+              <div className={styles.cartItemBoxItemTextWrapper}>
+                <a className={styles.cartItemTitleText}></a>
+              </div>
+              <div className={styles.cartItemBoxButtonArea}>
+                <a className={styles.cartItemTitleText}>個数</a>
+              </div>
+              <div className={styles.cartItemSubTotalPriceWrapper}>
+                <a className={styles.cartItemTitleText}>小計</a>
+              </div>
+            </div>
+
             {/* list */}
             {cartItemListInfo.map((item, index) => {
               return (
@@ -65,6 +80,65 @@ const CartItemComponent = () => {
                 />
               );
             })}
+
+            <div className={styles.cartItemListBottomAreaWrapper}>
+              <div className={styles.cartItemBoxImageWrapper}>
+                <a className={styles.cartBottom}></a>
+              </div>
+              <div className={styles.cartItemBoxItemTextWrapper}>
+                <a className={styles.cartBottom}></a>
+              </div>
+              <div className={styles.cartItemBoxButtonArea}>
+                <a className={styles.cartBottom}>合計金額</a>
+              </div>
+              <div className={styles.cartItemSubTotalPriceWrapper}>
+                <a className={styles.cartBottom}>2200円</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className={styles.cartItemsAttentionWrapper}>
+            <p className={styles.cartItemsAttention}> 注意事項</p>
+          </div>
+          <div className={styles.cartItemsAttentionDescriptWrapper}>
+            <p>
+              本サービスは一部の冷凍・冷蔵商品の商品を除き、基本は通常配達での配送になります。
+              <br></br>
+              ポスト配達、置き配希望の場合は季節・気温にご注意ください。夏季など気温の高い季節は対面やコンビニ受け取りをおすすめします。
+              <br></br>
+              ご配達を防ぐために住所情報はお間違えのないように入力をお願いいたします。
+            </p>
+          </div>
+        </div>
+        <div className={styles.deliveryDateArea}>
+          <div>
+            <div className={styles.deliveryDateTitleWrapper}>
+              <p className={styles.deliveryDateTitle}>お届け予定日</p>
+            </div>
+            <div className={styles.deliverruDateInputItems}>
+              <div className={styles.deliveryDateWrapper}>
+                <p>日付</p>
+                <input type="date" />
+              </div>
+              <div className={styles.deliveryTimeWrapper}>
+                <p>時間帯</p>
+                <select>
+                  <option>1</option>
+                  <option>1</option>
+                  <option>1</option>
+                </select>
+              </div>
+            </div>
+
+            <p className={styles.clickAttention}>
+              クリックで希望の配達日・時間帯に変更
+            </p>
+
+            <button className={styles.goToDeliveryInformation}>
+              決済・配達情報入力へ
+            </button>
           </div>
         </div>
       </div>

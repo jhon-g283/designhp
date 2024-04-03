@@ -4321,8 +4321,19 @@ button.itemDetailContPlusButton {
   position: relative;
 }
 
+.cartItemBoxImageWrapper:has(a.cartItemTitleText),
+.cartItemBoxItemTextWrapper:has(a.cartItemTitleText),
+.cartItemBoxButtonArea:has(a.cartItemTitleText),
+.cartItemSubTotalPriceWrapper:has(a.cartItemTitleText) {
+  height: auto !important;
+  padding-bottom: 21px;
+  margin-top: 0px !important;
+
+  border-bottom: 1px solid #a4a4a4;
+}
+
 .cartItemBoxItemTextWrapper {
-  margin-left: 49px;
+  padding-left: 49px;
   max-width: 366px;
   width: 100%;
 }
@@ -4331,6 +4342,7 @@ button.itemDetailContPlusButton {
   font-size: 1em;
   margin-bottom: 15px;
 }
+
 .cartItemPrice {
   font-size: 1em;
   margin-top: 0px;
@@ -4390,4 +4402,115 @@ button.itemDetailContPlusButton {
   border: 1px solid #a4a4a4;
   background-color: transparent;
   padding: 3px 11px 4px 11px;
+}
+
+.cartItemSubTotalPriceWrapper {
+  width: auto;
+  min-width: 205px;
+}
+
+.cartItemSubTotalPrice {
+  font-size: 1em;
+}
+
+.cartItemListTitleWrapper {
+  display: flex;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 140% */
+  letter-spacing: 2.4px;
+
+  padding-bottom: 21px;
+}
+
+.cartItemListBottomAreaWrapper {
+  display: flex;
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 112% */
+  letter-spacing: 3px;
+
+  margin-top: 47px;
+}
+
+.cartItemBoxImageWrapper:has(a.cartBottom),
+.cartItemBoxItemTextWrapper:has(a.cartBottom),
+.cartItemBoxButtonArea:has(a.cartBottom),
+.cartItemSubTotalPriceWrapper:has(a.cartBottom) {
+  height: auto !important;
+
+  margin-top: 0px !important;
+
+  border-bottom: 1px solid #a4a4a4;
+  padding-bottom: 50px;
+}
+
+.cartItemsAttentionWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+.cartItemsAttention {
+  font-size: 1em;
+
+  margin-top: 44px;
+  margin-bottom: 19px;
+}
+
+.cartItemsAttentionDescriptWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px; /* 156.25% */
+  letter-spacing: 2.24px;
+
+  width: 100%;
+  max-width: 964px;
+}
+
+.cartItemsAttentionDescript {
+  font-size: 1em;
+  margin: 0px;
+}
+
+.deliveryDateArea {
+  display: flex;
+
+  justify-content: flex-end;
+
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.92px;
+}
+
+.deliveryTitle {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+.deliveryDateTitleWrapper {
+  display: flex;
 }
