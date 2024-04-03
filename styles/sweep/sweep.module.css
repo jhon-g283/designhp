@@ -4238,6 +4238,9 @@ button.itemDetailContPlusButton {
   }
 }
 
+/* カート画面 */
+
+/* コンポーネント全体の外枠 */
 .cartComponentWrapper {
   background-color: #fff;
   display: flex;
@@ -4247,11 +4250,13 @@ button.itemDetailContPlusButton {
   padding-right: 123px;
 }
 
+/* 購入進捗のSVG */
 .cartProgressArea svg {
   width: 100%;
   max-width: 1094px;
 }
 
+/* カートの文字（外枠） */
 .cartAreaTitleWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -4264,16 +4269,19 @@ button.itemDetailContPlusButton {
   text-align: center;
 }
 
+/* カートの文字 */
 .cartAreaTitle {
   font-size: 1em;
   margin-top: 52px;
   margin-bottom: 36px;
 }
 
+/* 進捗のエリア */
 .cartProgressArea {
   width: 100%;
 }
 
+/* カート内商品（外枠） */
 .cartAreaItemTitleWordWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -4286,12 +4294,14 @@ button.itemDetailContPlusButton {
   text-align: center;
 }
 
+/* カート内商品 */
 .cartAreaItemTitleWord {
   font-size: 1em;
   margin-top: 81px;
   margin-bottom: 58px;
 }
 
+/* カートの商品の一覧部分（外枠） */
 .cartAreaItemListWrapper {
   width: 100%;
   max-width: 1094px;
@@ -4300,6 +4310,7 @@ button.itemDetailContPlusButton {
   gap: 36px;
 }
 
+/* カート内の商品 */
 .cartItemBox {
   display: flex;
   position: relative;
@@ -4314,6 +4325,7 @@ button.itemDetailContPlusButton {
   letter-spacing: 2.4px;
 }
 
+/* カートの商品画像 */
 .cartItemBoxImageWrapper {
   width: 155px;
   height: 155px;
@@ -4321,10 +4333,12 @@ button.itemDetailContPlusButton {
   position: relative;
 }
 
+/* 商品の項目名 */
 .cartItemBoxImageWrapper:has(a.cartItemTitleText),
 .cartItemBoxItemTextWrapper:has(a.cartItemTitleText),
 .cartItemBoxButtonArea:has(a.cartItemTitleText),
 .cartItemSubTotalPriceWrapper:has(a.cartItemTitleText) {
+  /* cartItemTitleTextが小要素にあるものだけ特定のスタイルにする */
   height: auto !important;
   padding-bottom: 21px;
   margin-top: 0px !important;
@@ -4332,22 +4346,26 @@ button.itemDetailContPlusButton {
   border-bottom: 1px solid #a4a4a4;
 }
 
+/* カートの商品名と値段 */
 .cartItemBoxItemTextWrapper {
   padding-left: 49px;
   max-width: 366px;
   width: 100%;
 }
 
+/* カート：商品名 */
 .cartItemName {
   font-size: 1em;
   margin-bottom: 15px;
 }
 
+/* カート：値段 */
 .cartItemPrice {
   font-size: 1em;
   margin-top: 0px;
 }
 
+/* カートのボタンのエリア */
 .cartItemBoxButtonArea {
   display: inline-flex;
   flex-direction: column;
@@ -4358,6 +4376,7 @@ button.itemDetailContPlusButton {
   margin-top: 15px;
 }
 
+/* カートの数量ボタン */
 .cartItemContButtonOuterWrapper {
   display: flex;
   width: 173px;
@@ -4370,6 +4389,7 @@ button.itemDetailContPlusButton {
   letter-spacing: 1.92px;
 }
 
+/* カート：商品数（外枠） */
 .cartItemContWrapper {
   width: 100%;
   height: 23px;
@@ -4381,10 +4401,12 @@ button.itemDetailContPlusButton {
   }
 }
 
+/* 商品数 */
 .cartItemCont {
   font-size: 1em;
 }
 
+/* カートの削除ボタン（外枠） */
 .cartItemDeleteButtonWrapper {
   font-size: 14px;
 
@@ -4397,6 +4419,7 @@ button.itemDetailContPlusButton {
   position: relative; */
 }
 
+/* カートの削除ボタン */
 .cartItemDeleteButton {
   text-align: center;
   border: 1px solid #a4a4a4;
@@ -4404,15 +4427,18 @@ button.itemDetailContPlusButton {
   padding: 3px 11px 4px 11px;
 }
 
+/* カートの小計（外枠） */
 .cartItemSubTotalPriceWrapper {
   width: auto;
   min-width: 205px;
 }
 
+/* カートの小計 */
 .cartItemSubTotalPrice {
   font-size: 1em;
 }
 
+/* カート一覧の上部のタイトル部分 */
 .cartItemListTitleWrapper {
   display: flex;
 
@@ -4427,6 +4453,7 @@ button.itemDetailContPlusButton {
   padding-bottom: 21px;
 }
 
+/* カート一覧の下部の部分 */
 .cartItemListBottomAreaWrapper {
   display: flex;
   color: #000;
@@ -4440,6 +4467,7 @@ button.itemDetailContPlusButton {
   margin-top: 47px;
 }
 
+/* カートの下部の部分 */
 .cartItemBoxImageWrapper:has(a.cartBottom),
 .cartItemBoxItemTextWrapper:has(a.cartBottom),
 .cartItemBoxButtonArea:has(a.cartBottom),
@@ -4452,6 +4480,7 @@ button.itemDetailContPlusButton {
   padding-bottom: 50px;
 }
 
+/* 注意事項（外枠） */
 .cartItemsAttentionWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -4462,6 +4491,7 @@ button.itemDetailContPlusButton {
   letter-spacing: 2.4px;
 }
 
+/* 注意事項 */
 .cartItemsAttention {
   font-size: 1em;
 
@@ -4469,6 +4499,7 @@ button.itemDetailContPlusButton {
   margin-bottom: 19px;
 }
 
+/* 注意事項の文章（外枠） */
 .cartItemsAttentionDescriptWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -4482,11 +4513,13 @@ button.itemDetailContPlusButton {
   max-width: 964px;
 }
 
+/* 注意事項の文章 */
 .cartItemsAttentionDescript {
   font-size: 1em;
   margin: 0px;
 }
 
+/* お届け予定日のエリア */
 .deliveryDateArea {
   display: flex;
 
@@ -4501,7 +4534,8 @@ button.itemDetailContPlusButton {
   letter-spacing: 1.92px;
 }
 
-.deliveryTitle {
+/* 日付（外枠） */
+.deliveryDateTitleWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
   font-size: 20px;
@@ -4511,6 +4545,44 @@ button.itemDetailContPlusButton {
   letter-spacing: 2.4px;
 }
 
-.deliveryDateTitleWrapper {
+/* 日付 */
+.deliveryDateTitle {
+  font-size: 1em;
+
+  margin-bottom: 17px;
+}
+
+/* カレンダー入力 */
+.deliverruDateInputItems {
   display: flex;
+}
+
+/* 日付 */
+.deliveryDateWrapper > p {
+  font-size: 1em;
+  margin: 0px;
+}
+/* 時間帯のセレクタ */
+.deliveryDateWrapper > input {
+  font-size: 1em;
+  border: 1px solid #a4a4a4;
+  padding: 12px 0px 13px 15px;
+}
+
+/* 時間帯 */
+.deliveryTimeWrapper > p {
+  font-size: 1em;
+  margin: 0px;
+}
+
+/* ガイド文 */
+.clickAttention {
+  font-size: 1em;
+  margin-top: 23px;
+  margin-bottom: 43px;
+}
+
+/* 決済画面へのボタン */
+.goToDeliveryInformation {
+  color: #fff;
 }
