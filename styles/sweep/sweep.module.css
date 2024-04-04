@@ -4566,13 +4566,24 @@ button.itemDetailContPlusButton {
 .deliveryDateWrapper > input {
   font-size: 1em;
   border: 1px solid #a4a4a4;
-  padding: 12px 0px 13px 15px;
+  padding: 11px 0px 11px 15px;
+  /* width: 185px;
+  height: 49px; */
 }
 
 /* 時間帯 */
 .deliveryTimeWrapper > p {
   font-size: 1em;
   margin: 0px;
+}
+
+.deliveryTimeWrapper select {
+  width: 122px;
+  height: 49px;
+  font-size: 1em;
+
+  border: 1px solid #a4a4a4;
+  padding: 12.5px 40.5px 12.5px 11.5px;
 }
 
 /* ガイド文 */
