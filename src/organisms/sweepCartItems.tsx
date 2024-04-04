@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import styled from 'styled-components';
+import DatePicker from 'react-datepicker';
 
+import 'react-datepicker/dist/react-datepicker.css';
 import {
   CartItemBox,
   CartItemProps,
@@ -52,6 +54,8 @@ const CartItemComponent = () => {
 
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
   const [cartItemListInfo, updateCartItemListInfo] = useState(initItems);
+
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <>
@@ -138,7 +142,36 @@ const CartItemComponent = () => {
               <div className={styles.deliveryDateWrapper}>
                 <p>日付</p>
 
-                <InputDateTag type="date"></InputDateTag>
+                {/* <InputDateTag type="date"></InputDateTag> */}
+                <DatePicker
+                  showIcon
+                  selected={startDate}
+                  toggleCalendarOnIconClick
+                  onChange={(date) => setStartDate(date || new Date())}
+                  minDate={new Date()}
+                  dateFormat="yyyy/MM/dd"
+                  className={styles.calendarInput}
+                  icon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className={styles.calendarInputSVG}
+                    >
+                      <rect
+                        x="0.5"
+                        y="6.5"
+                        width="15"
+                        height="9"
+                        fill="#D9D9D9"
+                        stroke="#7F6767"
+                      />
+                      <rect width="16" height="5" fill="#7F6767" />
+                    </svg>
+                  }
+                />
               </div>
               <div className={styles.deliveryTimeWrapper}>
                 <p>時間帯</p>

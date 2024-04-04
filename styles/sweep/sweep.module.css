@@ -4534,7 +4534,7 @@ button.itemDetailContPlusButton {
   letter-spacing: 1.92px;
 }
 
-/* 日付（外枠） */
+/* お届け予定日の文字 */
 .deliveryDateTitleWrapper {
   color: #000;
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -4563,12 +4563,31 @@ button.itemDetailContPlusButton {
   margin: 0px;
 }
 /* 時間帯のセレクタ */
-.deliveryDateWrapper > input {
-  font-size: 1em;
+/* .deliveryDateWrapper > input, */
+input.calendarInput {
+  font-size: 1em !important;
   border: 1px solid #a4a4a4;
-  padding: 11px 0px 11px 15px;
+  padding: 14px 0px 15px 15px !important;
   /* width: 185px;
   height: 49px; */
+
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: normal !important;
+  letter-spacing: 1.92px !important;
+}
+div.deliveryDateWrapper > div > div {
+  display: flex;
+
+  flex-direction: row-reverse;
+}
+
+.calendarInputSVG {
+  /* padding-top: 1em !important; */
+  top: 0.5em;
+  right: 0px;
+  /* position: absolute; */
+  /* padding: 13px 0px 14px 15px; */
 }
 
 /* 時間帯 */
