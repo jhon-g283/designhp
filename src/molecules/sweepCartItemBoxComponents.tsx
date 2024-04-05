@@ -47,62 +47,64 @@ const CartItemBox = ({
             className={styles.positionOverWrittenRelationOnSP}
           ></Image>
         </div>
-        <div className={styles.cartItemBoxItemTextWrapper}>
-          <p className={styles.cartItemName}>{itemName}</p>
-          <p className={styles.cartItemPrice}>¥{price}</p>
-        </div>
-        <div className={styles.cartItemBoxButtonArea}>
-          <div className={styles.cartItemContButtonOuterWrapper}>
-            <button
-              className={styles.itemDetailContMinusButton}
-              onClick={() => {
-                //   decreaseCount(count);
-              }}
-            >
-              <svg
-                width="16"
-                height="17"
-                viewBox="0 0 16 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        <div className={`${styles.cartItemBoxItemInnerWrapper}`}>
+          <div className={`${styles.cartItemBoxItemTextWrapper}`}>
+            <p className={styles.cartItemName}>{itemName}</p>
+            <p className={styles.cartItemPrice}>¥{price}</p>
+          </div>
+          <div className={styles.cartItemBoxButtonArea}>
+            <div className={styles.cartItemContButtonOuterWrapper}>
+              <button
+                className={styles.itemDetailContMinusButton}
+                onClick={() => {
+                  //   decreaseCount(count);
+                }}
               >
-                <line y1="8.5" x2="16" y2="8.5" stroke="black" />
-              </svg>
-            </button>
-            <div className={styles.cartItemContWrapper}>
-              <a className={styles.cartItemCont}>{count}</a>
-            </div>
+                <svg
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line y1="8.5" x2="16" y2="8.5" stroke="black" />
+                </svg>
+              </button>
+              <div className={styles.cartItemContWrapper}>
+                <a className={styles.cartItemCont}>{count}</a>
+              </div>
 
-            <button
-              className={styles.itemDetailContPlusButton}
-              onClick={() => {
-                //   increaseCount(count);
-              }}
-            >
-              <svg
-                width="16"
-                height="17"
-                viewBox="0 0 16 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                className={styles.itemDetailContPlusButton}
+                onClick={() => {
+                  //   increaseCount(count);
+                }}
               >
-                <line y1="8.5" x2="16" y2="8.5" stroke="black" />
-                <line
-                  x1="8.5"
-                  y1="2.20764e-08"
-                  x2="8.5"
-                  y2="17"
-                  stroke="black"
-                />
-              </svg>
-            </button>
+                <svg
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line y1="8.5" x2="16" y2="8.5" stroke="black" />
+                  <line
+                    x1="8.5"
+                    y1="2.20764e-08"
+                    x2="8.5"
+                    y2="17"
+                    stroke="black"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className={styles.cartItemDeleteButtonWrapper}>
+              <button className={styles.cartItemDeleteButton}>削除</button>
+            </div>
           </div>
-          <div className={styles.cartItemDeleteButtonWrapper}>
-            <button className={styles.cartItemDeleteButton}>削除</button>
+          <div className={styles.cartItemSubTotalPriceWrapper}>
+            <p className={styles.cartItemSubTotalPrice}>¥{totalPrice}</p>
           </div>
-        </div>
-        <div className={styles.cartItemSubTotalPriceWrapper}>
-          <p className={styles.cartItemSubTotalPrice}>¥{totalPrice}</p>
         </div>
       </div>
     </>

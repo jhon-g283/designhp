@@ -74,7 +74,8 @@ const CartItemComponent = () => {
         <div className={styles.cartAreaItemAreaWrapper}>
           <div className={styles.cartAreaItemListWrapper}>
             {/* title */}
-            <div className={styles.cartItemListTitleWrapper}>
+
+            <div className={` ${styles.cartItemListTitleWrapper} `}>
               <div className={styles.cartItemBoxImageWrapper}>
                 <a className={styles.cartItemTitleText}>商品</a>
               </div>
