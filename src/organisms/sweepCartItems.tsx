@@ -24,13 +24,15 @@ const CartItemComponent = () => {
     }
   `;
   const SelectTimeTag = styled.select`
+    /* 矢印を消す*/
     -webkit-appearance: none;
     appearance: none;
+
+    /* 画像を背景へセット*/
     background-image: url('/imgSweep/SelectArrow.svg');
     background-repeat: no-repeat;
-    background-size: 24px auto; /* 画像のサイズ（幅 高さ）*/
-    background-position: right 12px center; /* 画像の位置 */
-    width: 100px;
+    background-size: 11px 11px; /* 画像のサイズ（幅 高さ）*/
+    background-position: right 11.5px center; /* 画像の位置 */
   `;
 
   const initItems: CartItemProps[] = [
@@ -142,7 +144,6 @@ const CartItemComponent = () => {
               <div className={styles.deliveryDateWrapper}>
                 <p>日付</p>
 
-                {/* <InputDateTag type="date"></InputDateTag> */}
                 <DatePicker
                   showIcon
                   selected={startDate}
@@ -177,8 +178,13 @@ const CartItemComponent = () => {
                 <p>時間帯</p>
 
                 <SelectTimeTag>
-                  <option>指定なし</option> <option>1</option>{' '}
-                  <option>1</option>
+                  <option>指定なし</option>
+                  <option>午前中</option>
+                  <option>12時〜14時</option>
+                  <option>14時〜16時</option>
+                  <option>16時〜18時</option>
+                  <option>18時〜20時</option>
+                  <option>20時以降</option>
                 </SelectTimeTag>
               </div>
             </div>

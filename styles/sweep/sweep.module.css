@@ -4248,6 +4248,8 @@ button.itemDetailContPlusButton {
 
   padding-left: 125px;
   padding-right: 123px;
+
+  padding-bottom: 72px;
 }
 
 /* 購入進捗のSVG */
@@ -4562,12 +4564,12 @@ button.itemDetailContPlusButton {
   font-size: 1em;
   margin: 0px;
 }
-/* 時間帯のセレクタ */
-/* .deliveryDateWrapper > input, */
+
 input.calendarInput {
+  margin-top: 6px;
   font-size: 1em !important;
   border: 1px solid #a4a4a4;
-  padding: 14px 0px 15px 15px !important;
+  padding: 15px 0px 15px 15px !important;
   /* width: 185px;
   height: 49px; */
 
@@ -4584,10 +4586,14 @@ div.deliveryDateWrapper > div > div {
 
 .calendarInputSVG {
   /* padding-top: 1em !important; */
-  top: 0.5em;
+  top: 0.9em;
   right: 0px;
   /* position: absolute; */
   /* padding: 13px 0px 14px 15px; */
+}
+
+.deliveryTimeWrapper {
+  margin-left: 28px;
 }
 
 /* 時間帯 */
@@ -4595,14 +4601,15 @@ div.deliveryDateWrapper > div > div {
   font-size: 1em;
   margin: 0px;
 }
-
+/* 時間帯のセレクタ */
 .deliveryTimeWrapper select {
+  margin-top: 6px;
   width: 122px;
   height: 49px;
   font-size: 1em;
 
   border: 1px solid #a4a4a4;
-  padding: 12.5px 40.5px 12.5px 11.5px;
+  padding: 12.5px 0.5px 12.5px 11.5px;
 }
 
 /* ガイド文 */
@@ -4615,4 +4622,10 @@ div.deliveryDateWrapper > div > div {
 /* 決済画面へのボタン */
 .goToDeliveryInformation {
   color: #fff;
+  font-size: 1em;
+
+  width: 100%;
+  background-color: #000000;
+  border: none;
+  padding: 20px 72px 19px 73px;
 }
