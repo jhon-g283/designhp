@@ -3790,8 +3790,8 @@ button.itemDetailContMinusButton {
   border: none;
   background-color: transparent;
   @media (max-width: 768px) {
-    padding-left: 21px;
-    padding-right: 20px;
+    padding-left: 3.5px;
+    padding-right: 4px;
   }
 }
 
@@ -3803,8 +3803,8 @@ button.itemDetailContPlusButton {
   border: none;
   background-color: transparent;
   @media (max-width: 768px) {
-    padding-left: 21px;
-    padding-right: 20px;
+    padding-left: 4px;
+    padding-right: 6px;
   }
 }
 
@@ -4260,6 +4260,10 @@ button.itemDetailContPlusButton {
 .cartProgressArea svg {
   width: 100%;
   max-width: 1094px;
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 60px;
+  }
 }
 
 /* カートの文字（外枠） */
@@ -4280,6 +4284,14 @@ button.itemDetailContPlusButton {
   font-size: 1em;
   margin-top: 52px;
   margin-bottom: 36px;
+
+  @media (max-width: 768px) {
+    font-size: 0.66em;
+    letter-spacing: 2px;
+
+    margin-top: 0.45em;
+    margin-bottom: 0.68em;
+  }
 }
 
 /* 進捗のエリア */
@@ -4309,6 +4321,8 @@ button.itemDetailContPlusButton {
   @media (max-width: 768px) {
     font-size: 0.6em;
     letter-spacing: 1.5px;
+    margin-top: 1.22em;
+    margin-bottom: 0.82em;
   }
 }
 
@@ -4319,6 +4333,12 @@ button.itemDetailContPlusButton {
   display: inline-flex;
   flex-direction: column;
   gap: 36px;
+
+  @media (max-width: 768px) {
+    border-top: 1px solid #a4a4a4;
+    padding-top: 20px;
+    gap: 20px;
+  }
 }
 
 /* カート内の商品 */
@@ -4369,6 +4389,7 @@ button.itemDetailContPlusButton {
   width: 100%;
   @media (max-width: 768px) {
     display: block;
+    padding-left: 23.5px;
   }
 }
 
@@ -4380,6 +4401,8 @@ button.itemDetailContPlusButton {
   @media (max-width: 768px) {
     display: flex;
     padding-left: 0px;
+    width: 60%;
+    justify-content: space-between;
   }
 }
 
@@ -4387,12 +4410,27 @@ button.itemDetailContPlusButton {
 .cartItemName {
   font-size: 1em;
   margin-bottom: 15px;
+
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+
+    letter-spacing: 1.38px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 /* カート：値段 */
 .cartItemPrice {
   font-size: 1em;
   margin-top: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    letter-spacing: 1.38px;
+  }
 }
 
 /* カートのボタンのエリア */
@@ -4406,6 +4444,7 @@ button.itemDetailContPlusButton {
   margin-top: 15px;
   @media (max-width: 768px) {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -4420,6 +4459,10 @@ button.itemDetailContPlusButton {
   font-size: 16px;
 
   letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    width: 55px;
+    height: 19.5px;
+  }
 }
 
 /* カート：商品数（外枠） */
@@ -4431,12 +4474,17 @@ button.itemDetailContPlusButton {
   border-right: 0.5px solid #a4a4a4;
   @media (max-width: 768px) {
     /* 中心に調整する */
+    font-size: 1em;
+    height: 11.5px;
   }
 }
 
 /* 商品数 */
 .cartItemCont {
   font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+  }
 }
 
 /* カートの削除ボタン（外枠） */
@@ -4448,8 +4496,8 @@ button.itemDetailContPlusButton {
 
   width: 52px;
   height: 35px;
-  /* top: 20px;
-  position: relative; */
+  @media (max-width: 768px) {
+  }
 }
 
 /* カートの削除ボタン */
@@ -4458,6 +4506,8 @@ button.itemDetailContPlusButton {
   border: 1px solid #a4a4a4;
   background-color: transparent;
   padding: 3px 11px 4px 11px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* カートの小計（外枠） */
@@ -4474,6 +4524,8 @@ button.itemDetailContPlusButton {
 /* カートの小計 */
 .cartItemSubTotalPrice {
   font-size: 1em;
+  @media (max-width: 768px) {
+  }
 }
 
 /* カート一覧の上部のタイトル部分 */
@@ -4506,6 +4558,8 @@ button.itemDetailContPlusButton {
   letter-spacing: 3px;
 
   margin-top: 47px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* カートの下部の部分 */
@@ -4519,6 +4573,8 @@ button.itemDetailContPlusButton {
 
   border-bottom: 1px solid #a4a4a4;
   padding-bottom: 50px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 注意事項（外枠） */
@@ -4530,6 +4586,8 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2.4px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 注意事項 */
@@ -4538,6 +4596,8 @@ button.itemDetailContPlusButton {
 
   margin-top: 44px;
   margin-bottom: 19px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 注意事項の文章（外枠） */
@@ -4552,12 +4612,16 @@ button.itemDetailContPlusButton {
 
   width: 100%;
   max-width: 964px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 注意事項の文章 */
 .cartItemsAttentionDescript {
   font-size: 1em;
   margin: 0px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お届け予定日のエリア */
@@ -4573,6 +4637,8 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* お届け予定日の文字 */
@@ -4584,6 +4650,8 @@ button.itemDetailContPlusButton {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 2.4px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 日付 */
@@ -4591,17 +4659,23 @@ button.itemDetailContPlusButton {
   font-size: 1em;
 
   margin-bottom: 17px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* カレンダー入力 */
 .deliverruDateInputItems {
   display: flex;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 日付 */
 .deliveryDateWrapper > p {
   font-size: 1em;
   margin: 0px;
+  @media (max-width: 768px) {
+  }
 }
 
 input.calendarInput {
@@ -4609,36 +4683,36 @@ input.calendarInput {
   font-size: 1em !important;
   border: 1px solid #a4a4a4;
   padding: 15px 0px 15px 15px !important;
-  /* width: 185px;
-  height: 49px; */
-
-  font-style: normal !important;
-  font-weight: 300 !important;
-  line-height: normal !important;
-  letter-spacing: 1.92px !important;
+  @media (max-width: 768px) {
+  }
 }
 div.deliveryDateWrapper > div > div {
   display: flex;
 
   flex-direction: row-reverse;
+  @media (max-width: 768px) {
+  }
 }
 
 .calendarInputSVG {
-  /* padding-top: 1em !important; */
   top: 0.9em;
   right: 0px;
-  /* position: absolute; */
-  /* padding: 13px 0px 14px 15px; */
+  @media (max-width: 768px) {
+  }
 }
 
 .deliveryTimeWrapper {
   margin-left: 28px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 時間帯 */
 .deliveryTimeWrapper > p {
   font-size: 1em;
   margin: 0px;
+  @media (max-width: 768px) {
+  }
 }
 /* 時間帯のセレクタ */
 .deliveryTimeWrapper select {
@@ -4649,6 +4723,8 @@ div.deliveryDateWrapper > div > div {
 
   border: 1px solid #a4a4a4;
   padding: 12.5px 0.5px 12.5px 11.5px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* ガイド文 */
@@ -4656,6 +4732,8 @@ div.deliveryDateWrapper > div > div {
   font-size: 1em;
   margin-top: 23px;
   margin-bottom: 43px;
+  @media (max-width: 768px) {
+  }
 }
 
 /* 決済画面へのボタン */
@@ -4667,4 +4745,6 @@ div.deliveryDateWrapper > div > div {
   background-color: #000000;
   border: none;
   padding: 20px 72px 19px 73px;
+  @media (max-width: 768px) {
+  }
 }

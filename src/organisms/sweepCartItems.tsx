@@ -17,12 +17,6 @@ import { it } from 'node:test';
 const CartItemComponent = () => {
   // Redux{}
 
-  const InputDateTag = styled.input`
-    &::-webkit-calendar-picker-indicator {
-      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"%3E%3Crect x="0.5" y="6.5" width="15" height="9" fill="%23D9D9D9" stroke="%237F6767"/%3E%3Crect width="16" height="5" fill="%237F6767"/%3E%3C/svg%3E')
-        no-repeat;
-    }
-  `;
   const SelectTimeTag = styled.select`
     /* 矢印を消す*/
     -webkit-appearance: none;

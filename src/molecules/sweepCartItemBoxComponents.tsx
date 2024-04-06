@@ -66,8 +66,25 @@ const CartItemBox = ({
                   viewBox="0 0 16 17"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgPC}
                 >
                   <line y1="8.5" x2="16" y2="8.5" stroke="black" />
+                </svg>
+                <svg
+                  width="8.5"
+                  height="9"
+                  viewBox="0 0 17 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.373047"
+                    y1="9.07129"
+                    x2="16.373"
+                    y2="9.07129"
+                    stroke="black"
+                  />
                 </svg>
               </button>
               <div className={styles.cartItemContWrapper}>
@@ -86,6 +103,7 @@ const CartItemBox = ({
                   viewBox="0 0 16 17"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgPC}
                 >
                   <line y1="8.5" x2="16" y2="8.5" stroke="black" />
                   <line
@@ -93,6 +111,29 @@ const CartItemBox = ({
                     y1="2.20764e-08"
                     x2="8.5"
                     y2="17"
+                    stroke="black"
+                  />
+                </svg>
+                <svg
+                  width="8.5"
+                  height="9"
+                  viewBox="0 0 17 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.imgSP}
+                >
+                  <line
+                    x1="0.373047"
+                    y1="9.07129"
+                    x2="16.373"
+                    y2="9.07129"
+                    stroke="black"
+                  />
+                  <line
+                    x1="8.87305"
+                    y1="0.571289"
+                    x2="8.87305"
+                    y2="17.5713"
                     stroke="black"
                   />
                 </svg>
