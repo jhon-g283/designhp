@@ -87,9 +87,81 @@ const CartItemBox = ({
                   />
                 </svg>
               </button>
+              <svg
+                width="2"
+                height="23"
+                viewBox="0 0 1 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.imgPC}
+              >
+                <line
+                  x1="0.25"
+                  y1="1.45968e-08"
+                  x2="0.249999"
+                  y2="23"
+                  stroke="#A4A4A4"
+                  stroke-width="0.5"
+                />
+              </svg>
+
+              <svg
+                width="2"
+                height="11.5"
+                viewBox="0 0 1 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.imgSP}
+              >
+                <line
+                  x1="0.623047"
+                  y1="0.571289"
+                  x2="0.623046"
+                  y2="23.5713"
+                  stroke="#A4A4A4"
+                  stroke-width="0.5"
+                />
+              </svg>
+
               <div className={styles.cartItemContWrapper}>
                 <a className={styles.cartItemCont}>{count}</a>
               </div>
+
+              <svg
+                width="2"
+                height="23"
+                viewBox="0 0 1 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.imgPC}
+              >
+                <line
+                  x1="0.25"
+                  y1="1.45968e-08"
+                  x2="0.249999"
+                  y2="23"
+                  stroke="#A4A4A4"
+                  stroke-width="0.5"
+                />
+              </svg>
+
+              <svg
+                width="2"
+                height="11.5"
+                viewBox="0 0 1 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.imgSP}
+              >
+                <line
+                  x1="0.623047"
+                  y1="0.571289"
+                  x2="0.623046"
+                  y2="23.5713"
+                  stroke="#A4A4A4"
+                  stroke-width="0.5"
+                />
+              </svg>
 
               <button
                 className={styles.itemDetailContPlusButton}
@@ -139,6 +211,9 @@ const CartItemBox = ({
                 </svg>
               </button>
             </div>
+            <p className={`${styles.cartItemSubTotalPriceSP} ${styles.imgSP}`}>
+              小計 ¥{totalPrice}
+            </p>
             <div className={styles.cartItemDeleteButtonWrapper}>
               <button className={styles.cartItemDeleteButton}>削除</button>
             </div>
