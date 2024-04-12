@@ -11,7 +11,6 @@ import {
 } from '../molecules/sweepCartItemBoxComponents';
 import ProgressComponents from '../molecules/sweepProgressComponents';
 import Image from 'next/image';
-import { it } from 'node:test';
 
 // ヘッダー部分のコンポーネント
 const CartItemComponent = () => {
@@ -27,6 +26,9 @@ const CartItemComponent = () => {
     background-repeat: no-repeat;
     background-size: 11px 11px; /* 画像のサイズ（幅 高さ）*/
     background-position: right 11.5px center; /* 画像の位置 */
+    @media (max-width: 768px) {
+      background-size: 6px 6px; /* 画像のサイズ（幅 高さ）*/
+    }
   `;
 
   const initItems: CartItemProps[] = [
@@ -60,7 +62,7 @@ const CartItemComponent = () => {
           <p className={styles.cartAreaTitle}>カート</p>
         </div>
 
-        <ProgressComponents></ProgressComponents>
+        <ProgressComponents progress="1" />
 
         <div className={styles.cartAreaItemTitleWordWrapper}>
           <p className={styles.cartAreaItemTitleWord}>カート内商品</p>
@@ -107,10 +109,13 @@ const CartItemComponent = () => {
                 <a className={styles.cartBottom}></a>
               </div>
               <div className={styles.cartItemBoxButtonArea}>
-                <a className={styles.cartBottom}>合計金額</a>
+                <a className={styles.cartBottom}>合計金額</a>{' '}
+                <a className={`${styles.imgSP} ${styles.totalPriceSP}`}>
+                  2,200円
+                </a>
               </div>
               <div className={styles.cartItemSubTotalPriceWrapper}>
-                <a className={styles.cartBottom}>2200円</a>
+                <a className={styles.cartBottom}>2,200円</a>
               </div>
             </div>
           </div>
@@ -121,7 +126,7 @@ const CartItemComponent = () => {
             <p className={styles.cartItemsAttention}> 注意事項</p>
           </div>
           <div className={styles.cartItemsAttentionDescriptWrapper}>
-            <p>
+            <p className={styles.cartItemsAttentionDescript}>
               本サービスは一部の冷凍・冷蔵商品の商品を除き、基本は通常配達での配送になります。
               <br></br>
               ポスト配達、置き配希望の場合は季節・気温にご注意ください。夏季など気温の高い季節は対面やコンビニ受け取りをおすすめします。
@@ -146,7 +151,7 @@ const CartItemComponent = () => {
                   onChange={(date) => setStartDate(date || new Date())}
                   minDate={new Date()}
                   dateFormat="yyyy/MM/dd"
-                  className={styles.calendarInput}
+                  className={`${styles.calendarInput} `}
                   icon={
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +159,7 @@ const CartItemComponent = () => {
                       height="16"
                       viewBox="0 0 16 16"
                       fill="none"
-                      className={styles.calendarInputSVG}
+                      className={`${styles.calendarInputSVG} `}
                     >
                       <rect
                         x="0.5"
@@ -188,9 +193,11 @@ const CartItemComponent = () => {
               クリックで希望の配達日・時間帯に変更
             </p>
 
-            <button className={styles.goToDeliveryInformation}>
-              決済・配達情報入力へ
-            </button>
+            <div className={styles.goToDeliveryInformationWrapper}>
+              <button className={styles.goToDeliveryInformation}>
+                決済・配達情報入力へ
+              </button>
+            </div>
           </div>
         </div>
       </div>
