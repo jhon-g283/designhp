@@ -52,9 +52,24 @@ const ProgressComponents = ({ progress = '1' }: Props) => {
             r="23.5"
             fill={progress == '1' ? circleActiveColor : deActiveColor}
           />
-          <circle cx="371.5" cy="71.5" r="23.5" fill="#D9D9D9" />
-          <circle cx="710.5" cy="71.5" r="23.5" fill="#D9D9D9" />
-          <circle cx="1049.5" cy="71.5" r="23.5" fill="#D9D9D9" />
+          <circle
+            cx="371.5"
+            cy="71.5"
+            r="23.5"
+            fill={progress == '2' ? circleActiveColor : deActiveColor}
+          />
+          <circle
+            cx="710.5"
+            cy="71.5"
+            r="23.5"
+            fill={progress == '3' ? circleActiveColor : deActiveColor}
+          />
+          <circle
+            cx="1049.5"
+            cy="71.5"
+            r="23.5"
+            fill={progress == '4' ? circleActiveColor : deActiveColor}
+          />
         </svg>
       </div>
 

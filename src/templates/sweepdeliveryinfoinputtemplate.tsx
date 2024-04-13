@@ -4,7 +4,7 @@ import styles from '../../styles/sweep/sweep.module.css';
 import Header from '../organisms/sweepHeader';
 import Footer from '../organisms/sweepFooter';
 
-import CartItemComponent from '../organisms/sweepCartItems';
+import OrderInputComponent from '../organisms/sweepDeliveryInfoInput';
 
 const SweepDeliveryInfoInputTemplate = () => {
   return (
@@ -12,7 +12,9 @@ const SweepDeliveryInfoInputTemplate = () => {
       <Header />
       <div className={styles.firstViewArea}></div>
       <div className="sweep">
-        <div className={styles.mainWrapper}></div>
+        <div className={styles.mainWrapper}>
+          <OrderInputComponent />
+        </div>
 
         <Footer />
       </div>

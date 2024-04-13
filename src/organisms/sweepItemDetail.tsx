@@ -189,7 +189,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                 // height={110}
                 alt="Your Image"
                 fill={true}
-                // className={styles.positionOverWrittenRelationOnSP}
               ></Image>
             </div>
             <div className={styles.itemDetailItemThumbNailArea}>
@@ -203,7 +202,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                         // height={110}
                         alt="Your Image"
                         fill={true}
-                        // className={styles.positionOverWrittenRelationOnSP}
                       ></Image>
                     </div>
                   </>
@@ -391,7 +389,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                 // height={110}
                 alt="Your Image"
                 fill={true}
-                // className={styles.positionOverWrittenRelationOnSP}
               ></Image>
             </div>
           </div>
@@ -435,7 +432,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                 // height={110}
                 alt="Your Image"
                 fill={true}
-                // className={styles.positionOverWrittenRelationOnSP}
               ></Image>
             </div>
           </div>

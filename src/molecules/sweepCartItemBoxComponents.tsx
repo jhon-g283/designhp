@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読�
 export interface CartItemProps {
   imageUrl: string; //画像Url
   itemName?: string; //商品名
-  price?: string; //価格
+  price: string; //価格
   count: string;
   updateState?: () => void;
   linkParam?: string;
