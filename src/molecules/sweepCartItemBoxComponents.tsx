@@ -101,7 +101,7 @@ const CartItemBox = ({
                   x2="0.249999"
                   y2="23"
                   stroke="#A4A4A4"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
               </svg>
 
@@ -119,7 +119,7 @@ const CartItemBox = ({
                   x2="0.623046"
                   y2="23.5713"
                   stroke="#A4A4A4"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
               </svg>
 
@@ -141,7 +141,7 @@ const CartItemBox = ({
                   x2="0.249999"
                   y2="23"
                   stroke="#A4A4A4"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
               </svg>
 
@@ -159,7 +159,7 @@ const CartItemBox = ({
                   x2="0.623046"
                   y2="23.5713"
                   stroke="#A4A4A4"
-                  stroke-width="0.5"
+                  strokeWidth="0.5"
                 />
               </svg>
 

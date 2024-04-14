@@ -19,6 +19,9 @@ const Home: NextPage = () => {
         <a href="./designpage/cafetoppage">test</a>
         <a href="./sweep/top">test2</a>
         <a href="./sweep/itemDetail?id=9">test3</a>
+        <a href="./sweep/cart/deliveryinfoInput">test4</a>
+        <a href="./sweep/cart/deliveryinfoInput">test5</a>
+        <a href="./sweep/cart/deliveryinfoConfirm">test6</a>
 
         <p className={styles.description}>
           Get started by editing{' '}

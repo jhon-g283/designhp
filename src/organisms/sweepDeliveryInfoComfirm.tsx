@@ -14,7 +14,7 @@ import { current } from '@reduxjs/toolkit';
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 
 // ヘッダー部分のコンポーネント
-const OrderInputComponent = () => {
+const OrderConfirmComponent = () => {
   // Redux{}
 
   const initItems: CartItemProps[] = [
@@ -53,17 +53,19 @@ const OrderInputComponent = () => {
           <p className={styles.deliveryInfoTitle}>配送情報入力</p>
         </div>
 
-        <ProgressComponents progress="2" />
+        <ProgressComponents progress="3" />
 
         <div className={styles.deliveryInfoAreaWrapper}>
           <div className={styles.deliveryInfoInputAreaOuterWrapper}>
             <div className={styles.deliveryInfoTitleTextWrapper}>
               <InputTitle className={styles.deliveryInfoTitleText}>
-                決済情報
+                配送先住所
               </InputTitle>
             </div>
 
-            <div className={styles.deliveryInfoSubTextWrapper}>
+            {/* divとinline-flex,gapかwidh:100%で実装していく */}
+
+            {/* <div className={styles.deliveryInfoSubTextWrapper}>
               <p className={styles.deliveryInfoSubText}>
                 クレジット、またはスマホ・コンビニ決済からお選びいただけます。
               </p>
@@ -86,17 +88,17 @@ const OrderInputComponent = () => {
                 />
                 <input className={styles.creditCardNumber3} placeholder="CVC" />
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.deliveryInfoTitleTextWrapper}>
               <InputTitle
                 className={`${styles.deliveryInfoTitleText} ${styles.deliveryInfoTitleTextAddMargin}`}
               >
-                配送先住所
+                決済情報
               </InputTitle>
             </div>
 
-            <div className={styles.deliveryInfoInputArea}>
+            {/* <div className={styles.deliveryInfoInputArea}>
               <p>郵便番号</p>
               <input id={styles.addressNumber} placeholder="123-4567" />
               <p>住所</p>
@@ -112,9 +114,9 @@ const OrderInputComponent = () => {
               <input id={styles.phoneNumber} placeholder="123-456-7890" />
               <p>メール</p>
               <input id={styles.phoneMail} placeholder="chocolate@sweep.jp" />
-            </div>
+            </div> */}
           </div>
-          <div className={`${styles.deliveryInfoCartListArea} ${styles.imgPC}`}>
+          <div className={styles.deliveryInfoCartListArea}>
             {/* カート内データ */}
             <DeliveryCartListComponent cartItemsList={initItems} />
 
@@ -133,9 +135,7 @@ const OrderInputComponent = () => {
           </div>
         </div>
         <div className={styles.deliveryInfoConfirmButtonWrapper}>
-          <button
-            className={`${styles.deliveryInfoConfirmButton} ${styles.deliveryInfoConfirmButtonAddMarginSP}`}
-          >
+          <button className={styles.deliveryInfoConfirmButton}>
             確認画面へ
           </button>
         </div>
@@ -144,4 +144,4 @@ const OrderInputComponent = () => {
   );
 };
 
-export default OrderInputComponent;
+export default OrderConfirmComponent;
