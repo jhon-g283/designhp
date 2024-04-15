@@ -5475,3 +5475,36 @@ input.creditCardNumber3 {
     margin-top: 2.09em !important;
   }
 }
+
+/*  */
+.deliveryConfirmAddresNumberWrapper {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  margin-left: 32px;
+}
+
+.deliveryInfoName {
+  width: 111px;
+}
+
+.deliveryConfirmAddresWrapper {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  margin-left: 32px;
+}
+
+.deliveryConfirmAddresName {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  margin-left: 32px;
+}
+
+.deliveryConfirmAddresTell {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  margin-left: 32px;
+}
