@@ -2929,17 +2929,16 @@ a.reviewLink:active {
   }
 }
 
-/* コピーライト */
-.sweepCopyWrite svg {
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  /* コピーライト */
+  .sweepCopyWrite svg {
     width: 1em;
     padding-bottom: 0.105em;
     margin-right: 0.5em;
   }
 }
-
-.sweepCopyWrite a {
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .sweepCopyWrite a {
     line-height: 0.5em;
   }
 }
@@ -3748,9 +3747,10 @@ li:has(input.lineupCheckBox:checked) {
   }
 }
 
-.itemDetailContButtonArea > a {
-  /* SP表示の際は数量の野地は非表示 */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .itemDetailContButtonArea > a {
+    /* SP表示の際は数量の野地は非表示 */
+
     display: none;
   }
 }
@@ -4689,8 +4689,8 @@ button.itemDetailContPlusButton {
   }
 }
 
-.deliveryDateArea > div {
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .deliveryDateArea > div {
     width: 100%;
     /* display: flex;
     flex-direction: column;
@@ -4909,6 +4909,16 @@ div.deliveryDateWrapper > div > div {
   text-align: center;
   @media (max-width: 768px) {
     padding-top: 0.755em;
+  }
+}
+
+/* 決済情報、配送先住所の内側のDiv */
+.deliveryInfoInputAreaInnerWrapper {
+  padding-left: 32px;
+  width: 477px;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    width: 100%;
   }
 }
 
@@ -5228,9 +5238,11 @@ input.creditCardNumber3 {
 }
 
 /* 最後の商品 */
-.deliveryInfoCartItemListArea > div.deliveryItemWrapper:nth-last-child(1) {
-  padding-bottom: 28px;
-  border-bottom: #a4a4a4 1px solid;
+@media (max-width: 768px) {
+  .deliveryInfoCartItemListArea > div.deliveryItemWrapper:nth-last-child(1) {
+    padding-bottom: 28px;
+    border-bottom: #a4a4a4 1px solid;
+  }
 }
 
 /* 値段 */
@@ -5470,41 +5482,179 @@ input.creditCardNumber3 {
 }
 
 /* マージン幅調整用 */
-.deliveryInfoConfirmButtonAddMarginSP {
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .deliveryInfoConfirmButtonAddMarginSP {
     margin-top: 2.09em !important;
   }
 }
 
-/*  */
-.deliveryConfirmAddresNumberWrapper {
-  display: flex;
-  width: 100%;
-  text-align: left;
-  margin-left: 32px;
-}
-
+/* 項目名 */
 .deliveryInfoName {
   width: 111px;
+  @media (max-width: 768px) {
+    width: 69px;
+  }
 }
 
-.deliveryConfirmAddresWrapper {
+/* 各項目を横並び左寄せにする */
+.deliveryConfirmAddresNumberWrapper,
+.deliveryConfirmAddresWrapper,
+.deliveryConfirmAddresName,
+.deliveryConfirmAddresTell,
+.deliveryConfirmAddresMail,
+.deliveryConfirmStatmentWrapper {
   display: flex;
   text-align: left;
   width: 100%;
-  margin-left: 32px;
 }
 
-.deliveryConfirmAddresName {
-  display: flex;
-  text-align: left;
-  width: 100%;
-  margin-left: 32px;
+/* 郵便番号 */
+.deliveryConfirmAddresNumberWrapper p {
+  font-size: 1em;
+  margin-top: 26px;
+  margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+
+    margin-top: 0.59em;
+    margin-bottom: 0.28em;
+  }
 }
 
-.deliveryConfirmAddresTell {
+.deliveryConfirmAddresNumberWrapper > p {
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    letter-spacing: 1.15px;
+  }
+}
+
+/* 住所 */
+.deliveryConfirmAddresWrapper p {
+  font-size: 1em;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+    margin-top: 0.28em;
+    margin-bottom: 0.28em;
+  }
+}
+.deliveryConfirmAddresWrapper > div > p {
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    letter-spacing: 1.15px;
+  }
+}
+
+/* 氏名 */
+.deliveryConfirmAddresName p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 9px;
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+
+    margin-bottom: 0.46em;
+  }
+}
+
+/* 電話番号 */
+.deliveryConfirmAddresTell p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 11px;
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+
+    margin-bottom: 0.34em;
+  }
+}
+
+/* メールアドレス */
+.deliveryConfirmAddresMail p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 41px;
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+    margin-bottom: 1.28em;
+  }
+}
+
+.deliveryInfoConfirmBorder {
   display: flex;
-  text-align: left;
+  justify-content: start;
+}
+
+@media (max-width: 768px) {
+  .deliveryInfoConfirmBorder svg {
+    width: 73vw;
+  }
+}
+
+p.deliveryInfoConfirmStatmentTitle {
+  margin-top: 20px;
+  margin-bottom: 22px;
+  @media (max-width: 768px) {
+    margin-top: 0.475em;
+    margin-bottom: 0.85em;
+  }
+}
+
+/* 決済情報の項目 */
+.deliveryConfirmStatmentWrapper p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    letter-spacing: 1.38px;
+  }
+}
+
+.deliveryConfirmStatmentWrapper p:has(span) {
+  margin-bottom: 7px;
+  @media (max-width: 768px) {
+    margin-bottom: 0.59em;
+  }
+}
+.deliveryConfirmStatmentWrapper span {
+  padding-right: 20px;
+}
+
+/* 訂正ボタン（外枠） */
+.deliveryComfirmModifyButtonWrapper {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin-left: 32px;
+  padding-top: 54px; /* 61-7 */
+  padding-bottom: 32px;
+
+  @media (max-width: 768px) {
+    padding-top: 3.375em; /* 61-7 */
+    padding-bottom: 2.3125em;
+  }
+}
+
+/* 訂正ボタン */
+.deliveryComfirmModifyButton {
+  font-size: 1em;
+  padding: 19px 20px 19px 21px;
+
+  background-color: #ffffff;
+  border: none;
+
+  @media (max-width: 768px) {
+    font-size: 0.71em;
+    padding: 0.84em 1.65em;
+    letter-spacing: 1.38px;
+  }
 }

@@ -51,6 +51,7 @@ const OrderConfirmComponent = () => {
   const addres2 = 'マンション456号室'; //住所1+2
   const name = '田中 太郎'; //住所1+2
   const tell = '123-4567-8910'; //住所1+2
+  const mail = 'chocolate@sweep.jp'; //住所1+2
 
   const statmentType = 'クレジットカード';
 
@@ -68,65 +69,98 @@ const OrderConfirmComponent = () => {
         <ProgressComponents progress="3" />
 
         <div className={styles.deliveryInfoAreaWrapper}>
-          <div className={styles.deliveryInfoInputAreaOuterWrapper}>
+          <div className={`${styles.deliveryInfoInputAreaOuterWrapper} `}>
             <div className={styles.deliveryInfoTitleTextWrapper}>
               <InputTitle className={styles.deliveryInfoTitleText}>
                 配送先住所
               </InputTitle>
             </div>
-            <div className={styles.deliveryConfirmAddresNumberWrapper}>
-              <div className={styles.deliveryInfoName}>
-                <p>郵便番号</p>
+            <div className={styles.deliveryInfoInputAreaInnerWrapper}>
+              <div className={styles.deliveryConfirmAddresNumberWrapper}>
+                <div className={styles.deliveryInfoName}>
+                  <p>郵便番号</p>
+                </div>
+                <p>{addresNumber}</p>
               </div>
-              <p>{addresNumber}</p>
-            </div>
-            <div className={styles.deliveryConfirmAddresWrapper}>
-              <div className={styles.deliveryInfoName}>
-                <p>住所</p>
+              <div className={styles.deliveryConfirmAddresWrapper}>
+                <div className={styles.deliveryInfoName}>
+                  <p>住所</p>
+                </div>
+                <div>
+                  <p>{addres}</p>
+                  <p>{addres2}</p>
+                </div>
               </div>
-              <div>
-                <p>{addres}</p>
-                <p>{addres2}</p>
-              </div>
-            </div>
-            {/* <div className={styles.deliveryConfirmAddresWrapper2}>
-              <div className={styles.deliveryInfoName}></div>
-              <p>{addres2}</p>
-            </div> */}
 
-            <div className={styles.deliveryConfirmAddresName}>
-              <div className={styles.deliveryInfoName}>
-                <p>氏名</p>
+              <div className={styles.deliveryConfirmAddresName}>
+                <div className={styles.deliveryInfoName}>
+                  <p>氏名</p>
+                </div>
+                <p>{name}</p>
               </div>
-              <p>{name}</p>
-            </div>
 
-            <div className={styles.deliveryConfirmAddresTell}>
-              <div className={styles.deliveryInfoName}>
-                <p>電話番号</p>
+              <div className={styles.deliveryConfirmAddresTell}>
+                <div className={styles.deliveryInfoName}>
+                  <p>電話番号</p>
+                </div>
+                <p>{tell}</p>
               </div>
-              <p>{tell}</p>
+              <div className={styles.deliveryConfirmAddresMail}>
+                <div className={styles.deliveryInfoName}>
+                  <p>メール</p>
+                </div>
+                <p>{mail}</p>
+              </div>
+              <div className={styles.deliveryInfoConfirmBorder}>
+                <svg
+                  width="446"
+                  height="1"
+                  viewBox="0 0 446 1"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="4.37114e-08"
+                    y1="0.5"
+                    x2="446"
+                    y2="0.500039"
+                    stroke="#A4A4A4"
+                  />
+                </svg>
+              </div>
             </div>
-
-            {/* divとinline-flex,gapかwidh:100%で実装していく */}
 
             <div className={styles.deliveryInfoTitleTextWrapper}>
               <InputTitle
-                className={`${styles.deliveryInfoTitleText} ${styles.deliveryInfoTitleTextAddMargin}`}
+                className={`${styles.deliveryInfoTitleText} ${styles.deliveryInfoConfirmStatmentTitle}`}
               >
                 決済情報
               </InputTitle>
             </div>
 
-            <div className={styles.deliveryConfirmAddresTell}>
-              <div className={styles.deliveryInfoName}>
-                <p>決済</p>
+            <div className={styles.deliveryInfoInputAreaInnerWrapper}>
+              <div className={styles.deliveryConfirmStatmentWrapper}>
+                <div className={styles.deliveryInfoName}>
+                  <p>決済</p>
+                </div>
+                <div>
+                  <p>{statmentType}</p>
+                  <p>
+                    <span>番号</span>
+                    {creditNumber}
+                  </p>
+                  <p>
+                    <span>期限</span>
+                    {creditLimit}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p>{statmentType}</p>
-                <p>{creditNumber}</p>
-                <p>{creditLimit}</p>
-              </div>
+            </div>
+
+            <div className={styles.deliveryComfirmModifyButtonWrapper}>
+              <button className={styles.deliveryComfirmModifyButton}>
+                入力内容を訂正する
+              </button>
             </div>
           </div>
           <div className={styles.deliveryInfoCartListArea}>
@@ -147,10 +181,9 @@ const OrderConfirmComponent = () => {
             </div>
           </div>
         </div>
+
         <div className={styles.deliveryInfoConfirmButtonWrapper}>
-          <button className={styles.deliveryInfoConfirmButton}>
-            確認画面へ
-          </button>
+          <button className={styles.deliveryInfoConfirmButton}>注文確定</button>
         </div>
       </div>
     </>
