@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import OrderConpleteComponent from '../../../src/templates/sweepordercompletetemplate';
+import NewsListComponent from '../../../src/templates/sweepnewslisttemplate';
 
 // http://localhost:3000/sweep/lineup
 const Main: NextPage = () => {
@@ -16,7 +16,7 @@ const Main: NextPage = () => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <OrderConpleteComponent />
+      <NewsListComponent />
     </>
   );
 };

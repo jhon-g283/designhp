@@ -22,6 +22,7 @@ const Home: NextPage = () => {
         <a href="./sweep/cart/deliveryinfoInput">test4</a>
         <a href="./sweep/cart/deliveryinfoInput">test5</a>
         <a href="./sweep/cart/deliveryinfoConfirm">test6</a>
+        <a href="./sweep/cart/orderComplete">test7</a>
 
         <p className={styles.description}>
           Get started by editing{' '}

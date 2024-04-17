@@ -94,4 +94,11 @@ export interface newsData {
   title: string; //タイトル
   imageUrl: string; //メッセージ
   type: string; //お知らせのタイプ
+  context: string; //お知らせ内容
+  // ニュース詳細の内容
+  newsDetail: {
+    label: string; //ラベル
+    title: string; //タイトル
+    text: string; //本文
+  }[];
 }

@@ -26,17 +26,19 @@ const OrderConpleteComponent = () => {
 
         <ProgressComponents progress="4" />
 
-        <div className={styles.deliveryInfoAreaWrapper}>
-          <p>ご購入ありがとうございました。</p>
+        <div className={styles.orderCompleteWrapper}>
+          <div className={styles.orderCompleteTitle}>
+            <p>ご購入ありがとうございました。</p>
+          </div>
+
           <p>
-            商品の発送準備が整い次第 発送のご連絡・商品発送を行いますので
+            商品の発送準備が整い次第<br></br>
+            発送のご連絡・商品発送を行いますので <br></br>
             今しばらくお待ちください。
           </p>
         </div>
         <div className={styles.deliveryInfoConfirmButtonWrapper}>
-          <button className={styles.deliveryInfoConfirmButton}>
-            引き続き買い物を続ける
-          </button>
+          <button>引き続き買い物を続ける</button>
         </div>
       </div>
     </>

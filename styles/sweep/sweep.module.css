@@ -5658,3 +5658,80 @@ p.deliveryInfoConfirmStatmentTitle {
     letter-spacing: 1.38px;
   }
 }
+
+/* 購入完了画面 */
+
+.orderCompleteWrapper {
+  color: #000;
+  text-align: center;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+/* タイトル */
+.orderCompleteTitle {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 3px;
+}
+.orderCompleteTitle > p {
+  font-size: 1em;
+
+  margin-top: 76px;
+  margin-bottom: 72px;
+  @media (max-width: 768px) {
+    font-size: 0.58em;
+    letter-spacing: 1.75px;
+    margin-top: 2.6em;
+    margin-bottom: 2.6em;
+  }
+}
+
+/* 文章 */
+.orderCompleteWrapper > p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 76px;
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+    letter-spacing: 1.5px;
+    margin-bottom: 4.56em;
+  }
+}
+
+/* 買い物を続けるボタン（外枠） */
+.deliveryInfoConfirmButtonWrapper {
+  display: flex;
+
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.92px;
+  @media (max-width: 768px) {
+    padding-bottom: 64px;
+    justify-content: center;
+  }
+}
+
+/* 買い物を続ける */
+.deliveryInfoConfirmButtonWrapper > button {
+  font-size: 1em;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  padding: 19px 95px;
+  @media (max-width: 768px) {
+    font-size: 0.718em;
+    padding: 0.875em 3.875em;
+  }
+}
