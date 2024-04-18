@@ -1,61 +1,65 @@
 {
   "data": [
     {
+      "id": "1",
       "date": "2023.07.02",
       "title": "夏の新商品の紹介",
       "imageUrl": "/imgSweep/Product_milk_news.jpg",
       "type": "RELEASE/CAMPAIGN",
-      "context": "今年の夏に新しく夏限定のフレーバーが登場しました。",
+      "description": "今年の夏に新しく夏限定のフレーバーが登場しました。",
       "newsDetail": [
         {
-          "label": "",
+          "label": "新商品",
           "title": "",
           "text": ""
         },
         {
-          "label": "",
+          "label": "キャンペーン",
           "title": "",
           "text": ""
         }
       ]
     },
     {
+      "id": "2",
       "date": "2023.06.11",
       "title": "より良い効果を実感",
       "imageUrl": "/imgSweep/News_sleep.jpg",
       "type": "NEWS",
-      "context": "SWEEPでぐっすりと夜眠るための準備や耳寄りな情報をご紹介します。",
+      "description": "SWEEPでぐっすりと夜眠るための準備や耳寄りな情報をご紹介します。",
       "newsDetail": [
         {
-          "label": "",
+          "label": "トピック",
           "title": "",
           "text": ""
         }
       ]
     },
     {
+      "id": "3",
       "date": "2023.05.27",
       "title": "素材へのこだわり",
       "imageUrl": "/imgSweep/News_sozai.jpg",
       "type": "NEWS",
-      "context": "睡眠の質のため選び抜いた素材から作っております。",
+      "description": "睡眠の質のため選び抜いた素材から作っております。",
       "newsDetail": [
         {
-          "label": "",
+          "label": "トピック",
           "title": "",
           "text": ""
         }
       ]
     },
     {
+      "id": "4",
       "date": "2023.04.14",
       "title": "Sweepショップ東京",
       "imageUrl": "/imgSweep/News_shop.jpg",
       "type": "CAMPAIGN",
-      "context": "記念して新規購入者向けキャンペーン実施",
+      "description": "記念して新規購入者向けキャンペーン実施",
       "newsDetail": [
         {
-          "label": "",
+          "label": "キャンペーン",
           "title": "",
           "text": ""
         }

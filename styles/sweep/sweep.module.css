@@ -5078,7 +5078,9 @@ div.deliveryDateWrapper > div > div {
 .creditCardNumber1 {
   width: 202px;
   @media (max-width: 768px) {
-    width: calc(100% - 8px);
+    box-sizing: border-box;
+    width: 100%;
+    /* width: calc(100% - 8px); */
     margin-bottom: 0.67em;
   }
 }
@@ -5120,9 +5122,10 @@ input.creditCardNumber3 {
 /*　配送先住所の inputタグ */
 .deliveryInfoInputArea input {
   width: 100%;
-  max-width: 460px;
+  box-sizing: border-box;
+
   @media (max-width: 768px) {
-    width: calc(100% - 10px);
+    box-sizing: border-box;
   }
 }
 .deliveryInfoInputArea p {
@@ -5197,7 +5200,9 @@ input.creditCardNumber3 {
   width: 100%;
   max-width: 471px;
   @media (max-width: 768px) {
-    width: 95%;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 13px;
     padding-left: 5px;
   }
 }
@@ -5234,6 +5239,7 @@ input.creditCardNumber3 {
   line-height: normal;
   letter-spacing: 1.92px;
   @media (max-width: 768px) {
+    width: 98%;
   }
 }
 
@@ -5251,7 +5257,7 @@ input.creditCardNumber3 {
   @media (max-width: 768px) {
     font-size: 0.71em;
     letter-spacing: 1.38px;
-    padding-right: 1.12em;
+    /* padding-right: 1.12em; */
   }
 }
 
@@ -5368,8 +5374,8 @@ input.creditCardNumber3 {
     font-size: 0.718em;
 
     letter-spacing: 1.38px;
-    margin-top: 0.875em;
-    margin-bottom: 1em;
+    margin-top: 1.8em;
+    margin-bottom: 2em;
     /* padding-left: 5px; */
   }
 }
@@ -5400,7 +5406,7 @@ input.creditCardNumber3 {
     font-size: 0.718em;
 
     letter-spacing: 1.38px;
-    margin-bottom: 0.875em;
+    margin-bottom: 1.8em;
 
     /* padding-left: 5px; */
   }
@@ -5438,7 +5444,7 @@ input.creditCardNumber3 {
   margin-bottom: 25px;
   @media (max-width: 768px) {
     font-size: 0.75em;
-    margin-top: 1.3em;
+    margin-top: 2.6em;
     margin-bottom: 0.625em;
     /* padding-left: 5px; */
   }
@@ -5537,8 +5543,10 @@ input.creditCardNumber3 {
   @media (max-width: 768px) {
     font-size: 0.71em;
     letter-spacing: 1.38px;
-    margin-top: 0.28em;
-    margin-bottom: 0.28em;
+    /* margin-top: 0.28em;
+    margin-bottom: 0.28em; */
+    margin-top: 0.56em;
+    margin-bottom: 0.56em;
   }
 }
 .deliveryConfirmAddresWrapper > div > p {
@@ -5558,7 +5566,8 @@ input.creditCardNumber3 {
     font-size: 0.71em;
     letter-spacing: 1.38px;
 
-    margin-bottom: 0.46em;
+    /* margin-bottom: 0.46em; */
+    margin-bottom: 0.92em;
   }
 }
 
@@ -5572,7 +5581,8 @@ input.creditCardNumber3 {
     font-size: 0.71em;
     letter-spacing: 1.38px;
 
-    margin-bottom: 0.34em;
+    /* margin-bottom: 0.34em; */
+    margin-bottom: 0.68em;
   }
 }
 
@@ -5585,10 +5595,12 @@ input.creditCardNumber3 {
   @media (max-width: 768px) {
     font-size: 0.71em;
     letter-spacing: 1.38px;
-    margin-bottom: 1.28em;
+    /* margin-bottom: 1.28em; */
+    margin-bottom: 2.56em;
   }
 }
 
+/* 決済情報の横線 */
 .deliveryInfoConfirmBorder {
   display: flex;
   justify-content: start;
@@ -5600,12 +5612,15 @@ input.creditCardNumber3 {
   }
 }
 
+/* 決済情報のタイトル */
 p.deliveryInfoConfirmStatmentTitle {
   margin-top: 20px;
   margin-bottom: 22px;
   @media (max-width: 768px) {
-    margin-top: 0.475em;
-    margin-bottom: 0.85em;
+    /* margin-top: 0.475em;
+    margin-bottom: 0.85em; */
+    margin-top: 0.95em;
+    margin-bottom: 1.7em;
   }
 }
 
@@ -5620,12 +5635,15 @@ p.deliveryInfoConfirmStatmentTitle {
   }
 }
 
+/* Spanタグのあるもの */
 .deliveryConfirmStatmentWrapper p:has(span) {
   margin-bottom: 7px;
   @media (max-width: 768px) {
-    margin-bottom: 0.59em;
+    /* margin-bottom: 0.59em; */
+    margin-bottom: 1.18em;
   }
 }
+/* Spanタグ（項目名） */
 .deliveryConfirmStatmentWrapper span {
   padding-right: 20px;
 }
@@ -5639,7 +5657,7 @@ p.deliveryInfoConfirmStatmentTitle {
   padding-bottom: 32px;
 
   @media (max-width: 768px) {
-    padding-top: 3.375em; /* 61-7 */
+    padding-top: 3.625em; /* 61-7 */
     padding-bottom: 2.3125em;
   }
 }
@@ -5654,7 +5672,7 @@ p.deliveryInfoConfirmStatmentTitle {
 
   @media (max-width: 768px) {
     font-size: 0.71em;
-    padding: 0.84em 1.65em;
+    padding: 0.84em 3.3em;
     letter-spacing: 1.38px;
   }
 }
@@ -5734,4 +5752,169 @@ p.deliveryInfoConfirmStatmentTitle {
     font-size: 0.718em;
     padding: 0.875em 3.875em;
   }
+}
+
+/* ニュース一覧 */
+.newsListComponentWrapper {
+  background-color: #ffffff;
+  margin-top: 55px;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 49px;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+/* お知らせ一覧の文字（外枠） */
+.newsListTitleWrapper {
+  color: #000;
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2.75px;
+
+  text-align: center;
+}
+/* お知らせ一覧の文字 */
+.newsListTitleWrapper p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 23px;
+
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+    letter-spacing: 1.65px;
+  }
+}
+
+/* ボーダー */
+.newsListTitleWrapper p::after,
+.newsListTitleWrapper p::before {
+  /* ボーダーの調整 */
+  position: relative;
+  /* background-color: bisque; */
+  padding-left: 25px;
+  padding-right: 25px;
+  bottom: 0.4em;
+}
+
+/* 説明文 （外枠）*/
+.newsListDescriptionWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-align: center;
+}
+
+/* 説明文 */
+.newsListDescriptionWrapper p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 69px;
+
+  @media (max-width: 768px) {
+    font-size: 0.718em;
+    letter-spacing: 1.15px;
+  }
+}
+
+/* 一覧の外枠 */
+.newsListWrapper {
+  display: block;
+}
+
+/* ニュースの外枠 */
+.newsItemWrapper {
+  display: flex;
+  border-top: #a4a4a4 1px solid;
+  padding: 32px;
+}
+
+/* ニュース一覧の画像 */
+.newsItemImage {
+  width: 180px;
+  height: 180px;
+  position: relative;
+}
+
+/* ニュース一覧の文字部分 */
+.newsTextArea {
+  margin-left: 50px;
+}
+
+/* 掲載日（外枠） */
+.newsItemDateWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 200% */
+  letter-spacing: 1.4px;
+}
+
+/* 掲載日 */
+.newsItemDate {
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* ニュース名（外枠） */
+.newsItemTitleWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 140% */
+  letter-spacing: 2px;
+}
+
+/* ニュース名 */
+.newsItemTitle {
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.575em;
+    line-height: 0.7em; /* 121.739% */
+    letter-spacing: 1.15px;
+  }
+}
+
+/* ニュースの概要（外枠） */
+.newsItemDescriptionWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+  letter-spacing: 1.6px;
+}
+
+/* ニュースの概要*/
+.newsItemDescription {
+  font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.5625em;
+    line-height: 0.875em; /* 175% */
+    letter-spacing: 0.9px;
+  }
+}
+
+/* ラベルの外枠 */
+.newsItemLabelWrapper {
+  display: inline-flex;
+  gap: 16px;
 }

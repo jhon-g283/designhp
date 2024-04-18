@@ -90,11 +90,12 @@ export interface newsDataList {
 
 // お知らせ情報データ部分
 export interface newsData {
+  id: string; //id
   date: string; //日付（後でDateになおす）
   title: string; //タイトル
   imageUrl: string; //メッセージ
   type: string; //お知らせのタイプ
-  context: string; //お知らせ内容
+  description: string; //お知らせ内容
   // ニュース詳細の内容
   newsDetail: {
     label: string; //ラベル
