@@ -10,7 +10,7 @@ import Image from 'next/image';
 const NewsItemComponent = ({ newsDataProps }: Props) => {
   return (
     <>
-      <div className={styles.newsItemWrapper}>
+      <div className={styles.newsListItemWrapper}>
         <div className={styles.newsItemImage}>
           <Image
             src={newsDataProps.imageUrl}
@@ -37,9 +37,12 @@ const NewsItemComponent = ({ newsDataProps }: Props) => {
           <div className={styles.newsItemLabelWrapper}>
             {newsDataProps.newsDetail.map((item, index) => {
               return (
-                <a key={'news_' + newsDataProps.id + '_' + index}>
+                <p
+                  key={'news_' + newsDataProps.id + '_' + index}
+                  className={styles.newsItemLabel}
+                >
                   {item.label}
-                </a>
+                </p>
               );
             })}
           </div>

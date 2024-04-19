@@ -5761,9 +5761,21 @@ p.deliveryInfoConfirmStatmentTitle {
   padding-left: 130px;
   padding-right: 130px;
   padding-top: 49px;
+  padding-bottom: 49px;
   box-sizing: border-box;
 
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
 }
 
 /* お知らせ一覧の文字（外枠） */
@@ -5777,6 +5789,9 @@ p.deliveryInfoConfirmStatmentTitle {
   letter-spacing: 2.75px;
 
   text-align: center;
+
+  @media (max-width: 768px) {
+  }
 }
 /* お知らせ一覧の文字 */
 .newsListTitleWrapper p {
@@ -5787,6 +5802,7 @@ p.deliveryInfoConfirmStatmentTitle {
   @media (max-width: 768px) {
     font-size: 0.6em;
     letter-spacing: 1.65px;
+    margin-bottom: 1.16em;
   }
 }
 
@@ -5799,6 +5815,9 @@ p.deliveryInfoConfirmStatmentTitle {
   padding-left: 25px;
   padding-right: 25px;
   bottom: 0.4em;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* 説明文 （外枠）*/
@@ -5811,6 +5830,12 @@ p.deliveryInfoConfirmStatmentTitle {
   line-height: normal;
   letter-spacing: 1.6px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 /* 説明文 */
@@ -5822,19 +5847,29 @@ p.deliveryInfoConfirmStatmentTitle {
   @media (max-width: 768px) {
     font-size: 0.718em;
     letter-spacing: 1.15px;
+    margin-bottom: 2.5em;
+    text-align: left;
   }
 }
 
 /* 一覧の外枠 */
-.newsListWrapper {
-  display: block;
+.newsListPageListWrapper {
+  display: inline-block;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* ニュースの外枠 */
-.newsItemWrapper {
+.newsListItemWrapper {
   display: flex;
   border-top: #a4a4a4 1px solid;
   padding: 32px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 16px 6px;
+  }
 }
 
 /* ニュース一覧の画像 */
@@ -5842,11 +5877,23 @@ p.deliveryInfoConfirmStatmentTitle {
   width: 180px;
   height: 180px;
   position: relative;
+  /* 画像の縮小を禁止する */
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 /* ニュース一覧の文字部分 */
 .newsTextArea {
   margin-left: 50px;
+
+  position: relative;
+  @media (max-width: 768px) {
+    margin-left: 17px;
+  }
 }
 
 /* 掲載日（外枠） */
@@ -5856,13 +5903,18 @@ p.deliveryInfoConfirmStatmentTitle {
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
-  line-height: 28px; /* 200% */
+
   letter-spacing: 1.4px;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* 掲載日 */
 .newsItemDate {
   font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 5px;
 
   @media (max-width: 768px) {
     font-size: 0.5em;
@@ -5877,17 +5929,21 @@ p.deliveryInfoConfirmStatmentTitle {
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
-  line-height: 28px; /* 140% */
   letter-spacing: 2px;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* ニュース名 */
 .newsItemTitle {
   font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 5px;
 
   @media (max-width: 768px) {
     font-size: 0.575em;
-    line-height: 0.7em; /* 121.739% */
+
     letter-spacing: 1.15px;
   }
 }
@@ -5901,15 +5957,23 @@ p.deliveryInfoConfirmStatmentTitle {
   font-weight: 300;
   line-height: 28px; /* 175% */
   letter-spacing: 1.6px;
+
+  @media (max-width: 768px) {
+  }
 }
 
 /* ニュースの概要*/
 .newsItemDescription {
   font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 25px;
   @media (max-width: 768px) {
     font-size: 0.5625em;
-    line-height: 0.875em; /* 175% */
+    line-height: 1.4em; /* 175% */
     letter-spacing: 0.9px;
+    text-wrap: wrap;
+
+    margin-bottom: 6px;
   }
 }
 
@@ -5917,4 +5981,29 @@ p.deliveryInfoConfirmStatmentTitle {
 .newsItemLabelWrapper {
   display: inline-flex;
   gap: 16px;
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+
+  letter-spacing: 1.4px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+    bottom: 0px;
+    position: absolute;
+  }
+}
+
+/* ラベル */
+.newsItemLabel {
+  font-size: 1em;
+  border: 1px solid #a4a4a4;
+  padding: 0.6em 1.14em;
+  line-height: 1em;
+  margin: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.5em;
+  }
 }

@@ -47,7 +47,9 @@ const getNewsItems = async (url: string) => {
 export const fetchInfomations = createAsyncThunk<newsDataList, string>(
   "fetchItem_Cake",
   async (query, thunkAPI) => {
-    const result = getNewsItems(baseulr + query); // API問い合わせ
+    // クエリ情報がある場合はクエリを追加
+    const queryData = query !== "" ? `?${query}` : "";
+    const result = getNewsItems(baseulr + queryData); // API問い合わせ
     return result;
   }
 );

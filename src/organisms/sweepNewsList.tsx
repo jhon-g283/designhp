@@ -71,10 +71,13 @@ const NewsListComponent = () => {
           <Title>お知らせ一覧</Title>
         </div>
         <div className={styles.newsListDescriptionWrapper}>
-          <p>実施中のキャンペーンや新商品の情報、その他トピックなどを紹介</p>
+          <p>
+            実施中のキャンペーンや新商品の情報、
+            <br className={styles.imgSP}></br>その他トピックなどを紹介
+          </p>
         </div>
 
-        <div className={styles.newsListWrapper}>
+        <div className={styles.newsListPageListWrapper}>
           {newsData.map((item, index) => {
             return (
               <NewsItemComponent
