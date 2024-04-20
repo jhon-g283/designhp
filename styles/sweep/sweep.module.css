@@ -2848,6 +2848,16 @@ a.reviewLink:active {
   }
 }
 
+/* Topページ以外は幅変更 */
+.footeroption {
+  .footerConponentWrapper {
+    margin-top: 51px;
+    @media (max-width: 768px) {
+      margin-top: 60px;
+    }
+  }
+}
+
 /* フッターのロゴ画像 */
 .footerLogoImage {
   width: 230px;
@@ -6005,5 +6015,243 @@ p.deliveryInfoConfirmStatmentTitle {
   margin: 0px;
   @media (max-width: 768px) {
     font-size: 0.5em;
+  }
+}
+
+/* お知らせ詳細 */
+
+/* コンポーネント全体 */
+.newsDetailComponentWrapper {
+  margin-top: 55px;
+  padding-top: 54px;
+  padding-left: 58px;
+  padding-right: 58px;
+  padding-bottom: 65px;
+  background-color: #ffffff;
+
+  box-sizing: border-box;
+
+  width: 100%;
+  @media (max-width: 768px) {
+    margin-top: 20.5px;
+    padding-top: 24.5px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+    padding-bottom: 30px;
+  }
+}
+
+/* コンポーネントの内枠 */
+.newsDetailComponentInnerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1277px;
+  @media (max-width: 768px) {
+  }
+}
+
+/* ニュースタイトル）（外枠） */
+.newsDetailTitleWrapper {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.75px;
+  border-bottom: 1px solid #a4a4a4;
+  @media (max-width: 768px) {
+  }
+}
+
+/* ニュースタイトル */
+.newsDetailTitleWrapper p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 9px;
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+    letter-spacing: 1.65px;
+    margin-bottom: 1.44em;
+  }
+}
+/* 画像の外枠 */
+.newsDetailOuterWrapper {
+  margin-top: 43px;
+  width: 100%;
+  height: 35vh;
+  min-height: 354px;
+  position: relative;
+  @media (max-width: 768px) {
+    margin-top: 18px;
+    height: 100%;
+    max-height: 148px;
+  }
+}
+
+/* ニュース詳細の画像 */
+.newsDetailImage {
+  width: 100%; /* 親要素の幅に合わせる */
+  height: auto; /* 高さは自動調整してアスペクト比を保持 */
+  object-fit: contain; /* 画像全体がコンテナに収まるように調整 */
+
+  @media (max-width: 768px) {
+    height: 100%;
+    max-height: 148px;
+  }
+}
+
+/* ニュースの内容 */
+.newsDetailTextArea {
+  color: #000;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  margin-top: 35px;
+  border-bottom: 1px solid #a4a4a4;
+  @media (max-width: 768px) {
+  }
+}
+
+/* ニュースのラベル */
+.itemDetailLabel {
+  font-size: 1em;
+  border: 1px solid #a4a4a4;
+  padding: 0.43em 1em;
+  width: fit-content;
+  margin: 0px;
+  @media (max-width: 768px) {
+    font-size: 0.718em;
+    padding: 0.3em 0.728em;
+    letter-spacing: 1.15px;
+  }
+}
+
+/* ニュースタイトル （外枠）*/
+.newsDetailDescriptionWrapper {
+  font-size: 20px;
+
+  letter-spacing: 2.4px;
+  @media (max-width: 768px) {
+  }
+}
+
+/* ニュースタイトル */
+.newsDetailDescriptionWrapper p {
+  font-size: 1em;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  @media (max-width: 768px) {
+    font-size: 0.7em;
+    letter-spacing: 1.68px;
+    margin-top: 0.65em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.newsDetailTextWrapper {
+  line-height: 28px; /* 175% */
+  white-space: pre-wrap;
+  @media (max-width: 768px) {
+  }
+}
+
+.newsDetailTextWrapper p {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 48px;
+  @media (max-width: 768px) {
+    font-size: 0.6875em;
+    line-height: 1.525em; /* 163.636% */
+    letter-spacing: 1.32px;
+  }
+}
+
+/* タイトル */
+.newsDetailTitleWrapper {
+  .newsDetailListTitle {
+    margin-top: 48px;
+    margin-bottom: 45px;
+    text-align: center;
+    @media (max-width: 768px) {
+      margin-top: 1.36em;
+      margin-bottom: 2.2em;
+    }
+  }
+}
+
+/* お知らせ一覧の文字*/
+.newsDetailTitleWrapper:has(p.newsDetailListTitle) {
+  border-bottom: none;
+  @media (max-width: 768px) {
+  }
+}
+
+/* お知らせ一覧 */
+.newsDetailNewsListWrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 89px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1277px;
+
+  @media (max-width: 768px) {
+    gap: 19px 0px;
+  }
+
+  /* お知らせ一覧ページのスタイルを上書き */
+
+  /* 文字のエリア */
+
+  .newsTextArea {
+    margin-left: 34px;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-left: 15px;
+    }
+  }
+
+  .newsItemTitle {
+    margin-bottom: 24px;
+    @media (max-width: 768px) {
+      margin-bottom: 1.15em;
+    }
+  }
+  /* お知らせ概要 */
+  .newsItemDescription {
+    display: none;
+  }
+
+  .newsItemLabelWrapper {
+    @media (max-width: 768px) {
+      position: relative;
+    }
+  }
+
+  .newsListItemWrapper {
+    border-top: none;
+    border-left: #a4a4a4 1px solid;
+
+    padding-top: 8px;
+    padding-left: 34px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    width: 569px;
+    @media (max-width: 768px) {
+      box-sizing: border-box;
+      padding-top: 4px;
+      padding-left: 17px;
+      padding-right: 0px;
+      padding-bottom: 4px;
+      width: 100%;
+      min-width: 569px;
+    }
   }
 }

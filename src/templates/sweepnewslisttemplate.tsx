@@ -16,7 +16,9 @@ const SweepNewsListTemplate = () => {
           <NewsListComponent />
         </div>
 
-        <Footer />
+        <div className={styles.footeroption}>
+          <Footer />
+        </div>
       </div>
     </>
   );

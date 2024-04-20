@@ -93,7 +93,9 @@ export interface newsData {
   id: string; //id
   date: string; //日付（後でDateになおす）
   title: string; //タイトル
-  imageUrl: string; //メッセージ
+  imageUrl: string; //画像
+  detailImagePC: string; //お知らせ詳細用画像（PC）
+  detailImageSP: string; //お知らせ詳細用画像（SP）
   type: string; //お知らせのタイプ
   description: string; //お知らせ内容
   // ニュース詳細の内容

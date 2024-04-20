@@ -5,7 +5,7 @@ import Header from '../organisms/sweepHeader';
 import Footer from '../organisms/sweepFooter';
 
 import { NewsDetailProps } from '../../pages/sweep/news/newsDetail';
-import NewsListComponent from '../organisms/sweepNewsDetail';
+import NewsDetailComponent from '../organisms/sweepNewsDetail';
 
 const SweepNewsDetailTemplate = ({ newsId }: NewsDetailProps) => {
   // id取得
@@ -17,10 +17,12 @@ const SweepNewsDetailTemplate = ({ newsId }: NewsDetailProps) => {
       <div className={styles.firstViewArea}></div>
       <div className="sweep">
         <div className={styles.mainWrapper}>
-          <NewsListComponent newsId={id} />
+          <NewsDetailComponent newsId={id} />
         </div>
 
-        <Footer />
+        <div className={styles.footeroption}>
+          <Footer />
+        </div>
       </div>
     </>
   );

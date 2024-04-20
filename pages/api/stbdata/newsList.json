@@ -5,18 +5,20 @@
       "date": "2023.07.02",
       "title": "夏の新商品の紹介",
       "imageUrl": "/imgSweep/Product_milk_news.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
+      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
       "type": "RELEASE/CAMPAIGN",
       "description": "今年の夏に新しく夏限定のフレーバーが登場しました。",
       "newsDetail": [
         {
           "label": "新商品",
-          "title": "",
-          "text": ""
+          "title": "レモネードチョコ",
+          "text": "夏の暑い夜に食べやすいすっきりとした味わいが特徴のレモネード味のチョコレートが発売。ホワイトチョコをベースにレモンの爽やかな酸味を加えて夏バテ気味でも食べやすくなっております。\n夏だけの限定商品となっておりますので、ぜひ夏だけの味わいを体験してみてはいかがでしょうか？"
         },
         {
           "label": "キャンペーン",
-          "title": "",
-          "text": ""
+          "title": "夏の新商品割引キャンペーン実施中",
+          "text": "今レモネードチョコを購入すると,全体の購入金額から'5%割引'をいたします。期間限定のチョコレートを通常よりもお得に購入できるだけでなく、\n他の商品もまとめて安く購入できるのは今だけ！キャンペーンは今月末までの開催予定なっておりますのでお早めにご購入ください。"
         }
       ]
     },
@@ -25,13 +27,15 @@
       "date": "2023.06.11",
       "title": "より良い効果を実感",
       "imageUrl": "/imgSweep/News_sleep.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
+      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
       "type": "NEWS",
       "description": "SWEEPでぐっすりと夜眠るための準備や耳寄りな情報をご紹介します。",
       "newsDetail": [
         {
           "label": "トピック",
-          "title": "",
-          "text": ""
+          "title": "レモネードチョコ",
+          "text": "夏の暑い夜に食べやすいすっきりとした味わいが特徴のレモネード味のチョコレートが発売。ホワイトチョコをベースにレモンの爽やかな酸味を\n加えて夏バテ気味でも食べやすくなっております。\n夏だけの限定商品となっておりますので、ぜひ夏だけの味わいを体験してみてはいかがでしょうか？"
         }
       ]
     },
@@ -40,13 +44,15 @@
       "date": "2023.05.27",
       "title": "素材へのこだわり",
       "imageUrl": "/imgSweep/News_sozai.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
+      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
       "type": "NEWS",
       "description": "睡眠の質のため選び抜いた素材から作っております。",
       "newsDetail": [
         {
           "label": "トピック",
-          "title": "",
-          "text": ""
+          "title": "夏の新商品割引キャンペーン実施中",
+          "text": "今レモネードチョコを購入すると,全体の購入金額から'5%割引'をいたします。期間限定のチョコレートを通常よりもお得に購入できるだけでなく、\n他の商品もまとめて安く購入できるのは今だけ！キャンペーンは今月末までの開催予定なっておりますのでお早めにご購入ください。"
         }
       ]
     },
@@ -55,6 +61,8 @@
       "date": "2023.04.14",
       "title": "Sweepショップ東京",
       "imageUrl": "/imgSweep/News_shop.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
+      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
       "type": "CAMPAIGN",
       "description": "記念して新規購入者向けキャンペーン実施",
       "newsDetail": [
