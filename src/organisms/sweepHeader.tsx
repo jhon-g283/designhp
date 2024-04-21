@@ -28,7 +28,7 @@ const Header = () => {
         <div className={styles.headerItemWrapper}>
           {/* ロゴアイコン */}
           <div className={styles.logoImage}>
-            <Link href={'./top'}>
+            <Link href={'/sweep/top'}>
               <Image
                 src={'/imgSweep/sweeplogo.svg'}
                 // width={135} // Specify different width values based on device or viewport size

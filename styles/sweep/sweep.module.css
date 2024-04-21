@@ -117,6 +117,7 @@ img.positionOverWrittenRelationOnSP {
     width: 12vh;
     height: auto;
     padding-left: min(calc(5%), 40px);
+    z-index: 104;
   }
 }
 
@@ -231,6 +232,8 @@ a.linkMenu:active {
   background: #ffffff;
   transition: 0.5s;
   position: absolute;
+  /* ハンバーガーよりも上へ」 */
+  z-index: 103;
 }
 
 /* ３本線（上） */
@@ -6087,7 +6090,8 @@ p.deliveryInfoConfirmStatmentTitle {
   @media (max-width: 768px) {
     margin-top: 18px;
     height: 100%;
-    max-height: 148px;
+
+    min-height: 148px;
   }
 }
 
@@ -6096,11 +6100,6 @@ p.deliveryInfoConfirmStatmentTitle {
   width: 100%; /* 親要素の幅に合わせる */
   height: auto; /* 高さは自動調整してアスペクト比を保持 */
   object-fit: contain; /* 画像全体がコンテナに収まるように調整 */
-
-  @media (max-width: 768px) {
-    height: 100%;
-    max-height: 148px;
-  }
 }
 
 /* ニュースの内容 */
@@ -6154,6 +6153,7 @@ p.deliveryInfoConfirmStatmentTitle {
   }
 }
 
+/* ニュース詳細のテキスト部分 */
 .newsDetailTextWrapper {
   line-height: 28px; /* 175% */
   white-space: pre-wrap;
@@ -6161,6 +6161,7 @@ p.deliveryInfoConfirmStatmentTitle {
   }
 }
 
+/* ニュースの詳細 */
 .newsDetailTextWrapper p {
   font-size: 1em;
   margin-top: 0px;
@@ -6203,13 +6204,14 @@ p.deliveryInfoConfirmStatmentTitle {
   max-width: 1277px;
 
   @media (max-width: 768px) {
-    gap: 19px 0px;
+    max-width: initial;
+
+    gap: 19px;
   }
 
   /* お知らせ一覧ページのスタイルを上書き */
 
   /* 文字のエリア */
-
   .newsTextArea {
     margin-left: 34px;
     @media (max-width: 768px) {
@@ -6218,6 +6220,7 @@ p.deliveryInfoConfirmStatmentTitle {
     }
   }
 
+  /* タイトル */
   .newsItemTitle {
     margin-bottom: 24px;
     @media (max-width: 768px) {
@@ -6229,12 +6232,15 @@ p.deliveryInfoConfirmStatmentTitle {
     display: none;
   }
 
+  /* ラベル */
   .newsItemLabelWrapper {
     @media (max-width: 768px) {
+      /* 絶対値の表示箇所を解除 */
       position: relative;
     }
   }
 
+  /* ニュース項目 */
   .newsListItemWrapper {
     border-top: none;
     border-left: #a4a4a4 1px solid;
@@ -6251,7 +6257,7 @@ p.deliveryInfoConfirmStatmentTitle {
       padding-right: 0px;
       padding-bottom: 4px;
       width: 100%;
-      min-width: 569px;
+      max-width: 569px;
     }
   }
 }

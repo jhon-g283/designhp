@@ -1,0 +1,16 @@
+{
+  "itemDetailList": [
+    {
+      "id": "1",
+      "itemName": "ビターチョコ(7個)",
+      "imageUrl1": "/imgSweep/itemDetail_Item_Bitter.jpg",
+      "imageUrl2": "/imgSweep/itemDetail_Item_Bitter.jpg",
+      "imageUrl3": "/imgSweep/itemDetail_Item_Bitter.jpg",
+      "price": ["500", "1000"],
+      "evaluation": ["4", "3", "2", "4"],
+      "code": "ABC123",
+      "categoryId": "Basic",
+      "size": "M"
+    }
+  ]
+}
