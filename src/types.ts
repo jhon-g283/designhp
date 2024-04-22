@@ -52,30 +52,30 @@ export interface categoryList {
 }
 
 // API用：商品情報取得
-export interface itemDetailArray {
-  itemDetail: itemDetail;
-}
+// export interface itemDetailArray {
+//   itemDetail: itemDetail;
+// }
 
-// Reduxの型の設定　商品詳細
-export interface itemDetail {
-  itemDetailInfo?: {
-    id?: number;
-    itemName?: any;
-    imageUrl?: any;
-    imageUrl2?: any;
-    priceHole?: any;
-    pricePieace?: any;
-    kcal?: any;
-    code?: string;
-    discription?: string;
-    shopname?: string;
-    options?: {
-      name: string;
-      param: any;
-    }[];
-  };
-  status?: string;
-}
+// // Reduxの型の設定　商品詳細
+// export interface itemDetail {
+//   itemDetailInfo?: {
+//     id?: number;
+//     itemName?: any;
+//     imageUrl?: any;
+//     imageUrl2?: any;
+//     priceHole?: any;
+//     pricePieace?: any;
+//     kcal?: any;
+//     code?: string;
+//     discription?: string;
+//     shopname?: string;
+//     options?: {
+//       name: string;
+//       param: any;
+//     }[];
+//   };
+//   status?: string;
+// }
 
 //API用 お知らせデータ
 export interface newsDataResponse {
@@ -103,5 +103,38 @@ export interface newsData {
     label: string; //ラベル
     title: string; //タイトル
     text: string; //本文
+  }[];
+}
+
+// API用：商品情報取得
+export interface itemDetailAPI {
+  itemDetailList: itemDetailData[];
+  status: string;
+}
+
+// API用：商品情報取得
+export interface itemDetail {
+  itemDetailData?: itemDetailData;
+  status: string;
+}
+
+// // Reduxの型の設定　商品詳細
+export interface itemDetailData {
+  id: string;
+  code: string;
+  itemName: string;
+  imageUrl1: string;
+  imageUrl2: string;
+  imageUrl3: string;
+  price: string[];
+  description: string;
+  evaluation: string[];
+  itemFeatures: {
+    featureTitle: string;
+    featureImage: string;
+    featureSubTitle1: string;
+    featureDescription1: string;
+    featureSubTitle2: string;
+    featureDescription2: string;
   }[];
 }

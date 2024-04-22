@@ -1,35 +1,40 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { itemDetail } from "../../types";
-// Stateの型の設定
-export interface dataList {
-  itemlist?: {
-    id?: string;
-    itemName?: any;
-    imageUrl?: any;
-    priceHole?: any;
-    pricePieace?: any;
-    kcal?: any;
-    code?: string;
-  }[];
-  status: string;
-}
+import { itemDetailData, itemDetail } from "../../types";
 
 // State初期値の設定
-const initialState: itemDetail = {
-  itemDetailInfo: {
-    id: 0,
-    itemName: "---",
-    imageUrl: "---",
-    imageUrl2: "---",
-    priceHole: "---",
-    pricePieace: "---",
-    kcal: "---",
-    code: "---",
-    discription: "--",
-    options: [
-      { name: "--", param: "--" },
-      { name: "--", param: "--" },
-      { name: "--", param: "--" },
+export const initialState: itemDetail = {
+  itemDetailData: {
+    id: "1",
+    code: "bit01",
+    itemName: "ビターチョコ(7個)",
+    imageUrl1: "/imgSweep/itemDetail_Item_Bitter.jpg",
+    imageUrl2: "/imgSweep/itemDetail_Item_Bitter.jpg",
+    imageUrl3: "/imgSweep/itemDetail_Item_Bitter.jpg",
+    price: ["500", "1000"],
+    description:
+      "ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです。",
+    evaluation: ["4", "3", "2", "4"],
+    itemFeatures: [
+      {
+        featureTitle: "ビターチョコの特徴",
+        featureImage: "/imgSweep/ItemDetail_Feature_1.jpg",
+        featureSubTitle1: "口に広がる程よい苦味",
+        featureDescription1:
+          "ベーシックな苦味で食後に甘いものが苦手な方でも、甘いものが好きな方でもすぐ口に入る味わい。",
+        featureSubTitle2: "ノンカフェイン",
+        featureDescription2:
+          "他のチョコレートとは違い、眠りを妨げるカフェインなどは一切使用しておりません。",
+      },
+      {
+        featureTitle: "こだわりの原材料",
+        featureImage: "/imgSweep/ItemDetail_Feature_1.jpg",
+        featureSubTitle1: "カカオ",
+        featureDescription1:
+          "原料に使用するカカオなどは質にこだわり現地の農家から直接仕入れを行っています。",
+        featureSubTitle2: "砂糖",
+        featureDescription2:
+          "砂糖は海外産でなく国産の砂糖を使用しています。沖縄産の黒糖を材料に使用することで甘すぎず、苦過ぎない程よい味わいにしています。",
+      },
     ],
   },
 
@@ -38,7 +43,7 @@ const initialState: itemDetail = {
 
 //問合せURL
 const domain = process.env.NEXT_PUBLIC_HOST || "http://localhost:3000/"; //環境変数鵜より取得
-const baseulr: string = domain + "api/getitemDetailApi?";
+const baseulr: string = domain + "api/sweep/getitemDetailApi?";
 // const baseUrl: string = 'http://localhost:3000/api/getitemDetailApi?';
 
 // APIへの問い合わせ関数（fetchで取得する部分）
@@ -67,10 +72,10 @@ const getItems = async (requestUrl: string) => {
 // Thunk
 // 第１引数：返り値の型
 // 第２引数：受け渡す引数の型
-export const fetchDetails = createAsyncThunk<itemDetail, number>(
+export const fetchDetails = createAsyncThunk<itemDetail, string>(
   "fetchItem_Cake",
-  async (n: number, thunkAPI) => {
-    const requesrUrl: string = baseulr + "id=" + n.toString() + "&";
+  async (id: string, thunkAPI) => {
+    const requesrUrl: string = baseulr + "id=" + id;
 
     const result = await getItems(requesrUrl); // API問い合わせ
     return result;
@@ -96,13 +101,13 @@ const getItemDetailSlice = createSlice({
     // 通信完了
     builder.addCase(fetchDetails.fulfilled, (state, action) => {
       // state.loading = true;
-      const item = action.payload.itemDetailInfo; //payloadから取得したデータを取り出す
+      const item = action.payload.itemDetailData; //payloadから取得したデータを取り出す
 
       console.log("payload sucess detail");
       console.log(item);
 
       if (item != undefined) {
-        state.itemDetailInfo = item;
+        state.itemDetailData = item;
       }
 
       state.status = "success";
@@ -120,7 +125,7 @@ const getItemDetailSlice = createSlice({
 });
 
 // selectorをエクスポート
-export const searchResultOfCake = (cakeList: itemDetail) => cakeList;
+export const searchItemDetail = (itemDetail: itemDetail) => itemDetail;
 
 // Reducerをエクスポート
 // 読み込み時にはuseSelectで[state.設定したreducer名.State名]で読み込む

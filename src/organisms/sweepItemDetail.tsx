@@ -1,18 +1,37 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
+import { itemDetail } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
   createReviewSquares,
 } from '../common/sweep/createReviewStars';
 import Image from 'next/image';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { fetchDetails } from '../store/reducers/getItemDetailSlice';
+import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
 
 // ヘッダー部分のコンポーネント
 const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
+  const id = itemId;
   // Redux{}
+  const dispatch = useDispatch<AppDispatch>();
+  const itemData = useSelector((state: { itemDetailReducer: itemDetail }) =>
+    state.itemDetailReducer?.itemDetailData
+      ? state.itemDetailReducer.itemDetailData
+      : {}
+  );
+
+  useEffect(() => {
+    console.log('useEffect dispatch fetching information');
+    dispatch(fetchDetails(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
+
+  console.log(itemData);
 
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
   const [selected, setSelected] = useState(0);
