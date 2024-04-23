@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import { itemDetail } from '../types';
+import { itemDetail, itemDetailData } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
@@ -9,7 +9,10 @@ import {
 } from '../common/sweep/createReviewStars';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import { fetchDetails } from '../store/reducers/getItemDetailSlice';
+import {
+  fetchDetails,
+  initialState,
+} from '../store/reducers/getItemDetailSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
@@ -19,11 +22,14 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const id = itemId;
   // Redux{}
   const dispatch = useDispatch<AppDispatch>();
-  const itemData = useSelector((state: { itemDetailReducer: itemDetail }) =>
-    state.itemDetailReducer?.itemDetailData
-      ? state.itemDetailReducer.itemDetailData
-      : {}
+  const itemData: itemDetailData | undefined = useSelector(
+    (state: { itemDetailReducer: itemDetail }) =>
+      state.itemDetailReducer?.itemDetailData
+        ? state.itemDetailReducer.itemDetailData
+        : initialState.itemDetailData
   );
+
+  const itemName = itemData?.itemName;
 
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
@@ -159,7 +165,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   };
 
   const category = 'ベーシック';
-  const itemName = 'ビターチョコ';
+
   const itemDescription =
     'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
 
