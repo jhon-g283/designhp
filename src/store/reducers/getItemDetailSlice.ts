@@ -6,7 +6,8 @@ export const initialState: itemDetail = {
   itemDetailData: {
     id: "1",
     code: "bit01",
-    itemName: "ビターチョコ(7個)",
+    itemName: "****",
+    category: "ベーシック",
     imageUrl1: "/imgSweep/itemDetail_Item_Bitter.jpg",
     imageUrl2: "/imgSweep/itemDetail_Item_Bitter.jpg",
     imageUrl3: "/imgSweep/itemDetail_Item_Bitter.jpg",

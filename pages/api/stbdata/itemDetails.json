@@ -3,10 +3,11 @@
     {
       "id": "1",
       "code": "bit01",
+      "category": "ベーシック",
       "itemName": "ビターチョコ(7個)",
       "imageUrl1": "/imgSweep/itemDetail_Item_Bitter.jpg",
-      "imageUrl2": "/imgSweep/itemDetail_Item_Bitter.jpg",
-      "imageUrl3": "/imgSweep/itemDetail_Item_Bitter.jpg",
+      "imageUrl2": "/imgSweep/ItemDetail_Feature_1.jpg",
+      "imageUrl3": "/imgSweep/ItemDetail_Feature_2.jpg",
       "price": ["500", "1000"],
       "description": "ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです。",
       "evaluation": ["4", "3", "2", "4"],
@@ -21,7 +22,7 @@
         },
         {
           "featureTitle": "こだわりの原材料",
-          "featureImage": "/imgSweep/ItemDetail_Feature_1.jpg",
+          "featureImage": "/imgSweep/ItemDetail_Feature_2.jpg",
           "featureSubTitle1": "カカオ",
           "featureDescription1": "原料に使用するカカオなどは質にこだわり現地の農家から直接仕入れを行っています。",
           "featureSubTitle2": "砂糖",

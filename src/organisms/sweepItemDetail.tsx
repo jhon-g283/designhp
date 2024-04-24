@@ -29,7 +29,16 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         : initialState.itemDetailData
   );
 
+  console.log(itemData);
   const itemName = itemData?.itemName;
+  const category = itemData?.category;
+
+  const evaluationArray =
+    itemData?.evaluation !== undefined
+      ? itemData?.evaluation.map((item) => {
+          return parseInt(item);
+        })
+      : [0, 0.0, 0];
 
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
@@ -37,26 +46,30 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  console.log(itemData);
-
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
   const [selected, setSelected] = useState(0);
 
   const [count, setCount] = useState(1);
 
+  // カート数追加
   const increaseCount = (currentCount: number) => {
     currentCount++;
     setCount(currentCount);
   };
+  // カート数減少
   const decreaseCount = (currentCount: number) => {
     currentCount = currentCount == 0 ? 0 : currentCount - 1;
     console.log(currentCount);
     setCount(currentCount);
   };
 
-  const imageUrl = '/imgSweep/itemDetail_Item_Bitter.jpg';
-  const imageUrl2 = '/imgSweep/ItemDetail_Feature_1.jpg';
-  const imageUrl3 = '/imgSweep/ItemDetail_Feature_2.jpg';
+  const imageUrl = itemData?.imageUrl1 || '';
+  const imageUrl2 = itemData?.imageUrl2 || '';
+  const imageUrl3 = itemData?.imageUrl3 || '';
+
+  const featureImageUrl2 = itemData?.itemFeatures[0].featureImage || '';
+  const featureImageUrl3 = itemData?.itemFeatures[1].featureImage || '';
+  // const imageUrl3 = '/imgSweep/ItemDetail_Feature_2.jpg';
 
   const thumbNailImageArray = [
     '/imgSweep/itemDetail_Item_Bitter.jpg',
@@ -65,8 +78,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   ];
 
   const priceArray = ['600', '1300'];
-
-  const evaluationArray = [4, 1, 3, 2];
 
   const voiceArray = [
     {
@@ -163,8 +174,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       </div>
     );
   };
-
-  const category = 'ベーシック';
 
   const itemDescription =
     'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
@@ -409,7 +418,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
             <div className={styles.itemDetailItemFeaturesImage}>
               <Image
-                src={imageUrl2}
+                src={featureImageUrl2}
                 // width={540} // Specify different width values based on device or viewport size
                 // height={110}
                 alt="Your Image"
@@ -452,7 +461,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
             <div className={styles.itemDetailItemFeaturesImage}>
               <Image
-                src={imageUrl3}
+                src={featureImageUrl3}
                 // width={540} // Specify different width values based on device or viewport size
                 // height={110}
                 alt="Your Image"

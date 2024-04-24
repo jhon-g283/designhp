@@ -28,6 +28,7 @@ export default function searchCakesData(
   let result: itemDetail = { itemDetailData: itemData, status: "" }; //返却値用の変数
 
   if (itemData == undefined) {
+    console.log("undfinded");
     result.itemDetailData = initData;
   }
 

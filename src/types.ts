@@ -122,6 +122,7 @@ export interface itemDetail {
 export interface itemDetailData {
   id: string;
   code: string;
+  category: string;
   itemName: string;
   imageUrl1: string;
   imageUrl2: string;
