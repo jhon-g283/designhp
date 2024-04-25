@@ -9,7 +9,9 @@ export interface cartData {
 
 // カート用の商品データ
 export interface itemData {
-  itemId?: number; //商品ID
+  cartId?: string; //カート内の商品ID (カートの商品追加後に設定する)
+  itemId: number; //商品ID
+  code?: string; //コード
   itemName?: any; //商品名
   imageUrl?: any; //画像Url１
   imageUrl2?: any; //画像Url２
@@ -120,22 +122,25 @@ export interface itemDetail {
 
 // // Reduxの型の設定　商品詳細
 export interface itemDetailData {
-  id: string;
-  code: string;
-  category: string;
-  itemName: string;
-  imageUrl1: string;
-  imageUrl2: string;
-  imageUrl3: string;
-  price: string[];
-  description: string;
-  evaluation: string[];
+  id: string; //商品ID
+  code: string; //コード　　[サイズ-XX]
+  category: string; //カテゴリ
+  itemName: string; //商品名
+  imageUrl1: string; //画像
+  imageUrl2: string; //
+  imageUrl3: string; //
+  price: string[]; //価格
+  pieces: string[]; //サイズ
+  imageUrlCartThumbnail?: string; //カート用サムネイル
+  description: string; //商品説明
+  evaluation: string[]; //評価値
   itemFeatures: {
-    featureTitle: string;
-    featureImage: string;
-    featureSubTitle1: string;
-    featureDescription1: string;
-    featureSubTitle2: string;
-    featureDescription2: string;
+    //特徴の内容
+    featureTitle: string; //タイトル（大）
+    featureImage: string; //画像
+    featureSubTitle1: string; //サブタイトル１
+    featureDescription1: string; //説明文１
+    featureSubTitle2: string; //サブタイトル２
+    featureDescription2: string; //説明文２
   }[];
 }

@@ -51,7 +51,7 @@ const Header = () => {
                 lineup
               </Link>
 
-              <Link className={styles.linkMenu} href={'/sweep/news'}>
+              <Link className={styles.linkMenu} href={'/sweep/news/newsList'}>
                 news
               </Link>
             </div>
@@ -110,7 +110,7 @@ const Header = () => {
                       <li className="nav_item">
                         <Link
                           className={styles.humburgerMenuText}
-                          href={'/sweep/news'}
+                          href={'/sweep/news/newsList'}
                         >
                           news
                         </Link>

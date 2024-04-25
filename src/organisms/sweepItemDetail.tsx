@@ -14,6 +14,7 @@ import {
   initialState,
 } from '../store/reducers/getItemDetailSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
+import { addCart } from '../store/reducers/addCartDataSlice';
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
 
@@ -30,7 +31,8 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   );
 
   console.log(itemData);
-  const itemName = itemData?.itemName;
+
+  const itemName = itemData?.itemName || '';
   const category = itemData?.category;
 
   const evaluationArray =
@@ -38,7 +40,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       ? itemData?.evaluation.map((item) => {
           return parseInt(item);
         })
-      : [0, 0.0, 0];
+      : [0, 0, 0, 0];
 
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
@@ -47,9 +49,9 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   }, [dispatch]);
 
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  const [selected, setSelected] = useState(0);
-
-  const [count, setCount] = useState(1);
+  const [selectedSize, setSelectedSize] = useState(1); //現在のサイズ
+  const [selectedImage, setSelectedImage] = useState(0); //選択してる画像
+  const [count, setCount] = useState(1); //商品数
 
   // カート数追加
   const increaseCount = (currentCount: number) => {
@@ -58,9 +60,34 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   };
   // カート数減少
   const decreaseCount = (currentCount: number) => {
-    currentCount = currentCount == 0 ? 0 : currentCount - 1;
+    currentCount = currentCount == 1 ? 1 : currentCount - 1;
     console.log(currentCount);
     setCount(currentCount);
+  };
+
+  const codeArray = ['S', 'M', 'L'];
+  // 商品コード
+  const itemCode = codeArray[selectedSize];
+
+  // 共通化＾＾＾＾＾
+  const addCartFunction = (
+    id: string,
+    code: string,
+    itemName: string,
+    imageUrl: string,
+    count: number,
+    price: number
+  ) => {
+    const addData = {
+      itemId: id, //商品ID
+      code: code, //コード
+      itemName: itemName, //商品名
+      imageUrl: imageUrl, //カート画像Url
+      price: price, //価格',
+      count: count, //商品の個数',
+    };
+
+    dispatch(addCart(addData));
   };
 
   const imageUrl = itemData?.imageUrl1 || '';
@@ -71,13 +98,25 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const featureImageUrl3 = itemData?.itemFeatures[1].featureImage || '';
   // const imageUrl3 = '/imgSweep/ItemDetail_Feature_2.jpg';
 
-  const thumbNailImageArray = [
-    '/imgSweep/itemDetail_Item_Bitter.jpg',
-    '/imgSweep/ItemDetail_Feature_1.jpg',
-    '/imgSweep/ItemDetail_Feature_2.jpg',
-  ];
+  const thumbNailImageArray = [];
 
-  const priceArray = ['600', '1300'];
+  thumbNailImageArray.push(imageUrl);
+  thumbNailImageArray.push(imageUrl2);
+  thumbNailImageArray.push(imageUrl3);
+
+  const pieces = itemData?.pieces[selectedSize];
+
+  const itemNameDisplay = itemName + pieces;
+
+  const cartImageUrl =
+    itemData?.imageUrlCartThumbnail !== undefined
+      ? itemData.imageUrlCartThumbnail
+      : imageUrl;
+
+  const priceArray =
+    itemData?.price.map((item) => {
+      return parseInt(item);
+    }) || [];
 
   const voiceArray = [
     {
@@ -113,7 +152,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
     // ボタンのクラス選択中のサイズとインデックスが同じか比較する。
     const buttonClass =
-      selected == index
+      selectedSize == index
         ? styles.itemDetailSelectedButton
         : styles.itemDetailSizeButton;
 
@@ -122,7 +161,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         <button
           className={`${buttonClass}`}
           onClick={() => {
-            setSelected(index);
+            setSelectedSize(index);
           }}
         >
           {buttonText}
@@ -218,7 +257,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
           <div className={styles.itemDetailImageArea}>
             <div className={styles.itemDetailItemMainImageWrapper}>
               <Image
-                src={imageUrl}
+                src={thumbNailImageArray[selectedImage]}
                 // width={540} // Specify different width values based on device or viewport size
                 // height={110}
                 alt="Your Image"
@@ -226,15 +265,23 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               ></Image>
             </div>
             <div className={styles.itemDetailItemThumbNailArea}>
-              {thumbNailImageArray.map((item) => {
+              {thumbNailImageArray.map((item, index) => {
                 return (
                   <>
-                    <div className={styles.itemDetailItemThumbNailImageWrapper}>
+                    <div
+                      className={styles.itemDetailItemThumbNailImageWrapper}
+                      onClick={() => {
+                        setSelectedImage(index);
+                      }}
+                    >
                       <Image
-                        src={imageUrl}
+                        src={item}
                         // width={129} // Specify different width values based on device or viewport size
                         // height={110}
                         alt="Your Image"
+                        style={{
+                          objectFit: 'cover',
+                        }}
                         fill={true}
                       ></Image>
                     </div>
@@ -248,14 +295,14 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
           <div className={styles.itemDetailDescribeArea}>
             <div className={styles.itemDetailTextArea}>
               <div className={styles.itemDetailItemNameWrapper}>
-                <h2>{itemName}</h2>
+                <h2>{itemNameDisplay}</h2>
               </div>
 
               <p className={styles.itemDetailItemDescrib}>{itemDescription}</p>
               <p className={styles.itemDetailItemPrice}>
                 価格
                 <span className={styles.itemDetailItemPriceSpan}>
-                  ¥{priceArray[selected]}
+                  ¥{priceArray[selectedSize].toLocaleString()}
                 </span>
                 (税込)
               </p>
@@ -371,7 +418,19 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               </div>
               {/* カートボタン */}
               <div className={styles.itemDetailCartButtonWrapper}>
-                <button className={styles.itemDetailCartButton}>
+                <button
+                  className={styles.itemDetailCartButton}
+                  onClick={() => {
+                    addCartFunction(
+                      id,
+                      itemCode,
+                      itemNameDisplay,
+                      cartImageUrl,
+                      count,
+                      priceArray[selectedSize]
+                    );
+                  }}
+                >
                   カートへ
                 </button>
               </div>
