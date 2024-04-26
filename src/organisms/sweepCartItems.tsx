@@ -3,6 +3,9 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { cartData, itemData } from '../types';
+import { editCart } from '../store/reducers/addCartDataSlice';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import {
@@ -10,11 +13,17 @@ import {
   CartItemProps,
 } from '../molecules/sweepCartItemBoxComponents';
 import ProgressComponents from '../molecules/sweepProgressComponents';
-import Image from 'next/image';
+import { it } from 'node:test';
 
 // ヘッダー部分のコンポーネント
 const CartItemComponent = () => {
   // Redux{}
+
+  const dispatch = useDispatch();
+  const cartItemData: itemData[] = useSelector(
+    (state: { cartreducer: cartData }) =>
+      state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
+  ); //商品リスト取得(カート数)
 
   const SelectTimeTag = styled.select`
     /* 矢印を消す*/
@@ -31,27 +40,57 @@ const CartItemComponent = () => {
     }
   `;
 
-  const initItems: CartItemProps[] = [
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '1',
-      updateState: () => {},
-      linkParam: 'string',
-    },
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '2',
-      updateState: () => {},
-      linkParam: 'string',
-    },
-  ];
+  // カート数変更用関数
+  const upDateCount = (cariId: string, count: number) => {
+    // カート数変更(dispatch)
+    dispatch(editCart({ cartId: cariId, count: count }));
+  };
+
+  // カートデータの生成
+  const cartData: CartItemProps[] = cartItemData.map((item) => {
+    const itemCount = item.count !== undefined ? item.count : 0;
+    const itemPrice = item.price !== undefined ? item.price : 0;
+    const param = item.itemId.toString();
+    const cartId = item.cartId !== undefined ? item.cartId : '';
+    const result = {
+      cartId: cartId,
+      imageUrl: item.imageUrl,
+      itemName: item.itemName, //商品名
+      price: itemPrice, //価格
+      count: itemCount,
+      updateState: (id: string, count: number) => {
+        console.log('updateState');
+        upDateCount(id, count);
+      },
+      linkParam: param,
+    };
+
+    return result;
+  });
+
+  const totalPrice = 0;
+
+  // const initItems = [
+  //   {
+  //     imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
+  //     itemName: 'ビターチョコ', //商品名
+  //     price: 600, //価格
+  //     count: 1,
+  //     // updateState: (cartId) => {},
+  //     linkParam: 'string',
+  //   },
+  //   {
+  //     imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
+  //     itemName: 'ビターチョコ', //商品名
+  //     price: 600, //価格
+  //     count: 2,
+  //     // updateState: (cartId) => {},
+  //     linkParam: 'string',
+  //   },
+  // ];
 
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  const [cartItemListInfo, updateCartItemListInfo] = useState(initItems);
+  // const [cartItemListInfo, updateCartItemListInfo] = useState(cartData);
 
   const [startDate, setStartDate] = useState(new Date());
 
@@ -87,9 +126,10 @@ const CartItemComponent = () => {
             </div>
 
             {/* list */}
-            {cartItemListInfo.map((item, index) => {
+            {cartData.map((item, index) => {
               return (
                 <CartItemBox
+                  cartId={item.cartId}
                   imageUrl={item.imageUrl}
                   itemName={item.itemName}
                   price={item.price}

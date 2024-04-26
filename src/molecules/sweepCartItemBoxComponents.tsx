@@ -7,32 +7,28 @@ import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読�
 // ヘッダー部分のコンポーネント
 
 export interface CartItemProps {
+  cartId: string;
   imageUrl: string; //画像Url
   itemName?: string; //商品名
-  price: string; //価格
-  count: string;
-  updateState?: () => void;
+  price: number; //価格
+  count: number;
+  updateState?: (id: string, count: number) => void;
   linkParam?: string;
 }
 
 const CartItemBox = ({
   imageUrl = '',
   itemName = '',
-  price = '',
-  count = '',
-
-  updateState = () => {},
+  price = 0,
+  count = 0,
+  cartId = '',
+  updateState = (id: string, count: number) => {},
   linkParam,
 }: CartItemProps) => {
-  const dispatch = useDispatch();
-  const addCartFunction = () => {
-    console.log('add cart');
-    dispatch(addCart('77'));
-  };
-
   const link = 'domein:::::' + linkParam;
 
-  const totalPrice = parseInt(price) * parseInt(count);
+  // 小計
+  const totalPrice = price * count;
 
   return (
     <>
@@ -50,14 +46,18 @@ const CartItemBox = ({
         <div className={`${styles.cartItemBoxItemInnerWrapper}`}>
           <div className={`${styles.cartItemBoxItemTextWrapper}`}>
             <p className={styles.cartItemName}>{itemName}</p>
-            <p className={styles.cartItemPrice}>¥{price}</p>
+            <p className={styles.cartItemPrice}>¥{price.toLocaleString()}</p>
           </div>
           <div className={styles.cartItemBoxButtonArea}>
             <div className={styles.cartItemContButtonOuterWrapper}>
               <button
                 className={styles.itemDetailContMinusButton}
                 onClick={() => {
-                  //   decreaseCount(count);
+                  // Reduxの商品数をcartIdをもとに更新
+                  const decrementCount = count == 1 ? 1 : count - 1;
+
+                  // カート更新(dispatch)
+                  updateState(cartId, decrementCount);
                 }}
               >
                 <svg
@@ -166,7 +166,11 @@ const CartItemBox = ({
               <button
                 className={styles.itemDetailContPlusButton}
                 onClick={() => {
-                  //   increaseCount(count);
+                  // Reduxの商品数をcartIdをもとに更新
+                  const incrementCount = count + 1;
+
+                  // カート更新(dispatch)
+                  updateState(cartId, incrementCount);
                 }}
               >
                 <svg
@@ -212,7 +216,7 @@ const CartItemBox = ({
               </button>
             </div>
             <p className={`${styles.cartItemSubTotalPriceSP} ${styles.imgSP}`}>
-              小計 ¥{totalPrice}
+              小計 ¥{totalPrice.toLocaleString()}
             </p>
             <div className={styles.cartItemDeleteButtonWrapper}>
               <button className={styles.cartItemDeleteButton}>削除</button>

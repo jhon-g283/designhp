@@ -38,6 +38,16 @@ const cartReducerSlice = createSlice({
         console.log("has same id item");
         // return;
         // ？上書きにする？
+
+        const id = addData.itemId;
+        const code = addData.code;
+
+        state.itemDataArry = current(state.itemDataArry)?.map((item) => {
+          if (item.itemId == id && item.code == code) {
+            item.count = addData.count;
+          }
+          return item;
+        });
       }
 
       //カート数更新
@@ -56,6 +66,20 @@ const cartReducerSlice = createSlice({
       // カート数更新
       state.totalCountcount = newCount;
     },
+
+    editCart(state, action) {
+      console.log(action.payload);
+
+      const payloadData = action.payload;
+      const newCount = payloadData.count;
+      const id = payloadData.cartId;
+      // 現在のカートデータを更新
+      const newCartList = current(state.itemDataArry)?.map((item) => {
+        return { ...item, count: id == item.cartId ? newCount : item.count };
+      });
+
+      state.itemDataArry = newCartList;
+    },
     removeCart(state, action) {
       // カートの削除
 
@@ -69,7 +93,7 @@ const cartReducerSlice = createSlice({
 
 // selectorをエクスポート
 
-export const { addCart, removeCart } = cartReducerSlice.actions; // Action Createrをエクスポート
+export const { addCart, removeCart, editCart } = cartReducerSlice.actions; // Action Createrをエクスポート
 
 // 現在のcountの値を取得するためのSelectorをexportする
 export const selectCount = ({ cartInfo }: { cartInfo: cartData }) =>
