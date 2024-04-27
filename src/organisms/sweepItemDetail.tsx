@@ -18,6 +18,8 @@ import { addCart } from '../store/reducers/addCartDataSlice';
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
 
+import AddCartButton from '../atoms/addCartItem';
+
 // ヘッダー部分のコンポーネント
 const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const id = itemId;
@@ -35,6 +37,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const itemName = itemData?.itemName || '';
   const category = itemData?.category;
 
+  // 評価値の数値作成
   const evaluationArray =
     itemData?.evaluation !== undefined
       ? itemData?.evaluation.map((item) => {
@@ -42,6 +45,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         })
       : [0, 0, 0, 0];
 
+  // データ取得
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
     dispatch(fetchDetails(id));
@@ -418,21 +422,17 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
               </div>
               {/* カートボタン */}
               <div className={styles.itemDetailCartButtonWrapper}>
-                <button
+                <AddCartButton
                   className={styles.itemDetailCartButton}
-                  onClick={() => {
-                    addCartFunction(
-                      id,
-                      itemCode,
-                      itemNameDisplay,
-                      cartImageUrl,
-                      count,
-                      priceArray[selectedSize]
-                    );
-                  }}
+                  id={id}
+                  code={itemCode}
+                  itemName={itemNameDisplay}
+                  imageUrl={cartImageUrl}
+                  count={count}
+                  price={priceArray[selectedSize]}
                 >
                   カートへ
-                </button>
+                </AddCartButton>
               </div>
             </div>
           </div>

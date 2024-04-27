@@ -17,7 +17,7 @@ import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 const OrderInputComponent = () => {
   // Redux{}
 
-  const initItems: CartItemProps[] = [
+  const initItems: any[] = [
     {
       imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
       itemName: 'ビターチョコ', //商品名

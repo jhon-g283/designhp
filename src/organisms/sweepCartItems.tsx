@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import { cartData, itemData } from '../types';
-import { editCart } from '../store/reducers/addCartDataSlice';
+import { editCart, removeCart } from '../store/reducers/addCartDataSlice';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import {
@@ -25,6 +25,7 @@ const CartItemComponent = () => {
       state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
   ); //商品リスト取得(カート数)
 
+  // 配達時刻
   const SelectTimeTag = styled.select`
     /* 矢印を消す*/
     -webkit-appearance: none;
@@ -41,25 +42,33 @@ const CartItemComponent = () => {
   `;
 
   // カート数変更用関数
-  const upDateCount = (cariId: string, count: number) => {
-    // カート数変更(dispatch)
-    dispatch(editCart({ cartId: cariId, count: count }));
+  const upDateCount = (cariId: string, count?: number) => {
+    // 個数が引数にあるかどうかでカート内容の変更が削除を切り替える
+    if (count !== undefined) {
+      // カート数変更(dispatch)
+      dispatch(editCart({ cartId: cariId, count: count }));
+    } else {
+      // カート削除
+
+      dispatch(removeCart({ cartId: cariId }));
+    }
   };
 
   // カートデータの生成
   const cartData: CartItemProps[] = cartItemData.map((item) => {
-    const itemCount = item.count !== undefined ? item.count : 0;
-    const itemPrice = item.price !== undefined ? item.price : 0;
-    const param = item.itemId.toString();
-    const cartId = item.cartId !== undefined ? item.cartId : '';
+    const itemCount = item.count !== undefined ? item.count : 0; //カート数
+    const itemPrice = item.price !== undefined ? item.price : 0; //価格
+    const param = `id=${item?.itemId}&code=${item?.code}`; //商品ID+コード
+    const cartId = item.cartId !== undefined ? item.cartId : ''; //カートID
+
     const result = {
       cartId: cartId,
       imageUrl: item.imageUrl,
       itemName: item.itemName, //商品名
       price: itemPrice, //価格
       count: itemCount,
-      updateState: (id: string, count: number) => {
-        console.log('updateState');
+      updateState: (id: string, count?: number) => {
+        // 更新用の関数
         upDateCount(id, count);
       },
       linkParam: param,
@@ -68,29 +77,11 @@ const CartItemComponent = () => {
     return result;
   });
 
-  const totalPrice = 0;
-
-  // const initItems = [
-  //   {
-  //     imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-  //     itemName: 'ビターチョコ', //商品名
-  //     price: 600, //価格
-  //     count: 1,
-  //     // updateState: (cartId) => {},
-  //     linkParam: 'string',
-  //   },
-  //   {
-  //     imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-  //     itemName: 'ビターチョコ', //商品名
-  //     price: 600, //価格
-  //     count: 2,
-  //     // updateState: (cartId) => {},
-  //     linkParam: 'string',
-  //   },
-  // ];
-
-  // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  // const [cartItemListInfo, updateCartItemListInfo] = useState(cartData);
+  // 合計金額
+  const totalPrice = cartData.reduce(
+    (prev, current) => current.count * current.price + prev,
+    0
+  );
 
   const [startDate, setStartDate] = useState(new Date());
 
@@ -149,13 +140,15 @@ const CartItemComponent = () => {
                 <a className={styles.cartBottom}></a>
               </div>
               <div className={styles.cartItemBoxButtonArea}>
-                <a className={styles.cartBottom}>合計金額</a>{' '}
+                <a className={styles.cartBottom}>合計金額</a>
                 <a className={`${styles.imgSP} ${styles.totalPriceSP}`}>
-                  2,200円
+                  {totalPrice.toLocaleString()}円
                 </a>
               </div>
               <div className={styles.cartItemSubTotalPriceWrapper}>
-                <a className={styles.cartBottom}>2,200円</a>
+                <a className={styles.cartBottom}>
+                  {totalPrice.toLocaleString()}円
+                </a>
               </div>
             </div>
           </div>

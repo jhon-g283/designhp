@@ -3,6 +3,7 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
 import { addCart } from '../store/reducers/addCartDataSlice';
 import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import AddCartButton from '../atoms/addCartItem';
 
 // ヘッダー部分のコンポーネント
 
@@ -162,12 +163,15 @@ const ItemBox = ({
         </div>
 
         <div className={styles.itemBoxButtonWrapper}>
-          <button
+          {/* <button
             className={styles.itemBoxButton}
             onClick={() => addCartFunction()}
           >
             カートへ
-          </button>
+          </button> */}
+          <AddCartButton className={styles.itemBoxButton}>
+            カートへ
+          </AddCartButton>
         </div>
       </div>
     </>

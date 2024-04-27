@@ -4285,7 +4285,7 @@ button.itemDetailContPlusButton {
 
     padding-left: 11px;
     padding-right: 8px;
-    padding-bottom: 0px;
+    padding-bottom: 36px;
   }
 }
 
@@ -4447,6 +4447,7 @@ button.itemDetailContPlusButton {
 
   @media (max-width: 768px) {
     font-size: 0.575em;
+    text-wrap: nowrap;
 
     letter-spacing: 1.38px;
     margin-top: 0px;
@@ -4464,6 +4465,8 @@ button.itemDetailContPlusButton {
     margin-top: 0px;
     margin-bottom: 0px;
     letter-spacing: 1.38px;
+
+    margin-left: 0.575em;
   }
 }
 
@@ -4629,6 +4632,7 @@ button.itemDetailContPlusButton {
   font-size: 1em;
   @media (max-width: 768px) {
     font-size: 0.6em;
+    text-wrap: nowrap;
 
     line-height: 0.56em; /* 93.333% */
     letter-spacing: 1.8px;
@@ -5755,7 +5759,7 @@ p.deliveryInfoConfirmStatmentTitle {
 }
 
 /* 買い物を続けるボタン（外枠） */
-.deliveryInfoConfirmButtonWrapper {
+.continueShoppingButtonWrapper {
   display: flex;
 
   font-family: 'Hiragino Kaku Gothic Pro';
@@ -5764,14 +5768,14 @@ p.deliveryInfoConfirmStatmentTitle {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.92px;
+  justify-content: center;
   @media (max-width: 768px) {
     padding-bottom: 64px;
-    justify-content: center;
   }
 }
 
 /* 買い物を続ける */
-.deliveryInfoConfirmButtonWrapper > button {
+.continueShoppingButtonWrapper > button {
   font-size: 1em;
   color: #fff;
   background-color: #000000;

@@ -17,20 +17,20 @@ import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 const OrderConfirmComponent = () => {
   // Redux{}
 
-  const initItems: CartItemProps[] = [
+  const initItems = [
     {
       imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
       itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '1',
+      price: 600, //価格
+      count: 1,
       updateState: () => {},
       linkParam: 'string',
     },
     {
       imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
       itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '2',
+      price: 600, //価格
+      count: 2,
       updateState: () => {},
       linkParam: 'string',
     },
@@ -38,7 +38,7 @@ const OrderConfirmComponent = () => {
 
   const subTotalPrice = initItems
     .map((item) => {
-      const price = parseInt(item.count) * parseInt(item.price);
+      const price = item.count * item.price;
       return price;
     })
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);

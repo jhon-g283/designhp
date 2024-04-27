@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import Link from 'next/link';
 import { createReviewStars } from '../common/sweep/createReviewStars';
 import { addCart } from '../store/reducers/addCartDataSlice';
 import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
@@ -12,7 +13,7 @@ export interface CartItemProps {
   itemName?: string; //商品名
   price: number; //価格
   count: number;
-  updateState?: (id: string, count: number) => void;
+  updateState?: (id: string, count?: number) => void;
   linkParam?: string;
 }
 
@@ -22,26 +23,28 @@ const CartItemBox = ({
   price = 0,
   count = 0,
   cartId = '',
-  updateState = (id: string, count: number) => {},
-  linkParam,
+  updateState = (id: string, count?: number) => {},
+  linkParam = '',
 }: CartItemProps) => {
-  const link = 'domein:::::' + linkParam;
+  // const link =  linkParam;
 
   // 小計
-  const totalPrice = price * count;
+  const totalPrice = (price * count).toLocaleString();
 
   return (
     <>
       <div className={styles.cartItemBox}>
         <div className={styles.cartItemBoxImageWrapper} onClick={() => {}}>
-          <Image
-            src={imageUrl}
-            // width={236} // Specify different width values based on device or viewport size
-            // height={244}
-            alt="Your Image"
-            fill={true}
-            className={styles.positionOverWrittenRelationOnSP}
-          ></Image>
+          <Link href={`/sweep/itemDetail?${linkParam}`}>
+            <Image
+              src={imageUrl}
+              // width={236} // Specify different width values based on device or viewport size
+              // height={244}
+              alt="Your Image"
+              fill={true}
+              className={styles.positionOverWrittenRelationOnSP}
+            ></Image>
+          </Link>
         </div>
         <div className={`${styles.cartItemBoxItemInnerWrapper}`}>
           <div className={`${styles.cartItemBoxItemTextWrapper}`}>
@@ -219,7 +222,17 @@ const CartItemBox = ({
               小計 ¥{totalPrice.toLocaleString()}
             </p>
             <div className={styles.cartItemDeleteButtonWrapper}>
-              <button className={styles.cartItemDeleteButton}>削除</button>
+              <button
+                className={styles.cartItemDeleteButton}
+                onClick={() => {
+                  // Reduxの商品数をcartIdをもとに更新
+
+                  // カート更新(dispatch)
+                  updateState(cartId);
+                }}
+              >
+                削除
+              </button>
             </div>
           </div>
           <div className={styles.cartItemSubTotalPriceWrapper}>

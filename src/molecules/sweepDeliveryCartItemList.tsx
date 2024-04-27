@@ -1,7 +1,8 @@
 import styles from '../../styles/sweep/sweep.module.css';
 import { CartItemProps } from '../molecules/sweepCartItemBoxComponents';
 interface Props {
-  cartItemsList: CartItemProps[]; //進捗
+  // cartItemsList: CartItemProps[]; //進捗
+  cartItemsList: any[]; //進捗
 }
 
 import Image from 'next/image';
@@ -12,7 +13,7 @@ const DeliveryCartListComponent = ({ cartItemsList }: Props) => {
       {/* 外部こんぽへ */}
       <div className={styles.deliveryInfoCartItemListArea}>
         {cartItemsList.map((item, index) => {
-          const price = parseInt(item.count) * parseInt(item.price);
+          const price = item.count * item.price;
           const total = price.toLocaleString();
 
           return (

@@ -1,6 +1,8 @@
 import styles from '../../styles/sweep/sweep.module.css';
 import { newsData } from '../types';
 
+import { useRouter } from 'next/router';
+
 interface Props {
   newsDataProps: newsData; //進捗
 }
@@ -8,9 +10,21 @@ interface Props {
 import Image from 'next/image';
 
 const NewsItemComponent = ({ newsDataProps }: Props) => {
+  const id = newsDataProps.id;
+
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `/sweep/news/newsDetail?id=${id}`;
+
   return (
     <>
-      <div className={styles.newsListItemWrapper}>
+      <div
+        className={styles.newsListItemWrapper}
+        onClick={() => {
+          // クリックで商品ページへ
+          router.push(url);
+        }}
+      >
         <div className={styles.newsItemImage}>
           <Image
             src={newsDataProps.imageUrl}
@@ -29,7 +43,6 @@ const NewsItemComponent = ({ newsDataProps }: Props) => {
           </div>
           <div className={styles.newsItemDescriptionWrapper}>
             <p className={styles.newsItemDescription}>
-              {' '}
               {newsDataProps.description}
             </p>
           </div>

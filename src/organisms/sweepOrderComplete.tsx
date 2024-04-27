@@ -37,7 +37,7 @@ const OrderConpleteComponent = () => {
             今しばらくお待ちください。
           </p>
         </div>
-        <div className={styles.deliveryInfoConfirmButtonWrapper}>
+        <div className={styles.continueShoppingButtonWrapper}>
           <button>引き続き買い物を続ける</button>
         </div>
       </div>
