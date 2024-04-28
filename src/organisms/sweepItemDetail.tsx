@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import { itemDetail, itemDetailData } from '../types';
+import { itemDetail, itemDetailData, searchResultData } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
@@ -15,6 +15,7 @@ import {
 } from '../store/reducers/getItemDetailSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { addCart } from '../store/reducers/addCartDataSlice';
+import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
 
@@ -23,7 +24,8 @@ import AddCartButton from '../atoms/addCartItem';
 // ヘッダー部分のコンポーネント
 const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const id = itemId;
-  // Redux{}
+  // Redux：商品詳細
+
   const dispatch = useDispatch<AppDispatch>();
   const itemData: itemDetailData | undefined = useSelector(
     (state: { itemDetailReducer: itemDetail }) =>
@@ -32,7 +34,14 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         : initialState.itemDetailData
   );
 
+  // Redux:ピックアップ商品
+  const pickUpData = useSelector(
+    (state: { pickUpListReducer: searchResultData }) =>
+      state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
+  );
+
   console.log(itemData);
+  console.log(pickUpData);
 
   const itemName = itemData?.itemName || '';
   const category = itemData?.category;
@@ -49,6 +58,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
     dispatch(fetchDetails(id));
+    dispatch(fetchPickUpItemList(''));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -623,34 +633,22 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         <div className={styles.itemDetailItemRecentryCheckedItem}>
           <p>最近チェックした商品</p>
           <div className={styles.itemDetailItemRecentryCheckedItemListWrapper}>
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
+            {pickUpData.slice(0, 4).map((item, index) => {
+              const key = 'recently_' + index;
+              const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
+              return (
+                <ItemBox
+                  key={key}
+                  id={item.id || ''}
+                  code={item.code || ''}
+                  imageUrl={item.imageUrl || ''}
+                  itemName={item.itemName || ''}
+                  price={item.price || ''}
+                  review={item.evaluation || 0}
+                  linkParam={param || ''}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

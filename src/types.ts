@@ -53,32 +53,6 @@ export interface categoryList {
   categoryDetail?: string; // 商品カテゴリの説明文（表示用）
 }
 
-// API用：商品情報取得
-// export interface itemDetailArray {
-//   itemDetail: itemDetail;
-// }
-
-// // Reduxの型の設定　商品詳細
-// export interface itemDetail {
-//   itemDetailInfo?: {
-//     id?: number;
-//     itemName?: any;
-//     imageUrl?: any;
-//     imageUrl2?: any;
-//     priceHole?: any;
-//     pricePieace?: any;
-//     kcal?: any;
-//     code?: string;
-//     discription?: string;
-//     shopname?: string;
-//     options?: {
-//       name: string;
-//       param: any;
-//     }[];
-//   };
-//   status?: string;
-// }
-
 //API用 お知らせデータ
 export interface newsDataResponse {
   data: newsData[]; //

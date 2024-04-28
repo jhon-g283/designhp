@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
-import { addCart } from '../store/reducers/addCartDataSlice';
-import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import AddCartButton from '../atoms/addCartItem';
-
+import { useRouter } from 'next/router';
+import { ITEM_DETAIL_LINK } from '../common/sweep/setting';
 // ヘッダー部分のコンポーネント
 
 interface Props {
+  id: string;
+  code: string;
   imageUrl: string; //画像Url
   itemName?: string; //商品名
   price?: string; //価格
@@ -16,19 +17,17 @@ interface Props {
 }
 
 const TopPageItemBox = ({
+  id = '',
+  code = '',
   imageUrl = '',
   itemName = '',
   price = '',
   review = '0',
   linkParam,
 }: Props) => {
-  const dispatch = useDispatch();
-  const addCartFunction = () => {
-    console.log('add cart');
-    dispatch(addCart('77'));
-  };
-
-  const link = 'domein:::::' + linkParam;
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_DETAIL_LINK}?${linkParam}`;
 
   const starCount = parseInt(review);
 
@@ -42,7 +41,13 @@ const TopPageItemBox = ({
   return (
     <>
       <div className={styles.topItemBox}>
-        <div className={styles.topItemBoxImageWrapper} onClick={() => {}}>
+        <div
+          className={styles.topItemBoxImageWrapper}
+          onClick={() => {
+            // クリックで商品ページへ
+            router.push(url);
+          }}
+        >
           <Image
             src={imageUrl}
             // width={236} // Specify different width values based on device or viewport size
@@ -68,18 +73,20 @@ const TopPageItemBox = ({
               {stars}
             </span>
           </p>
-          {/* <div>
-            <a href={link}>商品詳細へ</a>
-          </div> */}
         </div>
 
         <div className={styles.topItemButtonWrapper}>
-          <button
+          <AddCartButton
             className={styles.topItemButton}
-            onClick={() => addCartFunction()}
+            id={id}
+            code={code}
+            itemName={itemName}
+            imageUrl={imageUrl}
+            count={1}
+            price={parseInt(price)}
           >
             カートへ
-          </button>
+          </AddCartButton>
         </div>
       </div>
     </>
@@ -87,19 +94,17 @@ const TopPageItemBox = ({
 };
 
 const ItemBox = ({
+  id = '',
+  code = '',
   imageUrl = '',
   itemName = '',
   price = '',
   review = '0',
   linkParam,
 }: Props) => {
-  const dispatch = useDispatch();
-  const addCartFunction = () => {
-    console.log('add cart');
-    dispatch(addCart('77'));
-  };
-
-  const link = 'domein:::::' + linkParam;
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_DETAIL_LINK}?${linkParam}`;
 
   const starCount = parseInt(review);
 
@@ -113,7 +118,7 @@ const ItemBox = ({
   return (
     <>
       <div className={styles.itemBox}>
-        <div className={styles.itemBoxImageWrapper} onClick={() => {}}>
+        <div className={styles.itemBoxImageWrapper}>
           <Image
             src={imageUrl}
             // width={236} // Specify different width values based on device or viewport size
@@ -121,6 +126,10 @@ const ItemBox = ({
             alt="Your Image"
             fill={true}
             className={styles.positionOverWrittenRelationOnSP}
+            onClick={() => {
+              // クリックで商品ページへ
+              router.push(url);
+            }}
           ></Image>
         </div>
 
@@ -140,7 +149,13 @@ const ItemBox = ({
             </span>
           </p>
           <div className={styles.itemBoxLinkWrapper}>
-            <a className={styles.itemBoxLink} href={link}>
+            <a
+              className={styles.itemBoxLink}
+              onClick={() => {
+                // クリックで商品ページへ
+                router.push(url);
+              }}
+            >
               商品詳細へ
             </a>
             <svg
@@ -169,7 +184,15 @@ const ItemBox = ({
           >
             カートへ
           </button> */}
-          <AddCartButton className={styles.itemBoxButton}>
+          <AddCartButton
+            className={styles.itemBoxButton}
+            id={id}
+            code={code}
+            itemName={itemName}
+            imageUrl={imageUrl}
+            count={1}
+            price={parseInt(price)}
+          >
             カートへ
           </AddCartButton>
         </div>

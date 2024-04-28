@@ -3,67 +3,61 @@ import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
 import { TopPageItemBox } from '../molecules/sweepItemBoxComponents';
-import Image from 'next/image';
-
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { searchResultData } from '../types';
+import { AppDispatch } from '../store/index'; //方で怒られるので入れた
+import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 // ヘッダー部分のコンポーネント
 const CampaignComponent = () => {
-  // Redux
+  const dispatch = useDispatch<AppDispatch>();
 
-  const campainArray = [
-    {
-      imageUrl: '/imgSweep/Product_Bitter.jpg',
-      itemName: 'チョコ',
-      price: '500',
-      review: '4',
-      linkParam: 'bbb',
-    },
-    {
-      imageUrl: '/imgSweep/Product_Bitter.jpg',
-      itemName: 'チョコ',
-      price: '500',
-      review: '4',
-      linkParam: 'bbb',
-    },
-    {
-      imageUrl: '/imgSweep/Product_Bitter.jpg',
-      itemName: 'チョコ',
-      price: '500',
-      review: '4',
-      linkParam: 'bbb',
-    },
-    {
-      imageUrl: '/imgSweep/Product_Bitter.jpg',
-      itemName: 'チョコ',
-      price: '500',
-      review: '4',
-      linkParam: 'bbb',
-    },
-  ];
+  // データ取得
+  useEffect(() => {
+    console.log('useEffect dispatch fetching information');
+
+    dispatch(fetchPickUpItemList(''));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
+
+  // Redux:ピックアップ商品
+  const pickUpData = useSelector(
+    (state: { pickUpListReducer: searchResultData }) =>
+      state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
+  );
+
+  const campainArray = pickUpData.slice(0, 4);
 
   const campaignList1 = campainArray.map((item, index) => {
     const key = 'campaignList1_Items_' + index;
+    const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
     return (
       <TopPageItemBox
-        key={key} //
-        imageUrl={item.imageUrl}
-        itemName={item.itemName}
-        price={item.price}
-        review={item.review}
-        linkParam={item.linkParam}
+        key={key}
+        id={item.id || ''}
+        code={item.code || ''}
+        imageUrl={item.imageUrl || ''}
+        itemName={item.itemName || ''}
+        price={item.price || ''}
+        review={item.evaluation || 0}
+        linkParam={param || ''}
       />
     );
   });
 
-  const campaignList12 = campainArray.map((item, index) => {
+  const campaignList2 = campainArray.map((item, index) => {
     const key = 'campaignList2_Items_' + index;
+    const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
     return (
       <TopPageItemBox
-        key={key} //
-        imageUrl={item.imageUrl}
-        itemName={item.itemName}
-        price={item.price}
-        review={item.review}
-        linkParam={item.linkParam}
+        key={key}
+        id={item.id || ''}
+        code={item.code || ''}
+        imageUrl={item.imageUrl || ''}
+        itemName={item.itemName || ''}
+        price={item.price || ''}
+        review={item.evaluation || 0}
+        linkParam={param || ''}
       />
     );
   });
@@ -173,7 +167,7 @@ const CampaignComponent = () => {
           <div className={styles.targetItemWrapper}>
             <p className={styles.targetItem}>対象商品</p>
           </div>
-          <div className={styles.campaginItemList}>{campaignList12}</div>
+          <div className={styles.campaginItemList}>{campaignList2}</div>
         </div>
       </div>
     </>

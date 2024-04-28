@@ -3,6 +3,8 @@ import { newsData } from '../types';
 
 import { useRouter } from 'next/router';
 
+import { NEWS_DETAIL_LINK } from '../common/sweep/setting';
+
 interface Props {
   newsDataProps: newsData; //進捗
 }
@@ -14,7 +16,7 @@ const NewsItemComponent = ({ newsDataProps }: Props) => {
 
   // ルーターと遷移先設定
   const router = useRouter();
-  const url = `/sweep/news/newsDetail?id=${id}`;
+  const url = `${NEWS_DETAIL_LINK}?id=${id}`;
 
   return (
     <>

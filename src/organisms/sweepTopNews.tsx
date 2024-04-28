@@ -32,6 +32,7 @@ const NewsComponent = () => {
           // key={'news_div_' + index}
         >
           <NewsItemTop
+            id={item.id}
             topicType={item.type}
             imageUrl={item.imageUrl}
             date={item.date}

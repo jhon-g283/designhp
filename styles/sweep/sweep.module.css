@@ -4287,6 +4287,12 @@ button.itemDetailContPlusButton {
     padding-right: 8px;
     padding-bottom: 36px;
   }
+
+  @media (min-width: 1513px) {
+    /* 中央配置にする */
+    padding-left: calc((100% - 1079px) / 2);
+    padding-right: calc((100% - 1079px) / 2);
+  }
 }
 
 /* 購入進捗のSVG */
@@ -6061,6 +6067,10 @@ p.deliveryInfoConfirmStatmentTitle {
     padding-left: 12.5px;
     padding-right: 12.5px;
     padding-bottom: 30px;
+  }
+
+  @media (min-width: 1513px) {
+    /* 中央配置にする */
   }
 }
 

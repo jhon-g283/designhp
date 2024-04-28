@@ -6,6 +6,7 @@ import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import { fetchItemList } from '../store/reducers/searchItemsSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
+import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 
 // ヘッダー部分のコンポーネント
 const LineupComponent = () => {
@@ -20,6 +21,12 @@ const LineupComponent = () => {
     (state: { itemListReducer: searchResultData }) =>
       state.itemListReducer?.categories ? state.itemListReducer.categories : []
   ); //商品リスト取得
+
+  // Redux:ピックアップ商品
+  const pickUpData = useSelector(
+    (state: { pickUpListReducer: searchResultData }) =>
+      state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
+  );
 
   // 商品概要の表示項モックをuseSelecterから取得
   const categoryName =
@@ -42,18 +49,25 @@ const LineupComponent = () => {
     // 問い合わせクエリ
     const query = 'Category=' + category + '&' + 'Size=' + size;
 
+    // 商品詳細
     dispatch(fetchItemList(query));
+    // PickUpリスト
+    dispatch(fetchPickUpItemList(''));
   }, [category, size, dispatch]);
 
   const ItemListComponent = itemlistData.map((item, index) => {
     const uniqueKey = 'ItemListComponent_key_' + index;
+
+    const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
     return (
       <ItemBox
+        id={item.id || ''}
+        code={item.code || ''}
         imageUrl={item.imageUrl || ''}
         itemName={item.itemName}
         price={item.price}
         review={item.evaluation}
-        linkParam={item.id || ''}
+        linkParam={param}
         key={uniqueKey}
       />
     );
@@ -342,34 +356,22 @@ const LineupComponent = () => {
           </div>
 
           <div className={styles.lineupItemListWrapper}>
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
-            <ItemBox
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="500"
-              review="2"
-              linkParam="bbb"
-            />
+            {pickUpData.slice(0, 4).map((item, index) => {
+              const key = 'recently_' + index;
+              const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
+              return (
+                <ItemBox
+                  key={key}
+                  id={item.id || ''}
+                  code={item.code || ''}
+                  imageUrl={item.imageUrl || ''}
+                  itemName={item.itemName || ''}
+                  price={item.price || ''}
+                  review={item.evaluation || 0}
+                  linkParam={param || ''}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

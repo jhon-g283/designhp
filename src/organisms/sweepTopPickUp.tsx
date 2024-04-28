@@ -3,11 +3,28 @@ import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
 import { TopPageItemBox } from '../molecules/sweepItemBoxComponents';
-import Image from 'next/image';
+import { searchResultData } from '../types';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { AppDispatch } from '../store/index'; //方で怒られるので入れた
+import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 
 // ヘッダー部分のコンポーネント
 const PickUpComponent = () => {
-  // Redux
+  const dispatch = useDispatch<AppDispatch>();
+  // データ取得
+  useEffect(() => {
+    console.log('useEffect dispatch fetching information');
+
+    dispatch(fetchPickUpItemList(''));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
+
+  // Redux:ピックアップ商品
+  const pickUpData = useSelector(
+    (state: { pickUpListReducer: searchResultData }) =>
+      state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
+  );
 
   return (
     <>
@@ -22,27 +39,22 @@ const PickUpComponent = () => {
           <div className={styles.backGroundSheet10}></div>
         </Div>
         <div className={styles.pickUpListWrapper}>
-          <TopPageItemBox
-            imageUrl="/imgSweep/Product_Bitter.jpg"
-            itemName="ビターチョコ(7個)"
-            price="500"
-            review="2"
-            linkParam="bbb"
-          />
-          <TopPageItemBox
-            imageUrl="/imgSweep/Product_Bitter.jpg"
-            itemName="ビターチョコ(7個)"
-            price="500"
-            review="2"
-            linkParam="bbb"
-          />
-          <TopPageItemBox
-            imageUrl="/imgSweep/Product_Bitter.jpg"
-            itemName="ビターチョコ(7個)"
-            price="500"
-            review="2"
-            linkParam="bbb"
-          />
+          {pickUpData.slice(0, 3).map((item, index) => {
+            const key = 'campaignList1_Items_' + index;
+            const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
+            return (
+              <TopPageItemBox
+                key={key}
+                id={item.id || ''}
+                code={item.code || ''}
+                imageUrl={item.imageUrl || ''}
+                itemName={item.itemName || ''}
+                price={item.price || ''}
+                review={item.evaluation || 0}
+                linkParam={param || ''}
+              />
+            );
+          })}
         </div>
         <Div
           afterClass="test"
