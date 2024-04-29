@@ -160,7 +160,7 @@ const NewsComponent = () => {
           <div className={styles.backGroundSheet1}></div>
         </Div>
       </div>
-      <div className={styles.newsConponentWrapper}>
+      <div className={`${styles.newsConponentWrapper}`}>
         <div className={styles.newsCompoTitleArea}>
           {/* タイトル名 */}
           <div className={styles.sectionHeaderWrapper}>

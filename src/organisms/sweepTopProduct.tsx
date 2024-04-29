@@ -40,8 +40,7 @@ const ProductComponent = () => {
 
               <div className={styles.lineupCopntext}>
                 <p className={styles.paragraph}>
-                  サイズとカテゴリーの中からお好みのセット、
-                  商品をお選びください。
+                  サイズとカテゴリーの中からお好みのセット、商品をお選びください。
                 </p>
               </div>
               <div className={styles.lineUpButtonWrapper}>

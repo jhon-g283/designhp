@@ -32,7 +32,9 @@ const SweepTopPageTemplate = () => {
           <SliderComponent />
         </div>
         {/* コンテンツ部分 */}
-        <div className={styles.mainWrapper}>
+        <div
+          className={`${styles.mainWrapper}  ${styles.sectionComponentAddPadding}`}
+        >
           {/* news */}
 
           <NewsComponent />

@@ -3,48 +3,39 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import {
-  CartItemBox,
-  CartItemProps,
-} from '../molecules/sweepCartItemBoxComponents';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { cartData, itemData } from '../types';
 import ProgressComponents from '../molecules/sweepProgressComponents';
-import Image from 'next/image';
+
 import InputTitle from '../atoms/sweepDeliveryInputTitle';
-import { current } from '@reduxjs/toolkit';
+
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
+import { useRouter } from 'next/router';
+import { CART_DELIVERY_CONFIRM } from '../common/sweep/setting';
 
 // ヘッダー部分のコンポーネント
 const OrderInputComponent = () => {
-  // Redux{}
+  // Reduxカート情報取得
 
-  const initItems: any[] = [
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '1',
-      updateState: () => {},
-      linkParam: 'string',
-    },
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: '600', //価格
-      count: '2',
-      updateState: () => {},
-      linkParam: 'string',
-    },
-  ];
+  const cartItemData: itemData[] = useSelector(
+    (state: { cartreducer: cartData }) =>
+      state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
+  ); //商品リスト取得(カート数)
 
-  const subTotalPrice = initItems
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${CART_DELIVERY_CONFIRM}`;
+
+  const subTotalPrice = cartItemData
     .map((item) => {
-      const price = parseInt(item.count) * parseInt(item.price);
+      const itemCount = item.count || 0;
+      const itemPrice = item.price || 0;
+      const price = itemCount * itemPrice;
       return price;
     })
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
-  // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  const [cartItemListInfo, updateCartItemListInfo] = useState(initItems);
+  const totalPrice = subTotalPrice + 500;
 
   return (
     <>
@@ -116,11 +107,11 @@ const OrderInputComponent = () => {
           </div>
           <div className={`${styles.deliveryInfoCartListArea} ${styles.imgPC}`}>
             {/* カート内データ */}
-            <DeliveryCartListComponent cartItemsList={initItems} />
+            <DeliveryCartListComponent cartItemsList={cartItemData} />
 
             <div className={styles.deliveryInfoSubtotalArea}>
               <p>小計</p>
-              <p>{subTotalPrice}</p>
+              <p>{subTotalPrice.toLocaleString()}</p>
             </div>
             <div className={styles.deliveryInfodeliveryCostArea}>
               <p>配送費</p>
@@ -128,13 +119,19 @@ const OrderInputComponent = () => {
             </div>
             <div className={styles.deliveryInfodeliveryTotalArea}>
               <p>合計</p>
-              <p>¥{subTotalPrice.toLocaleString()}</p>
+              <p>¥{totalPrice.toLocaleString()}</p>
             </div>
           </div>
         </div>
         <div className={styles.deliveryInfoConfirmButtonWrapper}>
           <button
             className={`${styles.deliveryInfoConfirmButton} ${styles.deliveryInfoConfirmButtonAddMarginSP}`}
+            onClick={() => {
+              // クリックで商品ページへ
+              router.push({
+                pathname: url,
+              });
+            }}
           >
             確認画面へ
           </button>

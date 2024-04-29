@@ -35,6 +35,7 @@ export interface searchReaultDataAPI {
 
 // 商品リストの中身
 export interface itemDataList {
+  listId: number;
   id?: string;
   itemName?: string; // 商品名
   imageUrl?: string; // 画像URL

@@ -3,20 +3,18 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import {
-  CartItemBox,
-  CartItemProps,
-} from '../molecules/sweepCartItemBoxComponents';
+
 import ProgressComponents from '../molecules/sweepProgressComponents';
-import Image from 'next/image';
-import InputTitle from '../atoms/sweepDeliveryInputTitle';
-import { current } from '@reduxjs/toolkit';
-import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
+import { useRouter } from 'next/router';
+import { ITEM_LINEUP } from '../common/sweep/setting';
 
 // ヘッダー部分のコンポーネント
 const OrderConpleteComponent = () => {
   // Redux{}
 
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_LINEUP}`;
   return (
     <>
       <div className={styles.cartComponentWrapper}>
@@ -38,7 +36,16 @@ const OrderConpleteComponent = () => {
           </p>
         </div>
         <div className={styles.continueShoppingButtonWrapper}>
-          <button>引き続き買い物を続ける</button>
+          <button
+            onClick={() => {
+              // クリックで商品ページへ
+              router.push({
+                pathname: url,
+              });
+            }}
+          >
+            引き続き買い物を続ける
+          </button>
         </div>
       </div>
     </>

@@ -3,19 +3,26 @@ import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import {
-  CartItemBox,
-  CartItemProps,
-} from '../molecules/sweepCartItemBoxComponents';
+
 import ProgressComponents from '../molecules/sweepProgressComponents';
-import Image from 'next/image';
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { cartData, itemData } from '../types';
 import InputTitle from '../atoms/sweepDeliveryInputTitle';
-import { current } from '@reduxjs/toolkit';
+import { useRouter } from 'next/router';
+import { CART_DELIVERY_INPUT, ORDER_COMPLETE } from '../common/sweep/setting';
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 
 // ヘッダー部分のコンポーネント
 const OrderConfirmComponent = () => {
   // Redux{}
+  const cartItemData: itemData[] = useSelector(
+    (state: { cartreducer: cartData }) =>
+      state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
+  ); //商品リスト取得(カート数)
+
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${CART_DELIVERY_INPUT}`;
 
   const initItems = [
     {
@@ -36,16 +43,16 @@ const OrderConfirmComponent = () => {
     },
   ];
 
-  const subTotalPrice = initItems
+  const subTotalPrice = cartItemData
     .map((item) => {
-      const price = item.count * item.price;
+      const itemCount = item.count || 0;
+      const itemPrice = item.price || 0;
+      const price = itemCount * itemPrice;
       return price;
     })
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
-  // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  const [cartItemListInfo, updateCartItemListInfo] = useState(initItems);
-
+  const totalPrice = subTotalPrice + 500;
   const addresNumber = '123-4567';
   const addres = '東京都 千代田区 丸の内１丁目 2-3 '; //住所1+2
   const addres2 = 'マンション456号室'; //住所1+2
@@ -158,18 +165,26 @@ const OrderConfirmComponent = () => {
             </div>
 
             <div className={styles.deliveryComfirmModifyButtonWrapper}>
-              <button className={styles.deliveryComfirmModifyButton}>
+              <button
+                className={styles.deliveryComfirmModifyButton}
+                onClick={() => {
+                  // クリックで商品ページへ
+                  router.push({
+                    pathname: CART_DELIVERY_INPUT,
+                  });
+                }}
+              >
                 入力内容を訂正する
               </button>
             </div>
           </div>
           <div className={styles.deliveryInfoCartListArea}>
             {/* カート内データ */}
-            <DeliveryCartListComponent cartItemsList={initItems} />
+            <DeliveryCartListComponent cartItemsList={cartItemData} />
 
             <div className={styles.deliveryInfoSubtotalArea}>
               <p>小計</p>
-              <p>{subTotalPrice}</p>
+              <p>{subTotalPrice.toLocaleString()}</p>
             </div>
             <div className={styles.deliveryInfodeliveryCostArea}>
               <p>配送費</p>
@@ -177,13 +192,23 @@ const OrderConfirmComponent = () => {
             </div>
             <div className={styles.deliveryInfodeliveryTotalArea}>
               <p>合計</p>
-              <p>¥{subTotalPrice.toLocaleString()}</p>
+              <p>¥{totalPrice.toLocaleString()}</p>
             </div>
           </div>
         </div>
 
         <div className={styles.deliveryInfoConfirmButtonWrapper}>
-          <button className={styles.deliveryInfoConfirmButton}>注文確定</button>
+          <button
+            className={styles.deliveryInfoConfirmButton}
+            onClick={() => {
+              // クリックで商品ページへ
+              router.push({
+                pathname: ORDER_COMPLETE,
+              });
+            }}
+          >
+            注文確定
+          </button>
         </div>
       </div>
     </>

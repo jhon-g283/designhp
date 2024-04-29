@@ -6,24 +6,29 @@ import DatePicker from 'react-datepicker';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import { cartData, itemData } from '../types';
 import { editCart, removeCart } from '../store/reducers/addCartDataSlice';
-
+import Image from 'next/image';
 import 'react-datepicker/dist/react-datepicker.css';
 import {
   CartItemBox,
   CartItemProps,
 } from '../molecules/sweepCartItemBoxComponents';
 import ProgressComponents from '../molecules/sweepProgressComponents';
-import { it } from 'node:test';
+
+import { useRouter } from 'next/router';
+import { CART_DELIVERY_INPUT, ITEM_LINEUP } from '../common/sweep/setting';
 
 // ヘッダー部分のコンポーネント
 const CartItemComponent = () => {
-  // Redux{}
-
+  // Reduxカート情報取得
   const dispatch = useDispatch();
   const cartItemData: itemData[] = useSelector(
     (state: { cartreducer: cartData }) =>
       state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
   ); //商品リスト取得(カート数)
+
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${CART_DELIVERY_INPUT}`;
 
   // 配達時刻
   const SelectTimeTag = styled.select`
@@ -83,7 +88,58 @@ const CartItemComponent = () => {
     0
   );
 
+  const hasItemInCart = cartData.length > 0;
+
   const [startDate, setStartDate] = useState(new Date());
+
+  const imageUrl = '/imgSweep/CartIcon.svg';
+
+  if (!hasItemInCart) {
+    return (
+      <div
+        className={`${styles.cartComponentWrapper} ${styles.addCartComponentPadding}`}
+      >
+        <div
+          className={`${styles.cartAreaTitleWrapper} ${styles.cartTitleAddBorder}`}
+        >
+          <p className={styles.cartAreaTitle}>カート</p>
+        </div>
+        <div className={styles.cartAreaItemTitleWordWrapper}>
+          <p
+            className={`${styles.cartAreaItemTitleWord} ${styles.cartAreaItemTitleWordPaddingPlus}`}
+          >
+            カート内に商品がありません。
+          </p>
+        </div>
+
+        <div className={styles.cartItemsNoItemAreaWrapper}>
+          <div className={styles.cartItemsCartIconWrapper}>
+            <div className={styles.cartItemsCartIcon}>
+              <Image
+                src={imageUrl}
+                // width={129} // Specify different width values based on device or viewport size
+                // height={110}
+                alt="Your Image"
+                fill={true}
+              ></Image>
+            </div>
+          </div>
+        </div>
+        <div className={styles.cartItemsGoLineup}>
+          <button
+            onClick={() => {
+              // クリックで商品ページへ
+              router.push({
+                pathname: ITEM_LINEUP,
+              });
+            }}
+          >
+            欲しい商品を探す
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -227,7 +283,16 @@ const CartItemComponent = () => {
             </p>
 
             <div className={styles.goToDeliveryInformationWrapper}>
-              <button className={styles.goToDeliveryInformation}>
+              <button
+                className={styles.goToDeliveryInformation}
+                onClick={() => {
+                  // クリックで商品ページへ
+                  router.push({
+                    pathname: url,
+                    query: { id: 3 },
+                  });
+                }}
+              >
                 決済・配達情報入力へ
               </button>
             </div>

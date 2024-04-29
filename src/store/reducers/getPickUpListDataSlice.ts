@@ -9,6 +9,7 @@ import { searchResultData } from "../../types";
 const initialSearchResult: searchResultData = {
   itemlist: [
     {
+      listId: 1,
       id: "1",
       itemName: "",
       imageUrl: "",

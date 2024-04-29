@@ -180,7 +180,7 @@ a.linkMenu:active {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  /* line-height: normal; */
 
   /* text-align: center; */
 }
@@ -919,6 +919,18 @@ img.FVOverWritten {
   margin: 0px;
   @media (max-width: 768px) {
     font-size: 0.8em !important;
+  }
+}
+
+/* 画面が大きくなった時の調整用 */
+@media (min-width: 1513px) {
+  .sectionComponentAddPadding {
+    /* 中央配置にする */
+
+    max-width: 1343px;
+
+    padding-left: calc((100% - 1513px) / 2);
+    padding-right: calc((100% - 1513px) / 2);
   }
 }
 
@@ -1873,7 +1885,7 @@ img.FVOverWritten {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  /* line-height: normal; */
   @media (max-width: 768px) {
     padding-top: 0.9em;
     padding-left: 0.5em;
@@ -4305,6 +4317,84 @@ button.itemDetailContPlusButton {
   }
 }
 
+/* カート商品なし： */
+.cartItemsNoItemAreaWrapper {
+  width: 100%;
+}
+
+/* カート商品なし：アイコン外枠 */
+.cartItemsCartIconWrapper {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  margin-bottom: 46px;
+}
+
+/* アイコン */
+/* カート商品なし*/
+.cartItemsCartIcon {
+  width: 177.741px;
+  height: 177.741px;
+
+  position: relative;
+  @media (max-width: 768px) {
+    width: calc(177.741px / 2);
+    height: calc(177.741px / 2);
+  }
+}
+
+/* 商品を探すボタン（外枠） */
+.cartItemsGoLineup {
+  display: flex;
+  justify-content: center;
+
+  color: #fff;
+  font-family: 'Hiragino Kaku Gothic Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.92px;
+}
+
+/* 商品を探すボタン */
+.cartItemsGoLineup button {
+  font-size: 1em;
+  padding: 19px 37.5px;
+  border: #000000;
+  color: #fff;
+  background-color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 0.718em;
+    padding: 1em 3.5em;
+  }
+}
+
+/* padding追加 */
+.cartAreaItemTitleWordPaddingPlus {
+  padding-left: 1em;
+  margin-bottom: 46px !important;
+  margin-top: 96px !important;
+
+  @media (max-width: 768px) {
+    margin-top: 55px !important;
+    padding-bottom: 33px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+/* カート商品なし：Padding追加 */
+.addCartComponentPadding {
+  margin-top: 55px;
+  padding-bottom: 187px;
+  @media (max-width: 768px) {
+    margin-top: 22px;
+    padding-bottom: 111px;
+  }
+}
+
 /* カートの文字（外枠） */
 .cartAreaTitleWrapper {
   color: #000;
@@ -4330,6 +4420,18 @@ button.itemDetailContPlusButton {
 
     margin-top: 0.45em;
     margin-bottom: 0.68em;
+  }
+}
+
+/* カート商品なし：ボーダー追加 */
+.cartTitleAddBorder {
+  border-bottom: 1px solid #a4a4a4;
+}
+/* カート商品なし：マージン追加 */
+.cartTitleAddBorder p {
+  @media (max-width: 768px) {
+    margin-top: 2.2em;
+    margin-bottom: 1.56em !important;
   }
 }
 
@@ -5502,6 +5604,7 @@ input.creditCardNumber3 {
   letter-spacing: 1.92px;
 
   max-width: 1079px;
+  padding-top: 7px;
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -6071,6 +6174,9 @@ p.deliveryInfoConfirmStatmentTitle {
 
   @media (min-width: 1513px) {
     /* 中央配置にする */
+
+    padding-left: calc((100% - 1277px) / 2);
+    padding-right: calc((100% - 1277px) / 2);
   }
 }
 

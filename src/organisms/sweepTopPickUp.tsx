@@ -80,7 +80,7 @@ const PickUpComponent = () => {
               </SectionSubTitle>
             </div>
 
-            <p>こちらの商品をぜひお試しになっては いかがでしょうか？</p>
+            <p>こちらの商品をぜひお試しになってはいかがでしょうか？</p>
           </div>
         </div>
       </div>
