@@ -8,6 +8,7 @@ import getItemListSlice from "./reducers/searchItemsSlice";
 import getNewsListSlice from "./reducers/getNewsDataSlice";
 import getItemDetailSlice from "./reducers/getItemDetailSlice";
 import getPickUpListListSlice from "./reducers/getPickUpListDataSlice";
+import utileStrageReducerSlice from "./reducers/utileStrageSlice";
 
 export type AppDispatch = typeof store.dispatch; // dispatchの方で怒られるので追加
 
@@ -18,6 +19,7 @@ const reducers = combineReducers({
   newsListReducer: getNewsListSlice,
   itemDetailReducer: getItemDetailSlice,
   pickUpListReducer: getPickUpListListSlice,
+  utileStrageReducer: utileStrageReducerSlice,
 
   // reducer: {
   //   // reducer名：インポートしたReducerファイル(XX.reducer)
@@ -30,7 +32,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: "root", // 永続化のキー
   storage, // 使用するストレージエンジン
-  whitelist: ["cartreducer"], //cartreducerのみを永続化する
+  whitelist: ["cartreducer", "utileStrageReducer"], //cartreducerのみを永続化する
 };
 
 // 永続化が適用されるpersistReducerにconfigとreducerをセットしてルートReducer作成

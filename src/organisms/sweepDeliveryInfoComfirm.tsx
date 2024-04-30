@@ -6,42 +6,31 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import ProgressComponents from '../molecules/sweepProgressComponents';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import { cartData, itemData } from '../types';
+import { cartData, itemData, utilStrage, deliveryInfoData } from '../types';
 import InputTitle from '../atoms/sweepDeliveryInputTitle';
 import { useRouter } from 'next/router';
 import { CART_DELIVERY_INPUT, ORDER_COMPLETE } from '../common/sweep/setting';
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
+import { initialState } from '../store/reducers/utileStrageSlice';
 
 // ヘッダー部分のコンポーネント
 const OrderConfirmComponent = () => {
-  // Redux{}
+  //  Reduxカート情報取得
   const cartItemData: itemData[] = useSelector(
     (state: { cartreducer: cartData }) =>
       state.cartreducer?.itemDataArry ? state.cartreducer.itemDataArry : []
   ); //商品リスト取得(カート数)
 
+  const deliveryInfo: deliveryInfoData = useSelector(
+    (state: { utileStrageReducer: utilStrage }) =>
+      state.utileStrageReducer?.deliveryInfo
+        ? state.utileStrageReducer.deliveryInfo
+        : initialState.deliveryInfo
+  ); //住所情報
+
   // ルーターと遷移先設定
   const router = useRouter();
   const url = `${CART_DELIVERY_INPUT}`;
-
-  const initItems = [
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: 600, //価格
-      count: 1,
-      updateState: () => {},
-      linkParam: 'string',
-    },
-    {
-      imageUrl: '/imgSweep/itemDetail_Item_Bitter.jpg',
-      itemName: 'ビターチョコ', //商品名
-      price: 600, //価格
-      count: 2,
-      updateState: () => {},
-      linkParam: 'string',
-    },
-  ];
 
   const subTotalPrice = cartItemData
     .map((item) => {
@@ -53,6 +42,7 @@ const OrderConfirmComponent = () => {
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
   const totalPrice = subTotalPrice + 500;
+
   const addresNumber = '123-4567';
   const addres = '東京都 千代田区 丸の内１丁目 2-3 '; //住所1+2
   const addres2 = 'マンション456号室'; //住所1+2

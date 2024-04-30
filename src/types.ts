@@ -119,3 +119,23 @@ export interface itemDetailData {
     featureDescription2: string; //説明文２
   }[];
 }
+
+// その他データ保持などの処理用
+export interface utilStrage {
+  deliveryInfo: deliveryInfoData;
+
+  recently: [];
+}
+
+export interface deliveryInfoData {
+  [key: string]: string; //　郵便番号
+  // addressNumber: string; //　郵便番号
+  // address: string; // 住所1
+  // address2: string; // 住所2
+  // name: string; // 氏名
+  // telephone: string; // 電話番号
+  // email: string; // メールアドレス
+  // paymentType: string; // 支払い方法
+  // creditCardNumber: string; // クレジットカード番号
+  // creditCardExpiration: string; // クレジットカード有効期限
+}

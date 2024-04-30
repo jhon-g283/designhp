@@ -4,7 +4,10 @@ import { default as Div } from '../common/observeDivComponent';
 import { searchResultData } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import { fetchItemList } from '../store/reducers/searchItemsSlice';
+import {
+  fetchItemList,
+  resultOfSearchItems,
+} from '../store/reducers/searchItemsSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 
