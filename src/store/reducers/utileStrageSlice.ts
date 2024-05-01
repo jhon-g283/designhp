@@ -8,15 +8,7 @@ import { utilStrage } from "../../types";
 // State初期値の設定
 export const initialState: utilStrage = {
   deliveryInfo: {
-    addressNumber: "",
-    address: "",
-    address2: "",
-    name: "",
-    telephone: "",
-    email: "",
     paymentType: "",
-    creditCardNumber: "",
-    creditCardExpiration: "",
   },
   recently: [],
 };
@@ -30,9 +22,23 @@ const utileStrageReducerSlice = createSlice({
     upDateDeliveryInfo(state, action) {
       // カートボタンで追加した時の処理
       console.log("action upDateDeliveryInfo ");
-      const payload = action.payload;
+      const payloadData = action.payload;
+      // 住所情報更新
+      state.deliveryInfo = payloadData;
     },
     upDateRecentry(state, action) {
+      const payloadData = action.payload;
+
+      const recentlyData =
+        current(state.recently).indexOf(payloadData) == -1
+          ? [...current(state.recently), payloadData]
+          : [...current(state.recently)];
+
+      // recentlyData.push(payloadData);
+
+      state.recently =
+        recentlyData.length > 4 ? recentlyData.slice(-4) : recentlyData;
+
       // カートボタンで追加した時の処理
       console.log("action upDateRecentry ");
     },
@@ -44,7 +50,8 @@ const utileStrageReducerSlice = createSlice({
 
 // selectorをエクスポート
 
-export const { upDateDeliveryInfo } = utileStrageReducerSlice.actions; // Action Createrをエクスポート
+export const { upDateDeliveryInfo, upDateRecentry } =
+  utileStrageReducerSlice.actions; // Action Createrをエクスポート
 
 // Reducerをエクスポート
 // 読み込み時にはuseSelectで[state.設定したreducer名.State名]で読み込む

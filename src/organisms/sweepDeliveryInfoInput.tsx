@@ -13,10 +13,15 @@ import InputTitle from '../atoms/sweepDeliveryInputTitle';
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 import { useRouter } from 'next/router';
 import { CART_DELIVERY_CONFIRM } from '../common/sweep/setting';
-import { initialState } from '../store/reducers/utileStrageSlice';
+import {
+  initialState,
+  upDateDeliveryInfo,
+} from '../store/reducers/utileStrageSlice';
+import { DeliveryInfoProps } from '../../pages/sweep/cart/deliveryinfoInput';
 
 // ヘッダー部分のコンポーネント
-const OrderInputComponent = () => {
+const OrderInputComponent = (props: DeliveryInfoProps) => {
+  const modify = props.isModifyInfo;
   // Reduxカート情報取得
   const dispatch = useDispatch<AppDispatch>();
   const cartItemData: itemData[] = useSelector(
@@ -26,14 +31,13 @@ const OrderInputComponent = () => {
 
   const deliveryInfo: deliveryInfoData = useSelector(
     (state: { utileStrageReducer: utilStrage }) =>
-      state.utileStrageReducer?.deliveryInfo
+      state.utileStrageReducer?.deliveryInfo !== undefined && modify
         ? state.utileStrageReducer.deliveryInfo
         : initialState.deliveryInfo
   ); //住所情報
 
-  const [deliveryInfoState, setDeliveryInfoState] = useState<deliveryInfoData>(
-    initialState.deliveryInfo
-  );
+  const [deliveryInfoState, setDeliveryInfoState] =
+    useState<deliveryInfoData>(deliveryInfo);
 
   // イベントから　nameとValueを取り出してState更新する関数
   const upDateDeliveryInfoState = (
@@ -49,6 +53,25 @@ const OrderInputComponent = () => {
     }));
   };
 
+  useEffect(() => {
+    // 確認画面からの遷移なら入力情報を初期表示でセット
+    if (modify) {
+      // nameのあるinputを全て取得
+      const inputs = document.querySelectorAll<HTMLInputElement>('input[name]');
+
+      // 要素の分だけループする
+      inputs.forEach((element) => {
+        const name = element.getAttribute('name');
+
+        if (name !== null) {
+          const val = deliveryInfoState[name];
+          element.value = val; // 値を更新
+        }
+      });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // ルーターと遷移先設定
   const router = useRouter();
   const url = `${CART_DELIVERY_CONFIRM}`;
@@ -63,6 +86,7 @@ const OrderInputComponent = () => {
     })
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
+  // 送料を追加
   const totalPrice = subTotalPrice + 500;
 
   return (
@@ -98,12 +122,27 @@ const OrderInputComponent = () => {
                 <input
                   className={styles.creditCardNumber1}
                   placeholder="1234-5678-9000"
+                  name="creditCardNumber"
+                  onChange={(event) => {
+                    upDateDeliveryInfoState(event);
+                  }}
                 />
                 <input
                   className={styles.creditCardNumber2}
                   placeholder="yy/mm"
+                  name="creditCardExpiration"
+                  onChange={(event) => {
+                    upDateDeliveryInfoState(event);
+                  }}
                 />
-                <input className={styles.creditCardNumber3} placeholder="CVC" />
+                <input
+                  className={styles.creditCardNumber3}
+                  placeholder="CVC"
+                  name="creditCardCVC"
+                  onChange={(event) => {
+                    upDateDeliveryInfoState(event);
+                  }}
+                />
               </div>
             </div>
 
@@ -123,9 +162,6 @@ const OrderInputComponent = () => {
                 placeholder="123-4567"
                 onChange={(event) => {
                   upDateDeliveryInfoState(event);
-                  // const inputName = event.target.name;
-
-                  // console.log(`変更されたinputのname: ${inputName}`);
                 }}
               />
               <p>住所</p>
@@ -133,27 +169,53 @@ const OrderInputComponent = () => {
                 id={styles.address1}
                 name="address1"
                 placeholder="都道府県"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
               />
               <input
                 id={styles.address2}
                 name="address2"
                 placeholder="市区町村、番地"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
               />
               <input
                 id={styles.address3}
                 name="address3"
                 placeholder="マンション名　号室  ※任意"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
               />
               <p>氏名</p>
               <input
                 id={styles.addressName}
                 name="addressName"
                 placeholder="田中　太郎"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
               />
               <p>電話番号</p>
-              <input id={styles.phoneNumber} placeholder="123-456-7890" />
+              <input
+                id={styles.phoneNumber}
+                name="phoneNumber"
+                placeholder="123-456-7890"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
+              />
               <p>メール</p>
-              <input id={styles.phoneMail} placeholder="chocolate@sweep.jp" />
+              <input
+                id={styles.phoneMail}
+                name="email"
+                placeholder="chocolate@sweep.jp"
+                onChange={(event) => {
+                  upDateDeliveryInfoState(event);
+                }}
+              />
             </div>
           </div>
           <div className={`${styles.deliveryInfoCartListArea} ${styles.imgPC}`}>
@@ -178,6 +240,8 @@ const OrderInputComponent = () => {
           <button
             className={`${styles.deliveryInfoConfirmButton} ${styles.deliveryInfoConfirmButtonAddMarginSP}`}
             onClick={() => {
+              // 配送情報を保存する
+              dispatch(upDateDeliveryInfo(deliveryInfoState));
               // クリックで商品ページへ
               router.push({
                 pathname: url,

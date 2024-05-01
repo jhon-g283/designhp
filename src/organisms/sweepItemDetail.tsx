@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import { itemDetail, itemDetailData, searchResultData } from '../types';
+import {
+  itemDetail,
+  itemDetailData,
+  searchResultData,
+  utilStrage,
+} from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
@@ -13,8 +18,9 @@ import {
   fetchDetails,
   initialState,
 } from '../store/reducers/getItemDetailSlice';
+import { upDateRecentry } from '../store/reducers/utileStrageSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
-import { addCart } from '../store/reducers/addCartDataSlice';
+
 import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
 
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
@@ -40,6 +46,12 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
   );
 
+  const recentlyList = useSelector(
+    (state: { utileStrageReducer: utilStrage }) =>
+      state.utileStrageReducer?.recently
+        ? state.utileStrageReducer.recently
+        : ['1', '1', '1', '1']
+  ).join(','); //｀最近見た商品情報
   console.log(itemData);
   console.log(pickUpData);
 
@@ -58,7 +70,9 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
     dispatch(fetchDetails(id));
-    dispatch(fetchPickUpItemList(''));
+    dispatch(fetchPickUpItemList(recentlyList));
+    dispatch(upDateRecentry(id));
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -82,27 +96,6 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
   const codeArray = ['S', 'M', 'L'];
   // 商品コード
   const itemCode = codeArray[selectedSize];
-
-  // 共通化＾＾＾＾＾
-  const addCartFunction = (
-    id: string,
-    code: string,
-    itemName: string,
-    imageUrl: string,
-    count: number,
-    price: number
-  ) => {
-    const addData = {
-      itemId: id, //商品ID
-      code: code, //コード
-      itemName: itemName, //商品名
-      imageUrl: imageUrl, //カート画像Url
-      price: price, //価格',
-      count: count, //商品の個数',
-    };
-
-    dispatch(addCart(addData));
-  };
 
   const imageUrl = itemData?.imageUrl1 || '';
   const imageUrl2 = itemData?.imageUrl2 || '';
@@ -132,24 +125,17 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       return parseInt(item);
     }) || [];
 
-  const voiceArray = [
-    {
-      name: 'カカオ',
-      age: '30代男性',
-      titie: '翌日スッキリ起きれる',
-      evaluation: 4,
-      comment:
-        'チョコなのに甘すぎず苦すぎず、食後にすんなり食べれる。\n一口食べると翌日スッキリ起きることがで切るので毎日食べてます。',
-    },
-    {
-      name: '胡桃',
-      age: '20代女性',
-      titie: '友達に勧められて',
-      evaluation: 4,
-      comment:
-        '職場の友人に勧められて試してみました。残業気味で寝不足になりがちだったのが若干解消して\n買ってよかったです。味も普通のチョコより美味しい。',
-    },
-  ];
+  const voiceData = itemData?.review?.map((item) => {
+    const result = {
+      name: item.reviewerName,
+      revierInfo: item.reviewerAge + '代' + item.reviewerGender,
+      titie: item.reviewTitle,
+      evaluation: item.review,
+      comment: item.commentText,
+    };
+
+    return result;
+  });
 
   // サイズのボタン
   const buttonArray = priceArray.map((item, index) => {
@@ -544,7 +530,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
         <div className={styles.itemDetailItemVoiceArea}>
           <p>お客様からの声</p>
 
-          {voiceArray.map((item, index) => {
+          {voiceData?.map((item, index) => {
             return (
               <div
                 className={styles.itemDetailItemVoiceItemWrapper}
@@ -602,7 +588,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
                         {item.name}
                       </a>
                       <a className={styles.itemDetailItemVoiceItemAge}>
-                        {item.age}
+                        {item.revierInfo}
                       </a>
                     </div>
                     {/* <div className={styles.itemDetailItemVoiceItemTitleWrapper}> */}

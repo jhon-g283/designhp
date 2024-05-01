@@ -30,8 +30,8 @@ const OrderConfirmComponent = () => {
 
   // ルーターと遷移先設定
   const router = useRouter();
-  const url = `${CART_DELIVERY_INPUT}`;
 
+  // 合計
   const subTotalPrice = cartItemData
     .map((item) => {
       const itemCount = item.count || 0;
@@ -41,20 +41,44 @@ const OrderConfirmComponent = () => {
     })
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
+  // 送料追加
   const totalPrice = subTotalPrice + 500;
 
-  const addresNumber = '123-4567';
-  const addres = '東京都 千代田区 丸の内１丁目 2-3 '; //住所1+2
-  const addres2 = 'マンション456号室'; //住所1+2
-  const name = '田中 太郎'; //住所1+2
-  const tell = '123-4567-8910'; //住所1+2
-  const mail = 'chocolate@sweep.jp'; //住所1+2
+  // 郵便番号
+  const addresNumber =
+    deliveryInfo?.addressNumber !== undefined
+      ? deliveryInfo?.addressNumber.slice(0, 3) +
+        '-' +
+        deliveryInfo?.addressNumber.slice(3, deliveryInfo?.addressNumber.length)
+      : '123-4567';
+  // 住所
+  const addres =
+    deliveryInfo?.address1 + deliveryInfo?.address2 ||
+    '東京都 千代田区 丸の内１丁目 2-3 '; //住所1+2
+
+  const addres2 = deliveryInfo?.address3 || ''; //住所1+2
+  // 氏名
+  const name = deliveryInfo?.addressName || '田中 太郎'; //住所1+2
+
+  // 電話番号
+  const tell = deliveryInfo?.phoneNumber || '123-4567-8910'; //住所1+2
+  const mail = deliveryInfo?.phoneMail || 'chocolate@sweep.jp'; //住所1+2
 
   const statmentType = 'クレジットカード';
 
-  const creditNumber = '************-8910';
+  // クレジット番号をマスクする
+  const creditNumberData = deliveryInfo?.creditCardNumber || '1234123456788910';
 
-  const creditLimit = '****';
+  const unmask = creditNumberData.slice(-4);
+  const mask = creditNumberData
+    .replace(/./g, '*')
+    .slice(0, creditNumberData.length - 4);
+
+  const creditNumber = mask + '-' + unmask;
+
+  const limit = deliveryInfo?.creditCardExpiration || '****';
+
+  const creditLimit = limit.replace(/./g, '*');
 
   return (
     <>

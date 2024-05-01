@@ -7,7 +7,6 @@ import {
 } from "../../../src/types";
 
 import jsonItemListData from "../stbdata/itemList.json"; //商品データ用のjson
-import jsonCategoryData from "../stbdata/categoryList.json"; //カテゴリーの概要文用のjson
 
 // 検索用のAPI
 export default function getPickUpItemsList(
@@ -23,15 +22,19 @@ export default function getPickUpItemsList(
       ? req.query["PickUp"]
       : "";
 
-  // 商品リスト（返却用のデータをjsonから取得してフィルター）
-  const itemListResult: itemDataList[] =
-    jsonItemListData.itemlist != undefined
-      ? jsonItemListData.itemlist.filter((item) => {
-          // サイズがAもしくは同じものか？
+  const picuUpArray = queryPicuUp.split(",");
 
-          return true;
-        })
-      : [];
+  // 商品リスト（返却用のデータをjsonから取得してフィルター）
+
+  const itemListResult: itemDataList[] = picuUpArray
+    ?.map((query) => {
+      const result = jsonItemListData.itemlist.find((item) => {
+        return item.id == query;
+      });
+
+      return result;
+    })
+    .filter((item) => item !== undefined) as itemDataList[];
 
   // 返却値
   const result: searchReaultDataAPI = {

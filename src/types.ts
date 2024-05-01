@@ -1,5 +1,7 @@
 // typescript型情報の定義ファイル
 
+import exp from "constants";
+
 // Redux カートの商品情報取得
 export interface cartData {
   itemDataArry?: itemData[]; //カートのデータ配列
@@ -109,22 +111,75 @@ export interface itemDetailData {
   imageUrlCartThumbnail?: string; //カート用サムネイル
   description: string; //商品説明
   evaluation: string[]; //評価値
-  itemFeatures: {
-    //特徴の内容
-    featureTitle: string; //タイトル（大）
-    featureImage: string; //画像
-    featureSubTitle1: string; //サブタイトル１
-    featureDescription1: string; //説明文１
-    featureSubTitle2: string; //サブタイトル２
-    featureDescription2: string; //説明文２
+  itemFeaturesCode: string; //特徴用のコード
+  itemFeatures: itemFeaturesData[]; //特徴のデータ配列
+  reviewCodes?: string[]; //レビューのコード
+  review?: itemDetailReviewData[]; //
+}
+
+// 商品詳細の特徴用データ(API)
+export interface itemFeaturesListData {
+  itemFeaturesList: {
+    name: string;
+    data: itemFeaturesData[];
   }[];
+}
+
+// 商品詳細の特徴用データ
+export interface itemFeaturesData {
+  featureTitle: string; //タイトル（大）
+  featureImage: string; //画像
+  featureSubTitle1: string; //サブタイトル１
+  featureDescription1: string; //説明文１
+  featureSubTitle2: string; //サブタイトル２
+  featureDescription2: string; //説明文２
+}
+
+// 商品詳細のレビュー部分
+export interface itemDetailReviewData {
+  reviewId: string;
+
+  review: number;
+  reviewTitle: string;
+
+  reviewerName: string;
+  reviewerGender: string;
+  reviewerAge: string;
+
+  commentText: string;
+}
+
+// レビュー一覧のデータ
+export interface reviewList {
+  reviewList: reviewData[];
+}
+
+// レビューのデータ
+export interface reviewData {
+  reviewId: string;
+  id: string; //
+  code: string;
+  imageUrl: string; //商品リストと同じ
+  itemName: string; //商品リストと同じ
+  price: number; //商品リストと同じ
+  review: number;
+  linkParam: string;
+
+  reviewerInfo: string;
+  reviewerName: string;
+  reviewerGender: string;
+  reviewerAge: string;
+  reviewerJob: string;
+
+  reviewTitle: string;
+  commentText: string;
 }
 
 // その他データ保持などの処理用
 export interface utilStrage {
-  deliveryInfo: deliveryInfoData;
+  deliveryInfo: deliveryInfoData; //住所情報
 
-  recently: [];
+  recently: string[]; //最近見た諸品
 }
 
 export interface deliveryInfoData {

@@ -6,7 +6,7 @@ import { searchResultData } from "../../types";
 //
 
 // Stateの初期値の定義
-const initialSearchResult: searchResultData = {
+export const initialSearchResult: searchResultData = {
   itemlist: [
     {
       listId: 1,
@@ -31,7 +31,7 @@ const baseulr: string = domain + "api/sweep/getPickUpItemsApi?";
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getItems = async (url: string) => {
   const requestUrl = url;
-  console.log("fetch! cake reducer! " + url);
+  console.log("fetch! picuUp! " + url);
   const result = await fetch(requestUrl)
     .then((responce) => {
       // console.log("fetch responce reducer");
@@ -58,7 +58,8 @@ const getItems = async (url: string) => {
 export const fetchPickUpItemList = createAsyncThunk<searchResultData, string>(
   "fetchPickUpItemList", //ユニーク値設定
   async (query, thunkAPI) => {
-    const result = getItems(baseulr + query); // API問い合わせ
+    const requestUrl = baseulr + `PickUp=${query}`;
+    const result = getItems(requestUrl); // API問い合わせ
     return result;
   }
 );

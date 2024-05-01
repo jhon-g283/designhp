@@ -16,6 +16,7 @@ export const initialState: itemDetail = {
     description:
       "ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです。",
     evaluation: ["4", "3", "2", "4"],
+    itemFeaturesCode: "",
     itemFeatures: [
       {
         featureTitle: "ビターチョコの特徴",
@@ -38,6 +39,7 @@ export const initialState: itemDetail = {
           "砂糖は海外産でなく国産の砂糖を使用しています。沖縄産の黒糖を材料に使用することで甘すぎず、苦過ぎない程よい味わいにしています。",
       },
     ],
+    reviewCodes: [],
   },
 
   status: "***",

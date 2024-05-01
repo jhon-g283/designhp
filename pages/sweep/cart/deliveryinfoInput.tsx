@@ -1,10 +1,17 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
+
 import Head from 'next/head';
 
 import SweepDeliveryInfoInputTemplate from '../../../src/templates/sweepdeliveryinfoinputtemplate';
+import { CART_DELIVERY_CONFIRM } from '../../../src/common/sweep/setting';
 
-// http://localhost:3000/sweep/lineup
-const Main: NextPage = () => {
+export interface DeliveryInfoProps {
+  isModifyInfo: boolean;
+}
+
+const Main: NextPage<DeliveryInfoProps> = (props) => {
+  // 確認画面からの遷移かどうか？
+  const modify = props.isModifyInfo;
   return (
     <>
       <Head>
@@ -16,9 +23,27 @@ const Main: NextPage = () => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SweepDeliveryInfoInputTemplate />
+      <SweepDeliveryInfoInputTemplate isModifyInfo={modify} />
     </>
   );
+};
+
+// サーバーサイドの処理を実施してクエリパラメータを取得後、Propsとして渡す。
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  // リファラーから入力情報の訂正かどうか判定
+  const referer = context.req.headers.referer || '';
+
+  const isModifyInfo = referer.indexOf(CART_DELIVERY_CONFIRM) > -1;
+
+  console.log('referer:' + referer);
+  console.log('isModifyInfo:' + isModifyInfo);
+
+  // propsとしてページコンポーネントに渡すデータを返す
+  return {
+    props: {
+      isModifyInfo: isModifyInfo,
+    },
+  };
 };
 
 export default Main;
