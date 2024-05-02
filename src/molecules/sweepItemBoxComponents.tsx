@@ -178,12 +178,6 @@ const ItemBox = ({
         </div>
 
         <div className={styles.itemBoxButtonWrapper}>
-          {/* <button
-            className={styles.itemBoxButton}
-            onClick={() => addCartFunction()}
-          >
-            カートへ
-          </button> */}
           <AddCartButton
             className={styles.itemBoxButton}
             id={id}

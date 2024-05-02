@@ -1,10 +1,19 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import SweepLineUpPageTemplate from '../../src/templates/sweeptemplatelineup';
 
-// http://localhost:3000/sweep/lineup
-const Main: NextPage = () => {
+// GetServerSidePropsのPropsのインターフェース
+export interface LineupProps {
+  SelectedSize: string; //サイズ
+  SelectedCategory: string; //カテゴリー
+}
+
+const Main: NextPage<LineupProps> = (props) => {
+  // サイズとカテゴリーを取得
+  const { SelectedSize, SelectedCategory } = props;
+  console.log('SelectedSize:' + SelectedSize);
+  console.log('SelectedCategory:' + SelectedCategory);
   return (
     <>
       <Head>
@@ -16,58 +25,35 @@ const Main: NextPage = () => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SweepLineUpPageTemplate />
+      <SweepLineUpPageTemplate
+        SelectedSize={SelectedSize}
+        SelectedCategory={SelectedCategory}
+      />
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  // クエリパラメータからサイズとカテゴリーを取得
+  const Size = context.query?.Size !== undefined ? context.query.Size : '';
+  const Category =
+    context.query?.Category !== undefined ? context.query.Category : '';
+
+  console.log('Size:' + Size);
+  console.log('Category:' + Category);
+  // propsとしてページコンポーネントに渡すデータを返す
+  return {
+    props: {
+      SelectedSize: Size,
+      SelectedCategory: Category,
+    },
+  };
 };
 
 export default Main;
 
 /*  
-SWEEP
-画面構造
-リンク一覧
-Top
-LineUp
-Cart
-DEliverInfo
-DeliverConfirm
-DeliverComplete
 
-ファイル階層
-「Page」
-Top
-LineUp
-Cart
-DEliverInfo
-DeliverConfirm
-DeliverComplete
-
-『テンプレート』
-toppage
-lineppage
-cartpage
-deliverinfopage
-deliverconfirmpage
-delivercompletepage
-
-
-『コンポーネント』(大体同じそうなもの)
-header
-itembox
-divAnimate
-spanAnimate
-
-同じ画面内で使用しないものは
-画面ごとの階層を切って使用する
-
-
-基本構造
-ヘッダーのカート数：Redux＋LocalStrage（使用するなら）
-商品一覧、Topや最近見た商品一覧：Redux＆非同期
-アニメーションを考えているパーツはクラス変更が前提のコンポを使用
-商品詳細：クエリパラメータ＆非同期通信
-お知らせ：非同期通信でデータ取得
 
 
 

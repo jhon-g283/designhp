@@ -10,7 +10,7 @@ export const initialState: utilStrage = {
   deliveryInfo: {
     paymentType: "",
   },
-  recently: [],
+  recently: ["1", "1", "1", "1"],
 };
 
 //問合せURL
@@ -33,8 +33,6 @@ const utileStrageReducerSlice = createSlice({
         current(state.recently).indexOf(payloadData) == -1
           ? [...current(state.recently), payloadData]
           : [...current(state.recently)];
-
-      // recentlyData.push(payloadData);
 
       state.recently =
         recentlyData.length > 4 ? recentlyData.slice(-4) : recentlyData;

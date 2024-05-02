@@ -4,10 +4,12 @@ import Header from '../organisms/sweepHeader';
 import Footer from '../organisms/sweepFooter';
 import Image from 'next/image';
 import LineupComponent from '../organisms/sweepLineup';
-
+import { LineupProps } from '../../pages/sweep/lineup';
 // import Header from '../organisms/sweepHeader';
 
-const SweepLineUpPageTemplate = () => {
+const SweepLineUpPageTemplate = (props: LineupProps) => {
+  // サイズとカテゴリーを取得
+  const { SelectedSize, SelectedCategory } = props;
   return (
     <>
       <Header />
@@ -37,7 +39,10 @@ const SweepLineUpPageTemplate = () => {
         </div>
 
         <div className={`${styles.mainWrapper}`}>
-          <LineupComponent />
+          <LineupComponent
+            SelectedSize={SelectedSize}
+            SelectedCategory={SelectedCategory}
+          />
         </div>
 
         <Footer />

@@ -7,9 +7,10 @@ import { NewsItemTop } from '../molecules/sweepTopNewsItemComponent';
 import { fetchInfomations } from '../store/reducers/getNewsDataSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
-import styled from 'styled-components';
+
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import { Tuple } from '@reduxjs/toolkit';
+import { useRouter } from 'next/router';
+import { NEWS_LIST_LINK } from '../common/sweep/setting';
 
 // ヘッダー部分のコンポーネント
 const NewsComponent = () => {
@@ -23,6 +24,10 @@ const NewsComponent = () => {
     console.log('useEffect dispatch fetchinfomation');
     dispatch(fetchInfomations(''));
   }, [dispatch]);
+
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${NEWS_LIST_LINK}`;
 
   const newsSlide = newsData.map((item, index) => {
     return (
@@ -202,7 +207,13 @@ const NewsComponent = () => {
         >
           <div className={styles.backGroundSheet3}></div>
         </Div>
-        <div className={styles.readMoreButton}>
+        <div
+          className={styles.readMoreButton}
+          onClick={() => {
+            // クリックで商品ページへ
+            router.push(url);
+          }}
+        >
           <a>READ MORE</a>
         </div>
       </div>

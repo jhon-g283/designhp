@@ -6,14 +6,15 @@ import Footer from '../organisms/sweepFooter';
 import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ型のインターフェースを使用する
 import ItemDetailComponent from '../organisms/sweepItemDetail';
 
-const SweepItemDetailPageTemplate = ({ itemId }: ItemDetailProps) => {
+const SweepItemDetailPageTemplate = (props: ItemDetailProps) => {
+  const { id, code } = props;
   return (
     <>
       <Header />
       <div className={styles.firstViewArea}></div>
       <div className="sweep">
         <div className={styles.mainWrapper}>
-          <ItemDetailComponent itemId={itemId} />
+          <ItemDetailComponent id={id} code={code} />
         </div>
 
         <Footer />

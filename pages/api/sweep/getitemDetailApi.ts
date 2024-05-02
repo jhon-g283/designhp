@@ -6,7 +6,7 @@ import {
   itemFeaturesData,
   itemFeaturesListData,
   itemDetailReviewData,
-  reviewList,
+  reviewListResutl,
 } from "../../../src/types";
 import jsonDataDetail from "../stbdata/itemDetails.json"; //データ用のJson
 import jsonDataFeature from "../stbdata/itemFeatureList.json"; //データ用のJson
@@ -28,7 +28,7 @@ export default function searchCakesData(
 
   const json = jsonDataDetail;
   const jsonFeature: itemFeaturesListData = jsonDataFeature;
-  const jsonReview: reviewList = jsonDataReview;
+  const jsonReview: reviewListResutl = jsonDataReview;
 
   const initData = initialState.itemDetailData;
 

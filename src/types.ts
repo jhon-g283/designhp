@@ -150,8 +150,13 @@ export interface itemDetailReviewData {
 }
 
 // レビュー一覧のデータ
-export interface reviewList {
+export interface reviewListResutl {
   reviewList: reviewData[];
+}
+// レビュー一覧のデータ
+export interface reviewList {
+  reviewList?: reviewData[];
+  status: string;
 }
 
 // レビューのデータ

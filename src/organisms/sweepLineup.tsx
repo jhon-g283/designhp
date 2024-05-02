@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
 import { default as Div } from '../common/observeDivComponent';
-import { searchResultData } from '../types';
+import { searchResultData, utilStrage } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import {
@@ -10,9 +10,13 @@ import {
 } from '../store/reducers/searchItemsSlice';
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { fetchPickUpItemList } from '../store/reducers/getPickUpListDataSlice';
+import { LineupProps } from '../../pages/sweep/lineup';
 
 // ヘッダー部分のコンポーネント
-const LineupComponent = () => {
+const LineupComponent = (props: LineupProps) => {
+  // サイズとカテゴリーを取得
+  const { SelectedSize, SelectedCategory } = props;
+
   // Redux
   const dispatch = useDispatch<AppDispatch>();
   const itemlistData = useSelector(
@@ -31,6 +35,14 @@ const LineupComponent = () => {
       state.pickUpListReducer?.itemlist ? state.pickUpListReducer.itemlist : []
   );
 
+  //｀最近見た商品情報
+  const recentlyList = useSelector(
+    (state: { utileStrageReducer: utilStrage }) =>
+      state.utileStrageReducer?.recently
+        ? state.utileStrageReducer.recently
+        : ['1', '1', '1', '1']
+  ).join(',');
+
   // 商品概要の表示項モックをuseSelecterから取得
   const categoryName =
     categoryData.length > 0 ? categoryData[0].categoryName : ''; //カテゴリー名
@@ -39,10 +51,13 @@ const LineupComponent = () => {
   const categoryDetail =
     categoryData.length > 0 ? categoryData[0].categoryDetail : ''; //カテゴリーの詳細分
 
+  const initSizeParam = SelectedSize !== '' ? SelectedSize : 'A';
+  const initCategoryParam =
+    SelectedCategory !== '' ? SelectedCategory : 'Basic';
   // useState(選択中のカテゴリ名)
-  const [category, setCategory] = useState('Basic');
+  const [category, setCategory] = useState(initCategoryParam);
   // useState(選択中のサイズ)
-  const [size, setSize] = useState('A');
+  const [size, setSize] = useState(initSizeParam);
 
   //dispatch実行
   useEffect(() => {
@@ -54,8 +69,9 @@ const LineupComponent = () => {
 
     // 商品詳細
     dispatch(fetchItemList(query));
-    // PickUpリスト
-    dispatch(fetchPickUpItemList(''));
+    // 最近見た商品リスト
+    dispatch(fetchPickUpItemList(recentlyList));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, size, dispatch]);
 
   const ItemListComponent = itemlistData.map((item, index) => {

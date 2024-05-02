@@ -16,7 +16,7 @@ const PickUpComponent = () => {
   useEffect(() => {
     console.log('useEffect dispatch fetching information');
 
-    dispatch(fetchPickUpItemList(''));
+    dispatch(fetchPickUpItemList('1,1,1,1'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 

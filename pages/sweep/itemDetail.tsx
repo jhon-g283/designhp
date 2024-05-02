@@ -6,12 +6,15 @@ import SweepItemDetailPageTemplate from '../../src/templates/sweeptemplateitemde
 
 // GetServerSidePropsのPropsのインターフェース
 export interface ItemDetailProps {
-  itemId: string; //商品ID
+  id: string; //商品ID
+  code: string;
 }
 
 const Main: NextPage<ItemDetailProps> = (props) => {
-  // Propsから商品IDを取得
-  const id = props.itemId;
+  // Propsから商品ID,Codeを取得
+  // const id = props.id;
+
+  const { id, code } = props;
 
   return (
     <>
@@ -25,7 +28,7 @@ const Main: NextPage<ItemDetailProps> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 商品IDを渡す */}
-      <SweepItemDetailPageTemplate itemId={id} />
+      <SweepItemDetailPageTemplate id={id} code={code} />
     </>
   );
 };
@@ -34,11 +37,13 @@ const Main: NextPage<ItemDetailProps> = (props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   // クエリパラメータから商品IDを取得
   const id = context.query?.id !== undefined ? context.query.id : '0';
+  const code = context.query?.code !== undefined ? context.query.code : '0';
 
   // propsとしてページコンポーネントに渡すデータを返す
   return {
     props: {
-      itemId: id,
+      id: id,
+      code: code,
     },
   };
 };

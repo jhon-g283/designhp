@@ -71,12 +71,12 @@ const CategoryComponent = () => {
             />
             <ItemLinkCategory
               itemName="キャラメル"
-              subName="caramel"
+              subName="Caramel"
               imageUrl="/imgSweep/Caramel.jpg"
             />
             <ItemLinkCategory
               itemName="ベジタブル"
-              subName="vegetable"
+              subName="Vegetable"
               imageUrl="/imgSweep/Vegitable.jpg"
             />
             <ItemLinkCategory

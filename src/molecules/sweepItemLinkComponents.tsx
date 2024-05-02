@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
-import styled from 'styled-components';
-
-// ヘッダー部分のコンポーネント
+import { useRouter } from 'next/router';
+import { ITEM_LINEUP } from '../common/sweep/setting';
 
 interface Props {
   imageUrl: string; //画像Url
@@ -16,9 +15,21 @@ const ItemLinkSize = ({
   itemName = '',
   subName = '',
 }: Props) => {
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_LINEUP}`;
+
+  const param = subName == '1Week' ? 'S' : subName == '1Month' ? 'M' : 'L';
+
   return (
     <>
-      <div className={styles.itemLinkSize}>
+      <div
+        className={styles.itemLinkSize}
+        onClick={() => {
+          // クリックで商品ページへ
+          router.push({ pathname: url, query: { Size: param } });
+        }}
+      >
         <div className={styles.itemImageWrapper}>
           <Image
             src={imageUrl}
@@ -72,9 +83,18 @@ const ItemLinkCategory = ({
   itemName = '',
   subName = '',
 }: Props) => {
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_LINEUP}`;
   return (
     <>
-      <div className={styles.itemLinkCategory}>
+      <div
+        className={styles.itemLinkCategory}
+        onClick={() => {
+          // クリックで商品ページへ
+          router.push({ pathname: url, query: { Category: subName } });
+        }}
+      >
         <div className={styles.itemImageCategoryWrapper}>
           <Image
             src={imageUrl}

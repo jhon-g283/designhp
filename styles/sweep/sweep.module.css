@@ -2062,6 +2062,12 @@ img.FVOverWritten {
   margin-bottom: 11px;
 
   font-size: 1em;
+
+  /* 文字を折り返す */
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   @media (max-width: 768px) {
     font-size: 0.75em;
     margin-top: 0.5em;
@@ -2071,7 +2077,8 @@ img.FVOverWritten {
 
 /* トップページ内のアイテムボックス */
 .itemBox {
-  /* width: 266px; */
+  max-width: 230px;
+  box-sizing: border-box;
 
   flex-shrink: 0;
   background: linear-gradient(0deg, #fff 0%, #fff 100%), rgba(0, 0, 0, 0.34);

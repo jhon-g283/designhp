@@ -4,10 +4,14 @@ import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
 import { ItemLinkSize } from '../molecules/sweepItemLinkComponents';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { ITEM_LINEUP } from '../common/sweep/setting';
 
 // ヘッダー部分のコンポーネント
 const ProductComponent = () => {
-  // Redux
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_LINEUP}`;
 
   return (
     <>
@@ -44,7 +48,13 @@ const ProductComponent = () => {
                 </p>
               </div>
               <div className={styles.lineUpButtonWrapper}>
-                <div className={styles.lineUpButton}>
+                <div
+                  className={styles.lineUpButton}
+                  onClick={() => {
+                    // クリックで商品ページへ
+                    router.push(url);
+                  }}
+                >
                   <a>LINEUP</a>
                 </div>
               </div>

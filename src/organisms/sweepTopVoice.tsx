@@ -3,11 +3,34 @@ import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
 import ReviewItem from '../molecules/sweepReviewItemComponents';
-import Image from 'next/image';
+import { useEffect } from 'react';
+import { AppDispatch } from '../store/index'; //方で怒られるので入れた
+import { useDispatch, useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
+import { fetchReviewItemList } from '../../src/store/reducers/reviewListSlice';
+
+import { reviewList } from '../types';
 
 // ヘッダー部分のコンポーネント
 const VoiceComponent = () => {
   // Redux
+  const dispatch = useDispatch<AppDispatch>();
+  // データ取得
+  useEffect(() => {
+    console.log('useEffect dispatch fetching information');
+
+    dispatch(fetchReviewItemList(''));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
+
+  // Redux:ピックアップ商品
+  const reviewDataList = useSelector(
+    (state: { getReviewListReducer: reviewList }) =>
+      state.getReviewListReducer?.reviewList
+        ? state.getReviewListReducer.reviewList
+        : []
+  ).slice(0, 4);
+
+  console.log(reviewDataList);
 
   return (
     <>
@@ -47,7 +70,23 @@ const VoiceComponent = () => {
         </Div>
         <div className={styles.reviewItemListWrapper}>
           <div className={styles.reviewItemList}>
-            <ReviewItem
+            {reviewDataList.map((item, index) => {
+              const reviewerInfo = `(${item.reviewerAge} ${item.reviewerJob} ${item.reviewerGender})`;
+              const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
+              return (
+                <ReviewItem
+                  key={'reviewItem_' + index}
+                  imageUrl={item.imageUrl}
+                  itemName={item.itemName}
+                  price={item.price}
+                  review={item.review}
+                  linkParam={param}
+                  reviewerInfo={reviewerInfo}
+                  commentText={item.commentText}
+                />
+              );
+            })}
+            {/* <ReviewItem
               imageUrl="/imgSweep/Product_Bitter.jpg"
               itemName="ビターチョコ(7個)"
               price="600"
@@ -82,7 +121,7 @@ const VoiceComponent = () => {
               linkParam="a"
               reviewerInfo="(30代 会社員 女性)"
               commentText="甘すぎず苦すぎない絶妙な口当たりで、食後に最適。自然と夜もベッドに入れるようになったので、買ってよかったです。"
-            />
+            /> */}
           </div>
         </div>
       </div>

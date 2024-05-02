@@ -7,8 +7,9 @@ import cartReducerSlice from "./reducers/addCartDataSlice";
 import getItemListSlice from "./reducers/searchItemsSlice";
 import getNewsListSlice from "./reducers/getNewsDataSlice";
 import getItemDetailSlice from "./reducers/getItemDetailSlice";
-import getPickUpListListSlice from "./reducers/getPickUpListDataSlice";
+import getPickUpListDataSlice from "./reducers/getPickUpListDataSlice";
 import utileStrageReducerSlice from "./reducers/utileStrageSlice";
+import getReviewListSlice from "./reducers/reviewListSlice";
 
 export type AppDispatch = typeof store.dispatch; // dispatchの方で怒られるので追加
 
@@ -18,8 +19,9 @@ const reducers = combineReducers({
   itemListReducer: getItemListSlice,
   newsListReducer: getNewsListSlice,
   itemDetailReducer: getItemDetailSlice,
-  pickUpListReducer: getPickUpListListSlice,
+  pickUpListReducer: getPickUpListDataSlice,
   utileStrageReducer: utileStrageReducerSlice,
+  getReviewListReducer: getReviewListSlice,
 
   // reducer: {
   //   // reducer名：インポートしたReducerファイル(XX.reducer)

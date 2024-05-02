@@ -27,9 +27,16 @@ import { ItemDetailProps } from '../../pages/sweep/itemDetail'; // 親と同じ�
 
 import AddCartButton from '../atoms/addCartItem';
 
+interface categoryConvert {
+  [key: string]: string; //　郵便番号
+}
+interface sizeConvert {
+  [key: string]: number; //　郵便番号
+}
+
 // ヘッダー部分のコンポーネント
-const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
-  const id = itemId;
+const ItemDetailComponent = (props: ItemDetailProps) => {
+  const { id, code } = props;
   // Redux：商品詳細
 
   const dispatch = useDispatch<AppDispatch>();
@@ -50,13 +57,27 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
     (state: { utileStrageReducer: utilStrage }) =>
       state.utileStrageReducer?.recently
         ? state.utileStrageReducer.recently
-        : ['1', '1', '1', '1']
+        : ['1-S', '1-S', '1-S', '1-S']
   ).join(','); //｀最近見た商品情報
+
   console.log(itemData);
   console.log(pickUpData);
 
   const itemName = itemData?.itemName || '';
-  const category = itemData?.category;
+  const category = itemData?.category || '';
+
+  const categoryNames: categoryConvert = {
+    Basic: 'ベーシック',
+    Milk: 'ミルク',
+    Caramel: 'キャラメル',
+    Strawberry: 'ストロベリー',
+    Sakura: 'サクラ',
+    Vegetable: 'ベジタブル',
+    Limited: '期間限定',
+    Bitter: 'ビター',
+  };
+
+  const categoryDisplay = categoryNames[category] || '';
 
   // 評価値の数値作成
   const evaluationArray =
@@ -68,16 +89,21 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
 
   // データ取得
   useEffect(() => {
-    console.log('useEffect dispatch fetching information');
+    console.log('useEffect dispatch fetching detail');
+    const recentryCode = `${id}-${code}`;
     dispatch(fetchDetails(id));
     dispatch(fetchPickUpItemList(recentlyList));
-    dispatch(upDateRecentry(id));
+    dispatch(upDateRecentry(recentryCode));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
+  const sizeArray: sizeConvert = { S: 0, M: 1, L: 2 };
+
+  const initSelectedSize = sizeArray[code] || 0;
+
   // 現在選択中のボタン(数値と配列のインデックスを連動させる。)
-  const [selectedSize, setSelectedSize] = useState(1); //現在のサイズ
+  const [selectedSize, setSelectedSize] = useState(initSelectedSize); //現在のサイズ
   const [selectedImage, setSelectedImage] = useState(0); //選択してる画像
   const [count, setCount] = useState(1); //商品数
 
@@ -222,7 +248,7 @@ const ItemDetailComponent = ({ itemId }: ItemDetailProps) => {
       <div className={styles.itemDetailComponentWrapper}>
         {/* パンクズりすと */}
         <div className={styles.itemDetailBreadList}>
-          <a>{category}</a>
+          <a>{categoryDisplay}</a>
           <svg
             width="11"
             height="12"

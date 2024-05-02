@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
-
+import { useRouter } from 'next/router';
+import { ITEM_DETAIL_LINK } from '../common/sweep/setting';
 // ヘッダー部分のコンポーネント
 
 interface Props {
   imageUrl?: string; //画像Url
   itemName?: string; //商品名
-  price?: string; //価格
-  review?: string;
+  price?: number; //価格
+  review?: number;
   linkParam?: string;
   reviewerInfo?: string;
   commentText?: string;
@@ -17,15 +18,17 @@ interface Props {
 const ReviewItem = ({
   imageUrl = '',
   itemName = '',
-  price = '',
-  review = '',
+  price = 0,
+  review = 0,
   linkParam = '',
   reviewerInfo = '',
   commentText = '',
 }: Props) => {
-  const link = 'domein:::::' + linkParam;
+  // ルーターと遷移先設定
+  const router = useRouter();
+  const url = `${ITEM_DETAIL_LINK}?${linkParam}`;
 
-  const starCount = parseInt(review);
+  const starCount = review;
 
   const stars = createReviewStars(
     starCount,
@@ -69,7 +72,13 @@ const ReviewItem = ({
           </div>
 
           <div className={styles.reviewLinkWrapper}>
-            <a className={styles.reviewLink} href={link}>
+            <a
+              className={styles.reviewLink}
+              onClick={() => {
+                // クリックで商品ページへ
+                router.push(url);
+              }}
+            >
               商品ページへ
             </a>
             <svg
