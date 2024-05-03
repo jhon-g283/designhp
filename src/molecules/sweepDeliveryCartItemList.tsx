@@ -1,5 +1,4 @@
 import styles from '../../styles/sweep/sweep.module.css';
-import { CartItemProps } from '../molecules/sweepCartItemBoxComponents';
 interface Props {
   // cartItemsList: CartItemProps[]; //進捗
   cartItemsList: any[]; //進捗

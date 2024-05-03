@@ -273,6 +273,13 @@ const LineupComponent = (props: LineupProps) => {
               </li>
               <li
                 onClick={() => {
+                  setCategory('Vegetable');
+                }}
+              >
+                ベジタブル{CategoryCheckBox('Vegetable')}
+              </li>
+              <li
+                onClick={() => {
                   setCategory('Limited');
                 }}
               >

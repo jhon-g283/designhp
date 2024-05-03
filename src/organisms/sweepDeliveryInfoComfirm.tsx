@@ -12,9 +12,11 @@ import { useRouter } from 'next/router';
 import { CART_DELIVERY_INPUT, ORDER_COMPLETE } from '../common/sweep/setting';
 import DeliveryCartListComponent from '../molecules/sweepDeliveryCartItemList';
 import { initialState } from '../store/reducers/utileStrageSlice';
+import { resetCart } from '../store/reducers/addCartDataSlice';
 
 // ヘッダー部分のコンポーネント
 const OrderConfirmComponent = () => {
+  const dispatch = useDispatch();
   //  Reduxカート情報取得
   const cartItemData: itemData[] = useSelector(
     (state: { cartreducer: cartData }) =>
@@ -215,6 +217,7 @@ const OrderConfirmComponent = () => {
           <button
             className={styles.deliveryInfoConfirmButton}
             onClick={() => {
+              dispatch(resetCart(''));
               // クリックで商品ページへ
               router.push({
                 pathname: ORDER_COMPLETE,

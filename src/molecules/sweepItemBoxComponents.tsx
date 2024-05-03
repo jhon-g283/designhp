@@ -58,7 +58,13 @@ const TopPageItemBox = ({
           ></Image>
         </div>
 
-        <div className={styles.topItemInfoWrapper}>
+        <div
+          className={styles.topItemInfoWrapper}
+          onClick={() => {
+            // クリックで商品ページへ
+            router.push(url);
+          }}
+        >
           <div className={styles.topItemNameWrapper}>
             <p className={styles.topItemName}>{itemName}</p>
           </div>
@@ -133,7 +139,13 @@ const ItemBox = ({
           ></Image>
         </div>
 
-        <div className={styles.itemBoxInfoWrapper}>
+        <div
+          className={styles.itemBoxInfoWrapper}
+          onClick={() => {
+            // クリックで商品ページへ
+            router.push(url);
+          }}
+        >
           <div className={styles.itemBoxNameWrapper}>
             <p className={styles.itemBoxName}>{itemName}</p>
           </div>

@@ -5,7 +5,7 @@
       "id": "1",
       "code": "S",
       "imageUrl": "/imgSweep/Product_Bitter.jpg",
-      "itemName": "ビターチョコ(7個)",
+      "itemName": "ベーシックチョコ(7個)",
       "price": 600,
       "review": 3,
       "linkParam": "a",
@@ -19,7 +19,7 @@
     },
     {
       "reviewId": "2",
-      "id": "1",
+      "id": "5",
       "code": "S",
       "imageUrl": "/imgSweep/Product_sakura.jpg",
       "itemName": "サクラ(7個)",
@@ -36,7 +36,7 @@
     },
     {
       "reviewId": "3",
-      "id": "1",
+      "id": "4",
       "code": "S",
       "imageUrl": "/imgSweep/Product_strawberry.jpg",
       "itemName": "ストロベリー(7個)",

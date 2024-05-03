@@ -7,6 +7,8 @@ import {
   searchResultData,
   utilStrage,
 } from '../types';
+import { ITEM_LINEUP } from '../common/sweep/setting';
+import { useRouter } from 'next/router';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
 import {
   createReviewStarsLineup,
@@ -76,6 +78,10 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
     Limited: '期間限定',
     Bitter: 'ビター',
   };
+
+  // パンクズリストのリンク設定
+  const router = useRouter();
+  const BreadListLink = `${ITEM_LINEUP}`;
 
   const categoryDisplay = categoryNames[category] || '';
 
@@ -248,7 +254,18 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
       <div className={styles.itemDetailComponentWrapper}>
         {/* パンクズりすと */}
         <div className={styles.itemDetailBreadList}>
-          <a>{categoryDisplay}</a>
+          <a
+            onClick={() => {
+              // パンクズリスト
+              // クリックで一覧ページへ
+              router.push({
+                pathname: BreadListLink,
+                query: { Category: category },
+              });
+            }}
+          >
+            {categoryDisplay}
+          </a>
           <svg
             width="11"
             height="12"

@@ -30,7 +30,7 @@ const cartReducerSlice = createSlice({
 
       // すでに追加済みか確認
       const check = currentCartList?.find((item) => {
-        return item.itemId == addData.itemId;
+        return item.itemId == addData.itemId && item.code == addData.code;
       });
 
       if (check !== undefined) {
@@ -110,6 +110,12 @@ const cartReducerSlice = createSlice({
 
       console.log("remove cart id:" + action.payload);
     },
+    resetCart(state, action) {
+      // カートデータリセット（購入完了時など）
+
+      state.itemDataArry = initialState.itemDataArry;
+      state.totalCountcount = 0;
+    },
   },
   extraReducers: (builder) => {
     // 通信中
@@ -118,7 +124,8 @@ const cartReducerSlice = createSlice({
 
 // selectorをエクスポート
 
-export const { addCart, removeCart, editCart } = cartReducerSlice.actions; // Action Createrをエクスポート
+export const { addCart, removeCart, editCart, resetCart } =
+  cartReducerSlice.actions; // Action Createrをエクスポート
 
 // 現在のcountの値を取得するためのSelectorをexportする
 export const selectCount = ({ cartInfo }: { cartInfo: cartData }) =>
