@@ -1,0 +1,21 @@
+/* カート追加時のアニメーション */
+.cartCount {
+  animation: cartCountAnimation 0.7s ease-out;
+
+  display: inline-block;
+}
+
+@keyframes cartCountAnimation {
+  /* 画面側で作成したカート数＆一つ前のカート数の２つを縦に並べたものを上下にスライドして数が増えるように見せる。 */
+  0% {
+    transform: translateY(0em);
+  }
+
+  50% {
+    transform: translateY(-1em);
+  }
+
+  100% {
+    transform: translateY(-2em);
+  }
+}

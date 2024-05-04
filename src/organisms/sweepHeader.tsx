@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
-import { useState } from 'react';
+import stylesAnimation from '../../styles/sweep/sweepanimation.module.css';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 
 import { cartData } from '../types';
@@ -17,10 +18,34 @@ const Header = () => {
   // ハンバーガーメニュー表示状況
   const [check, setCheck] = useState(false);
 
+  // アニメーション用のフラグ
+  const [animationFlag, setAnimationFlag] = useState(false);
+  const [firstFlag, setFirstFlag] = useState(false);
+
   // 切り替え用関数
   const switchMenu = () => {
     setCheck(!check);
   };
+
+  // アニメーション用のカート数（-1）
+  const preCartNumber = cartCount - 1 > 0 ? cartCount - 1 : 0;
+
+  useEffect(() => {
+    if (!firstFlag) {
+      // 初期表示時にはアニメーション用フラグを動かさない
+      setFirstFlag(true);
+    } else {
+      // カート数が変更したらアニメーション用フラグを切り替えて数秒後に戻す
+      if (cartCount !== 0) {
+        setAnimationFlag(true);
+        setTimeout(() => {
+          setAnimationFlag(false);
+        }, 700);
+      }
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cartCount]);
 
   return (
     <>
@@ -57,7 +82,7 @@ const Header = () => {
             </div>
 
             {/* カート数、アイコン */}
-            <div className={styles.cartIconImageWrapper}>
+            <div className={`${styles.cartIconImageWrapper} `}>
               <Link href={'/sweep/cart/cartItems'}>
                 <Image
                   src={'/imgSweep/cartImage.svg'}
@@ -72,11 +97,27 @@ const Header = () => {
             </div>
 
             <div
-              className={styles.cartNumberWrapper}
+              className={`${styles.cartNumberWrapper}`}
               style={check ? { display: 'none' } : {}}
             >
+              {/* <div className={` ${stylesAnimation.cartAnimation}`}> */}
+
               <div>
-                <a>{cartCount}</a>
+                {!animationFlag ? (
+                  <a>{cartCount}</a>
+                ) : (
+                  <>
+                    <a className={stylesAnimation.cartCount}>
+                      {preCartNumber}
+                      <br></br>
+
+                      {cartCount}
+                    </a>
+                  </>
+                )}
+                {/* <a>{cartCount}</a> */}
+
+                {/* <a>{animationFlag ? preCartNumber : cartCount}</a> */}
               </div>
             </div>
             <div className={`${styles.sweepHumburger} ${styles.imgSP}`}>

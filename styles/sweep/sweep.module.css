@@ -169,6 +169,12 @@ a.linkMenu:active {
   width: 26px;
   height: 26px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  overflow: hidden;
+
   margin-top: 5px;
   margin-right: 7px;
   font-size: 15px;
@@ -188,9 +194,11 @@ a.linkMenu:active {
 /* カート数 */
 .cartNumberWrapper a {
   margin: 0 auto;
+  position: relative;
 }
 /* カート数の位置調整*/
 .cartNumberWrapper div {
+  position: relative;
   padding-top: 1.5px;
 }
 

@@ -289,7 +289,6 @@ const CartItemComponent = () => {
                   // クリックで商品ページへ
                   router.push({
                     pathname: url,
-                    query: { id: 3 },
                   });
                 }}
               >

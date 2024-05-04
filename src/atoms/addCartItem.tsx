@@ -1,4 +1,6 @@
 import { addCart } from '../store/reducers/addCartDataSlice';
+import { useState } from 'react';
+
 import { AppDispatch } from '../store/index'; //方で怒られるので入れた
 import { useDispatch } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
 import styled from 'styled-components';
@@ -27,6 +29,17 @@ const AddCartButton = (prop: Prop) => {
   } = prop;
   const dispatch = useDispatch<AppDispatch>();
 
+  // カート追加時のアニメーション用フラグ
+  const [sendingFlag, setSendingFlag] = useState(false);
+
+  // フラグを数秒後に戻す
+  const flagChangeWithTimer = () => {
+    setSendingFlag(true);
+    setTimeout(() => {
+      setSendingFlag(false);
+    }, 1000);
+  };
+
   //   追加用関数
   const addCartFunction = (
     id: string,
@@ -48,14 +61,17 @@ const AddCartButton = (prop: Prop) => {
     dispatch(addCart(addData));
   };
 
+  const senging = <>sending</>;
+
   const cartButton = (
     <button
       onClick={() => {
+        flagChangeWithTimer();
         addCartFunction(id, code, itemName, imageUrl, count, price);
       }}
       className={className}
     >
-      {children}
+      {!sendingFlag ? children : senging}
     </button>
   );
 
