@@ -1,4 +1,6 @@
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
+
 import { newsData } from '../types';
 
 import { useRouter } from 'next/router';
@@ -21,7 +23,7 @@ const NewsItemComponent = ({ newsDataProps }: Props) => {
   return (
     <>
       <div
-        className={styles.newsListItemWrapper}
+        className={`${styles.newsListItemWrapper} ${animationStyle.newsListHover}`}
         onClick={() => {
           // クリックで商品ページへ
           router.push(url);

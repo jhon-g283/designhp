@@ -19,3 +19,116 @@
     transform: translateY(-2em);
   }
 }
+
+/* ホバーイベント類 */
+
+/* リンクボタンのホバー */
+.topPageLinkBottom:hover {
+  /* filter: invert(100%); */
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* ニュース一覧のホバー */
+.topPagenewsItemHover:hover {
+  background-color: rgba(198, 198, 198, 0.3); /* ふんわりとした明るい影を追加 */
+  transition: background-color 1s; /* 背景色の変化をアニメーション化 */
+  /* background-color: #ffffff; */
+}
+
+/* カテゴリーのホバー */
+.lineUpuCategory li:hover {
+  text-decoration-line: underline;
+  text-decoration-color: rgba(220, 220, 220, 0.5);
+  text-underline-offset: 0.5rem;
+}
+
+/* 商品ボックスのホバー */
+.itemBoxAnker:hover {
+  text-decoration-line: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.83);
+  text-underline-offset: 0.2rem;
+}
+
+.topItemBoxAnker:hover {
+  text-decoration-line: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.83);
+  text-underline-offset: 0.2rem;
+}
+
+/* ヘッダーのメニュー */
+.headerLink a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.83);
+  text-underline-offset: 0.2rem;
+  transition: text-decoration-color 0.3s, text-decoration-style 0.3s; /* 下線が表示される時間を設定 */
+}
+
+/* カートのアイコン */
+.cartIconHover:hover {
+  border-bottom: #000000 1px solid;
+  border-bottom-width: 3px;
+  transition: border-bottom-width 1s;
+  /* 下線部を入れることでカートアイコンが動くように見せる */
+}
+
+/* ニュース一覧のホバー */
+.newsListHover:hover {
+  background-color: rgba(221, 218, 218, 0.3); /* ふんわりとした明るい影を追加 */
+  transition: background-color 1s; /* 背景色の変化をアニメーション化 */
+}
+
+.arrowHover:hover {
+  /* animation: animationFeedin1 1s; */
+  border-color: #ffffff;
+}
+.arrowHover:hover svg {
+  animation: animationArrowSlide 1s;
+}
+
+/* カートボタンのホバー */
+.itemDetailCartButtonHover button:hover {
+  filter: invert(100%);
+  border: #ffffff 1px solid;
+}
+
+.countHover button:hover {
+  background-color: rgba(221, 218, 218, 0.3); /* ふんわりとした明るい影を追加 */
+}
+
+.sizeButtonHover:hover {
+  background-color: rgba(221, 218, 218, 0.3); /* ふんわりとした明るい影を追加 */
+}
+
+/* アニメーション系 */
+
+/* テキスト部分のフェードイン */
+.FeedIn1 {
+  animation: animationFeedin1 1s;
+}
+/* テキストをフェードイン */
+@keyframes animationFeedin1 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animationArrowSlide {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(10px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

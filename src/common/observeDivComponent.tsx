@@ -8,7 +8,7 @@ interface Props {
   className?: string; //クラス名(className)
   once?: boolean; //一回きりか？
   rootMargin?: string; //スクロール時の検知するマージンはば
-  children: React.ReactElement; //<div>タグで囲むchildrenのコンポーネント・タグ
+  children: React.ReactNode; //<div>タグで囲むchildrenのコンポーネント・タグ
 }
 
 // Observe機能付きののDivタグ

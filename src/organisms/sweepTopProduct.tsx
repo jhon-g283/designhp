@@ -1,4 +1,5 @@
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
@@ -14,7 +15,13 @@ const ProductComponent = () => {
   const url = `${ITEM_LINEUP}`;
 
   return (
-    <>
+    <Div
+      className=""
+      afterClass={`${animationStyle.FeedIn1}`}
+      beforeClass=""
+      once={true}
+      rootMargin="0px"
+    >
       <div>
         <div>
           <Div
@@ -49,7 +56,7 @@ const ProductComponent = () => {
               </div>
               <div className={styles.lineUpButtonWrapper}>
                 <div
-                  className={styles.lineUpButton}
+                  className={`${styles.lineUpButton} ${animationStyle.topPageLinkBottom}`}
                   onClick={() => {
                     // クリックで商品ページへ
                     router.push(url);
@@ -132,7 +139,7 @@ const ProductComponent = () => {
           </div>
         </div>
       </div>
-    </>
+    </Div>
   );
 };
 

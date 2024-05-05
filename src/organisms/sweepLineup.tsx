@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import { searchResultData, utilStrage } from '../types';
 import { ItemBox } from '../molecules/sweepItemBoxComponents';
@@ -22,6 +23,14 @@ const LineupComponent = (props: LineupProps) => {
   const itemlistData = useSelector(
     (state: { itemListReducer: searchResultData }) =>
       state.itemListReducer?.itemlist ? state.itemListReducer.itemlist : []
+  ); //商品リスト取得
+
+  // アニメーション用に取得状況でコンポーネント切り替えを行うため取得
+  const fetchingComplete = useSelector(
+    (state: { itemListReducer: searchResultData }) =>
+      state.itemListReducer?.status
+        ? state.itemListReducer.status == 'success'
+        : false
   ); //商品リスト取得
 
   const categoryData = useSelector(
@@ -74,23 +83,43 @@ const LineupComponent = (props: LineupProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, size, dispatch]);
 
-  const ItemListComponent = itemlistData.map((item, index) => {
-    const uniqueKey = 'ItemListComponent_key_' + index;
+  // アイテムリスト
+  const ItemListComponent = fetchingComplete ? (
+    itemlistData.map((item, index) => {
+      const uniqueKey = 'ItemListComponent_key_' + index;
 
-    const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
-    return (
+      const param = `id=${item?.id}&code=${item?.code}`; //商品ID+コード
+      return (
+        <ItemBox
+          id={item.id || ''}
+          code={item.code || ''}
+          imageUrl={item.imageUrl || ''}
+          itemName={item.itemName}
+          price={item.price}
+          review={item.evaluation}
+          linkParam={param}
+          key={uniqueKey}
+          index={index}
+        />
+      );
+    })
+  ) : (
+    // アニメーション用にダミーの状態を実装する
+    <>
       <ItemBox
-        id={item.id || ''}
-        code={item.code || ''}
-        imageUrl={item.imageUrl || ''}
-        itemName={item.itemName}
-        price={item.price}
-        review={item.evaluation}
-        linkParam={param}
-        key={uniqueKey}
+        id={''}
+        code={''}
+        imageUrl={''}
+        itemName={''}
+        price={''}
+        review={''}
+        linkParam={''}
+        key={'_'}
+        index={0}
       />
-    );
-  });
+      )
+    </>
+  );
 
   // カテゴリカテゴリのチェックボックス
   const CategoryCheckBox = (currentCategory: string = '') => {
@@ -101,7 +130,6 @@ const LineupComponent = (props: LineupProps) => {
           name="category"
           className={styles.lineupCheckBox}
           checked={category == currentCategory}
-          // onChange={() => {}}
           readOnly
         />
         <svg
@@ -110,6 +138,14 @@ const LineupComponent = (props: LineupProps) => {
           viewBox="0 0 14 9"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={
+            // チェック一致時にアニメーション発火
+            category == currentCategory
+              ? {
+                  animation: `${animationStyle.animationFeedin1} 0.5s`,
+                }
+              : {}
+          }
         >
           <line
             x1="0.568397"
@@ -190,7 +226,9 @@ const LineupComponent = (props: LineupProps) => {
             </span>
           </p>
 
-          <div className={styles.lineupFilterBlockWrapper}>
+          <div
+            className={`${styles.lineupFilterBlockWrapper} ${animationStyle.lineUpuCategory}`}
+          >
             <p>
               <span>
                 <svg
@@ -362,7 +400,16 @@ const LineupComponent = (props: LineupProps) => {
         </div>
 
         <div className={styles.lineupItemArea}>
-          <div className={styles.lineupCategoryExprainArea}>
+          <div
+            className={styles.lineupCategoryExprainArea}
+            style={
+              fetchingComplete
+                ? {
+                    animation: `${animationStyle.animationFeedin1} 0.7s`,
+                  }
+                : {}
+            }
+          >
             <div className={styles.lineupCategoryTitle}>
               <h2>{categoryName}</h2>
             </div>
@@ -395,6 +442,7 @@ const LineupComponent = (props: LineupProps) => {
                   price={item.price || ''}
                   review={item.evaluation || 0}
                   linkParam={param || ''}
+                  index={index}
                 />
               );
             })}

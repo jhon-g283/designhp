@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import {
   itemDetail,
@@ -186,7 +187,7 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
     const buttonClass =
       selectedSize == index
         ? styles.itemDetailSelectedButton
-        : styles.itemDetailSizeButton;
+        : `${styles.itemDetailSizeButton} ${animationStyle.sizeButtonHover}`;
 
     return (
       <>
@@ -296,7 +297,13 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
         </div>
         {/* 商品情報 */}
 
-        <div className={styles.itemDetailItemImfomation}>
+        <Div
+          className={styles.itemDetailItemImfomation}
+          afterClass={`${animationStyle.FeedIn1}`}
+          beforeClass=""
+          once={true}
+          rootMargin="0px"
+        >
           <div className={styles.itemDetailImageArea}>
             <div className={styles.itemDetailItemMainImageWrapper}>
               <Image
@@ -365,7 +372,9 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
             {/* ボタン類 */}
             <div className={styles.itemDetailButtonArea}>
               {/* 数量 */}
-              <div className={styles.itemDetailContButtonArea}>
+              <div
+                className={`${styles.itemDetailContButtonArea} ${animationStyle.countHover}`}
+              >
                 <a>数量</a>
                 {/* 共通化する ーーーーーーーーーーーーーー*/}
                 <div className={styles.itemDetailContButtonOuterWrapper}>
@@ -460,7 +469,9 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
                 {/* ーーーーーーーーーーーーーーー */}
               </div>
               {/* カートボタン */}
-              <div className={styles.itemDetailCartButtonWrapper}>
+              <div
+                className={`${styles.itemDetailCartButtonWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+              >
                 <AddCartButton
                   className={styles.itemDetailCartButton}
                   id={id}
@@ -475,12 +486,18 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
               </div>
             </div>
           </div>
-        </div>
+        </Div>
 
         {/* 商品の特徴 */}
         <div className={styles.itemDetailItemFeaturesArea}>
           {/* 特徴１ */}
-          <div className={styles.itemDetailItemFeatures1Wrapper}>
+          <Div
+            className={styles.itemDetailItemFeatures1Wrapper}
+            afterClass={`${animationStyle.FeedIn1}`}
+            beforeClass=""
+            once={true}
+            rootMargin="0px"
+          >
             <div className={styles.itemDetailItemFeaturesText}>
               <div className={styles.itemDetailFeaturesTitleWrapper}>
                 <p className={styles.itemDetailItemFeaturesTitle}>
@@ -523,9 +540,15 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
                 fill={true}
               ></Image>
             </div>
-          </div>
+          </Div>
           {/* 特徴２ */}
-          <div className={styles.itemDetailItemFeatures2Wrapper}>
+          <Div
+            className={styles.itemDetailItemFeatures2Wrapper}
+            afterClass={`${animationStyle.FeedIn1}`}
+            beforeClass=""
+            once={true}
+            rootMargin="0px"
+          >
             <div className={styles.itemDetailItemFeaturesText}>
               <div className={styles.itemDetailFeaturesTitleWrapper}>
                 <p className={styles.itemDetailItemFeaturesTitle}>
@@ -566,7 +589,7 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
                 fill={true}
               ></Image>
             </div>
-          </div>
+          </Div>
         </div>
 
         {/* <div className={styles.itemDetailItemVoiceAreaBorder}></div> */}

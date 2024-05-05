@@ -1822,6 +1822,16 @@ img.FVOverWritten {
     padding-bottom: 0px;
   }
 }
+
+@media (max-width: 768px) {
+  .categorySPImageOuterWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
 /* 画像の外枠 */
 .categoryImageWrapper {
   width: 1097px;
@@ -1987,7 +1997,7 @@ img.FVOverWritten {
   height: 200px;
   flex-shrink: 0;
   position: relative;
-
+  cursor: pointer;
   @media (max-width: 768px) {
     width: 100%;
     /* max-width: 125px; */
@@ -2043,6 +2053,7 @@ img.FVOverWritten {
   font-weight: 300;
   line-height: normal;
   letter-spacing: 1.4px;
+  cursor: pointer;
 }
 
 /* 商品名（外枠） */

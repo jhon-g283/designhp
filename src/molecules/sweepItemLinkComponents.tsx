@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { useRouter } from 'next/router';
 import { ITEM_LINEUP } from '../common/sweep/setting';
 
@@ -24,7 +25,7 @@ const ItemLinkSize = ({
   return (
     <>
       <div
-        className={styles.itemLinkSize}
+        className={`${styles.itemLinkSize} ${animationStyle.arrowHover}`}
         onClick={() => {
           // クリックで商品ページへ
           router.push({ pathname: url, query: { Size: param } });
@@ -89,7 +90,7 @@ const ItemLinkCategory = ({
   return (
     <>
       <div
-        className={styles.itemLinkCategory}
+        className={`${styles.itemLinkCategory} ${animationStyle.arrowHover}`}
         onClick={() => {
           // クリックで商品ページへ
           router.push({ pathname: url, query: { Category: subName } });

@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
 import AddCartButton from '../atoms/addCartItem';
 import { useRouter } from 'next/router';
+
 import { ITEM_DETAIL_LINK } from '../common/sweep/setting';
 // ヘッダー部分のコンポーネント
 
@@ -14,6 +16,7 @@ interface Props {
   price?: string; //価格
   review: string;
   linkParam: string;
+  index?: number; //アニメーション用インデックス
 }
 
 const TopPageItemBox = ({
@@ -24,6 +27,7 @@ const TopPageItemBox = ({
   price = '',
   review = '0',
   linkParam,
+  index = 0,
 }: Props) => {
   // ルーターと遷移先設定
   const router = useRouter();
@@ -107,6 +111,7 @@ const ItemBox = ({
   price = '',
   review = '0',
   linkParam,
+  index = 0,
 }: Props) => {
   // ルーターと遷移先設定
   const router = useRouter();
@@ -121,9 +126,16 @@ const ItemBox = ({
     'top_item_box'
   );
 
+  const delayTime = `${0.1 + index * 0.25}s`;
+
   return (
     <>
-      <div className={styles.itemBox}>
+      <div
+        className={`${styles.itemBox} `}
+        style={{
+          animation: `${animationStyle.animationFeedin1} ${delayTime}`,
+        }}
+      >
         <div className={styles.itemBoxImageWrapper}>
           <Image
             src={imageUrl}
@@ -162,7 +174,7 @@ const ItemBox = ({
           </p>
           <div className={styles.itemBoxLinkWrapper}>
             <a
-              className={styles.itemBoxLink}
+              className={`${styles.itemBoxLink} ${animationStyle.itemBoxAnker}`}
               onClick={() => {
                 // クリックで商品ページへ
                 router.push(url);

@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
@@ -11,9 +11,15 @@ const AboutComponent = () => {
 
   return (
     <>
-      <div className={styles.aboutConponentWrapper}>
+      <Div
+        className={styles.aboutConponentWrapper}
+        afterClass={`${animationStyle.FeedIn1}`}
+        beforeClass="pre--"
+        once={true}
+        rootMargin="0px"
+      >
         <Div
-          afterClass="test"
+          afterClass={`${animationStyle.FeedIn1}`}
           beforeClass="pre--"
           className="defoooo"
           once={true}
@@ -166,7 +172,7 @@ const AboutComponent = () => {
           </div>
           {/* ーーーーー */}
         </div>
-      </div>
+      </Div>
     </>
   );
 };

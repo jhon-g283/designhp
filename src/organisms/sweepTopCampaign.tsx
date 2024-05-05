@@ -1,4 +1,5 @@
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
@@ -64,7 +65,13 @@ const CampaignComponent = () => {
 
   return (
     <>
-      <div className={styles.campaignComponentWrapper}>
+      <Div
+        className={styles.campaignComponentWrapper}
+        afterClass={`${animationStyle.FeedIn1}`}
+        beforeClass=""
+        once={true}
+        rootMargin="0px"
+      >
         <Div
           afterClass="test"
           beforeClass="pre--"
@@ -169,7 +176,7 @@ const CampaignComponent = () => {
           </div>
           <div className={styles.campaginItemList}>{campaignList2}</div>
         </div>
-      </div>
+      </Div>
     </>
   );
 };

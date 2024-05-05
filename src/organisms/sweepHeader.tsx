@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import stylesAnimation from '../../styles/sweep/sweepanimation.module.css';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'; //Redux,useSelectorとdispatchの読み込み
@@ -67,7 +68,9 @@ const Header = () => {
 
           {/* メニュー */}
           <div className={styles.headerMenu}>
-            <div className={`${styles.linkMenuWraper} ${styles.imgPC}`}>
+            <div
+              className={`${styles.linkMenuWraper} ${styles.imgPC} ${animationStyle.headerLink}`}
+            >
               <Link className={styles.linkMenu} href={'/sweep/top'}>
                 top
               </Link>
@@ -82,7 +85,9 @@ const Header = () => {
             </div>
 
             {/* カート数、アイコン */}
-            <div className={`${styles.cartIconImageWrapper} `}>
+            <div
+              className={`${styles.cartIconImageWrapper} ${animationStyle.cartIconHover}`}
+            >
               <Link href={'/sweep/cart/cartItems'}>
                 <Image
                   src={'/imgSweep/cartImage.svg'}
@@ -115,9 +120,6 @@ const Header = () => {
                     </a>
                   </>
                 )}
-                {/* <a>{cartCount}</a> */}
-
-                {/* <a>{animationFlag ? preCartNumber : cartCount}</a> */}
               </div>
             </div>
             <div className={`${styles.sweepHumburger} ${styles.imgSP}`}>

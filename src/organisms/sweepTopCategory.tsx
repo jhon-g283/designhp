@@ -1,4 +1,5 @@
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
@@ -14,7 +15,13 @@ const CategoryComponent = () => {
 
   return (
     <>
-      <div className={styles.categoryConponentWrapper}>
+      <Div
+        className={styles.categoryConponentWrapper}
+        afterClass={`${animationStyle.FeedIn1}`}
+        beforeClass=""
+        once={true}
+        rootMargin="0px"
+      >
         <Div
           afterClass="test"
           beforeClass="pre--"
@@ -25,7 +32,7 @@ const CategoryComponent = () => {
           <div className={styles.backGroundSheet8}></div>
         </Div>
 
-        <div className={styles.categoryImageOuterWrapper}>
+        <div className={styles.categorySPImageOuterWrapper}>
           <div className={styles.categoryImageWrapperSP}>
             <Image
               src="/imgSweep/Category_mainSP.jpg"
@@ -96,7 +103,7 @@ const CategoryComponent = () => {
             />
           </div>
         </div>
-      </div>
+      </Div>
     </>
   );
 };

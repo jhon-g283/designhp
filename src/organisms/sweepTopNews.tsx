@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import { newsDataList } from '../types';
@@ -33,7 +34,7 @@ const NewsComponent = () => {
     return (
       <SplideSlide key={`news-slide-${index}`}>
         <div
-          className={styles.newsItemWrapper}
+          className={`${styles.newsItemWrapper} ${animationStyle.topPagenewsItemHover}`}
           // key={'news_div_' + index}
         >
           <NewsItemTop
@@ -156,7 +157,7 @@ const NewsComponent = () => {
     <>
       <div className={styles.marginBlock}>
         <Div
-          afterClass="test"
+          afterClass={`${animationStyle.FeedIn1}`}
           beforeClass="pre--"
           className="defoooo"
           once={true}
@@ -165,7 +166,13 @@ const NewsComponent = () => {
           <div className={styles.backGroundSheet1}></div>
         </Div>
       </div>
-      <div className={`${styles.newsConponentWrapper}`}>
+      <Div
+        className={`${styles.newsConponentWrapper}`}
+        afterClass={`${animationStyle.FeedIn1}`}
+        beforeClass=""
+        once={true}
+        rootMargin="0px"
+      >
         <div className={styles.newsCompoTitleArea}>
           {/* タイトル名 */}
           <div className={styles.sectionHeaderWrapper}>
@@ -195,8 +202,16 @@ const NewsComponent = () => {
           <div className={styles.backGroundSheet2}></div>
         </Div>
 
-        <div className={styles.newsListWrapper}>{sliderArea}</div>
-      </div>
+        <Div
+          className={styles.newsListWrapper}
+          afterClass={`${animationStyle.FeedIn1}`}
+          beforeClass=""
+          once={true}
+          rootMargin="0px"
+        >
+          {sliderArea}
+        </Div>
+      </Div>
       <div className={styles.linkButtonWrapper}>
         <Div
           afterClass="test"
@@ -208,7 +223,7 @@ const NewsComponent = () => {
           <div className={styles.backGroundSheet3}></div>
         </Div>
         <div
-          className={styles.readMoreButton}
+          className={`${styles.readMoreButton} ${animationStyle.topPageLinkBottom}`}
           onClick={() => {
             // クリックで商品ページへ
             router.push(url);

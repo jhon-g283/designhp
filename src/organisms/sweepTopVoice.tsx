@@ -1,4 +1,5 @@
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import SectionTitle from '../atoms/sweepTitleComponent';
 import SectionSubTitle from '../atoms/sweepSubTitleComponent';
@@ -34,7 +35,13 @@ const VoiceComponent = () => {
 
   return (
     <>
-      <div className={styles.voiceConponentWrapper}>
+      <Div
+        className={styles.voiceConponentWrapper}
+        afterClass={`${animationStyle.FeedIn1}`}
+        beforeClass=""
+        once={true}
+        rootMargin="0px"
+      >
         <Div
           afterClass="test"
           beforeClass="pre--"
@@ -86,45 +93,9 @@ const VoiceComponent = () => {
                 />
               );
             })}
-            {/* <ReviewItem
-              imageUrl="/imgSweep/Product_Bitter.jpg"
-              itemName="ビターチョコ(7個)"
-              price="600"
-              review="3"
-              linkParam="a"
-              reviewerInfo="(30代 会社員 女性)"
-              commentText="甘すぎず苦すぎない絶妙な口当たりで、食後に最適。自然と夜もベッドに入れるようになったので、買ってよかったです。"
-            />
-            <ReviewItem
-              imageUrl="/imgSweep/Product_sakura.jpg"
-              itemName="サクラ(7個)"
-              price="700"
-              review="3"
-              linkParam="a"
-              reviewerInfo="(20代 会社員 女性)"
-              commentText="夕食後に食べるものですが、好きすぎてお昼ご飯の後にも食べてしまいます。ほんのりとした桜の香りが好きなポイントです。"
-            />
-            <ReviewItem
-              imageUrl="/imgSweep/Product_strawberry.jpg"
-              itemName="ストロベリー(7個)"
-              price="600"
-              review="3"
-              linkParam="a"
-              reviewerInfo="(30代 会社員 女性)"
-              commentText="上品な大人な感じの苺の味がします。娘にちょうだいとよく言われますがもったいなくてあげれません。"
-            />
-            <ReviewItem
-              imageUrl="/imgSweep/Product_Rich_bitter.jpg"
-              itemName="リッチビター(7個)"
-              price="600"
-              review="2"
-              linkParam="a"
-              reviewerInfo="(30代 会社員 女性)"
-              commentText="甘すぎず苦すぎない絶妙な口当たりで、食後に最適。自然と夜もベッドに入れるようになったので、買ってよかったです。"
-            /> */}
           </div>
         </div>
-      </div>
+      </Div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { createReviewStars } from '../common/sweep/createReviewStars';
 import { useRouter } from 'next/router';
 import { ITEM_DETAIL_LINK } from '../common/sweep/setting';
@@ -73,7 +74,7 @@ const ReviewItem = ({
 
           <div className={styles.reviewLinkWrapper}>
             <a
-              className={styles.reviewLink}
+              className={`${styles.reviewLink} ${animationStyle.topItemBoxAnker}`}
               onClick={() => {
                 // クリックで商品ページへ
                 router.push(url);
