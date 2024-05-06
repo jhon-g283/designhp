@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
@@ -125,7 +126,9 @@ const CartItemComponent = () => {
             </div>
           </div>
         </div>
-        <div className={styles.cartItemsGoLineup}>
+        <div
+          className={`${styles.cartItemsGoLineup} ${animationStyle.itemDetailCartButtonHover}`}
+        >
           <button
             onClick={() => {
               // クリックで商品ページへ
@@ -282,7 +285,9 @@ const CartItemComponent = () => {
               クリックで希望の配達日・時間帯に変更
             </p>
 
-            <div className={styles.goToDeliveryInformationWrapper}>
+            <div
+              className={`${styles.goToDeliveryInformationWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+            >
               <button
                 className={styles.goToDeliveryInformation}
                 onClick={() => {

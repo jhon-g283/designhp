@@ -4403,6 +4403,7 @@ button.itemDetailContPlusButton {
   border: #000000;
   color: #fff;
   background-color: #000000;
+  border: #000000 1px solid;
 
   @media (max-width: 768px) {
     font-size: 0.718em;
@@ -5000,8 +5001,8 @@ div.deliveryDateWrapper > div > div {
 }
 
 /* 決済ボタン（外枠） */
-.goToDeliveryInformationWrapper {
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .goToDeliveryInformationWrapper {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -5015,6 +5016,7 @@ div.deliveryDateWrapper > div > div {
 
   width: 100%;
   background-color: #000000;
+  border: #000000 1px solid;
   border: none;
   padding: 20px 72px 19px 73px;
   @media (max-width: 768px) {
@@ -5213,7 +5215,7 @@ div.deliveryDateWrapper > div > div {
   font-size: 1em;
   color: #fff;
   background-color: #000000;
-  border: #000000;
+  border: #000000 1px solid;
   border-radius: 8px;
   padding: 21px 24.5px;
   @media (max-width: 768px) {
@@ -5656,6 +5658,7 @@ input.creditCardNumber3 {
 
   padding: 19px 68px;
   background-color: #000000;
+  border: #000000 1px solid;
   border: none;
 
   @media (max-width: 768px) {
@@ -5848,6 +5851,7 @@ p.deliveryInfoConfirmStatmentTitle {
   padding: 19px 20px 19px 21px;
 
   background-color: #ffffff;
+  border: #ffffff 1px solid;
   border: none;
 
   @media (max-width: 768px) {
@@ -5926,7 +5930,8 @@ p.deliveryInfoConfirmStatmentTitle {
   font-size: 1em;
   color: #fff;
   background-color: #000000;
-  border: none;
+
+  border: #000000 1px solid;
   padding: 19px 95px;
   @media (max-width: 768px) {
     font-size: 0.718em;

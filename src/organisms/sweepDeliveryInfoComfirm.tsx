@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -180,7 +181,9 @@ const OrderConfirmComponent = () => {
               </div>
             </div>
 
-            <div className={styles.deliveryComfirmModifyButtonWrapper}>
+            <div
+              className={`${styles.deliveryComfirmModifyButtonWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+            >
               <button
                 className={styles.deliveryComfirmModifyButton}
                 onClick={() => {
@@ -213,7 +216,9 @@ const OrderConfirmComponent = () => {
           </div>
         </div>
 
-        <div className={styles.deliveryInfoConfirmButtonWrapper}>
+        <div
+          className={`${styles.deliveryInfoConfirmButtonWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+        >
           <button
             className={styles.deliveryInfoConfirmButton}
             onClick={() => {

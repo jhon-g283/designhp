@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import Link from 'next/link';
 import { createReviewStars } from '../common/sweep/createReviewStars';
 import { addCart } from '../store/reducers/addCartDataSlice';
@@ -51,7 +52,9 @@ const CartItemBox = ({
             <p className={styles.cartItemName}>{itemName}</p>
             <p className={styles.cartItemPrice}>¥{price.toLocaleString()}</p>
           </div>
-          <div className={styles.cartItemBoxButtonArea}>
+          <div
+            className={`${styles.cartItemBoxButtonArea} ${animationStyle.countHover}`}
+          >
             <div className={styles.cartItemContButtonOuterWrapper}>
               <button
                 className={styles.itemDetailContMinusButton}

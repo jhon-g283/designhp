@@ -78,26 +78,34 @@
   transition: background-color 1s; /* 背景色の変化をアニメーション化 */
 }
 
+/* topページのカテゴリーホバー */
 .arrowHover:hover {
-  /* animation: animationFeedin1 1s; */
   border-color: #ffffff;
 }
 .arrowHover:hover svg {
   animation: animationArrowSlide 1s;
 }
 
-/* カートボタンのホバー */
+/* 商品詳細カートボタン、配送情報入力のホバー */
 .itemDetailCartButtonHover button:hover {
+  /* ボタンの色を反転させる。 */
   filter: invert(100%);
   border: #ffffff 1px solid;
 }
 
+/* 数量系のホバー */
 .countHover button:hover {
   background-color: rgba(221, 218, 218, 0.3); /* ふんわりとした明るい影を追加 */
 }
 
+/* 数量系のホバー */
 .sizeButtonHover:hover {
   background-color: rgba(221, 218, 218, 0.3); /* ふんわりとした明るい影を追加 */
+}
+
+/* サムネイルホバー */
+.thumbnailHover:hover {
+  filter: drop-shadow(0px 0px 4px #636364);
 }
 
 /* アニメーション系 */

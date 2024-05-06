@@ -319,7 +319,7 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
                 return (
                   <>
                     <div
-                      className={styles.itemDetailItemThumbNailImageWrapper}
+                      className={`${styles.itemDetailItemThumbNailImageWrapper} ${animationStyle.thumbnailHover}`}
                       onClick={() => {
                         setSelectedImage(index);
                       }}

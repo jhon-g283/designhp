@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -35,7 +36,9 @@ const OrderConpleteComponent = () => {
             今しばらくお待ちください。
           </p>
         </div>
-        <div className={styles.continueShoppingButtonWrapper}>
+        <div
+          className={`${styles.continueShoppingButtonWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+        >
           <button
             onClick={() => {
               // クリックで商品ページへ

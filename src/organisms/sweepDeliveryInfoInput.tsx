@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/sweep/sweep.module.css';
+import animationStyle from '../../styles/sweep/sweepanimation.module.css';
 import { default as Div } from '../common/observeDivComponent';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -99,7 +100,9 @@ const OrderInputComponent = (props: DeliveryInfoProps) => {
         <ProgressComponents progress="2" />
 
         <div className={styles.deliveryInfoAreaWrapper}>
-          <div className={styles.deliveryInfoInputAreaOuterWrapper}>
+          <div
+            className={`${styles.deliveryInfoInputAreaOuterWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+          >
             <div className={styles.deliveryInfoTitleTextWrapper}>
               <InputTitle className={styles.deliveryInfoTitleText}>
                 決済情報
@@ -236,7 +239,9 @@ const OrderInputComponent = (props: DeliveryInfoProps) => {
             </div>
           </div>
         </div>
-        <div className={styles.deliveryInfoConfirmButtonWrapper}>
+        <div
+          className={`${styles.deliveryInfoConfirmButtonWrapper} ${animationStyle.itemDetailCartButtonHover}`}
+        >
           <button
             className={`${styles.deliveryInfoConfirmButton} ${styles.deliveryInfoConfirmButtonAddMarginSP}`}
             onClick={() => {
