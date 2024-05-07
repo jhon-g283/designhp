@@ -104,8 +104,8 @@ const LineupComponent = (props: LineupProps) => {
       );
     })
   ) : (
-    // アニメーション用にダミーの状態を実装する
-    <>
+    // 差分がHTML構造に発生しないとアニメーションが動かないのでアニメーション用にダミーの状態を実装する(透明なダミー用のボックスをセット)
+    <div style={{ opacity: 0 }}>
       <ItemBox
         id={''}
         code={''}
@@ -118,7 +118,7 @@ const LineupComponent = (props: LineupProps) => {
         index={0}
       />
       )
-    </>
+    </div>
   );
 
   // カテゴリカテゴリのチェックボックス
