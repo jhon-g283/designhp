@@ -80,6 +80,8 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
     Bitter: 'ビター',
   };
 
+  const itemDescription = itemData?.description || '';
+
   // パンクズリストのリンク設定
   const router = useRouter();
   const BreadListLink = `${ITEM_LINEUP}`;
@@ -246,9 +248,6 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
       </div>
     );
   };
-
-  const itemDescription =
-    'ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです!';
 
   return (
     <>

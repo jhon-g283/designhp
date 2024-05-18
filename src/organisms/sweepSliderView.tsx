@@ -127,7 +127,7 @@ const SliderComponent = () => {
                   ></Image>
                   <div className={`${styles.imgSP} ${styles.fvImage1} `}>
                     <Image
-                      src="/imgSweep/FVTopImage1SP2.jpg"
+                      src="/imgSweep/FVTopImage1SP.jpg"
                       // width={664} // Specify different width values based on device or viewport size
                       // height={827}
                       alt="Your Image"
@@ -140,7 +140,7 @@ const SliderComponent = () => {
               </div>
 
               {/* 背景画像 */}
-              <div className={styles.fvbackImage1Wrapper}>
+              <div className={`${styles.fvbackImage1Wrapper}`}>
                 <Image
                   src="/imgSweep/backGroundFV1PC.jpg"
                   // width={1980} // Specify different width values based on device or viewport size
@@ -164,14 +164,132 @@ const SliderComponent = () => {
             </div>
           </SplideSlide>
           <SplideSlide>
-            <Image
-              src="/img/FirstSectionImg2-2.png"
-              width={500} // Specify different width values based on device or viewport size
-              height={400}
-              alt="Your Image"
-              layout="responsive"
-              // className={styles.imgPC}
-            ></Image>
+            {/* 2枚目 */}
+            <div className={`${styles.fvImageWrapper1} `}>
+              <div className={styles.fvInnerWrapper}>
+                {/* ロゴ部分 */}
+                <div className={styles.fvLogoArea2}>
+                  {/* ここでフォント上書き */}
+                  <div className={styles.logoImageWrapper2}>
+                    <p>夏季限定</p>
+                  </div>
+
+                  <div className={`${styles.fvCopyWrite2} ${styles.imgPC}`}>
+                    <p className={`${styles.wordLemonade}`}>レモネード味</p>
+                    <p className={`${styles.wordNowOnSale} ${styles.imgPC}`}>
+                      期間限定販売中
+                    </p>
+                    <p className={`${styles.wordLimited} ${styles.imgPC}`}>
+                      Limited Summer Flavor
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.fvImageArea}>
+                  <Image
+                    src="/imgSweep/FVTopImage2PC.jpg"
+                    width={880} // Specify different width values based on device or viewport size
+                    height={674}
+                    alt="Your Image"
+                    // fill={true}
+
+                    className={`${styles.imgPC} ${styles.fvImage1} `}
+                  ></Image>
+                  <div className={`${styles.imgSP} ${styles.fvImage1} `}>
+                    <Image
+                      src="/imgSweep/FVTopImage2SP.png"
+                      // width={664} // Specify different width values based on device or viewport size
+                      // height={827}
+                      alt="Your Image"
+                      fill={true}
+                      style={{ objectFit: 'contain' }}
+                      className={styles.FVOverWritten}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* 背景画像 */}
+              <div className={styles.fvbackImage1Wrapper}>
+                <Image
+                  src="/imgSweep/backGroundFV2PC.jpg"
+                  // width={1980} // Specify different width values based on device or viewport size
+                  // height={893}
+                  alt="Your Image"
+                  fill={true}
+                  style={{ objectFit: 'contain' }}
+                  className={styles.FVBKOverWritten}
+                  // className={` ${styles.fvbackImage1} `}
+                ></Image>
+              </div>
+            </div>
+          </SplideSlide>
+          <SplideSlide>
+            {/* ３枚目 */}
+            <div className={styles.fvImageWrapper1}>
+              <div className={styles.fvInnerWrapper}>
+                {/* ロゴ部分 */}
+                <div className={styles.fvLogoArea3}>
+                  {/* ここでフォント上書き */}
+
+                  <div className={`${styles.fvCopyWrite3} ${styles.imgPC}`}>
+                    <p className={`${styles.wordSweepCafe}`}>Sweep Cafe</p>
+
+                    <div className={styles.businessHours}>
+                      <p className={` ${styles.imgPC}`}>場所</p>
+                      <p className={` ${styles.imgPC}`}>渋谷スカイビル5F</p>
+                    </div>
+
+                    <div className={styles.businessHours}>
+                      <p className={` ${styles.imgPC}`}>
+                        <p className={` ${styles.imgPC}`}>営業</p>
+                      </p>
+                      <div>
+                        <p className={` ${styles.imgPC}`}>Open: 10:00</p>
+                        <p className={` ${styles.imgPC}`}>Close: 20:00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.fvImageArea}>
+                  <Image
+                    src="/imgSweep/FVTopImage3PC.jpg"
+                    width={880} // Specify different width values based on device or viewport size
+                    height={674}
+                    alt="Your Image"
+                    // fill={true}
+
+                    className={`${styles.imgPC} ${styles.fvImage1} `}
+                  ></Image>
+                  <div className={`${styles.imgSP} ${styles.fvImage1} `}>
+                    <Image
+                      src="/imgSweep/FVTopImage3SP.png"
+                      // width={664} // Specify different width values based on device or viewport size
+                      // height={827}
+                      alt="Your Image"
+                      fill={true}
+                      style={{ objectFit: 'contain' }}
+                      className={styles.FVOverWritten}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* 背景画像 */}
+              <div className={styles.fvbackImage1Wrapper}>
+                <Image
+                  src="/imgSweep/backGroundFV3PC.jpg"
+                  // width={1980} // Specify different width values based on device or viewport size
+                  // height={893}
+                  alt="Your Image"
+                  fill={true}
+                  style={{ objectFit: 'contain' }}
+                  className={styles.FVBKOverWritten}
+                  // className={` ${styles.fvbackImage1} `}
+                ></Image>
+              </div>
+            </div>
           </SplideSlide>
         </SplideTrack>
         <div className={`splide__arrows ${styles.imgPC}`}>

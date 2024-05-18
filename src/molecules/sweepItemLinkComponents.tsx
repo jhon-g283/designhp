@@ -107,7 +107,39 @@ const ItemLinkCategory = ({
           ></Image>
         </div>
         <div className={styles.itemCategoryNameWrapper}>
-          <p className={styles.itemCategoryName}>{itemName}</p>
+          <p className={styles.itemCategoryName}>
+            {itemName}
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                className={styles.imgSP}
+              >
+                <mask
+                  id="mask0_2640_114"
+                  style={{ maskType: 'alpha' }}
+                  maskUnits="userSpaceOnUse"
+                  x="7"
+                  y="0"
+                  width="10"
+                  height="17"
+                >
+                  <path
+                    d="M7.97597 15.7982L16.0784 7.74667M16.0336 8.97333L8.04262 0.933939"
+                    stroke="white"
+                    strokeWidth="2"
+                  />
+                </mask>
+                <g mask="url(#mask0_2640_114)">
+                  <rect x="9" width="10" height="18" fill="white" />
+                </g>
+              </svg>
+            </span>
+          </p>
+
           <div className={styles.itemCategorySubNameWrapper}>
             <p className={styles.itemCategorySubName}>{subName}</p>
           </div>
@@ -119,6 +151,7 @@ const ItemLinkCategory = ({
           height="17"
           viewBox="0 0 17 17"
           fill="none"
+          className={styles.imgPC}
         >
           <mask
             id="mask0_2640_114"

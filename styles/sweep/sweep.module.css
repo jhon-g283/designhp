@@ -363,13 +363,14 @@ a.humburgerMenuText:active {
 /* FVの内側 */
 .fvInnerWrapper {
   display: flex;
-  padding-top: 55px;
+  /* padding-top: 55px; */
+  justify-content: space-between;
 
-  background-color: rgba(73, 72, 71, 0.366);
+  /* background-color: rgba(73, 72, 71, 0.366); */
   width: 100%;
   height: min(calc(89vh), 769px);
-  background: rgba(0, 0, 0, 0.42);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* background: rgba(0, 0, 0, 0.42); */
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
   z-index: 2;
 
   /* font */
@@ -417,6 +418,63 @@ a.humburgerMenuText:active {
   }
 }
 
+/* FV２枚目 */
+.fvLogoArea2 {
+  margin-left: 83px;
+  margin-top: 30px;
+
+  color: #5d5d5d;
+
+  font-family: YuMincho;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 5px;
+
+  z-index: 4;
+
+  text-shadow: none;
+
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
+}
+
+.logoImageWrapper2 {
+  border: 1px solid #5d5d5d;
+  width: fit-content;
+  padding: 15.44px 21.05px 15.45px 21.05px;
+}
+
+.fvLogoArea2 p {
+  margin: 0px;
+}
+
+/* FV3枚目 */
+.fvLogoArea3 {
+  margin-left: 83px;
+  margin-top: 251px;
+  color: #fff;
+
+  font-family: YuMincho;
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 6.12px;
+
+  z-index: 4;
+
+  text-shadow: none;
+
+  @media (max-width: 768px) {
+    /*  */
+    display: none;
+  }
+}
+
 /* FVコピーライト部分 */
 .fvCopyWrite {
   margin-top: 102px;
@@ -430,17 +488,69 @@ a.humburgerMenuText:active {
   }
 }
 
+/* FV２枚目のコピー */
+.fvCopyWrite2 {
+  margin-top: 144px;
+}
+
+/* コピー文 */
+.wordLemonade {
+  font-size: 51px;
+
+  letter-spacing: 10.2px;
+}
+/* 販売中 */
+.wordNowOnSale {
+  font-size: 38px;
+
+  letter-spacing: 7.6px;
+  padding-left: 7px;
+}
+/* Limited */
+.wordLimited {
+  font-size: 21px;
+
+  letter-spacing: 4.2px;
+  padding-left: 7px;
+}
+
+/* ３枚目のコピー */
+.fvCopyWrite3 p {
+  margin: 0px;
+}
+
+/* Cafe名 */
+.wordSweepCafe {
+  font-family: YuMincho;
+  font-size: 51px;
+
+  letter-spacing: 6.12px;
+  padding-bottom: 37px;
+}
+
+/* 営業時間 */
+.businessHours {
+  font-size: 22px;
+
+  letter-spacing: 3.96px;
+
+  display: flex;
+  gap: 14px;
+  margin-bottom: 11px;
+}
+
 /* FVの画像部分 */
 .fvImageArea {
   /* width: 100%; */
   /* width: 800px; */
   width: 44vw;
-  z-index: 3;
   height: 68vh;
-  right: 233px;
-  top: 39px;
+  z-index: 3;
 
-  position: absolute;
+  right: 233px;
+  top: 29px;
+  position: relative;
+  /* position: absolute; */
   @media (max-width: 768px) {
     top: 0px;
     left: 0px;
@@ -526,6 +636,12 @@ img.FVOverWritten {
   margin-left: 1.5em;
   z-index: 0;
   position: absolute;
+  @media (max-width: 768px) {
+    margin-left: 22px;
+    margin-top: -135px;
+    width: 161px;
+    height: 125.5px;
+  }
 }
 
 .backGroundSheet3 {
@@ -537,6 +653,12 @@ img.FVOverWritten {
   z-index: 0;
   margin-bottom: -80px;
   position: absolute;
+  @media (max-width: 768px) {
+    right: 0px;
+    width: 174.5px;
+    height: 83px;
+    margin-top: 10px;
+  }
 }
 .backGroundSheet4 {
   background-color: black;
@@ -548,10 +670,11 @@ img.FVOverWritten {
   margin-right: -80px;
   position: absolute;
   @media (max-width: 768px) {
-    left: -100px;
+    /* left: -100px; */
+    margin-right: -20px;
+    margin-top: -15px;
     width: 100vw;
-    height: 568px;
-    margin-right: 0px;
+    height: 251px;
   }
 }
 .backGroundSheet5 {
@@ -567,10 +690,10 @@ img.FVOverWritten {
   position: absolute;
 
   @media (max-width: 768px) {
-    /* left: -100px; */
-    width: 95vw;
+    width: 100vw;
     margin: 0px;
-    margin-left: min(calc(-5%), 40px);
+    height: 240px;
+    margin-left: min(calc(-5%), -40px);
   }
 }
 
@@ -588,7 +711,9 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    margin-top: 140px;
+    height: 182px;
+    width: 86vw;
   }
 }
 
@@ -604,6 +729,10 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /* 非表示にする */
+    display: none;
+  }
 }
 
 .backGroundSheet8 {
@@ -620,7 +749,7 @@ img.FVOverWritten {
 
   position: absolute;
   @media (max-width: 768px) {
-    /*  */
+    /* 非表示にする */
     display: none;
   }
 }
@@ -639,7 +768,7 @@ img.FVOverWritten {
 
   position: absolute;
   @media (max-width: 768px) {
-    /*  */
+    /* 非表示にする */
     display: none;
   }
 }
@@ -658,8 +787,11 @@ img.FVOverWritten {
 
   position: absolute;
   @media (max-width: 768px) {
-    /*  */
-    display: none;
+    height: 111px;
+    width: 71vw;
+    margin-top: 0px;
+    top: 0px;
+    left: -20px;
   }
 }
 
@@ -678,7 +810,10 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    /* display: none; */
+    left: -20px;
+    height: 62px;
+    width: 64vw;
   }
 }
 
@@ -713,6 +848,13 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    margin-top: -10px;
+    margin-left: min(calc(-5%), -20px);
+    width: 136px;
+    height: 114px;
+  }
 }
 
 .backGroundSheet14 {
@@ -728,7 +870,8 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    height: 261px;
+    margin-left: min(calc(-5%), -20px);
   }
 }
 
@@ -744,6 +887,14 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+
+    margin-top: 40px;
+    width: 138px;
+    height: 114px;
+    margin-left: min(calc(-5%), -20px);
+  }
 }
 
 .backGroundSheet16 {
@@ -760,7 +911,12 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+    height: 114px;
+    width: 199px;
+    margin-top: -10px;
+    margin-right: 0px;
+    left: 0px;
+    margin-left: min(calc(-5%), -20px);
   }
 }
 .backGroundSheet17 {
@@ -775,6 +931,15 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    width: 72px;
+    height: 350px;
+    margin-top: 0px;
+    margin-right: 0px;
+
+    margin-left: min(calc(-5%), -20px);
+  }
 }
 
 .backGroundSheet18 {
@@ -789,6 +954,14 @@ img.FVOverWritten {
   z-index: 0;
 
   position: absolute;
+  @media (max-width: 768px) {
+    /*  */
+    width: 125x;
+    height: 201px;
+    flex-shrink: 0;
+
+    margin-left: min(calc(-5%), -20px);
+  }
 }
 
 .backGroundSheet19 {
@@ -824,7 +997,11 @@ img.FVOverWritten {
   position: absolute;
   @media (max-width: 768px) {
     /*  */
-    display: none;
+
+    margin-top: 380px;
+    margin-right: min(calc(-5%), -20px);
+    width: 145px;
+    height: 81px;
   }
 }
 
@@ -1126,7 +1303,8 @@ img.FVOverWritten {
     margin-left: 0px;
     padding-top: 1em;
     padding-left: 1.5em;
-    padding-bottom: 1.5em;
+    padding-bottom: 2.5em;
+    background-color: #000000;
   }
 }
 
@@ -1556,9 +1734,13 @@ img.FVOverWritten {
   width: 401px;
   text-align: start;
   @media (max-width: 768px) {
-    margin-top: 18px;
-    margin-left: 12px;
-    width: 90vw;
+    padding-top: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 24px;
+    width: auto;
+
+    background-color: #000000;
   }
 }
 
@@ -1567,6 +1749,8 @@ img.FVOverWritten {
   font-size: 1em;
   @media (max-width: 768px) {
     margin-top: 6px;
+    width: fit-content;
+    text-wrap: wrap;
   }
 }
 
@@ -1856,6 +2040,9 @@ img.FVOverWritten {
 .categoryListWrapper {
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    margin-top: 24px;
+  }
 }
 
 /* カテゴリーのリスト */
@@ -1888,24 +2075,19 @@ img.FVOverWritten {
 
 /* カテゴリー名の外枠 */
 .itemCategoryNameWrapper {
-  margin-left: 19px;
-  margin-top: 30px;
-  @media (max-width: 768px) {
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-}
-
-/* カテゴリー名の外枠 */
-.itemCategoryNameWrapper {
   color: #fff;
   font-family: 'Noto Sans Javanese';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  /* line-height: normal; */
+  margin-left: 19px;
+  margin-top: 30px;
   @media (max-width: 768px) {
-    padding-top: 0.9em;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 100%;
+
+    padding-top: 0.5em;
     padding-left: 0.5em;
   }
 }
@@ -1950,7 +2132,7 @@ img.FVOverWritten {
   position: relative;
   margin-top: 175px;
   @media (max-width: 768px) {
-    /* margin-top: 0px; */
+    margin-top: 63.5px;
     flex-direction: column-reverse;
   }
 }
@@ -2305,8 +2487,23 @@ a.itemBoxLink + svg {
   position: relative;
   z-index: 3;
   @media (max-width: 768px) {
-    margin-top: 6em;
+    margin-top: 4em;
     margin-left: 0.5em;
+    margin-bottom: 5em;
+  }
+}
+
+/* 背景に黒い四角を擬似で挿入 */
+@media (max-width: 768px) {
+  div.campaignTextArea1_2Wrapper::before {
+    background-color: #000000;
+    width: 100vw;
+    height: 130%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -25px;
+    margin-left: min(calc(-5%), -40px);
   }
 }
 
@@ -2317,6 +2514,7 @@ a.itemBoxLink + svg {
   z-index: 3;
   @media (max-width: 768px) {
     margin-left: 0px;
+    margin-top: 60px;
   }
 }
 /* 対象商品の一覧 */
@@ -2366,6 +2564,7 @@ a.itemBoxLink + svg {
 
   @media (max-width: 768px) {
     font-size: 0.8em;
+    width: 73vw;
   }
 }
 

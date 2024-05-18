@@ -7,4 +7,7 @@
   background: linear-gradient(0deg, #353338 0%, #353338 100%),
     rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(0px);
+
+  /* 横方向のはみ出しを非表示にする */
+  overflow-x: hidden;
 }
