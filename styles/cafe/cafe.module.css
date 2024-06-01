@@ -2,6 +2,18 @@
 
 /* SP W:768 */
 
+/* 画面が大きくなった時の調整用 */
+@media (min-width: 1513px) {
+  .sectionComponentAddPadding {
+    /* 中央配置にする */
+
+    max-width: 1343px;
+
+    padding-left: calc((100% - 1513px)) !important;
+    padding-right: calc((100% - 1513px)) !important;
+  }
+}
+
 /* ヘッダー */
 .headerarea {
   top: -2px;

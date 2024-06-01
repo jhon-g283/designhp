@@ -151,7 +151,9 @@ const menuArrayOther: arrayText[] = [
 const MenuFirstSection = () => {
   return (
     <>
-      <div className={styles.menufirstsectionwrapper}>
+      <div
+        className={`${styles.menufirstsectionwrapper} ${styles.sectionComponentAddPadding}`}
+      >
         <SectionTitleComp
           text={'MENU'}
           useClassName={styles.sectionTitle}

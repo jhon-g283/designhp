@@ -43,7 +43,7 @@ const MoreFirstSection = () => {
   return (
     <>
       <div
-        className={styles.morefirstsectionwrapper}
+        className={`${styles.morefirstsectionwrapper} ${styles.sectionComponentAddPadding}`}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
           backgroundColor: 'red',

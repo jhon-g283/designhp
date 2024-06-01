@@ -49,7 +49,7 @@ const TopSecondSection = () => {
   return (
     <>
       <div
-        className={styles.secondsectionwrapper}
+        className={`${styles.secondsectionwrapper} ${styles.sectionComponentAddPadding}`}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
         }}

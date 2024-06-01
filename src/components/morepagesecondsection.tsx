@@ -47,7 +47,7 @@ const MoreSecondSection = () => {
   return (
     <>
       <div
-        className={styles.moresecondsectionwrapper}
+        className={`${styles.moresecondsectionwrapper} ${styles.sectionComponentAddPadding}`}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
           backgroundColor: 'red',

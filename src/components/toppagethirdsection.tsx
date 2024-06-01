@@ -217,7 +217,7 @@ const TopThirdSection = () => {
   return (
     <>
       <div
-        className={styles.thirddsectionwrapper}
+        className={`${styles.thirddsectionwrapper} ${styles.sectionComponentAddPadding}`}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
         }}

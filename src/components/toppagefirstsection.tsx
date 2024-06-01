@@ -259,7 +259,7 @@ const TopFirstSection = () => {
   return (
     <>
       <div
-        className={styles.firstsectionwrapper}
+        className={`${styles.firstsectionwrapper} ${styles.sectionComponentAddPadding}`}
         style={{
           backgroundImage: `url(${BackGroundImg.src})`,
         }}
