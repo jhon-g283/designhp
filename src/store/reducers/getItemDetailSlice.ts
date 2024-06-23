@@ -11,7 +11,7 @@ export const initialState: itemDetail = {
     imageUrl1: "/imgSweep/itemDetail_Item_Bitter.jpg",
     imageUrl2: "/imgSweep/itemDetail_Item_Bitter.jpg",
     imageUrl3: "/imgSweep/itemDetail_Item_Bitter.jpg",
-    price: ["500", "1000"],
+    price: ["500", "1000", "1500"],
     pieces: [""],
     description:
       "ベーシックな苦味が特徴で初めての方にとてもおすすめのチョコです。",
