@@ -216,14 +216,22 @@ p.shopname {
   color: #ffffff;
 
   @media (max-width: 768px) {
+    /* 透明にする */
     font-size: 11px;
-    opacity: 0.1;
+    opacity: 0;
+    transition: 0.6s;
   }
 }
 
 .sidemenu p {
   margin-top: 116px;
   writing-mode: vertical-rl;
+}
+
+.sidemenu:hover {
+  /* ホバー時に不透明 */
+  opacity: 1;
+  transition: 0.6s;
 }
 
 /* ハンバーガーのボタン部分 */
@@ -1399,6 +1407,7 @@ p.menuNumberSP {
 a.mapAppButton {
   width: 200px;
   height: 43px;
+  color: #000000;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 4px solid #000000;
 
@@ -1440,7 +1449,8 @@ a.mapAppButton {
   /* justify-content: flex-end; */
 }
 
-a.mapAppButton:visited {
+a.mapAppButton:visited,
+a.mapAppButton:active {
   color: inherit;
 
   justify-content: flex-end;
