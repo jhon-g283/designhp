@@ -27,15 +27,15 @@
       "date": "2023.06.11",
       "title": "より良い効果を実感",
       "imageUrl": "/imgSweep/News_sleep.jpg",
-      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
-      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage2_PC.jpg",
+      "detailImageSP": "/imgSweep/newsDetailImage2_SP.jpg",
       "type": "NEWS",
       "description": "SWEEPでぐっすりと夜眠るための準備や耳寄りな情報をご紹介します。",
       "newsDetail": [
         {
           "label": "トピック",
-          "title": "レモネードチョコ",
-          "text": "夏の暑い夜に食べやすいすっきりとした味わいが特徴のレモネード味のチョコレートが発売。ホワイトチョコをベースにレモンの爽やかな酸味を\n加えて夏バテ気味でも食べやすくなっております。\n夏だけの限定商品となっておりますので、ぜひ夏だけの味わいを体験してみてはいかがでしょうか？"
+          "title": "より良い効果を実感",
+          "text": "皆様、朝は気持ちよく起きることができてますでしょうか？SWEEPは睡眠の質を上げる商品ですが、ただ食べれば睡眠が改善されるものではございません。皆様の生活習慣や寝室の状況も大きく睡眠の質に関わるため、ベットでスマホを操作する、電気をつけながら寝るなど、ご自身の環境も一度振り返っていただけるとあなたの睡眠の悩みの種が出てくるかと思います。"
         }
       ]
     },
@@ -44,15 +44,15 @@
       "date": "2023.05.27",
       "title": "素材へのこだわり",
       "imageUrl": "/imgSweep/News_sozai.jpg",
-      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
-      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage3_PC.jpg",
+      "detailImageSP": "/imgSweep/newsDetailImage3_SP.jpg",
       "type": "NEWS",
       "description": "睡眠の質のため選び抜いた素材から作っております。",
       "newsDetail": [
         {
           "label": "トピック",
-          "title": "夏の新商品割引キャンペーン実施中",
-          "text": "今レモネードチョコを購入すると,全体の購入金額から'5%割引'をいたします。期間限定のチョコレートを通常よりもお得に購入できるだけでなく、\n他の商品もまとめて安く購入できるのは今だけ！キャンペーンは今月末までの開催予定なっておりますのでお早めにご購入ください。"
+          "title": "素材へのこだわり",
+          "text": "SWEEPは沖縄県産の黒糖、北海道産の牛乳など、自然由来の天然素材をメインに作り上げております。睡眠の質を高めるために化学的に合成された安価な材料は購入する皆様が安心して口にできるように使わずに製造し、新商品を企画する際も常に日本全国で安心できる素材を探して使用しております。"
         }
       ]
     },
@@ -61,15 +61,15 @@
       "date": "2023.04.14",
       "title": "Sweepショップ東京",
       "imageUrl": "/imgSweep/News_shop.jpg",
-      "detailImagePC": "/imgSweep/newsDetailImage_PC.jpg",
-      "detailImageSP": "/imgSweep/imageDetailSP.jpg",
+      "detailImagePC": "/imgSweep/newsDetailImage4_PC.jpg",
+      "detailImageSP": "/imgSweep/newsDetailImage4_SP.jpg",
       "type": "CAMPAIGN",
       "description": "記念して新規購入者向けキャンペーン実施",
       "newsDetail": [
         {
           "label": "キャンペーン",
-          "title": "",
-          "text": ""
+          "title": "Sweepショップ東京開店記念",
+          "text": "皆様が日々Sweepをご愛用してくださり、企業スタッフ一同、とても感謝しております。この度、東京にSweepを専門に販売・提供する店舗Sweepショップを開店することが決定いたしました。これを記念して本販売サイトでも商品をさらに多くの方に購入していただけるようにキャンペーンを企画しております。詳細は後日、本ページのNewsにて発表させていただく予定なので、楽しみにお待ちいただけると幸いです。"
         }
       ]
     }
