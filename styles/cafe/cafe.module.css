@@ -111,7 +111,6 @@
   /* height: 727px; */
 
   @media screen and (max-width: 768px) {
-    background-color: #d7baf7;
     height: 100%;
   }
 }
