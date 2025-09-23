@@ -71,7 +71,7 @@ const LineupComponent = (props: LineupProps) => {
   //dispatch実行
   useEffect(() => {
     // カテゴリー
-    console.log('useEffect dispatch fetchinfomation');
+    // console.log('useEffect dispatch fetchinfomation');
 
     // 問い合わせクエリ
     const query = 'Category=' + category + '&' + 'Size=' + size;

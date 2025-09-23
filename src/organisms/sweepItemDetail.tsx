@@ -63,8 +63,8 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
         : ['1-S', '1-S', '1-S', '1-S']
   ).join(','); //｀最近見た商品情報
 
-  console.log(itemData);
-  console.log(pickUpData);
+  // console.log(itemData);
+  // console.log(pickUpData);
 
   const itemName = itemData?.itemName || '';
   const category = itemData?.category || '';
@@ -98,7 +98,7 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
 
   // データ取得
   useEffect(() => {
-    console.log('useEffect dispatch fetching detail');
+    // console.log('useEffect dispatch fetching detail');
     const recentryCode = `${id}-${code}`;
     dispatch(fetchDetails(id));
     dispatch(fetchPickUpItemList(recentlyList));
@@ -124,7 +124,7 @@ const ItemDetailComponent = (props: ItemDetailProps) => {
   // カート数減少
   const decreaseCount = (currentCount: number) => {
     currentCount = currentCount == 1 ? 1 : currentCount - 1;
-    console.log(currentCount);
+    // console.log(currentCount);
     setCount(currentCount);
   };
 

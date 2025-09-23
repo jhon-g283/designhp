@@ -22,7 +22,7 @@ const NewsComponent = () => {
   ); //商品リスト取得
   //dispatch実行
   useEffect(() => {
-    console.log('useEffect dispatch fetchinfomation');
+    // console.log('useEffect dispatch fetchinfomation');
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 

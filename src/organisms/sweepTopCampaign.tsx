@@ -15,7 +15,7 @@ const CampaignComponent = () => {
 
   // データ取得
   useEffect(() => {
-    console.log('useEffect dispatch fetching information');
+    // console.log('useEffect dispatch fetching information');
 
     dispatch(fetchPickUpItemList('1,2,3,4'));
     // eslint-disable-next-line react-hooks/exhaustive-deps

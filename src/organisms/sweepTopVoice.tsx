@@ -17,7 +17,7 @@ const VoiceComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
   // データ取得
   useEffect(() => {
-    console.log('useEffect dispatch fetching information');
+    // console.log('useEffect dispatch fetching information');
 
     dispatch(fetchReviewItemList(''));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +31,7 @@ const VoiceComponent = () => {
         : []
   ).slice(0, 4);
 
-  console.log(reviewDataList);
+  // console.log(reviewDataList);
 
   return (
     <>

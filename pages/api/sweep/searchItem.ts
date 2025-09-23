@@ -15,8 +15,8 @@ export default function searchItemList(
   req: NextApiRequest,
   res: NextApiResponse<searchReaultDataAPI>
 ) {
-  console.log("req");
-  console.log(req.query);
+  // console.log("req");
+  // console.log(req.query);
 
   // カテゴリ（queryパラメータ）
   const queryCategory =

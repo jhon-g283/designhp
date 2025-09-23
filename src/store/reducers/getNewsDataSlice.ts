@@ -16,20 +16,20 @@ const initialState: newsDataList = {
 const domain = process.env.NEXT_PUBLIC_HOST || "http://localhost:3000/"; //環境変数鵜より取得
 const baseulr: string = domain + "api/sweep/newsListApi";
 
-console.log(domain);
+// console.log(domain);
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getNewsItems = async (url: string) => {
   const requestUrl = url;
-  console.log("fetch! cake reducer! " + url);
+  // console.log("fetch! cake reducer! " + url);
   const result = await fetch(requestUrl)
     .then((responce) => {
-      console.log("fetch responce reducer info");
+      // console.log("fetch responce reducer info");
       // console.log(responce);
       return responce.json();
     })
     .then((data: newsDataList) => {
-      console.log("fetch data reducer info");
-      console.log(data);
+      // console.log("fetch data reducer info");
+      // console.log(data);
       // const str: string = "data.name";
       return data;
     })
@@ -71,7 +71,7 @@ const getNewsListSlice = createSlice({
 
       state.data = item;
 
-      console.log("success--info");
+      // console.log("success--info");
 
       state.status = "success";
     });

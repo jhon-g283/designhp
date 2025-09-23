@@ -48,7 +48,7 @@ const NewsDetailComponent = ({ newsId }: NewsDetailProps) => {
   const query = newsId !== '' ? `id=${newsId}` : '';
 
   useEffect(() => {
-    console.log('useEffect dispatch fetching information');
+    // console.log('useEffect dispatch fetching information');
     dispatch(fetchInfomations(''));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);

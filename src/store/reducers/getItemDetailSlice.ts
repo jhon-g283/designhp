@@ -52,7 +52,7 @@ const baseulr: string = domain + "api/sweep/getitemDetailApi?";
 
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getItems = async (requestUrl: string) => {
-  console.log("fetch! reducer!");
+  // console.log("fetch! reducer!");
 
   const result = await fetch(requestUrl)
     .then((responce) => {
@@ -97,9 +97,9 @@ const getItemDetailSlice = createSlice({
     builder.addCase(fetchDetails.pending, (state, action) => {
       state.status = "pending";
 
-      console.log("pending--");
+      // console.log("pending--");
 
-      console.log(state.status);
+      // console.log(state.status);
     });
 
     // 通信完了
@@ -107,8 +107,8 @@ const getItemDetailSlice = createSlice({
       // state.loading = true;
       const item = action.payload.itemDetailData; //payloadから取得したデータを取り出す
 
-      console.log("payload sucess detail");
-      console.log(item);
+      // console.log("payload sucess detail");
+      // console.log(item);
 
       if (item != undefined) {
         state.itemDetailData = item;
@@ -116,7 +116,7 @@ const getItemDetailSlice = createSlice({
 
       state.status = "success";
 
-      console.log(action.payload);
+      // console.log(action.payload);
       // console.log(state.itemlist);
       // console.log(state.status);
     });

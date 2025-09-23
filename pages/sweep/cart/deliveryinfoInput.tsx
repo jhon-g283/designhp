@@ -35,8 +35,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const isModifyInfo = referer.indexOf(CART_DELIVERY_CONFIRM) > -1;
 
-  console.log('referer:' + referer);
-  console.log('isModifyInfo:' + isModifyInfo);
+  // console.log('referer:' + referer);
+  // console.log('isModifyInfo:' + isModifyInfo);
 
   // propsとしてページコンポーネントに渡すデータを返す
   return {

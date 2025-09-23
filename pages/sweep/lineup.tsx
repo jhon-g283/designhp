@@ -12,8 +12,8 @@ export interface LineupProps {
 const Main: NextPage<LineupProps> = (props) => {
   // サイズとカテゴリーを取得
   const { SelectedSize, SelectedCategory } = props;
-  console.log('SelectedSize:' + SelectedSize);
-  console.log('SelectedCategory:' + SelectedCategory);
+  // console.log('SelectedSize:' + SelectedSize);
+  // console.log('SelectedCategory:' + SelectedCategory);
   return (
     <>
       <Head>
@@ -39,8 +39,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const Category =
     context.query?.Category !== undefined ? context.query.Category : '';
 
-  console.log('Size:' + Size);
-  console.log('Category:' + Category);
+  // console.log('Size:' + Size);
+  // console.log('Category:' + Category);
   // propsとしてページコンポーネントに渡すデータを返す
   return {
     props: {

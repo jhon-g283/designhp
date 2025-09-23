@@ -31,7 +31,7 @@ const baseulr: string = domain + "api/sweep/getPickUpItemsApi?";
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getItems = async (url: string) => {
   const requestUrl = url;
-  console.log("fetch! picuUp! " + url);
+  // console.log("fetch! picuUp! " + url);
   const result = await fetch(requestUrl)
     .then((responce) => {
       // console.log("fetch responce reducer");
@@ -71,13 +71,13 @@ const getPickUpListDataSlice = createSlice({
   extraReducers: (builder) => {
     // 通信中
     builder.addCase(fetchPickUpItemList.pending, (state, action) => {
-      console.log("pending--getPickUpListSlice");
+      // console.log("pending--getPickUpListSlice");
       state.status = "pending";
     });
 
     // 通信完了
     builder.addCase(fetchPickUpItemList.fulfilled, (state, action) => {
-      console.log("success--getPickUpListSlice");
+      // console.log("success--getPickUpListSlice");
 
       const item = action.payload.itemlist; //payloadから取得したデータを取り出す(商品リスト)
 

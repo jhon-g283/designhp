@@ -21,7 +21,7 @@ const utileStrageReducerSlice = createSlice({
   reducers: {
     upDateDeliveryInfo(state, action) {
       // カートボタンで追加した時の処理
-      console.log("action upDateDeliveryInfo ");
+      // console.log("action upDateDeliveryInfo ");
       const payloadData = action.payload;
       // 住所情報更新
       state.deliveryInfo = payloadData;
@@ -38,7 +38,7 @@ const utileStrageReducerSlice = createSlice({
         recentlyData.length > 4 ? recentlyData.slice(-4) : recentlyData;
 
       // カートボタンで追加した時の処理
-      console.log("action upDateRecentry ");
+      // console.log("action upDateRecentry ");
     },
   },
   extraReducers: (builder) => {

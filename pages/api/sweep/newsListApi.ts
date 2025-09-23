@@ -7,7 +7,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<newsDataResponse>
 ) {
-  console.log("req infomationApi");
+  // console.log("req infomationApi");
 
   // クエリがある場合
   // if (req.query !== undefined) {

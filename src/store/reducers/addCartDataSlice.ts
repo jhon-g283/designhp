@@ -20,7 +20,7 @@ const cartReducerSlice = createSlice({
   reducers: {
     addCart(state, action) {
       // カートボタンで追加した時の処理
-      console.log("action addCart ");
+      // console.log("action addCart ");
 
       // カートとして追加されるデータ
       const addData: itemData = action.payload;
@@ -35,7 +35,7 @@ const cartReducerSlice = createSlice({
 
       if (check !== undefined) {
         // すでに追加済みならカート内の数量だけ変更
-        console.log("has same id item");
+        // console.log("has same id item");
 
         const id = addData.itemId;
         const code = addData.code;
@@ -71,7 +71,7 @@ const cartReducerSlice = createSlice({
 
     editCart(state, action) {
       // カートの数量変更
-      console.log(action.payload);
+      // console.log(action.payload);
 
       // 送られたデータ
       const payloadData = action.payload;
@@ -108,7 +108,7 @@ const cartReducerSlice = createSlice({
       // カート数更新
       state.totalCountcount = newCount;
 
-      console.log("remove cart id:" + action.payload);
+      // console.log("remove cart id:" + action.payload);
     },
     resetCart(state, action) {
       // カートデータリセット（購入完了時など）

@@ -14,8 +14,8 @@ export default function getPickUpItemsList(
   req: NextApiRequest,
   res: NextApiResponse<searchReaultDataAPI>
 ) {
-  console.log("req");
-  console.log(req.query);
+  // console.log("req");
+  // console.log(req.query);
 
   // カテゴリ（queryパラメータ）
   const queryPicuUp =

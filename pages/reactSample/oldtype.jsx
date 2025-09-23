@@ -17,7 +17,7 @@ class Counter extends Component {
   }
 
   render() {
-    console.log('更新' + this.state.count);
+    // console.log('更新' + this.state.count);
     return (
       <div>
         <h2>カウンター(クラスコンポーネント)</h2>

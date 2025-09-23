@@ -20,7 +20,7 @@ const NewsListComponent = () => {
 
   // ニュース一覧の情報を取得
   useEffect(() => {
-    console.log('useEffect dispatch fetching information');
+    // console.log('useEffect dispatch fetching information');
     dispatch(fetchInfomations(''));
   }, [dispatch]);
 

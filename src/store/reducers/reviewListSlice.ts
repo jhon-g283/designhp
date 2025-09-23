@@ -19,7 +19,7 @@ const baseulr: string = domain + "api/sweep/getReviewListApi?";
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getItems = async (url: string) => {
   const requestUrl = url;
-  console.log("fetch! review " + url);
+  // console.log("fetch! review " + url);
   const result = await fetch(requestUrl)
     .then((responce) => {
       // console.log("fetch responce reducer");
@@ -59,13 +59,13 @@ const getReviewListSlice = createSlice({
   extraReducers: (builder) => {
     // 通信中
     builder.addCase(fetchReviewItemList.pending, (state, action) => {
-      console.log("pending--getPickUpListSlice");
+      // console.log("pending--getPickUpListSlice");
       state.status = "pending";
     });
 
     // 通信完了
     builder.addCase(fetchReviewItemList.fulfilled, (state, action) => {
-      console.log("success--getPickUpListSlice");
+      // console.log("success--getPickUpListSlice");
 
       const item = action.payload.reviewList; //payloadから取得したデータを取り出す(商品リスト)
 

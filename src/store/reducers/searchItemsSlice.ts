@@ -38,7 +38,7 @@ const baseulr: string = domain + "api/sweep/searchItem?";
 // APIへの問い合わせ関数（fetchで取得する部分）
 const getItems = async (url: string) => {
   const requestUrl = url;
-  console.log("fetch! cake reducer! " + url);
+  // console.log("fetch! cake reducer! " + url);
   const result = await fetch(requestUrl)
     .then((responce) => {
       // console.log("fetch responce reducer");
@@ -77,13 +77,13 @@ const getItemListSlice = createSlice({
   extraReducers: (builder) => {
     // 通信中
     builder.addCase(fetchItemList.pending, (state, action) => {
-      console.log("pending--getItemListSlice");
+      // console.log("pending--getItemListSlice");
       state.status = "pending";
     });
 
     // 通信完了
     builder.addCase(fetchItemList.fulfilled, (state, action) => {
-      console.log("success--getItemListSlice");
+      // console.log("success--getItemListSlice");
 
       const item = action.payload.itemlist; //payloadから取得したデータを取り出す(商品リスト)
       const category = action.payload.categories; //payloadから取得したデータを取り出す（カテゴリ概要）
