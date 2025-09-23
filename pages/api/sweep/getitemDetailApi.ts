@@ -21,8 +21,8 @@ export default function searchCakesData(
   req: NextApiRequest,
   res: NextApiResponse<itemDetail>
 ) {
-  console.log("req");
-  console.log(req.query);
+  // console.log("req");
+  // console.log(req.query);
 
   const queryId = req.query?.id || 1; //クエリ取得
 
