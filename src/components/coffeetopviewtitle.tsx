@@ -1,10 +1,11 @@
+import type React from 'react';
 import styles from '../../styles/cafe/cafe.module.css';
 interface Props {
   useClassName?: string;
   fontColor?: string;
   titleText: string;
   subTitleText?: string;
-  subTTitleParagraph?: JSX.Element;
+  subTTitleParagraph?: React.JSX.Element;
 }
 
 // トップビューのタイトル名

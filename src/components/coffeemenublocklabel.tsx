@@ -1,10 +1,11 @@
+import type React from 'react';
 import Paragraph from './coffeeparagraph';
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 interface Props {
   useClassName: string;
   fontColor: string;
-  paragramMenuText: JSX.Element;
+  paragramMenuText: React.JSX.Element;
   menuNameJp: string;
   menuNameEn: string;
   price: string;

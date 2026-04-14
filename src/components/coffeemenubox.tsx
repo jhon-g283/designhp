@@ -1,3 +1,4 @@
+import type React from 'react';
 import styles from '../../styles/cafe/cafe.module.css';
 import Image from 'next/image';
 
@@ -8,7 +9,7 @@ interface Props {
   classNameOfBox: string;
   classNameOfBoxLabel: string;
   classNameOfBoxImg: string;
-  paragramMenuTextOfLabel: JSX.Element;
+  paragramMenuTextOfLabel: React.JSX.Element;
   textOfMenuNameJp: string;
   textOfMenuNameEn: string;
   textOfMenuNameNum: string;

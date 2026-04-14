@@ -1609,7 +1609,7 @@ a.mapAppButton:active {
 
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media screen and(max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin: 0px;
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
@@ -1624,7 +1624,7 @@ a.mapAppButton:active {
   /* padding-left: 128px; */
   padding-left: min(calc(10%), 128px);
   padding-right: min(calc(10%), 128px);
-  @media screen and(max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-left: min(calc(8%), 28px);
     padding-right: min(calc(8%), 28px);
     margin-top: 0px;
