@@ -1,8 +1,10 @@
+import type React from 'react';
+
 // 受け取ったタグ構造にクラス名でスタイルをつける
 interface Props {
   useClassName?: string;
   fontColor?: string;
-  paragramText: JSX.Element;
+  paragramText: React.JSX.Element;
 }
 
 const Paragraph = ({ useClassName, fontColor, paragramText }: Props) => {

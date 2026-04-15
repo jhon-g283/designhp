@@ -240,7 +240,7 @@ const CartItemComponent = () => {
                   showIcon
                   selected={startDate}
                   toggleCalendarOnIconClick
-                  onChange={(date) => setStartDate(date || new Date())}
+                  onChange={(date: Date | null) => setStartDate(date || new Date())}
                   minDate={new Date()}
                   dateFormat="yyyy/MM/dd"
                   className={`${styles.calendarInput} `}
